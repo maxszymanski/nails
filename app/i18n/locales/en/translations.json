@@ -1,36 +1,8 @@
 {
 	"nav": {
-		"title": "Home"
-	},
-	"login": {
-		"logoInfo": "Trade Items Instantly",
-		"title": "Login",
-		"info": "By logging in, you acknowledge that you are at least 18 years of age, that any items you wager are not stolen, and that you agree to our Terms of Use.",
-		"label": "Roblox Username",
-		"checkbox": "By checking this box you agree to ",
-		"terms": "our terms and services",
-		"placeholder": "Enter your roblox username...",
-		"signin": "SIGN IN"
-	},
-	"register": {
-		"label": "Add the following phrase to your roblox description page",
-		"textCopied": "Copied to clipboard",
-		"notification": "Never share this phrase with anybody."
-	},
-	"balanceModal": {
-		"title": "Why do we have 2 balances?",
-		"subtitle": "We use MBX Coins for everything, but we split balances into Crypto/Card deposits and MM2 Items deposits. This is to prevent users from abusing our items selling feature",
-		"notification": "Both balances are the same value ",
-		"notificationPrice": "(100 MBX = $1)",
-		"mm2Balance": "MM2 Skins Balance",
-		"freeMM2": "Free MM2 Withdrawals",
-		"fee": "20% fee if withdrawing to crypto",
-		"usdBalance": "USD Balance",
-		"crypto": "Free Crypto Withdrawals",
-		"understand": "I understand"
-	},
-	"validations": {
-		"noEmpty": "This field is required",
-		"terms": "Please accept our terms and conditions"
+		"home": "Home",
+		"products": "Products",
+		"legal": "Legal",
+		"faq": "FAQ"
 	}
 }

@@ -4,8 +4,12 @@ export default async function Home() {
 	const { t } = await getT('navbar')
 
 	return (
-		<div className="flex-1 overflow-hidden ">
-			<p>{t('nav.title')}</p>{' '}
+		<div className=" ">
+			<p>{t('nav.title')}</p>
+			<div className="mt-40 w-full h-30 bg-black"></div>
+			<div className="mt-40 w-full h-30 bg-black"></div>
+			<div className="mt-40 w-full h-30 bg-black"></div>
+			<div className="mt-40 w-full h-30 bg-black"></div>
 		</div>
 	)
 }
