@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@plugin 'tailwind-scrollbar' {
+	nocompatible: true;
+	preferredstrategy: 'pseudoelements';
+}
+@theme {
+	--color-black-bg: #0d0d0d;
+	--color-black-primary: #111111;
+	--color-black-secondary: #181818;
+	--color-grayscale: #84878b;
+	--color-alert: #f13d30;
+	--color-orange-primary: #e8a41a;
+
+	--breakpoint-2xl: 1440px;
+	--breakpoint-xs: 360px;
+
+	--tracking-shrink: -0.1em;
+
+	--animate-visible: visible 0.3s ease-out;
+	@keyframes visible {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+.scrollbar-none {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+	display: none;
+}
+
+.my-scrollbar {
+	@apply scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-orange-primary scrollbar-track-grayscale scrollbar-thin;
+}
