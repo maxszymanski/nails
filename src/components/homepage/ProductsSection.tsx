@@ -39,11 +39,11 @@ async function ProductsSection({ lng }: { lng: string }) {
 				<div className="flex flex-col w-full items-center md:flex-row md:items-end md:justify-between md:gap-4">
 					<div className=" flex flex-col items-center text-center mb-6 md:mb-0 md:items-start md:text-left">
 						<Pill text={t('homepage.products.pill')} />
-						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14  lg:text-[64px] lg:leading-18 mt-2 mb-4">
+						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4">
 							{t('homepage.products.title')} <br />
 							{t('homepage.products.titleTwo')}
 						</h2>
-						<p className="text-grayscale-500 leading-6 w-full max-w-[550px]">
+						<p className="text-grayscale-500 leading-6 w-full max-w-[420px]">
 							{t('homepage.products.subtitle')}
 						</p>
 					</div>
@@ -78,35 +78,70 @@ const ProductsBoxes = async () => {
 	const { t } = await getT('translations')
 
 	return (
-		<div className="flex flex-row flex-wrap justify-center gap-4 mt-12 items-center ">
-			<ProductsBox
-				title={t('homepage.products.organizers')}
-				subtitle={t('homepage.products.organizersSub')}
-				smallImage="/assets/organizer-sm.png"
-			/>
-			<ProductsBox
-				title={t('homepage.products.magnetic')}
-				subtitle={t('homepage.products.magneticSub')}
-				smallImage="/assets/magnetic-sm.png"
-			/>
-			<ProductsBox
-				title={t('homepage.products.nonmagnetic')}
-				subtitle={t('homepage.products.nonmagneticSub')}
-				smallImage="/assets/nonmagnetic-sm.png"
-			/>
+		<div
+			className="flex flex-row flex-wrap justify-center gap-4 mt-12 lg:gap-x-[15px] 
+    lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[1fr_1fr] lg:h-[616px] lg:mt-14">
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-4 ">
+				<ProductsBox
+					title={t('homepage.products.organizers')}
+					subtitle={t('homepage.products.organizersSub')}
+					smallImage="/assets/organizer-sm.png"
+					image="/assets/organizer.png"
+					alt="organizer"
+				/>
+			</div>
 
-			<ProductsBox
-				title={t('homepage.products.display')}
-				subtitle={t('homepage.products.displaySub')}
-				smallImage="/assets/display-sm.png"
-			/>
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none  lg:h-auto lg:row-span-2">
+				<ProductsBox
+					title={t('homepage.products.magnetic')}
+					subtitle={t('homepage.products.magneticSub')}
+					smallImage="/assets/magnetic-sm.png"
+					image="/assets/magnetic.png"
+					alt="magnetic tips"
+				/>
+			</div>
+
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-2">
+				<ProductsBox
+					title={t('homepage.products.nonmagnetic')}
+					subtitle={t('homepage.products.nonmagneticSub')}
+					smallImage="/assets/nonmagnetic-sm.png"
+					image="/assets/nonmagnetic.png"
+					alt="non magnetic tips"
+				/>
+			</div>
+
+			<div className="w-full max-w-[343px] h-[343px]  lg:max-w-none lg:h-[300px] lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-3">
+				<ProductsBox
+					title={t('homepage.products.display')}
+					subtitle={t('homepage.products.displaySub')}
+					smallImage="/assets/display-sm.png"
+					image="/assets/display.png"
+					alt="Proffesional Presentation"
+					isDisplay
+				/>
+			</div>
 		</div>
 	)
 }
-const ProductsBox = ({ title, subtitle, smallImage }: { title: string; subtitle: string; smallImage: string }) => {
+const ProductsBox = ({
+	title,
+	subtitle,
+	smallImage,
+	image,
+	isDisplay,
+	alt,
+}: {
+	title: string
+	subtitle: string
+	smallImage: string
+	image: string
+	isDisplay?: boolean
+	alt: string
+}) => {
 	return (
-		<div className="relative bg-white z-3 h-[343px] w-full max-w-[343px] rounded-2xl overflow-hidden shadow-[0px_1px_2px_0px_#E9DDC840,0px_2px_8px_0px_#E9DDC840]">
-			<div className="flex flex-col  items-center p-4 max-w-[287px] w-full mx-auto relative z-4">
+		<div className="relative bg-white z-3 h-full w-full  rounded-2xl overflow-hidden shadow-[0px_1px_2px_0px_#E9DDC840,0px_2px_8px_0px_#E9DDC840] lg:rounded-3xl">
+			<div className="flex flex-col  items-center p-4 max-w-[287px] lg:max-w-full w-full mx-auto relative z-4 lg:flex-row gap-2 lg:pl-4 lg:pr-2 lg:gap-4 lg:mx-0 xl:pl-6">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M6.65361 9.58672C6.65361 7.96711 7.96591 6.65483 9.58551 6.65353H10.9198C11.694 6.65353 12.4357 6.3462 12.9855 5.80157L13.9179 4.86793C15.0603 3.71904 16.9172 3.71385 18.0661 4.85497L18.0673 4.85627L18.0791 4.86664L19.0127 5.80028C19.5612 6.3462 20.3043 6.65223 21.0784 6.65223H22.4153C24.0349 6.65223 25.3485 7.96581 25.3485 9.58543V10.9185C25.3485 11.6939 25.6545 12.4356 26.2004 12.9854L27.1341 13.919C28.2829 15.0615 28.2895 16.9183 27.1484 18.0673L26.2017 19.0139C25.6559 19.5625 25.3499 20.3054 25.3499 21.0783V22.4165C25.3472 24.0361 24.0336 25.3458 22.4153 25.3445H21.0757C20.3016 25.3445 19.5587 25.6518 19.0101 26.1978L18.0765 27.1301C16.9367 28.2803 15.0797 28.2881 13.9308 27.1482L13.9269 27.1457L12.9829 26.2017C12.4344 25.6557 11.6914 25.3497 10.9173 25.3485H9.58551C7.96591 25.3485 6.65361 24.0361 6.65361 22.4165V21.0757C6.65361 20.3015 6.34629 19.5598 5.80037 19.0113L4.86803 18.0777C3.71783 16.9378 3.71005 15.0835 4.84857 13.9333C4.84857 13.9333 4.85247 13.9307 4.85376 13.9282L5.79777 12.9828C6.34369 12.4343 6.65103 11.6913 6.65103 10.9159V9.58672"
@@ -123,18 +158,28 @@ const ProductsBox = ({ title, subtitle, smallImage }: { title: string; subtitle:
 						strokeLinejoin="round"
 					/>
 				</svg>
-				<h3 className="capitalize leading-7 text-[18px] mt-2">{title}</h3>
-				<p className="text-grayscale-500 leading-5 text-sm text-center">{subtitle}</p>
+				<div className="text-center lg:text-start">
+					<h3 className="capitalize leading-7 text-[18px] lg:text-xl lg:leading-8 ">{title}</h3>
+					<p className="text-grayscale-500 leading-5 text-sm lg:text-base lg:leading-6">{subtitle}</p>
+				</div>
 			</div>
 			<Image
-				className="object-bottom pointer-events-none"
+				className="object-bottom pointer-events-none lg:hidden"
 				src={smallImage}
 				fill
-				alt="organizer"
+				alt={alt}
 				quality={100}
 				sizes="343px"
 			/>
-			<div className="absolute bottom-0 w-full h-12 z-4 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_100%)]"></div>
+			<Image
+				className="object-bottom pointer-events-none hidden lg:block"
+				src={image}
+				fill
+				alt={alt}
+				quality={100}
+				sizes={`${isDisplay ? '755px' : '370px'}`}
+			/>
+			<div className="absolute bottom-0 w-full h-12 z-4 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_100%)] lg:h-25"></div>
 		</div>
 	)
 }
