@@ -4,5 +4,28 @@
 		"products": "Products",
 		"legal": "Legal",
 		"faq": "FAQ"
+	},
+	"homepage": {
+		"header": {
+			"title": "Professional",
+			"titleTwo": "Nails Color Display",
+			"subtitle": "Showcase your shades with clarity and elegance. Our smart display system helps you present, organize, and sell more effectively.",
+			"cta": "Explore Our Products"
+		},
+		"products": {
+			"title": "The Best Way to",
+			"titleTwo": "Present Nail Colors",
+			"subtitle": "A modular nail display system designed for both everyday use and professional salons-helping to organize, showcase, and simplify color selection with ease.",
+			"cta": "Explore Our Products",
+			"pill": "Our System",
+			"organizers": "Organizers",
+			"organizersSub": "Keep every color perfectly organized",
+			"magnetic": "Magnetic Tips",
+			"magneticSub": "Attach and remove tips effortlessly",
+			"nonmagnetic": "Non-magnetic Tips",
+			"nonmagneticSub": "Test and compare colors easily",
+			"display": "Display Bar",
+			"displaySub": "Present nail colors clearly and professionally"
+		}
 	}
 }

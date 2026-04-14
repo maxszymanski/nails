@@ -49,15 +49,8 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 			<Button
 				variant="switch"
 				onClick={() => setOpen(is => !is)}
-				restClass={`w-full gap-2 relative lg:w-[128px]`}>
-				<Image
-					src={current.flag}
-					alt={current.label}
-					width={20}
-					height={14}
-					className="object-cover"
-					quality={100}
-				/>
+				restClass={`w-full gap-2 relative lg:w-[128px] hover:bg-grayscale`}>
+				<Image src={current.flag} alt={current.label} width={20} height={20} quality={100} />
 				<span className="text-sm font-medium leading-5 text-grayscale-500 flex-1 text-left">
 					{current.label}
 				</span>
@@ -78,7 +71,7 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 				</svg>
 			</Button>
 			{open && (
-				<div className="absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0 bg-white border border-grayscale-100 rounded-2xl overflow-hidden z-10 lg:rounded-sm">
+				<div className="absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0 bg-white border border-grayscale-100 rounded-2xl overflow-hidden z-10 lg:rounded-lg">
 					{languagesOptions.map((option, i) => (
 						<div key={option.value}>
 							{i > 0 && <div className="h-px grayscale-100" />}

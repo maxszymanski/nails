@@ -74,7 +74,7 @@ function Navbar({ lng }: { lng: string }) {
 		<>
 			<header className="w-full">
 				<nav
-					className={`px-4 lg:left-1/2 lg:-translate-x-1/2 left-0 duration-400  fixed top-0 z-60 flex flex-col   w-full transition-all ${show ? 'translate-y-0' : '-translate-y-full'} ${isExpanded ? 'overflow-y-auto max-h-dvh h-full' : 'overflow-y-hidden max-h-22'}  lg:max-h-22 delay-200 lg:overflow-y-visible`}
+					className={`px-4 lg:left-1/2 lg:-translate-x-1/2 left-0 duration-400  fixed top-0 z-60 flex flex-col xl:max-w-[1172px]  xl:mx-auto  w-full transition-all ${show ? 'translate-y-0' : '-translate-y-full'} ${isExpanded ? 'overflow-y-auto max-h-dvh  h-full' : 'overflow-y-hidden max-h-22'}  lg:max-h-22 delay-200 lg:overflow-y-visible`}
 					ref={navRef}>
 					{/* mobile */}
 					<div className="relative  py-6 w-full flex justify-between items-center z-20 lg:hidden ">
@@ -127,19 +127,22 @@ function Navbar({ lng }: { lng: string }) {
 						</div>
 					</div>
 					<div
-						className={`lg:hidden flex flex-col h-(calc(100vh-88px)) relative pb-4 w-full ${!isExpanded ? '-z-10 opacity-0 pointer-events-none delay-1000' : ' z-60 opacity-100 '}`}>
+						className={`lg:hidden flex flex-col h-dvh justify-between relative pb-4 w-full ${!isExpanded ? '-z-10 opacity-0 pointer-events-none delay-1000' : ' z-60 opacity-100 '}`}>
 						<NavList
 							lng={lng}
 							isExpanded={isExpanded}
-							isOpen={isOpen}
-							toggleIsOpen={() => setIsOpen(is => !is)}
 							isSocialOpen={isSocialOpen}
 							toggleIsSocialOpen={() => setIsSocialOpen(is => !is)}
 						/>
-					</div>
-					<div
-						className={`w-full lg:hidden pb-4 duration-500 relative mt-auto transition-all ${!isExpanded ? 'opacity-0 text-grayscale -translate-y-4 delay-100' : 'opacity-100 text-grayscale translate-y-0 delay-900'}`}>
-						<LanguageSwitcher lng={lng} />
+
+						<div
+							className={`w-full  sticky bottom-0 transition-all duration-500 ${
+								!isExpanded
+									? 'opacity-0 text-grayscale -translate-y-4 delay-100'
+									: 'opacity-100 text-grayscale translate-y-0 delay-900'
+							}`}>
+							<LanguageSwitcher lng={lng} />
+						</div>
 					</div>
 
 					{/* desktop */}

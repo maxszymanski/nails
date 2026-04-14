@@ -4,23 +4,17 @@ import { usePathname } from 'next/navigation'
 
 function NavList({
 	isExpanded,
-	isOpen,
 	isSocialOpen,
-	toggleIsOpen,
 	toggleIsSocialOpen,
 	lng,
 }: {
 	isExpanded: boolean
-	isOpen: boolean
 	isSocialOpen: boolean
-	toggleIsOpen: () => void
 	toggleIsSocialOpen: () => void
 	lng: string
 }) {
 	const { t } = useT('translations')
 	const pathname = usePathname()
-
-	console.log(pathname)
 
 	const navList = [
 		{ href: `/${lng}`, linkName: `${t('nav.home')}` },

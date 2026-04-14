@@ -26,7 +26,7 @@ function DesktopNav({ lng }: { lng: string }) {
 	]
 
 	return (
-		<div className=" hidden w-full lg:flex items-center py-6  justify-between wrapper lg:px-4">
+		<div className=" hidden w-full lg:flex items-center py-6  justify-between wrapper lg:px-4 xl:px-0 ">
 			<div className="flex items-center gap-12">
 				<LogoLink />
 				<ul className="flex items-center gap-[15px]">
