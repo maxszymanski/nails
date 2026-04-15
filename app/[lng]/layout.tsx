@@ -5,6 +5,7 @@ import { languages } from '../i18n/settings'
 import { dir } from 'i18next'
 import AosProvider from '@/src/components/ui/AosProvider'
 import Navbar from '@/src/components/nav/Navbar'
+import Footer from '@/src/components/footer/Footer'
 
 const outfit = Outfit({
 	subsets: ['latin'],
@@ -32,9 +33,10 @@ export default async function RootLayout({
 
 	return (
 		<html lang={lng} dir={dir(lng)} className={`${outfit.className} h-full antialiased `}>
-			<body className="tracking-[-0.7%] flex flex-col relative w-full my-scrollbar bg-white text-black-primary">
+			<body className="tracking-shrink flex flex-col relative w-full my-scrollbar bg-white text-black-primary">
 				<Navbar lng={lng} />
 				<AosProvider>{children}</AosProvider>
+				<Footer lng={lng} />
 			</body>
 		</html>
 	)

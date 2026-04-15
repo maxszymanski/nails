@@ -43,7 +43,7 @@ async function ProductsSection({ lng }: { lng: string }) {
 							{t('homepage.products.title')} <br />
 							{t('homepage.products.titleTwo')}
 						</h2>
-						<p className="text-grayscale-500 leading-6 w-full max-w-[420px]">
+						<p className="text-grayscale-500 leading-6 w-full max-w-[550px]">
 							{t('homepage.products.subtitle')}
 						</p>
 					</div>

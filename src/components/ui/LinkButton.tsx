@@ -5,7 +5,7 @@ interface LinkButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 	isActive?: boolean
 	isActiveClass?: string
 	children: React.ReactNode
-	variant?: 'primary' | 'rounded' | 'switch'
+	variant?: 'primary' | 'rounded' | 'switch' | 'secondary' | 'default'
 	restClass?: string
 }
 
@@ -14,6 +14,9 @@ const variants = {
 		'bg-my-purple text-white h-10 rounded-full px-4 text-sm leading-5 font-medium hover:bg-my-purple/90 focus-visible:ring-my-purple',
 	rounded: 'rounded-full size-10 shrink-0 border border-grayscale hover:bg-grayscale-100 relative',
 	switch: 'rounded-[50px] px-2.5 py-2.5 bg-grayscale-100 h-10',
+	secondary:
+		'bg-grayscale-100 text-grayscale-500 h-10 rounded-full px-4 text-sm leading-5 font-medium hover:bg-grayscale focus-visible:ring-my-purple',
+	default: 'bg-transparent',
 }
 
 export const mainClass =

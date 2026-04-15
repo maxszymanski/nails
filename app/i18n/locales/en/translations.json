@@ -15,7 +15,7 @@
 		"products": {
 			"title": "The Best Way to",
 			"titleTwo": "Present Nail Colors",
-			"subtitle": "A modular magnetic display system designed to organize, showcase and simplify color selection in modern nail salons.",
+			"subtitle": "A modular nail display system designed for both everyday use and professional salons-helping to organize, showcase, and simplify color selection with ease.",
 			"cta": "Explore Our Products",
 			"pill": "Our System",
 			"organizers": "Smart Organization",
@@ -26,6 +26,39 @@
 			"nonmagneticSub": "Test and compare colors easily",
 			"display": "Professional Presentation",
 			"displaySub": "Present nail colors clearly and professionally"
+		},
+		"choice": {
+			"title": "Designed for",
+			"titleTwo": "Effortless Choice",
+			"subtitle": "Place the removable sample nail directly on your finger to see how the color or design will look in real life. This simple testing method makes it easier to compare shades and confidently choose the perfect one.",
+			"cta": "Order Now",
+			"pill": "Our Innovation"
+		},
+		"options": {
+			"title": "Three Display Options. One Smart System.",
+			"subtitle": "Select the configuration that fits your needs-a storage cabinet for full organization or a versatile frame for flexible presentation.",
+			"pill": "The Possibilities",
+			"frame": "Frame Version",
+			"frameSub": "A minimal display solution with stand or wall-mount option.",
+			"frameCta": "Explore Frame",
+			"cabinet": "Cabinet Version",
+			"cabinetSub": "Integrated storage and display in one elegant unit.",
+			"cabinetCta": "Explore Cabinet",
+			"display": "Display Bar",
+			"displaySub": "A minimal display solution with stand or wall-mount option.",
+			"displayCta": "Explore Display Bar",
+			"new": "New"
+		},
+		"organization": {
+			"title": "Smart Color Organization",
+			"subtitle": "A clear numbering system connects each sample nail with its matching polish bottle, helping quickly locate, organize and present every color with ease.",
+			"pill": "Organisation"
+		},
+		"upgrade": {
+			"title": "Upgrade Your Salon Display Today",
+			"subtitle": "Discover a smarter, cleaner and more elegant way to present colors, designed for both everyday users and nail professionals.",
+			"pill": "Ready?",
+			"cta": "Explore Our Products"
 		}
 	}
 }
