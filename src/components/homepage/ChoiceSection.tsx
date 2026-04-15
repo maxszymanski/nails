@@ -9,7 +9,9 @@ async function ChoiceSection({ lng }: { lng: string }) {
 		<section className="pb-25 lg:pb-30">
 			<div className="wrapper px-4 relative z-3  flex flex-col-reverse items-center gap-12 md:flex-row md:gap- md:justify-between">
 				<div className="flex flex-col w-full items-center md:items-start md:w-fit">
-					<div className=" flex flex-col items-center text-center mb-6  md:items-start md:text-left ">
+					<div
+						className=" flex flex-col items-center text-center mb-6  md:items-start md:text-left "
+						data-aos="fade-in">
 						<Pill text={t('homepage.choice.pill')} />
 						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4">
 							{t('homepage.choice.title')} <br />
@@ -19,7 +21,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 							{t('homepage.choice.subtitle')}
 						</p>
 					</div>
-					<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit">
+					<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit" data-aos="fade-in">
 						{t('homepage.choice.cta')}
 						<svg
 							width="20px"
@@ -40,7 +42,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 						</svg>
 					</LinkButton>
 				</div>
-				<div className="relative z-3 pt-10 md:pt-0 mask-x-from-90% md:mask-x-from-80%">
+				<div className="relative z-3 pt-10 md:pt-0 mask-x-from-90% md:mask-x-from-80%" data-aos="fade-in">
 					<Image
 						className="hidden md:block "
 						src={'/assets/choice-hero.png'}

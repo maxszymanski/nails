@@ -5,6 +5,30 @@
 		"legal": "Legal",
 		"faq": "FAQ"
 	},
+	"footer": {
+		"info": "Iwon Naildisplay creates smart magnetic display systems designed to elevate nail color presentation in modern salons.",
+		"products": {
+			"title": "Products",
+			"nails": "IND Nails",
+			"display": "Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"company": {
+			"title": "Home",
+			"system": "Our System",
+			"innovation": "Our Innovation",
+			"possiblities": "The Possibilities",
+			"organisation": "The Organisation"
+		},
+		"legal": {
+			"title": "Legal",
+			"tos": "TOS",
+			"faq": "FAQ"
+		},
+		"copyright": "All rights reserved."
+	},
 	"homepage": {
 		"header": {
 			"title": "Professional",
@@ -18,13 +42,13 @@
 			"subtitle": "A modular nail display system designed for both everyday use and professional salons-helping to organize, showcase, and simplify color selection with ease.",
 			"cta": "Explore Our Products",
 			"pill": "Our System",
-			"organizers": "Smart Organization",
+			"organizers": "Organizers",
 			"organizersSub": "Keep every color perfectly organized",
 			"magnetic": "Magnetic Tips",
 			"magneticSub": "Attach and remove tips effortlessly",
 			"nonmagnetic": "Non-magnetic Tips",
 			"nonmagneticSub": "Test and compare colors easily",
-			"display": "Professional Presentation",
+			"display": "Display Bar",
 			"displaySub": "Present nail colors clearly and professionally"
 		},
 		"choice": {

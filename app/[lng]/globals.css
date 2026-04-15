@@ -41,7 +41,7 @@
 }
 
 .my-scrollbar {
-	@apply scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-my-purple scrollbar-track-grayscale scrollbar-thin;
+	@apply scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-my-purple/20 scrollbar-track-grayscale scrollbar-thin;
 }
 
 .wrapper {

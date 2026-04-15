@@ -36,7 +36,9 @@ async function ProductsSection({ lng }: { lng: string }) {
 			</svg>
 
 			<div className="wrapper px-4 relative z-3">
-				<div className="flex flex-col w-full items-center md:flex-row md:items-end md:justify-between md:gap-4">
+				<div
+					className="flex flex-col w-full items-center md:flex-row md:items-end md:justify-between md:gap-4"
+					data-aos="fade-in">
 					<div className=" flex flex-col items-center text-center mb-6 md:mb-0 md:items-start md:text-left">
 						<Pill text={t('homepage.products.pill')} />
 						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4">
@@ -81,7 +83,7 @@ const ProductsBoxes = async () => {
 		<div
 			className="flex flex-row flex-wrap justify-center gap-4 mt-12 lg:gap-x-[15px] 
     lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[1fr_1fr] lg:h-[616px] lg:mt-14">
-			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-4 ">
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-4 " data-aos="fade-in">
 				<ProductsBox
 					title={t('homepage.products.organizers')}
 					subtitle={t('homepage.products.organizersSub')}
@@ -91,7 +93,7 @@ const ProductsBoxes = async () => {
 				/>
 			</div>
 
-			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none  lg:h-auto lg:row-span-2">
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none  lg:h-auto lg:row-span-2" data-aos="fade-in">
 				<ProductsBox
 					title={t('homepage.products.magnetic')}
 					subtitle={t('homepage.products.magneticSub')}
@@ -101,7 +103,7 @@ const ProductsBoxes = async () => {
 				/>
 			</div>
 
-			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-2">
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-2" data-aos="fade-in">
 				<ProductsBox
 					title={t('homepage.products.nonmagnetic')}
 					subtitle={t('homepage.products.nonmagneticSub')}
@@ -111,7 +113,9 @@ const ProductsBoxes = async () => {
 				/>
 			</div>
 
-			<div className="w-full max-w-[343px] h-[343px]  lg:max-w-none lg:h-[300px] lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-3">
+			<div
+				className="w-full max-w-[343px] h-[343px]  lg:max-w-none lg:h-[300px] lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-3"
+				data-aos="fade-in">
 				<ProductsBox
 					title={t('homepage.products.display')}
 					subtitle={t('homepage.products.displaySub')}

@@ -8,7 +8,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 	return (
 		<section className="w-full bg-[#231F2D] py-12 lg:py-16">
 			<div className="wrapper px-4 flex flex-col gap-12 lg:gap-14">
-				<div className="flex flex-col w-full items-center">
+				<div className="flex flex-col w-full items-center" data-aos="fade-in">
 					<div className=" flex flex-col items-center text-center mb-6  max-w-[575px]">
 						<Pill text={t('homepage.options.pill')} />
 						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 text-white">
@@ -20,7 +20,9 @@ async function OptionsSection({ lng }: { lng: string }) {
 
 				<div className="w-full flex flex-col gap-4 items-center">
 					<div className="w-full flex flex-col gap-4 md:flex-row items-center">
-						<div className="w-full max-w-[343px] h-[343px] md:h-[300px] md:max-w-full  md:basis-[calc(100%/2 -8px)]">
+						<div
+							className="w-full max-w-[343px] h-[343px] md:h-[300px] md:max-w-full  md:basis-[calc(100%/2 -8px)]"
+							data-aos="fade-in">
 							<Card
 								title={t('homepage.options.frame')}
 								subtitle={t('homepage.options.frameSub')}
@@ -31,7 +33,9 @@ async function OptionsSection({ lng }: { lng: string }) {
 								href={`${lng}/products/frame`}
 							/>
 						</div>
-						<div className="w-full max-w-[343px] h-[343px] md:h-[300px] md:max-w-full  md:basis-[calc(100%/2 -8px)]">
+						<div
+							className="w-full max-w-[343px] h-[343px] md:h-[300px] md:max-w-full  md:basis-[calc(100%/2 -8px)]"
+							data-aos="fade-in">
 							<Card
 								title={t('homepage.options.cabinet')}
 								subtitle={t('homepage.options.cabinetSub')}
@@ -43,7 +47,9 @@ async function OptionsSection({ lng }: { lng: string }) {
 							/>
 						</div>
 					</div>
-					<div className="w-full max-w-[343px] h-[343px] md:h-[300px]  lg:basis-[calc(100%/2 -8px)] md:max-w-full ">
+					<div
+						className="w-full max-w-[343px] h-[343px] md:h-[300px]  lg:basis-[calc(100%/2 -8px)] md:max-w-full "
+						data-aos="fade-in">
 						<Card
 							title={t('homepage.options.display')}
 							subtitle={t('homepage.options.displaySub')}

@@ -14,7 +14,7 @@ export const mainClass =
 const variants = {
 	primary: 'bg-black-primary text-white',
 	rounded: 'rounded-full size-10 shrink-0 border border-grayscale  relative hover:bg-grayscale-100',
-	switch: 'rounded-[50px] px-2.5 py-2.5 bg-grayscale-100 h-10',
+	switch: 'rounded-[50px] px-2.5 py-2.5 h-10',
 }
 
 function Button({

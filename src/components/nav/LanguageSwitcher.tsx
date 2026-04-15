@@ -19,7 +19,7 @@ const languagesOptions = [
 	},
 ]
 
-export default function LanguageSwitcher({ lng }: { lng: string }) {
+export default function LanguageSwitcher({ lng, isFooter = false }: { lng: string; isFooter?: boolean }) {
 	const router = useRouter()
 	const pathname = usePathname()
 	const [open, setOpen] = useState(false)
@@ -49,9 +49,9 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 			<Button
 				variant="switch"
 				onClick={() => setOpen(is => !is)}
-				restClass={`w-full gap-2 relative lg:w-[128px] hover:bg-grayscale`}>
+				restClass={`w-full gap-2 relative lg:w-[128px] ${isFooter ? 'bg-[#E9DDC833] hover:bg-[#e9ddc857]' : 'bg-grayscale-100  hover:bg-grayscale'}`}>
 				<Image src={current.flag} alt={current.label} width={20} height={20} quality={100} />
-				<span className="text-sm font-medium leading-5 text-grayscale-500 flex-1 text-left">
+				<span className={`text-sm font-medium leading-5 text-grayscale-500 flex-1 text-left   `}>
 					{current.label}
 				</span>
 				<svg
@@ -71,20 +71,23 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 				</svg>
 			</Button>
 			{open && (
-				<div className="absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0 bg-white border border-grayscale-100 rounded-2xl overflow-hidden z-10 lg:rounded-lg">
+				<div
+					className={`absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0  border  rounded-2xl overflow-hidden z-10 lg:rounded-lg ${isFooter ? 'bg-[#E9DDC833] border-[#E9DDC880]' : 'bg-white border-grayscale-100'}`}>
 					{languagesOptions.map((option, i) => (
 						<div key={option.value}>
 							{i > 0 && <div className="h-px grayscale-100" />}
 							<button
 								onClick={() => handleSelect(option.value)}
-								className={`w-full h-10 px-2.5 flex items-center gap-2 cursor-pointer duration-300 transition-colors ${lng === option.value ? 'bg-grayscale-100' : 'hover:bg-grayscale-100/50'}`}>
-								<Image
-									src={option.flag}
-									alt={option.label}
-									width={20}
-									height={14}
-									className="object-cover rounded-sm"
-								/>
+								className={`w-full h-10 px-2.5 flex items-center gap-2 cursor-pointer duration-300 transition-colors ${
+									lng === option.value
+										? isFooter
+											? 'bg-white/80'
+											: 'bg-grayscale-100'
+										: !isFooter
+											? 'hover:bg-[#E9DDC833]/50'
+											: 'hover:bg-grayscale-100/50'
+								}`}>
+								<Image src={option.flag} alt={option.label} width={20} height={20} quality={100} />
 								<span className="text-sm font-medium text-black">{option.label}</span>
 							</button>
 						</div>

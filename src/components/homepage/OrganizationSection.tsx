@@ -2,6 +2,7 @@ import { getT } from '@/app/i18n'
 import Pill from '../ui/Pill'
 import Image from 'next/image'
 import LinkButton from '../ui/LinkButton'
+import CarouselBox from './CarouselBox'
 
 async function OrganizationSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
@@ -11,7 +12,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 			<section className="py-25 lg:py-30">
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20">
 					<div className="flex flex-col w-full items-center">
-						<div className=" flex flex-col items-center text-center mb-6  max-w-[575px]">
+						<div className=" flex flex-col items-center text-center mb-6  max-w-[575px]" data-aos="fade-in">
 							<Pill text={t('homepage.organization.pill')} />
 							<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 ">
 								{t('homepage.organization.title')}
@@ -29,6 +30,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 							alt="nails organizer"
 							className="object-cover object-center "
 							sizes="(max-width: 640px) 600px, 1200px"
+							data-aos="fade-in"
 						/>
 					</div>
 				</div>
@@ -36,7 +38,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 			<section>
 				<div className="max-w-[749px] mx-auto w-full pb-12 lg:pb-14 px-4">
 					<div className="flex flex-col w-full items-center">
-						<div className=" flex flex-col items-center text-center mb-6  ">
+						<div className=" flex flex-col items-center text-center mb-6  " data-aos="fade-in">
 							<Pill text={t('homepage.upgrade.pill')} />
 							<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 tracking-shrink">
 								{t('homepage.upgrade.title')}
@@ -45,7 +47,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 								{t('homepage.upgrade.subtitle')}
 							</p>
 						</div>
-						<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit">
+						<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit" data-aos="fade-in">
 							{t('homepage.upgrade.cta')}
 							<svg
 								width="20px"
@@ -67,6 +69,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 						</LinkButton>
 					</div>
 				</div>
+				<CarouselBox />
 			</section>
 		</>
 	)
