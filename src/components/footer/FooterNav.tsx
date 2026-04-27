@@ -6,23 +6,24 @@ async function FooterNav({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 
 	const products = [
-		{ name: t('footer.products.nails'), href: '/nails' },
-		{ name: t('footer.products.display'), href: '/display-bar' },
-		{ name: t('footer.products.magnetic'), href: '/magnetic-nails' },
-		{ name: t('footer.products.frame'), href: '/frame-display' },
-		{ name: t('footer.products.cabinet'), href: '/cabinet-display' },
+		{ name: t('products.products.nails'), href: `fingernagel` },
+		{ name: t('products.products.display'), href: `nagelstreifen` },
+		{ name: t('products.products.magnetic'), href: `magnetnagel` },
+		{ name: t('products.products.transparent'), href: `transparente-nagel` },
+		{ name: t('products.products.frame'), href: `rahmendisplay` },
+		{ name: t('products.products.cabinet'), href: `vitrinenauslage` },
 	]
 
 	const company = [
-		{ name: t('footer.company.system'), href: '/system' },
-		{ name: t('footer.company.innovation'), href: '/innovation' },
-		{ name: t('footer.company.possiblities'), href: '/possibilities' },
-		{ name: t('footer.company.organisation'), href: '/organisation' },
+		{ name: t('footer.company.system'), href: `system` },
+		{ name: t('footer.company.innovation'), href: `innovation` },
+		{ name: t('footer.company.possiblities'), href: `possibilities` },
+		{ name: t('footer.company.organisation'), href: `organisation` },
 	]
 	const legal = [
-		{ name: t('footer.legal.tos'), href: '/privacy-policy' },
+		{ name: t('footer.legal.tos'), href: `datenschutzerklarung` },
 
-		{ name: t('footer.legal.faq'), href: '/faq' },
+		{ name: t('footer.legal.faq'), href: `faq` },
 	]
 
 	return (
@@ -35,7 +36,7 @@ async function FooterNav({ lng }: { lng: string }) {
 					</li>
 					{products.map(product => (
 						<li key={product.name}>
-							<LinkButton variant="footer" href={`${lng}/products/${product.href}`}>
+							<LinkButton variant="footer" href={`/${lng}/producte/${product.href}`}>
 								{product.name}
 							</LinkButton>
 						</li>
@@ -47,7 +48,7 @@ async function FooterNav({ lng }: { lng: string }) {
 					</li>
 					{company.map(item => (
 						<li key={item.name}>
-							<LinkButton variant="footer" href={`${lng}/${item.href}`}>
+							<LinkButton variant="footer" href={`/${lng}/${item.href}`}>
 								{item.name}
 							</LinkButton>
 						</li>
@@ -59,7 +60,7 @@ async function FooterNav({ lng }: { lng: string }) {
 					</li>
 					{legal.map(item => (
 						<li key={item.name}>
-							<LinkButton variant="footer" href={`${lng}/${item.href}`}>
+							<LinkButton variant="footer" href={`/${lng}/${item.href}`}>
 								{item.name}
 							</LinkButton>
 						</li>

@@ -8,7 +8,7 @@ async function Footer({ lng }: { lng: string }) {
 
 	return (
 		<footer className="px-4 pb-4 w-full ">
-			<div className="rounded-3xl  overflow-hidden relative  bg-[#F8F2EA] z-0">
+			<div className="rounded-2xl lg:rounded-3xl  overflow-hidden relative  bg-[#F8F2EA] z-0">
 				<div className="p-4 wrapper lg:pt-18 lg:pb-6 relative z-2">
 					<FooterTop lng={lng} />
 					<FooterNav lng={lng} />

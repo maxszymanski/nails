@@ -33,7 +33,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang={lng} dir={dir(lng)} className={`${outfit.className} h-full antialiased `}>
-			<body className="tracking-shrink flex flex-col relative w-full my-scrollbar bg-white text-black-primary">
+			<body className="tracking-shrink flex flex-col relative w-full my-scrollbar bg-white text-black-primary h-full">
 				<Navbar lng={lng} />
 				<AosProvider>{children}</AosProvider>
 				<Footer lng={lng} />

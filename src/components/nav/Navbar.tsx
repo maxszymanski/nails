@@ -15,11 +15,8 @@ function Navbar({ lng }: { lng: string }) {
 	const navRef = useRef(null)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isExpanded, setIsExpanded] = useState(false)
-	const [hasBorder, setHasBorder] = useState(false)
-	const [isOpen, setIsOpen] = useState(false)
-	const [isSocialOpen, setIsSocialOpen] = useState(false)
 
-	console.log(lng)
+	const [isSocialOpen, setIsSocialOpen] = useState(false)
 
 	const pathname = usePathname()
 
@@ -28,7 +25,7 @@ function Navbar({ lng }: { lng: string }) {
 	}
 	const closeNav = useCallback(() => {
 		setIsExpanded(false)
-		setIsOpen(false)
+
 		setIsSocialOpen(false)
 	}, [])
 
@@ -60,8 +57,6 @@ function Navbar({ lng }: { lng: string }) {
 			} else {
 				setShow(true)
 			}
-
-			setHasBorder(currentY > 0)
 
 			setLastScrollY(currentY)
 		}

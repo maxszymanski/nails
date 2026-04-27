@@ -21,7 +21,7 @@ const variants = {
 	footer: 'text-sm text-grayscale-500 hover:text-grayscale-500/70 leading-5 focus-visible:ring-my-purple/50 justify-start',
 }
 
-export const mainClass =
+const mainClass =
 	'flex items-center justify-center transition-colors duration-300 cursor-pointer outline-none text-nowrap relative focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white'
 
 function LinkButton({ variant = 'primary', children, restClass, href, ...rest }: LinkButtonProps) {
