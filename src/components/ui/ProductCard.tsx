@@ -4,22 +4,18 @@ import Image from 'next/image'
 import LinkButton from './LinkButton'
 import Button from './Button'
 import Link from 'next/link'
+import { Product } from '@/src/data/products'
 
-function ProductCard({
-	item,
-	lng,
-}: {
-	item: { id: number; name: string; image: string; price: number; href: string }
-	lng: string
-}) {
+function ProductCard({ item, lng }: { item: Product; lng: string }) {
 	const { t } = useT('translations')
+
 	return (
 		<div
 			className="flex flex-col max-w-[364px] w-full mx-auto gap-4"
 			data-aos="fade-up"
 			data-aos-delay={100 * item.id}>
 			<Link
-				href={`/${lng}/producte/${item.href}`}
+				href={`/${lng}/producte/${item.slug}`}
 				className="w-full max-h-115 aspect-364/460  relative overflow-hidden rounded-2xl lg:rounded-3xl group ">
 				<Image
 					src={item.image}
@@ -38,7 +34,7 @@ function ProductCard({
 				<p className="text-xl leading-8">{item.price.toFixed(2).replace('.', ',')}€ </p>
 			</div>
 			<div className="grid grid-cols-2 gap-3 ">
-				<LinkButton href={`/${lng}/producte/${item.href}`} variant="secondary">
+				<LinkButton href={`/${lng}/producte/${item.slug}`} variant="secondary">
 					{t('products.details')}
 					<svg
 						width="20px"

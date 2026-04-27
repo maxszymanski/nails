@@ -15,7 +15,7 @@ const languagesOptions = [
 	{
 		value: 'de',
 		label: 'Deutsch',
-		flag: '/assets/english.png',
+		flag: '/assets/flags/de.png',
 	},
 ]
 
@@ -50,7 +50,16 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 				variant="switch"
 				onClick={() => setOpen(is => !is)}
 				restClass={`w-full gap-2 relative lg:w-[128px] ${isFooter ? 'bg-[#E9DDC833] hover:bg-[#e9ddc857]' : 'bg-grayscale-100  hover:bg-grayscale'}`}>
-				<Image src={current.flag} alt={current.label} width={20} height={20} quality={100} />
+				<span className="block relative size-5 rounded-full shrink-0 overflow-hidden">
+					<Image
+						src={current.flag}
+						alt={current.label}
+						fill
+						quality={100}
+						sizes="20px"
+						className=" object-cover object-center"
+					/>
+				</span>
 				<span className={`text-sm font-medium leading-5 text-grayscale-500 flex-1 text-left   `}>
 					{current.label}
 				</span>
@@ -87,7 +96,16 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 											? 'hover:bg-[#E9DDC833]/50'
 											: 'hover:bg-grayscale-100/50'
 								}`}>
-								<Image src={option.flag} alt={option.label} width={20} height={20} quality={100} />
+								<span className="block relative size-5 rounded-full shrink-0 overflow-hidden">
+									<Image
+										src={option.flag}
+										alt={option.label}
+										fill
+										quality={100}
+										sizes="20px"
+										className="object-center object-cover"
+									/>
+								</span>
 								<span className="text-sm font-medium text-black">{option.label}</span>
 							</button>
 						</div>

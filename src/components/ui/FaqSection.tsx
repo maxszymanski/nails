@@ -6,15 +6,27 @@ const faqs = [
 		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
 	},
 	{
-		title: 'How often can I reuse/redesign the nails? asdasdasd',
+		title: 'What do I need to pay attention to when using them?',
 		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
 	},
 	{
-		title: 'How often can I reuse/redesign the nails? sdf',
+		title: 'Can I order a free sample?',
 		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
 	},
 	{
-		title: 'How often can I reuse/redesign the nails? asdasd',
+		title: 'If I place an order, how much are the shipping costs?',
+		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
+	},
+	{
+		title: 'Are there any deviations in the product quality?',
+		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
+	},
+	{
+		title: 'Are the IND displays also available in other colors?',
+		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
+	},
+	{
+		title: 'Hygiene instructions',
 		answer: 'The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!',
 	},
 ]

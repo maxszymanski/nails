@@ -98,5 +98,55 @@
 		"pill": "FAQ",
 		"title": "Frequently Asked Questions",
 		"subtitle": "Find answers to the most common questions about our products, ordering process and how the system works."
+	},
+	"privacy": {
+		"pill": "Last Update: 18.03.2026",
+		"title": "Legal Notice",
+		"subtitle": "Information according to § 5 TMG",
+		"general": "General Information",
+		"generalOne": "The following information provides an overview of how your personal data is collected and processed when you visit our website. Personal data is any data that can be used to personally identify you. The responsible entity for data processing on this website is:",
+		"phone": "Phone",
+		"data": "Data Collection on Our Website",
+		"dataOne": "How do we collect your data?",
+		"dataOneSub": "Your data is collected when you provide it to us, for example by placing an order or filling out a contact or checkout form. Other data is collected automatically when you visit our website through IT systems. This includes technical data such as your browser type, operating system, or time of access.",
+		"dataTwo": "What do we use your data for?",
+		"dataTwoSub": "We use your data to:",
+		"dataTwoList": [
+			"process and fulfill orders",
+			"handle payments and deliveries",
+			"respond to inquiries",
+			" ensure the proper functioning of the website",
+			"improve our services and user experience"
+		],
+		"legal": "Legal Basis for Processing",
+		"legalSub": "Your data is processed in accordance with GDPR based on:",
+		"legalSubList": [
+			"Article 6(1)(b) – processing necessary for contract performance (orders)",
+			"Article 6(1)(c) – legal obligations (e.g. tax regulations)",
+			"Article 6(1)(f) – legitimate interests (website functionality, analytics)"
+		],
+		"dataSharing": "Data Sharing",
+		"dataSharingSub": "We only share your data when necessary, for example with:",
+		"dataSharingSubList": ["payment providers", " shipping companies", "IT and hosting providers"],
+		"dataSharingUnderlist": "All third parties are obligated to comply with data protection regulations.",
+		"cookies": "Cookies and Analytics",
+		"cookiesUnder": " Our website uses cookies to ensure proper functionality and improve user experience. Some cookies are essential, while others help us analyze user behavior. You can control or disable cookies in your browser settings.",
+		"retention": "Data Retention",
+		"retentionSub": "We retain your personal data only as long as necessary to fulfill contractual and legal obligations. After that, the data is deleted unless further storage is required by law.",
+		"rights": "Your Rights",
+		"rightsSub": "You have the right to",
+		"rightsList": [
+			" access your stored data (Art. 15 GDPR)",
+			"correct inaccurate data (Art. 16 GDPR)",
+			"request deletion (Art. 17 GDPR)",
+			" restrict processing (Art. 18 GDPR)",
+			"object to processing (Art. 21 GDPR)",
+			"data portability (Art. 20 GDPR)"
+		],
+		"rightsUnderlist": "You can contact us at any time regarding your data.",
+		"security": "Data Security",
+		"securitySub": "We take appropriate technical and organizational measures to protect your data. However, data transmission over the Internet (e.g. email) may have security vulnerabilities.",
+		"disclaimer": "Disclaimer",
+		"disclaimerSub": "The information on this website is provided for general informational purposes only. We make no guarantees regarding the completeness accuracy, or timeliness of the content. Our website may contain links to external third-party websites. We have no control over their content and accept no liability for it. The respective provider is responsible for the content of linked pages. If you become aware of any legal violations on our website, please inform us. We will remove such content immediately."
 	}
 }

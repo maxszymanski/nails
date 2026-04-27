@@ -7,7 +7,7 @@ async function page() {
 
 	return (
 		<main className="flex-1">
-			<section className="mt-36 lg:mt-36">
+			<section className="mt-36">
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20 px-4">
 					<div className="flex flex-col w-full items-center">
 						<div
