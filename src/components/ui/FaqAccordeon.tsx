@@ -3,13 +3,14 @@
 import { useState } from 'react'
 
 interface AccorderonProps {
-	idx: number
+	idx?: number
 	title: string
 	answer?: string
+	list?: string[]
 }
 
-function FaqAccordeon({ idx, title, answer }: AccorderonProps) {
-	const [isOpen, setIsOpen] = useState(false)
+function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
+	const [isOpen, setIsOpen] = useState(idx === 0)
 
 	return (
 		<div
@@ -33,10 +34,22 @@ function FaqAccordeon({ idx, title, answer }: AccorderonProps) {
 					</span>
 				</span>
 			</button>
-			<p
-				className={` text-grayscale-500 pr-4 sm:pr-6 transition-all duration-300  text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px] pb-6 ' : 'invisible opacity-20 max-h-0 '}  `}>
-				{answer}
-			</p>
+			{answer && (
+				<p
+					className={` text-grayscale-500 pr-4 sm:pr-6 transition-all duration-300  text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px] pb-6 ' : 'invisible opacity-20 max-h-0 '}  `}>
+					{answer}
+				</p>
+			)}
+			{list && (
+				<ul
+					className={`w-full transition-all text-grayscale-500 duration-300 ml-4 text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px]  ' : 'invisible opacity-20 max-h-0 '} `}>
+					{list.map((item, idx) => (
+						<li key={idx} className="list-disc list-inside leading-6">
+							{item}
+						</li>
+					))}
+				</ul>
+			)}
 		</div>
 	)
 }

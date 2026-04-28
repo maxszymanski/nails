@@ -30,7 +30,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 								image="/assets/option-one.png"
 								alt="frame version"
 								cta={t('homepage.options.frameCta')}
-								href={`${lng}/products/frame`}
+								href={`${lng}/produkte/rahmendisplay`}
 							/>
 						</div>
 						<div
@@ -43,7 +43,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 								image="/assets/option-one.png"
 								alt="cabinet version"
 								cta={t('homepage.options.cabinetCta')}
-								href={`${lng}/products/cabinet`}
+								href={`${lng}/produkte/vitrinenauslage`}
 							/>
 						</div>
 					</div>
@@ -57,7 +57,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 							image="/assets/option-three.png"
 							alt="display bar"
 							cta={t('homepage.options.displayCta')}
-							href={`${lng}/products/display-bar`}
+							href={`${lng}/products/nagelstreifen`}
 							isDisplay
 						/>
 					</div>

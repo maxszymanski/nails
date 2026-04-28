@@ -3,7 +3,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	isActiveClass?: string
 	children: React.ReactNode
 
-	variant?: 'primary' | 'rounded' | 'switch'
+	variant?: 'primary' | 'rounded' | 'switch' | 'default'
 
 	restClass?: string
 }
@@ -12,6 +12,7 @@ const mainClass =
 	'flex items-center justify-center transition-colors duration-300 cursor-pointer outline-none text-nowrap relative focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white'
 
 const variants = {
+	default: 'duration-300',
 	primary:
 		'bg-my-purple text-white h-10 rounded-full px-4 text-sm leading-5 font-medium hover:bg-my-purple/90 focus-visible:ring-my-purple',
 	rounded: 'rounded-full size-10 shrink-0 border border-grayscale  relative hover:bg-grayscale-100',

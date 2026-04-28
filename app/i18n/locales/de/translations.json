@@ -2,7 +2,180 @@
 	"nav": {
 		"home": "Startseite",
 		"products": "Produkte",
-		"legal": "Rechtlich",
+		"legal": "Rechtliches",
 		"faq": "FAQ"
-	}
+	},
+	"footer": {
+		"info": "Iwon Naildisplay entwickelt intelligente magnetische Display-Systeme, die die Präsentation von Nagelfarben in modernen Salons auf ein neues Niveau heben.",
+		"company": {
+			"title": "Startseite",
+			"system": "Unser System",
+			"innovation": "Unsere Innovation",
+			"possiblities": "Die Möglichkeiten",
+			"organisation": "Die Organisation"
+		},
+		"legal": {
+			"title": "Rechtliches",
+			"tos": "AGB",
+			"faq": "FAQ"
+		},
+		"copyright": "Alle Rechte vorbehalten."
+	},
+	"homepage": {
+		"header": {
+			"title": "Professionell",
+			"titleTwo": "Nagellack-Farbdisplay",
+			"subtitle": "Präsentieren Sie Ihre Farbtöne klar und elegant. Unser intelligentes Display-System hilft Ihnen, Farben zu präsentieren, zu organisieren und effektiver zu verkaufen.",
+			"cta": "Unsere Produkte entdecken"
+		},
+		"products": {
+			"title": "Der beste Weg,",
+			"titleTwo": "Nagelfarben zu präsentieren",
+			"subtitle": "Ein modulares Nagel-Display-System für den täglichen Gebrauch und professionelle Salons – hilft dabei, Farben zu organisieren, zu präsentieren und die Farbauswahl zu vereinfachen.",
+			"cta": "Unsere Produkte entdecken",
+			"pill": "Unser System",
+			"organizers": "Organizer",
+			"organizersSub": "Jede Farbe perfekt organisiert",
+			"magnetic": "Magnetische Tips",
+			"magneticSub": "Tips mühelos befestigen und entfernen",
+			"nonmagnetic": "Nicht-magnetische Tips",
+			"nonmagneticSub": "Farben einfach testen und vergleichen",
+			"display": "Display Bar",
+			"displaySub": "Nagelfarben klar und professionell präsentieren"
+		},
+		"choice": {
+			"title": "Designed für",
+			"titleTwo": "Mühelose Auswahl",
+			"subtitle": "Legen Sie den abnehmbaren Muster-Nagel direkt auf Ihren Finger, um zu sehen, wie die Farbe oder das Design in Wirklichkeit aussieht. Diese einfache Testmethode erleichtert den Farbvergleich und hilft, die perfekte Wahl zu treffen.",
+			"cta": "Jetzt bestellen",
+			"pill": "Unsere Innovation"
+		},
+		"options": {
+			"title": "Drei Display-Optionen. Ein intelligentes System.",
+			"subtitle": "Wählen Sie die Konfiguration, die Ihren Bedürfnissen entspricht – ein Aufbewahrungsschrank für volle Organisation oder ein vielseitiger Rahmen für flexible Präsentation.",
+			"pill": "Die Möglichkeiten",
+			"frame": "Rahmen-Version",
+			"frameSub": "Eine minimalistische Display-Lösung mit Steh- oder Wandmontageoption.",
+			"frameCta": "Rahmen entdecken",
+			"cabinet": "Schrank-Version",
+			"cabinetSub": "Integrierte Aufbewahrung und Präsentation in einer eleganten Einheit.",
+			"cabinetCta": "Schrank entdecken",
+			"display": "Display Bar",
+			"displaySub": "Eine minimalistische Display-Lösung mit Steh- oder Wandmontageoption.",
+			"displayCta": "Display Bar entdecken",
+			"new": "Neu"
+		},
+		"organization": {
+			"title": "Intelligente Farborganisation",
+			"subtitle": "Ein klares Nummerierungssystem verbindet jeden Muster-Nagel mit der passenden Nagellackflasche und hilft dabei, jede Farbe schnell zu finden, zu organisieren und zu präsentieren.",
+			"pill": "Organisation"
+		},
+		"upgrade": {
+			"title": "Modernisieren Sie Ihr Salon-Display noch heute",
+			"subtitle": "Entdecken Sie eine intelligentere, sauberere und elegantere Art, Farben zu präsentieren – entwickelt für den täglichen Gebrauch und Nagelprofis.",
+			"pill": "Bereit?",
+			"cta": "Unsere Produkte entdecken"
+		}
+	},
+	"products": {
+		"pill": "Unsere Produkte",
+		"title": "Stellen Sie Ihr perfektes Display-Setup zusammen",
+		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems, das entwickelt wurde, um Ihre Nagellackkollektion zu organisieren, zu präsentieren und aufzuwerten.",
+		"products": {
+			"title": "Produkte",
+			"nails": "IND Nails",
+			"display": "IND Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"transparent": "IND Transparent Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"details": "Details ansehen",
+		"add": "In den Warenkorb"
+	},
+	"faq": {
+		"pill": "FAQ",
+		"title": "Häufig gestellte Fragen",
+		"subtitle": "Finden Sie Antworten auf die häufigsten Fragen zu unseren Produkten, dem Bestellvorgang und der Funktionsweise des Systems."
+	},
+	"privacy": {
+		"pill": "Letzte Aktualisierung: 18.03.2026",
+		"title": "Impressum",
+		"subtitle": "Angaben gemäß § 5 TMG",
+		"general": "Allgemeine Informationen",
+		"generalOne": "Die folgenden Informationen geben einen Überblick darüber, wie Ihre personenbezogenen Daten beim Besuch unserer Website erhoben und verarbeitet werden. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
+		"phone": "Telefon",
+		"data": "Datenerhebung auf unserer Website",
+		"dataOne": "Wie erfassen wir Ihre Daten?",
+		"dataOneSub": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, zum Beispiel durch eine Bestellung oder das Ausfüllen eines Kontakt- oder Bestellformulars. Andere Daten werden beim Besuch unserer Website automatisch durch IT-Systeme erfasst. Das sind vor allem technische Daten wie Browsertyp, Betriebssystem oder Uhrzeit des Seitenaufrufs.",
+		"dataTwo": "Wofür nutzen wir Ihre Daten?",
+		"dataTwoSub": "Wir verwenden Ihre Daten, um:",
+		"dataTwoList": [
+			"Bestellungen zu bearbeiten und auszuführen",
+			"Zahlungen und Lieferungen abzuwickeln",
+			"Anfragen zu beantworten",
+			"den ordnungsgemäßen Betrieb der Website sicherzustellen",
+			"unsere Dienste und die Benutzererfahrung zu verbessern"
+		],
+		"legal": "Rechtsgrundlage der Verarbeitung",
+		"legalSub": "Ihre Daten werden gemäß DSGVO auf folgender Grundlage verarbeitet:",
+		"legalSubList": [
+			"Art. 6 Abs. 1 lit. b – Verarbeitung zur Vertragserfüllung (Bestellungen)",
+			"Art. 6 Abs. 1 lit. c – gesetzliche Verpflichtungen (z. B. steuerliche Vorschriften)",
+			"Art. 6 Abs. 1 lit. f – berechtigte Interessen (Website-Funktionalität, Analyse)"
+		],
+		"dataSharing": "Datenweitergabe",
+		"dataSharingSub": "Wir geben Ihre Daten nur weiter, wenn es notwendig ist, zum Beispiel an:",
+		"dataSharingSubList": ["Zahlungsanbieter", "Versandunternehmen", "IT- und Hosting-Anbieter"],
+		"dataSharingUnderlist": "Alle Drittanbieter sind verpflichtet, die Datenschutzbestimmungen einzuhalten.",
+		"cookies": "Cookies und Analyse",
+		"cookiesUnder": "Unsere Website verwendet Cookies, um die ordnungsgemäße Funktionalität sicherzustellen und die Benutzererfahrung zu verbessern. Einige Cookies sind notwendig, während andere uns helfen, das Nutzerverhalten zu analysieren. Sie können Cookies in Ihren Browsereinstellungen steuern oder deaktivieren.",
+		"retention": "Datenspeicherung",
+		"retentionSub": "Wir speichern Ihre personenbezogenen Daten nur so lange, wie es zur Erfüllung vertraglicher und gesetzlicher Pflichten erforderlich ist. Danach werden die Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.",
+		"rights": "Ihre Rechte",
+		"rightsSub": "Sie haben das Recht auf",
+		"rightsList": [
+			"Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)",
+			"Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+			"Löschung Ihrer Daten (Art. 17 DSGVO)",
+			"Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+			"Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+			"Datenübertragbarkeit (Art. 20 DSGVO)"
+		],
+		"rightsUnderlist": "Sie können uns jederzeit bezüglich Ihrer Daten kontaktieren.",
+		"security": "Datensicherheit",
+		"securitySub": "Wir treffen geeignete technische und organisatorische Maßnahmen zum Schutz Ihrer Daten. Die Datenübertragung im Internet (z. B. per E-Mail) kann jedoch Sicherheitslücken aufweisen.",
+		"disclaimer": "Haftungsausschluss",
+		"disclaimerSub": "Die Informationen auf dieser Website dienen ausschließlich allgemeinen Informationszwecken. Wir übernehmen keine Garantie für die Vollständigkeit, Richtigkeit oder Aktualität der Inhalte. Unsere Website kann Links zu externen Websites Dritter enthalten. Wir haben keinen Einfluss auf deren Inhalte und übernehmen keine Haftung dafür. Für die Inhalte verlinkter Seiten ist der jeweilige Anbieter verantwortlich. Sollten Sie auf unserer Website Rechtsverstöße feststellen, bitten wir Sie, uns darüber zu informieren. Wir werden solche Inhalte umgehend entfernen."
+	},
+	"faqItems": [
+		{
+			"title": "Wie oft kann ich die Nails wiederverwenden/neu gestalten?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Worauf muss ich bei der Verwendung achten?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Kann ich ein kostenloses Muster bestellen?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Wie hoch sind die Versandkosten bei einer Bestellung?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Gibt es Abweichungen in der Produktqualität?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Sind die IND Displays auch in anderen Farben erhältlich?",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Hygienehinweise",
+			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+		}
+	]
 }

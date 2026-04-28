@@ -32,11 +32,11 @@ async function FooterNav({ lng }: { lng: string }) {
 			<div className="flex  gap-x-10 gap-y-6  flex-wrap w-full md:justify-end lg:gap-x-12">
 				<ul className="flex flex-col gap-y-2 items-start">
 					<li>
-						<span className="leading-5 text-sm ">{t('footer.products.title')}</span>
+						<span className="leading-5 text-sm ">{t('products.products.title')}</span>
 					</li>
 					{products.map(product => (
 						<li key={product.name}>
-							<LinkButton variant="footer" href={`/${lng}/producte/${product.href}`}>
+							<LinkButton variant="footer" href={`/${lng}/produkte/${product.href}`}>
 								{product.name}
 							</LinkButton>
 						</li>

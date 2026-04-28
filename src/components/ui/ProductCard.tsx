@@ -15,13 +15,13 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 			data-aos="fade-up"
 			data-aos-delay={100 * item.id}>
 			<Link
-				href={`/${lng}/producte/${item.slug}`}
+				href={`/${lng}/produkte/${item.slug}`}
 				className="w-full max-h-115 aspect-364/460  relative overflow-hidden rounded-2xl lg:rounded-3xl group ">
 				<Image
-					src={item.image}
+					src={item.images[0]}
 					alt={item.name}
 					fill
-					className="object-contain object-center group-hover:scale-110 transition-transform duration-300"
+					className="object-cover object-center group-hover:scale-110 transition-transform duration-300"
 					sizes="364px"
 					loading="eager"
 					fetchPriority="high"
@@ -34,7 +34,7 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 				<p className="text-xl leading-8">{item.price.toFixed(2).replace('.', ',')}€ </p>
 			</div>
 			<div className="grid grid-cols-2 gap-3 ">
-				<LinkButton href={`/${lng}/producte/${item.slug}`} variant="secondary">
+				<LinkButton href={`/${lng}/produkte/${item.slug}`} variant="secondary">
 					{t('products.details')}
 					<svg
 						width="20px"

@@ -21,7 +21,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 							{t('homepage.choice.subtitle')}
 						</p>
 					</div>
-					<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit" data-aos="fade-in">
+					<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit" data-aos="fade-in">
 						{t('homepage.choice.cta')}
 						<svg
 							width="20px"

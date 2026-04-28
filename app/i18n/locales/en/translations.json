@@ -82,6 +82,7 @@
 		"pill": "Our Products",
 		"title": "Build Your Perfect Display Setup",
 		"subtitle": "Discover all components of the Iwon Nail Display system designed to organize, present and elevate your nail color collection.",
+		"mayLike": "You May Also Like",
 		"products": {
 			"title": "Products",
 			"nails": "IND Nails",
@@ -91,8 +92,101 @@
 			"frame": "IND Frame Display",
 			"cabinet": "IND Cabinet Display"
 		},
+		"description": {
+			"nails": "IND Nails are classic sample tips designed for easy and professional presentation of nail polish colors. They can be worn on a finger or hung, offering a practical and versatile display solution. Minimum order 30 pieces.",
+			"display": "IND Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"transparent": "IND Transparent Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"features": {
+			"title": "Features",
+			"nails": [
+				"Lightweight and easy to use",
+				"Easy to remove and reposition",
+				"Compatible with IND display systems",
+				"Ideal for salon color presentation"
+			],
+			"magnetic": [
+				"Magnetic base for quick attachment",
+				"Easy to remove and reposition",
+				"Compatible with IND display systems",
+				"Ideal for salon color presentation"
+			],
+			"display": [
+				"Quick and easy installation",
+				"Removable display nails for direct testing",
+				"Clear numbering for instant color selection",
+				"Unlimited expansion with additional strips",
+				"Clear color presentation"
+			],
+			"frame": [
+				"Elegant frame design for professional presentation",
+				"Suitable for wall mounting or standing display",
+				"Keeps nail colors organized and easy to view",
+				"Clean and modern look for any interior"
+			],
+			"transparent": [
+				"Made from clear, transparent plastic",
+				"Natural and accurate color presentation",
+				"Compatible with IND display systems",
+				"Can be worn on a finger or hung for display"
+			],
+			"cabinet": [
+				"2-in-1 display and storage solution",
+				"Interior shelves for organized storage",
+				"Can be wall-mounted or used as a standing unit",
+				"Clean and professional design"
+			]
+		},
+		"includes": {
+			"title": "What's Included",
+			"nails": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
+			"magnetic": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
+			"display": [
+				"Plastic display strip with numbering and double-sided adhesive tape",
+				"Includes 14 try-on nails"
+			],
+			"frame": [
+				"IND Frame Display (stand and wall mounting)",
+				"Installation aid",
+				"30 magnetic nails",
+				"60 stickers with double numbering",
+				"2x dowels 6mm and screws",
+				"Plastic aid with 4 magnets"
+			],
+			"transparent": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
+			"cabinet": [
+				"IND Frame Display (stand and wall mounting)",
+				"30 magnetic nails",
+				"60 stickers with double numbering",
+				"2x dowels 6mm and screws",
+				"Plastic aid with 4 magnets"
+			]
+		},
+		"dimensions": {
+			"title": "Dimensions",
+			"nails": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"magnetic": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"display": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"frame": [
+				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x T)",
+				"Plasitc aid: 148 mm x 40 mm x 5 mm ( L x W x T)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x T), footprint: 25mm",
+				"Hole spacing mounting: 215 mm"
+			],
+			"transparent": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"cabinet": [
+				"IND Cabinet Display: 305 mm x 252 mm x 97 mm ( L x W x T)",
+				"Plasitc aid: 148 mm x 40 mm x 5 mm ( L x W x T)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x T), footprint: 25mm",
+				"Hole spacing mounting: 215 mm"
+			]
+		},
 		"details": "See details",
-		"add": "Add to Cart"
+		"add": "Add to Cart",
+		"patent": "This product is protected by German Patent No."
 	},
 	"faq": {
 		"pill": "FAQ",
@@ -148,5 +242,35 @@
 		"securitySub": "We take appropriate technical and organizational measures to protect your data. However, data transmission over the Internet (e.g. email) may have security vulnerabilities.",
 		"disclaimer": "Disclaimer",
 		"disclaimerSub": "The information on this website is provided for general informational purposes only. We make no guarantees regarding the completeness accuracy, or timeliness of the content. Our website may contain links to external third-party websites. We have no control over their content and accept no liability for it. The respective provider is responsible for the content of linked pages. If you become aware of any legal violations on our website, please inform us. We will remove such content immediately."
-	}
+	},
+	"faqItems": [
+		{
+			"title": "How often can I reuse/redesign the nails?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "What do I need to pay attention to when using them?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "Can I order a free sample?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "If I place an order, how much are the shipping costs?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "Are there any deviations in the product quality?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "Are the IND displays also available in other colors?",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		},
+		{
+			"title": "Hygiene instructions",
+			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+		}
+	]
 }

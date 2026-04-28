@@ -23,7 +23,7 @@ function NavList({
 			linkName: `${t('nav.products')}`,
 		},
 		{
-			href: `/${lng}/rechtlich"`,
+			href: `/${lng}/datenschutzerklarung`,
 			linkName: `${t('nav.legal')}`,
 		},
 		{ href: `/${lng}/faq`, linkName: `${t('nav.faq')}` },

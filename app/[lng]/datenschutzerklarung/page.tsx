@@ -2,11 +2,20 @@ import { getT } from '@/app/i18n'
 
 import Pill from '@/src/components/ui/Pill'
 
+export async function generateMetadata() {
+	const { t } = await getT('translations')
+
+	return {
+		title: t(`nav.legal`),
+		description: t(`privacy.general`),
+	}
+}
+
 async function page() {
 	const { t } = await getT('translations')
 	return (
 		<main className="flex-1">
-			<section className="w-full wrapper px-4 mt-36 pb-20 lg:pb-30">
+			<section className="w-full wrapper px-4 mt-24 lg:mt-36 pb-20 lg:pb-30">
 				<div className="w-full max-w-[720px]">
 					<Pill text={t('privacy.pill')} />
 					<h1 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 ">
@@ -21,7 +30,7 @@ async function page() {
 								Ms Iwona Krol-Ptaszynska <br />
 								Grillparzerstr. 12 <br />
 								40699 Erkrath <br /> Germany <br />
-								{t('privacy.phone')}: : +49 (0) 177 3500405 <br />
+								{t('privacy.phone')}: +49 (0) 177 3500405 <br />
 								E-Mail: info@iwonnaildisplay.de
 							</p>
 						</div>

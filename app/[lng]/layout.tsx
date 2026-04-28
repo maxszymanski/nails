@@ -12,7 +12,10 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-	title: 'Iwon',
+	title: {
+		template: '%s | Iwon',
+		default: 'Iwon',
+	},
 	description: 'Iwon nails',
 }
 

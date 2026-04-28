@@ -49,7 +49,7 @@ async function ProductsSection({ lng }: { lng: string }) {
 							{t('homepage.products.subtitle')}
 						</p>
 					</div>
-					<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit">
+					<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit">
 						{t('homepage.products.cta')}
 						<svg
 							width="20px"

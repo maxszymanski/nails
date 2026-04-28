@@ -47,7 +47,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 								{t('homepage.upgrade.subtitle')}
 							</p>
 						</div>
-						<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit" data-aos="fade-in">
+						<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit" data-aos="fade-in">
 							{t('homepage.upgrade.cta')}
 							<svg
 								width="20px"

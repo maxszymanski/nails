@@ -15,11 +15,11 @@ function DesktopNav({ lng }: { lng: string }) {
 	const navList = [
 		{ href: `/${lng}`, linkName: `${t('nav.home')}` },
 		{
-			href: `/${lng}/producte`,
+			href: `/${lng}/produkte`,
 			linkName: `${t('nav.products')}`,
 		},
 		{
-			href: `/${lng}/rechtlich`,
+			href: `/${lng}/datenschutzerklarung`,
 			linkName: `${t('nav.legal')}`,
 		},
 		{ href: `/${lng}/faq`, linkName: `${t('nav.faq')}` },

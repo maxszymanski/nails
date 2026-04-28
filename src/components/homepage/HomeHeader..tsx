@@ -17,6 +17,7 @@ async function HomeHeader({ lng }: { lng: string }) {
 				fetchPriority="high"
 				loading="eager"
 				className="md:hidden block object-top mask-x-from-90%"
+				style={{ height: 'auto' }}
 			/>
 			<Image
 				src={'/assets/home-hero.png'}
@@ -28,6 +29,7 @@ async function HomeHeader({ lng }: { lng: string }) {
 				fetchPriority="high"
 				loading="eager"
 				className="hidden md:block -mt-8 relative md:-right-30 lg:-right-40"
+				style={{ height: 'auto' }}
 			/>
 			<div className="md:absolute md:inset-0 lg:w-full">
 				<div className="md:max-w-[1172px] lg:mx-auto h-full px-4 ">
@@ -39,7 +41,7 @@ async function HomeHeader({ lng }: { lng: string }) {
 						<p className="text-grayscale-500 leading-6 w-full md:pr-20 lg:pr-15">
 							{t('homepage.header.subtitle')}
 						</p>
-						<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit">
+						<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit">
 							{t('homepage.header.cta')}
 							<svg
 								width="20px"
