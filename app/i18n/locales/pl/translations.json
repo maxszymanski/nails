@@ -1,0 +1,320 @@
+{
+	"nav": {
+		"home": "Strona główna",
+		"products": "Produkty",
+		"legal": "Prawne",
+		"faq": "FAQ"
+	},
+	"footer": {
+		"info": "Iwon Naildisplay tworzy inteligentne magnetyczne systemy ekspozycji zaprojektowane, aby podnieść prezentację kolorów lakierów w nowoczesnych salonach.",
+		"company": {
+			"title": "Strona główna",
+			"system": "Nasz System",
+			"innovation": "Nasza Innowacja",
+			"possiblities": "Możliwości",
+			"organisation": "Organizacja"
+		},
+		"legal": {
+			"title": "Prawne",
+			"tos": "Regulamin",
+			"faq": "FAQ"
+		},
+		"copyright": "Wszelkie prawa zastrzeżone."
+	},
+	"homepage": {
+		"header": {
+			"title": "Profesjonalny",
+			"titleTwo": "Ekspozytor Kolorów Paznokci",
+			"subtitle": "Prezentuj swoje odcienie z przejrzystością i elegancją. Nasz inteligentny system ekspozycji pomaga prezentować, organizować i sprzedawać skuteczniej.",
+			"cta": "Odkryj nasze produkty"
+		},
+		"products": {
+			"title": "Najlepszy sposób na",
+			"titleTwo": "Prezentację Kolorów Paznokci",
+			"subtitle": "Modułowy system ekspozycji paznokci zaprojektowany zarówno do codziennego użytku, jak i profesjonalnych salonów – pomaga organizować, prezentować i upraszczać wybór koloru.",
+			"cta": "Odkryj nasze produkty",
+			"pill": "Nasz System",
+			"organizers": "Organizery",
+			"organizersSub": "Każdy kolor idealnie zorganizowany",
+			"magnetic": "Magnetyczne Tipsy",
+			"magneticSub": "Mocuj i zdejmuj tipsy bez wysiłku",
+			"nonmagnetic": "Niemagnetyczne Tipsy",
+			"nonmagneticSub": "Łatwe testowanie i porównywanie kolorów",
+			"display": "Display Bar",
+			"displaySub": "Prezentuj kolory paznokci czytelnie i profesjonalnie"
+		},
+		"choice": {
+			"title": "Zaprojektowany dla",
+			"titleTwo": "Łatwego Wyboru",
+			"subtitle": "Połóż wymienną próbkę paznokcia bezpośrednio na palcu, aby zobaczyć, jak kolor lub wzór będzie wyglądał w rzeczywistości. Ta prosta metoda testowania ułatwia porównywanie odcieni i pewny wybór idealnego koloru.",
+			"cta": "Zamów teraz",
+			"pill": "Nasza Innowacja"
+		},
+		"options": {
+			"title": "Trzy opcje ekspozycji. Jeden inteligentny system.",
+			"subtitle": "Wybierz konfigurację dopasowaną do Twoich potrzeb – szafkę do pełnej organizacji lub wszechstronną ramkę do elastycznej prezentacji.",
+			"pill": "Możliwości",
+			"frame": "Wersja Ramkowa",
+			"frameSub": "Minimalistyczne rozwiązanie ekspozycyjne z opcją stojaka lub montażu ściennego.",
+			"frameCta": "Odkryj ramkę",
+			"cabinet": "Wersja Szafkowa",
+			"cabinetSub": "Zintegrowane przechowywanie i ekspozycja w jednej eleganckiej jednostce.",
+			"cabinetCta": "Odkryj szafkę",
+			"display": "Display Bar",
+			"displaySub": "Minimalistyczne rozwiązanie ekspozycyjne z opcją stojaka lub montażu ściennego.",
+			"displayCta": "Odkryj Display Bar",
+			"new": "Nowość"
+		},
+		"organization": {
+			"title": "Inteligentna Organizacja Kolorów",
+			"subtitle": "Przejrzysty system numeracji łączy każdą próbkę paznokcia z pasującą butelką lakieru, pomagając szybko znaleźć, zorganizować i zaprezentować każdy kolor.",
+			"pill": "Organizacja"
+		},
+		"upgrade": {
+			"title": "Ulepsz ekspozycję swojego salonu już dziś",
+			"subtitle": "Odkryj inteligentniejszy, czystszy i bardziej elegancki sposób prezentowania kolorów, zaprojektowany zarówno dla codziennych użytkowników, jak i profesjonalistów.",
+			"pill": "Gotowy?",
+			"cta": "Odkryj nasze produkty"
+		}
+	},
+	"products": {
+		"pill": "Nasze Produkty",
+		"title": "Zbuduj swój idealny zestaw ekspozycyjny",
+		"subtitle": "Odkryj wszystkie komponenty systemu Iwon Nail Display zaprojektowanego do organizacji, prezentacji i wzbogacenia Twojej kolekcji lakierów.",
+		"mayLike": "Może Ci się spodobać",
+		"products": {
+			"title": "Produkty",
+			"nails": "IND Nails",
+			"display": "IND Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"transparent": "IND Transparent Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"description": {
+			"nails": "IND Nails to klasyczne próbki tipów zaprojektowane do łatwej i profesjonalnej prezentacji kolorów lakierów. Można je nosić na palcu lub zawieszać, oferując praktyczne i wszechstronne rozwiązanie ekspozycyjne. Minimalne zamówienie 30 sztuk.",
+			"display": "IND Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"transparent": "IND Transparent Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"features": {
+			"title": "Cechy",
+			"nails": [
+				"Lekkie i łatwe w użyciu",
+				"Łatwe do zdejmowania i ponownego pozycjonowania",
+				"Kompatybilne z systemami ekspozycji IND",
+				"Idealne do prezentacji kolorów w salonie"
+			],
+			"magnetic": [
+				"Magnetyczna podstawa do szybkiego mocowania",
+				"Łatwe do zdejmowania i ponownego pozycjonowania",
+				"Kompatybilne z systemami ekspozycji IND",
+				"Idealne do prezentacji kolorów w salonie"
+			],
+			"display": [
+				"Szybka i łatwa instalacja",
+				"Wyjmowane paznokcie ekspozycyjne do bezpośredniego testowania",
+				"Przejrzysta numeracja do natychmiastowego wyboru koloru",
+				"Nieograniczona rozbudowa o dodatkowe pasy",
+				"Wyraźna prezentacja kolorów"
+			],
+			"frame": [
+				"Elegancki design ramki do profesjonalnej prezentacji",
+				"Nadaje się do montażu ściennego lub jako stojak",
+				"Utrzymuje kolory paznokci zorganizowane i łatwe do przeglądania",
+				"Czysty i nowoczesny wygląd do każdego wnętrza"
+			],
+			"transparent": [
+				"Wykonane z przezroczystego tworzywa sztucznego",
+				"Naturalna i dokładna prezentacja kolorów",
+				"Kompatybilne z systemami ekspozycji IND",
+				"Można nosić na palcu lub zawieszać"
+			],
+			"cabinet": [
+				"Rozwiązanie 2 w 1 – ekspozycja i przechowywanie",
+				"Wewnętrzne półki do zorganizowanego przechowywania",
+				"Można montować na ścianie lub używać jako stojak",
+				"Czysty i profesjonalny design"
+			]
+		},
+		"includes": {
+			"title": "Zawartość zestawu",
+			"nails": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
+			"magnetic": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
+			"display": [
+				"Plastikowy pas ekspozycyjny z numeracją i dwustronną taśmą klejącą",
+				"14 paznokci do przymierzania"
+			],
+			"frame": [
+				"IND Frame Display (stojak i montaż ścienny)",
+				"Pomoc montażowa",
+				"30 magnetycznych paznokci",
+				"60 naklejek z podwójną numeracją",
+				"2x kołki 6mm i śruby",
+				"Plastikowa pomoc z 4 magnesami"
+			],
+			"transparent": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
+			"cabinet": [
+				"IND Frame Display (stojak i montaż ścienny)",
+				"30 magnetycznych paznokci",
+				"60 naklejek z podwójną numeracją",
+				"2x kołki 6mm i śruby",
+				"Plastikowa pomoc z 4 magnesami"
+			]
+		},
+		"dimensions": {
+			"title": "Wymiary",
+			"nails": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
+			"magnetic": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
+			"display": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
+			"frame": [
+				"IND Frame Display: 305 mm x 252 mm x 17 mm (D x S x G)",
+				"Pomoc plastikowa: 148 mm x 40 mm x 5 mm (D x S x G)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (D x S x G), stopa: 25mm",
+				"Rozstaw otworów montażowych: 215 mm"
+			],
+			"transparent": [
+				"Długość (D) - 48mm",
+				"Szerokość (S) - 10mm",
+				"Wysokość (W) - 10mm",
+				"Długość stopy - 25mm"
+			],
+			"cabinet": [
+				"IND Cabinet Display: 305 mm x 252 mm x 97 mm (D x S x G)",
+				"Pomoc plastikowa: 148 mm x 40 mm x 5 mm (D x S x G)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (D x S x G), stopa: 25mm",
+				"Rozstaw otworów montażowych: 215 mm"
+			]
+		},
+		"details": "Zobacz szczegóły",
+		"add": "Dodaj do koszyka",
+		"patent": "Ten produkt jest chroniony niemieckim patentem nr"
+	},
+	"faq": {
+		"pill": "FAQ",
+		"title": "Często zadawane pytania",
+		"subtitle": "Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych produktów, procesu zamówienia i działania systemu."
+	},
+	"privacy": {
+		"pill": "Ostatnia aktualizacja: 18.03.2026",
+		"title": "Informacje prawne",
+		"subtitle": "Informacje zgodnie z § 5 TMG",
+		"general": "Informacje ogólne",
+		"generalOne": "Poniższe informacje dają przegląd tego, jak Twoje dane osobowe są zbierane i przetwarzane podczas odwiedzania naszej strony internetowej. Dane osobowe to wszelkie dane, za pomocą których możesz zostać zidentyfikowany. Podmiotem odpowiedzialnym za przetwarzanie danych na tej stronie jest:",
+		"phone": "Telefon",
+		"data": "Zbieranie danych na naszej stronie",
+		"dataOne": "Jak zbieramy Twoje dane?",
+		"dataOneSub": "Twoje dane są zbierane z jednej strony poprzez to, że nam je przekazujesz, na przykład składając zamówienie lub wypełniając formularz kontaktowy lub zamówienia. Inne dane są zbierane automatycznie podczas odwiedzania naszej strony przez systemy IT. Są to przede wszystkim dane techniczne, takie jak typ przeglądarki, system operacyjny lub czas wyświetlenia strony.",
+		"dataTwo": "Do czego wykorzystujemy Twoje dane?",
+		"dataTwoSub": "Używamy Twoich danych, aby:",
+		"dataTwoList": [
+			"przetwarzać i realizować zamówienia",
+			"obsługiwać płatności i dostawy",
+			"odpowiadać na zapytania",
+			"zapewnić prawidłowe funkcjonowanie strony",
+			"ulepszać nasze usługi i doświadczenia użytkownika"
+		],
+		"legal": "Podstawa prawna przetwarzania",
+		"legalSub": "Twoje dane są przetwarzane zgodnie z RODO na podstawie:",
+		"legalSubList": [
+			"Art. 6 ust. 1 lit. b – przetwarzanie niezbędne do wykonania umowy (zamówienia)",
+			"Art. 6 ust. 1 lit. c – obowiązki prawne (np. przepisy podatkowe)",
+			"Art. 6 ust. 1 lit. f – uzasadnione interesy (funkcjonalność strony, analityka)"
+		],
+		"dataSharing": "Udostępnianie danych",
+		"dataSharingSub": "Udostępniamy Twoje dane tylko wtedy, gdy jest to konieczne, na przykład:",
+		"dataSharingSubList": ["dostawcom płatności", "firmom kurierskim", "dostawcom IT i hostingu"],
+		"dataSharingUnderlist": "Wszyscy zewnętrzni dostawcy są zobowiązani do przestrzegania przepisów o ochronie danych.",
+		"cookies": "Pliki cookie i analityka",
+		"cookiesUnder": "Nasza strona używa plików cookie, aby zapewnić prawidłowe działanie i poprawić doświadczenie użytkownika. Niektóre pliki cookie są niezbędne, inne pomagają nam analizować zachowanie użytkowników. Możesz kontrolować lub wyłączyć pliki cookie w ustawieniach przeglądarki.",
+		"retention": "Przechowywanie danych",
+		"retentionSub": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to niezbędne do wypełnienia zobowiązań umownych i prawnych. Następnie dane są usuwane, chyba że przepisy prawa wymagają dalszego przechowywania.",
+		"rights": "Twoje prawa",
+		"rightsSub": "Masz prawo do",
+		"rightsList": [
+			"dostępu do swoich przechowywanych danych (art. 15 RODO)",
+			"poprawienia nieprawidłowych danych (art. 16 RODO)",
+			"usunięcia danych (art. 17 RODO)",
+			"ograniczenia przetwarzania (art. 18 RODO)",
+			"sprzeciwu wobec przetwarzania (art. 21 RODO)",
+			"przenoszenia danych (art. 20 RODO)"
+		],
+		"rightsUnderlist": "Możesz skontaktować się z nami w dowolnym momencie w sprawie swoich danych.",
+		"security": "Bezpieczeństwo danych",
+		"securitySub": "Podejmujemy odpowiednie techniczne i organizacyjne środki w celu ochrony Twoich danych. Jednak transmisja danych przez Internet (np. e-mail) może mieć luki w zabezpieczeniach.",
+		"disclaimer": "Zastrzeżenie",
+		"disclaimerSub": "Informacje na tej stronie służą wyłącznie celom informacyjnym. Nie gwarantujemy kompletności, dokładności ani aktualności treści. Nasza strona może zawierać linki do zewnętrznych stron trzecich. Nie mamy wpływu na ich treść i nie ponosimy za nią odpowiedzialności. Za treść linkowanych stron odpowiada ich dostawca. Jeśli zauważysz naruszenia prawa na naszej stronie, prosimy o poinformowanie nas. Usuniemy takie treści niezwłocznie."
+	},
+	"faqItems": [
+		{
+			"title": "Jak często mogę ponownie używać/przeprojektowywać paznokcie?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Na co muszę zwrócić uwagę podczas użytkowania?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Czy mogę zamówić bezpłatną próbkę?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Jakie są koszty wysyłki przy zamówieniu?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Czy występują odchylenia w jakości produktu?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Czy ekspozytory IND są dostępne w innych kolorach?",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		},
+		{
+			"title": "Instrukcje higieniczne",
+			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+		}
+	],
+	"cart": {
+		"addedToCart": "Produkt dodany do koszyka",
+		"title": "Twój koszyk",
+		"closeModal": "Zamknij okno",
+		"remove": "Usuń",
+		"empty": "Twój koszyk jest pusty",
+		"value": "Wartość produktów",
+		"shipping": "Dostawa",
+		"total": "Razem",
+		"free": "Bezpłatna",
+		"quote": "Przejdź do zapytania",
+		"freeShipping": "Darmowa dostawa",
+		"shippingInfo": "Ze względu na duże zainteresowanie mogą wystąpić opóźnienia w dostawie.",
+		"order": "Złóż zamówienie",
+		"orderTitle": "Poproś o BEZPŁATNĄ WYCENĘ",
+		"name": "Twoje imię",
+		"lastName": "Twoje nazwisko",
+		"email": "Twój adres e-mail",
+		"message": "Dodatkowa wiadomość",
+		"enterMessage": "Wpisz swoją wiadomość...",
+		"read": "Zapoznałem/am się z",
+		"terms": "polityką prywatności.",
+		"pill": "Wysyłka w ciągu 24 godzin od otrzymania płatności.",
+		"success": "Twoje zamówienie zostało pomyślnie złożone.",
+		"successTitle": "Potwierdzenie",
+		"thankYou": "Zamówienie złożone!",
+		"subtitle": "Twoje zamówienie zostało pomyślnie przesłane.",
+		"emailSend": "Wysłaliśmy Ci e-mail ze szczegółami płatności. Sprawdź swoją skrzynkę odbiorczą i dokończ płatność, aby sfinalizować zamówienie.",
+		"spam": "Jeśli nie widzisz e-maila, sprawdź folder spam.",
+		"thanks": "Dziękujemy za wybranie Iwon Naildisplay!",
+		"close": "Rozumiem!"
+	},
+	"validation": {
+		"firstNameRequired": "Proszę podać imię",
+		"firstNameMin": "Imię musi mieć co najmniej 3 znaki",
+		"lastNameRequired": "Proszę podać nazwisko",
+		"lastNameMin": "Nazwisko musi mieć co najmniej 3 znaki",
+		"emailInvalid": "Podaj poprawny adres e-mail",
+		"termsRequired": "Proszę zaakceptować politykę prywatności"
+	}
+}

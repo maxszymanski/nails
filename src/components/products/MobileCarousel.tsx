@@ -23,8 +23,8 @@ function MobileCarousel({ images }: { images: string[] }) {
 	const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi])
 
 	return (
-		<div className="flex flex-col gap-4 ">
-			<div className="w-full flex flex-col gap-3 lg:max-w-[542px] md:flex-row lg:flex-col">
+		<div className="flex flex-col gap-4 " data-aos="fade-in">
+			<div className="w-full flex flex-col gap-3 lg:max-w-[542px] md:justify-center lg:justify-start md:flex-row lg:flex-col">
 				<div
 					className="overflow-hidden rounded-2xl lg:rounded-3xl aspect-square w-full md:max-w-[542px] md:max-h-[542px]"
 					ref={emblaRef}>

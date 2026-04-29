@@ -272,5 +272,45 @@
 			"title": "Hygiene instructions",
 			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
 		}
-	]
+	],
+	"cart": {
+		"addedToCart": "Product added to cart",
+		"title": "Your Cart",
+		"closeModal": "Close modal",
+		"remove": "Remove",
+		"empty": "Your cart is empty",
+		"value": "Value of Products",
+		"shipping": "Shipping",
+		"total": "Total",
+		"free": "Free",
+		"quote": "Go to Quote",
+		"freeShipping": "Free Shipping",
+		"shippingInfo": "Due to high demand there may be delays in delivery.",
+		"order": "Place an order",
+		"orderTitle": "Request your NO-OBLIGATION QUOTE",
+		"name": "Your Name",
+		"lastName": "Your Last Name",
+		"email": "Your Email Address",
+		"message": "Additional Message",
+		"enterMessage": "Please enter your message...",
+		"read": "I have read the",
+		"terms": "data protection declaration.",
+		"pill": "Shipping within 24 hours after payment is received.",
+		"success": "Your order has been successfully placed.",
+		"successTitle": "Confirmation",
+		"thankYou": "Order Placed!",
+		"subtitle": "Your order has been successfully submitted.",
+		"emailSend": "We've sent you an email with payment details. Please check your inbox and complete the payment to finalize your order.",
+		"spam": "If you don't see it, please check your spam folder.",
+		"thanks": "Thank you for choosing Iwon Naildisplay!",
+		"close": "Got it!"
+	},
+	"validation": {
+		"firstNameRequired": "Please enter your first name",
+		"firstNameMin": "First name must be at least 3 characters",
+		"lastNameRequired": "Please enter your last name",
+		"lastNameMin": "Last name must be at least 3 characters",
+		"emailInvalid": "Please enter a valid email address",
+		"termsRequired": "Please accept the terms and conditions"
+	}
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter, usePathname } from 'next/navigation'
-import { languages } from '@/app/i18n/settings'
+
 import { useEffect, useRef, useState } from 'react'
 import Button from '../ui/Button'
 import Image from 'next/image'
@@ -16,6 +16,11 @@ const languagesOptions = [
 		value: 'de',
 		label: 'Deutsch',
 		flag: '/assets/flags/de.png',
+	},
+	{
+		value: 'pl',
+		label: 'Polski',
+		flag: '/assets/flags/pl.png',
 	},
 ]
 
@@ -81,7 +86,7 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 			</Button>
 			{open && (
 				<div
-					className={`absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0  border  rounded-2xl overflow-hidden z-10 lg:rounded-lg ${isFooter ? 'bg-[#E9DDC833] border-[#E9DDC880]' : 'bg-white border-grayscale-100'}`}>
+					className={`absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0  border  rounded-2xl overflow-hidden z-10 lg:rounded-lg ${isFooter ? 'bg-grayscale-400 border-[#E9DDC880]' : 'bg-white border-grayscale-100'}`}>
 					{languagesOptions.map((option, i) => (
 						<div key={option.value}>
 							{i > 0 && <div className="h-px grayscale-100" />}

@@ -2,9 +2,28 @@
 import { Product } from '@/src/data/products'
 import Button from '../ui/Button'
 import { useT } from '@/app/i18n/client'
+import { useState } from 'react'
+import { useCartStore } from '../stores/CartStore'
+import { toast } from 'react-toastify'
 
 function AddToCard({ product }: { product: Product }) {
 	const { t } = useT('translations')
+	const [itemQuantity, setItemQuantity] = useState(1)
+
+	const increment = () => {
+		setItemQuantity(prevQuantity => prevQuantity + 1)
+	}
+	const decrease = () => {
+		if (itemQuantity === 1) return
+		setItemQuantity(prevQuantity => prevQuantity - 1)
+	}
+	const addItem = useCartStore(state => state.addItem)
+
+	const addItemToCart = () => {
+		addItem(product, itemQuantity)
+		toast.success(t('cart.addedToCart'))
+	}
+
 	return (
 		<div className="flex items-center gap-4 mb-6 lg:mb-12">
 			<div
@@ -12,9 +31,9 @@ function AddToCard({ product }: { product: Product }) {
 				<Button
 					variant="default"
 					aria-label="increase items"
-					restClass=" text-grayscale-500 h-full w-full  hover:bg-grayscale-200"
-					// onClick={() => handleDecrease(item.id)}
-				>
+					restClass=" text-grayscale-500 h-full w-full  hover:bg-grayscale-200 disabled:cursor-auto disabled:hover:bg-transparent"
+					disabled={itemQuantity === 1}
+					onClick={decrease}>
 					<svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M3.33268 8.66781H7.33335H8.66668H12.6673L12.7357 8.66461C13.0717 8.63034 13.334 8.34627 13.334 8.00114C13.334 7.65607 13.0717 7.37201 12.7357 7.33774L12.6673 7.33447H8.66668H7.33335H3.33268C2.9645 7.33447 2.66602 7.63301 2.66602 8.00114C2.66602 8.36934 2.9645 8.66781 3.33268 8.66781Z"
@@ -23,14 +42,13 @@ function AddToCard({ product }: { product: Product }) {
 					</svg>
 				</Button>
 				<span className="size-5 shrink-0 inline-flex items-center justify-center text-sm leading-6 select-none">
-					{/* {quantity} */} 1
+					{itemQuantity}
 				</span>
 				<Button
 					variant="default"
 					aria-label="decrease items"
 					restClass=" text-grayscale-500 h-full  w-full hover:bg-grayscale-200 disabled:cursor-auto disabled:pointer-events-none disabled:opacity-50"
-					// onClick={() => handleIncrease(item.id)}
-				>
+					onClick={increment}>
 					<svg
 						width="16"
 						height="16"
@@ -45,7 +63,7 @@ function AddToCard({ product }: { product: Product }) {
 					</svg>
 				</Button>
 			</div>
-			<Button variant="primary" restClass="w-full">
+			<Button variant="primary" restClass="w-full" onClick={addItemToCart}>
 				{t('products.add')}
 				<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<g id="Arrow / Arrow_Right_SM">

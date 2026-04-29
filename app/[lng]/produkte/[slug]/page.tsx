@@ -2,6 +2,7 @@ import { getT } from '@/app/i18n'
 import AddToCard from '@/src/components/products/AddToCard'
 import MobileCarousel from '@/src/components/products/MobileCarousel'
 import FaqAccordeon from '@/src/components/ui/FaqAccordeon'
+import MoreCard from '@/src/components/ui/MoreCard'
 import { products } from '@/src/data/products'
 import { Metadata } from 'next'
 import Link from 'next/link'
@@ -65,7 +66,7 @@ async function page({ params }: { params: Params }) {
 	const includes = t(`products.includes.${product.name}`, { returnObjects: true }) as string[]
 	const dimensions = t(`products.dimensions.${product.name}`, { returnObjects: true }) as string[]
 
-	const restProducts = products.filter(p => p.id !== product.id)
+	const restProducts = products.filter(p => p.id !== product.id).slice(0, 4)
 
 	return (
 		<main className=" flex-1">
@@ -73,7 +74,7 @@ async function page({ params }: { params: Params }) {
 				<div className="w-full px-4 wrapper">
 					<div className="flex flex-col gap-6 lg:flex-row  pb-25 lg:pb-30">
 						<div className="flex flex-col lg:mb-4 w-full lg:max-w-[542px]">
-							<div className="flex ">
+							<div className="flex " data-aos="fade-in">
 								<Link
 									href={`/${lng}/produkte`}
 									className="block text-sm text-grayscale-500 leading-5 hover:text-black-primary/80 duration-300 transition-colors px-2 py-2.5 font-medium">
@@ -88,7 +89,7 @@ async function page({ params }: { params: Params }) {
 
 							<MobileCarousel images={product.images} />
 						</div>
-						<div className="max-w-[542px] lg:mt-10 w-full">
+						<div className="max-w-[542px] lg:mt-10 w-full mx-auto lg:mx-0" data-aos="fade-up">
 							<h1 className="text-[32px] leading-10 lg:text-5xl lg:leading-14">
 								{t(`products.products.${product.name}`)}
 							</h1>
@@ -114,8 +115,17 @@ async function page({ params }: { params: Params }) {
 					</div>
 				</div>
 			</section>
-			<section className="w-full px-4 wrapper">
-				<h2 className="text-[32px] leading-10 lg:text-5xl lg:leading-14">{t('products.mayLike')}</h2>
+			<section className="w-full px-4 wrapper pb-25 lg:pb-30">
+				<h2
+					className="text-[32px] leading-10 lg:text-5xl lg:leading-14 text-center mb-12 lg:mb-14"
+					data-aos="fade-in">
+					{t('products.mayLike')}
+				</h2>
+				<div className="grid grid-cols-2 gap-2 xs:gap-4 md:grid-cols-4">
+					{restProducts.map(product => (
+						<MoreCard key={product.id} product={product} lng={lng} />
+					))}
+				</div>
 			</section>
 		</main>
 	)

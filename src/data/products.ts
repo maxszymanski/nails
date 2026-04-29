@@ -9,6 +9,8 @@ export type Product = {
 	patent?: string
 }
 
+export const SHIPPING = 15
+
 export const products: Product[] = [
 	{
 		id: 0,
@@ -27,7 +29,7 @@ export const products: Product[] = [
 		id: 1,
 		name: 'magnetic',
 		slug: `magnetnagel`,
-		price: 0.6,
+		price: 1,
 		images: [
 			'/assets/magnetic/magnetic-nails.png',
 			'/assets/magnetic/magnetic-nails-2.png',
@@ -53,7 +55,7 @@ export const products: Product[] = [
 		id: 3,
 		name: 'frame',
 		slug: `rahmendisplay`,
-		price: 0.6,
+		price: 79.99,
 		images: [
 			'/assets/frame/frame-nails.png',
 			'/assets/frame/frame-nails-2.png',
@@ -65,7 +67,7 @@ export const products: Product[] = [
 		id: 4,
 		name: 'cabinet',
 		slug: `vitrinenauslage`,
-		price: 0.6,
+		price: 99.99,
 		images: [
 			'/assets/cabinet/cabinet-nails.png',
 			'/assets/cabinet/cabinet-nails-2.png',
@@ -77,7 +79,7 @@ export const products: Product[] = [
 		id: 5,
 		name: 'display',
 		slug: `nagelstreifen`,
-		price: 0.6,
+		price: 18.9,
 		images: [
 			'/assets/display/display-nails.png',
 			'/assets/display/display-nails-2.png',

@@ -5,9 +5,17 @@ import LinkButton from './LinkButton'
 import Button from './Button'
 import Link from 'next/link'
 import { Product } from '@/src/data/products'
+import { useCartStore } from '../stores/CartStore'
+import { toast } from 'react-toastify'
 
 function ProductCard({ item, lng }: { item: Product; lng: string }) {
 	const { t } = useT('translations')
+
+	const addItem = useCartStore(state => state.addItem)
+	const addItemToCart = () => {
+		addItem(item)
+		toast.success(t('cart.addedToCart'))
+	}
 
 	return (
 		<div
@@ -55,7 +63,7 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 						</g>
 					</svg>
 				</LinkButton>
-				<Button variant="primary">
+				<Button variant="primary" onClick={addItemToCart}>
 					{t('products.add')}
 					<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g id="Arrow / Arrow_Right_SM">

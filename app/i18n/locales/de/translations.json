@@ -81,6 +81,7 @@
 		"pill": "Unsere Produkte",
 		"title": "Stellen Sie Ihr perfektes Display-Setup zusammen",
 		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems, das entwickelt wurde, um Ihre Nagellackkollektion zu organisieren, zu präsentieren und aufzuwerten.",
+		"mayLike": "Das könnte Ihnen auch gefallen",
 		"products": {
 			"title": "Produkte",
 			"nails": "IND Nails",
@@ -90,8 +91,101 @@
 			"frame": "IND Frame Display",
 			"cabinet": "IND Cabinet Display"
 		},
+		"description": {
+			"nails": "IND Nails sind klassische Muster-Tips für die einfache und professionelle Präsentation von Nagellackfarben. Sie können am Finger getragen oder aufgehängt werden und bieten eine praktische und vielseitige Display-Lösung. Mindestbestellmenge 30 Stück.",
+			"display": "IND Display Bar",
+			"magnetic": "IND Magnetic Nails",
+			"transparent": "IND Transparent Nails",
+			"frame": "IND Frame Display",
+			"cabinet": "IND Cabinet Display"
+		},
+		"features": {
+			"title": "Eigenschaften",
+			"nails": [
+				"Leicht und einfach zu verwenden",
+				"Einfach zu entfernen und neu zu positionieren",
+				"Kompatibel mit IND Display-Systemen",
+				"Ideal für die Farbpräsentation im Salon"
+			],
+			"magnetic": [
+				"Magnetische Basis für schnelle Befestigung",
+				"Einfach zu entfernen und neu zu positionieren",
+				"Kompatibel mit IND Display-Systemen",
+				"Ideal für die Farbpräsentation im Salon"
+			],
+			"display": [
+				"Schnelle und einfache Installation",
+				"Abnehmbare Display-Nägel zum direkten Testen",
+				"Klare Nummerierung für sofortige Farbauswahl",
+				"Unbegrenzte Erweiterung mit zusätzlichen Streifen",
+				"Klare Farbpräsentation"
+			],
+			"frame": [
+				"Elegantes Rahmendesign für professionelle Präsentation",
+				"Geeignet für Wandmontage oder Standaufstellung",
+				"Hält Nagelfarben organisiert und übersichtlich",
+				"Sauberes und modernes Aussehen für jedes Interieur"
+			],
+			"transparent": [
+				"Aus klarem, transparentem Kunststoff gefertigt",
+				"Natürliche und genaue Farbdarstellung",
+				"Kompatibel mit IND Display-Systemen",
+				"Kann am Finger getragen oder zur Präsentation aufgehängt werden"
+			],
+			"cabinet": [
+				"2-in-1 Display- und Aufbewahrungslösung",
+				"Innenregale für geordnete Aufbewahrung",
+				"Kann wandmontiert oder als Standgerät verwendet werden",
+				"Sauberes und professionelles Design"
+			]
+		},
+		"includes": {
+			"title": "Lieferumfang",
+			"nails": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
+			"magnetic": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
+			"display": [
+				"Kunststoff-Display-Streifen mit Nummerierung und doppelseitigem Klebeband",
+				"Inklusive 14 Anprob-Nägel"
+			],
+			"frame": [
+				"IND Frame Display (Steh- und Wandmontage)",
+				"Montagehilfe",
+				"30 magnetische Nägel",
+				"60 Aufkleber mit doppelter Nummerierung",
+				"2x Dübel 6mm und Schrauben",
+				"Kunststoffhilfe mit 4 Magneten"
+			],
+			"transparent": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
+			"cabinet": [
+				"IND Frame Display (Steh- und Wandmontage)",
+				"30 magnetische Nägel",
+				"60 Aufkleber mit doppelter Nummerierung",
+				"2x Dübel 6mm und Schrauben",
+				"Kunststoffhilfe mit 4 Magneten"
+			]
+		},
+		"dimensions": {
+			"title": "Abmessungen",
+			"nails": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"magnetic": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"display": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"frame": [
+				"IND Frame Display: 305 mm x 252 mm x 17 mm (L x B x T)",
+				"Kunststoffhilfe: 148 mm x 40 mm x 5 mm (L x B x T)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (L x B x T), Fußabdruck: 25mm",
+				"Lochabstand Montage: 215 mm"
+			],
+			"transparent": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"cabinet": [
+				"IND Cabinet Display: 305 mm x 252 mm x 97 mm (L x B x T)",
+				"Kunststoffhilfe: 148 mm x 40 mm x 5 mm (L x B x T)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (L x B x T), Fußabdruck: 25mm",
+				"Lochabstand Montage: 215 mm"
+			]
+		},
 		"details": "Details ansehen",
-		"add": "In den Warenkorb"
+		"add": "In den Warenkorb",
+		"patent": "Dieses Produkt ist durch das deutsche Patent Nr. geschützt."
 	},
 	"faq": {
 		"pill": "FAQ",
@@ -177,5 +271,45 @@
 			"title": "Hygienehinweise",
 			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
 		}
-	]
+	],
+	"cart": {
+		"addedToCart": "Produkt zum Warenkorb hinzugefügt",
+		"title": "Ihr Warenkorb",
+		"closeModal": "Modal schließen",
+		"remove": "Entfernen",
+		"empty": "Ihr Warenkorb ist leer",
+		"value": "Produktwert",
+		"shipping": "Versand",
+		"total": "Gesamt",
+		"free": "Kostenlos",
+		"quote": "Zur Anfrage",
+		"freeShipping": "Kostenloser Versand",
+		"shippingInfo": "Aufgrund der hohen Nachfrage kann es zu Lieferverzögerungen kommen.",
+		"order": "Bestellung aufgeben",
+		"orderTitle": "Fordern Sie Ihr UNVERBINDLICHES ANGEBOT an",
+		"name": "Ihr Vorname",
+		"lastName": "Ihr Nachname",
+		"email": "Ihre E-Mail-Adresse",
+		"message": "Zusätzliche Nachricht",
+		"enterMessage": "Bitte geben Sie Ihre Nachricht ein...",
+		"read": "Ich habe die",
+		"terms": "Datenschutzerklärung gelesen.",
+		"pill": "Versand innerhalb von 24 Stunden nach Zahlungseingang.",
+		"success": "Ihre Bestellung wurde erfolgreich aufgegeben.",
+		"successTitle": "Bestätigung",
+		"thankYou": "Bestellung aufgegeben!",
+		"subtitle": "Ihre Bestellung wurde erfolgreich übermittelt.",
+		"emailSend": "Wir haben Ihnen eine E-Mail mit den Zahlungsdetails gesendet. Bitte prüfen Sie Ihren Posteingang und schließen Sie die Zahlung ab, um Ihre Bestellung abzuschließen.",
+		"spam": "Falls Sie die E-Mail nicht finden, prüfen Sie bitte Ihren Spam-Ordner.",
+		"thanks": "Vielen Dank, dass Sie Iwon Naildisplay gewählt haben!",
+		"close": "Verstanden!"
+	},
+	"validation": {
+		"firstNameRequired": "Bitte geben Sie Ihren Vornamen ein",
+		"firstNameMin": "Der Vorname muss mindestens 3 Zeichen lang sein",
+		"lastNameRequired": "Bitte geben Sie Ihren Nachnamen ein",
+		"lastNameMin": "Der Nachname muss mindestens 3 Zeichen lang sein",
+		"emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+		"termsRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
+	}
 }
