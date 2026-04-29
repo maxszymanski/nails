@@ -7,6 +7,7 @@ import { products } from '@/src/data/products'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { languages } from '@/app/i18n/settings'
 
 type Params = Promise<{ slug: string; lng: string }>
 
@@ -48,9 +49,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export const revalidate = 86400
 
 export async function generateStaticParams() {
-	return products.map(product => ({
-		product: product.slug,
-	}))
+	return languages.flatMap(lng =>
+		products.map(product => ({
+			lng,
+			slug: product.slug,
+		})),
+	)
 }
 
 async function page({ params }: { params: Params }) {
