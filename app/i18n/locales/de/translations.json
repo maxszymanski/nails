@@ -2,8 +2,9 @@
 	"nav": {
 		"home": "Startseite",
 		"products": "Produkte",
-		"legal": "Rechtliches",
-		"faq": "FAQ"
+		"legal": "Satzung",
+		"faq": "FAQ",
+		"socials": "Soziale Medien"
 	},
 	"footer": {
 		"info": "Iwon Naildisplay entwickelt intelligente magnetische Display-Systeme, die die Präsentation von Nagelfarben in modernen Salons auf ein neues Niveau heben.",
@@ -15,7 +16,7 @@
 			"organisation": "Die Organisation"
 		},
 		"legal": {
-			"title": "Rechtliches",
+			"title": "Satzung",
 			"tos": "AGB",
 			"faq": "FAQ"
 		},
@@ -23,31 +24,31 @@
 	},
 	"homepage": {
 		"header": {
-			"title": "Professionell",
-			"titleTwo": "Nagellack-Farbdisplay",
-			"subtitle": "Präsentieren Sie Ihre Farbtöne klar und elegant. Unser intelligentes Display-System hilft Ihnen, Farben zu präsentieren, zu organisieren und effektiver zu verkaufen.",
-			"cta": "Unsere Produkte entdecken"
+			"title": "Professionelles Display ",
+			"titleTwo": "für Nagellackfarben",
+			"subtitle": "Präsentieren Sie Ihre Farben auf elegante und übersichtliche Weise. Unsere professionellen Displays helfen dabei, Ihre Kollektion zu ordnen, erleichtern die Farbauswahl und unterstützen einen effektiven Verkauf.",
+			"cta": "Zu Unseren Produkten"
 		},
 		"products": {
-			"title": "Der beste Weg,",
-			"titleTwo": "Nagelfarben zu präsentieren",
-			"subtitle": "Ein modulares Nagel-Display-System für den täglichen Gebrauch und professionelle Salons – hilft dabei, Farben zu organisieren, zu präsentieren und die Farbauswahl zu vereinfachen.",
-			"cta": "Unsere Produkte entdecken",
+			"title": "Die Beste Art Der",
+			"titleTwo": "Präsentation Von Nagelfarben",
+			"subtitle": "Das modulare Präsentationssystem mit Anprobenägeln für Nagelfarben wurde sowohl für den täglichen Gebrauch als auch für professionelle Salons entwickelt – es hilft, die Präsentation zu organisieren und die Farbauswahl zu erleichtern.",
+			"cta": "Zu Unseren Produkten",
 			"pill": "Unser System",
-			"organizers": "Organizer",
-			"organizersSub": "Jede Farbe perfekt organisiert",
-			"magnetic": "Magnetische Tips",
-			"magneticSub": "Tips mühelos befestigen und entfernen",
-			"nonmagnetic": "Nicht-magnetische Tips",
-			"nonmagneticSub": "Farben einfach testen und vergleichen",
-			"display": "Display Bar",
-			"displaySub": "Nagelfarben klar und professionell präsentieren"
+			"organizers": "Organisatoren",
+			"organizersSub": "Ordnung und bequemer Zugriff auf jede Farbe.",
+			"magnetic": "Magnetische Nägel",
+			"magneticSub": "Mühelose Farbprüfung.",
+			"nonmagnetic": "Ichtmagnetische Nägel",
+			"nonmagneticSub": "Eine einfache Möglichkeit, Farben zu testen und zu vergleichen.",
+			"display": "Kunststoffleiste",
+			"displaySub": "Eine elegante Präsentation von Farben an einem Ort."
 		},
 		"choice": {
-			"title": "Designed für",
-			"titleTwo": "Mühelose Auswahl",
-			"subtitle": "Legen Sie den abnehmbaren Muster-Nagel direkt auf Ihren Finger, um zu sehen, wie die Farbe oder das Design in Wirklichkeit aussieht. Diese einfache Testmethode erleichtert den Farbvergleich und hilft, die perfekte Wahl zu treffen.",
-			"cta": "Jetzt bestellen",
+			"title": "Entwickelt Für Eine",
+			"titleTwo": "Einfache Auswahl",
+			"subtitle": "Setzen Sie die Anprobenägel direkt auf den Finger und sehen Sie sofort, wie Farbe oder Design in Wirklichkeit wirken. Diese einfache Methode erleichtert den Vergleich von Farbtönen und die Wahl der idealen Farbe.",
+			"cta": "Jetzt Bestellen",
 			"pill": "Unsere Innovation"
 		},
 		"options": {
@@ -74,7 +75,7 @@
 			"title": "Modernisieren Sie Ihr Salon-Display noch heute",
 			"subtitle": "Entdecken Sie eine intelligentere, sauberere und elegantere Art, Farben zu präsentieren – entwickelt für den täglichen Gebrauch und Nagelprofis.",
 			"pill": "Bereit?",
-			"cta": "Unsere Produkte entdecken"
+			"cta": "Zu Unseren Produkten"
 		}
 	},
 	"products": {

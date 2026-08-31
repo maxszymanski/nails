@@ -46,7 +46,7 @@ function NavList({
 					<button
 						className="text-sm  leading-5 font-medium bg-transparent text-grayscale-500 duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-start flex items-center justify-between"
 						onClick={toggleIsSocialOpen}>
-						Socials{' '}
+						{t('nav.socials')}{' '}
 						<svg
 							width="24"
 							height="24"

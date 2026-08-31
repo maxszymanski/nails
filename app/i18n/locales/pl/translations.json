@@ -2,8 +2,9 @@
 	"nav": {
 		"home": "Strona główna",
 		"products": "Produkty",
-		"legal": "Prawne",
-		"faq": "FAQ"
+		"legal": "Regulamin",
+		"faq": "FAQ",
+		"socials": "Nasze Social Media"
 	},
 	"footer": {
 		"info": "Iwon Naildisplay tworzy inteligentne magnetyczne systemy ekspozycji zaprojektowane, aby podnieść prezentację kolorów lakierów w nowoczesnych salonach.",
@@ -23,46 +24,46 @@
 	},
 	"homepage": {
 		"header": {
-			"title": "Profesjonalny",
-			"titleTwo": "Ekspozytor Kolorów Paznokci",
-			"subtitle": "Prezentuj swoje odcienie z przejrzystością i elegancją. Nasz inteligentny system ekspozycji pomaga prezentować, organizować i sprzedawać skuteczniej.",
-			"cta": "Odkryj nasze produkty"
+			"title": "Profesjonalna Ekspozycja",
+			"titleTwo": "Kolorów Paznokci",
+			"subtitle": "Zaprezentuj swoje kolory w elegancki i przejrzysty sposób. Nasze profesjonalne ekspozytory pomagają uporządkować kolekcję, ułatwiają wybór odcienia i wspierają skuteczną sprzedaż.",
+			"cta": "Zobacz Nasze Produkty"
 		},
 		"products": {
 			"title": "Najlepszy sposób na",
 			"titleTwo": "Prezentację Kolorów Paznokci",
-			"subtitle": "Modułowy system ekspozycji paznokci zaprojektowany zarówno do codziennego użytku, jak i profesjonalnych salonów – pomaga organizować, prezentować i upraszczać wybór koloru.",
-			"cta": "Odkryj nasze produkty",
+			"subtitle": "Modułowy system ekspozycji kolorów paznokci, zaprojektowany zarówno do codziennego użytku, jak i profesjonalnych salonów–pomaga organizować prezentację i ułatwia wybór koloru.",
+			"cta": "Zobacz Nasze Produkty",
 			"pill": "Nasz System",
 			"organizers": "Organizery",
-			"organizersSub": "Każdy kolor idealnie zorganizowany",
-			"magnetic": "Magnetyczne Tipsy",
-			"magneticSub": "Mocuj i zdejmuj tipsy bez wysiłku",
-			"nonmagnetic": "Niemagnetyczne Tipsy",
-			"nonmagneticSub": "Łatwe testowanie i porównywanie kolorów",
-			"display": "Display Bar",
-			"displaySub": "Prezentuj kolory paznokci czytelnie i profesjonalnie"
+			"organizersSub": "Porządek i wygodny dostęp do każdego koloru.",
+			"magnetic": "Paznokcie Magnetyczne",
+			"magneticSub": "Testowanie kolorów bez wysiłku.",
+			"nonmagnetic": "Paznokcie Niemagnetyczne",
+			"nonmagneticSub": "Prosty sposób na testowanie i porównywanie kolorów.",
+			"display": "IND Listwy Ekspozycyjne",
+			"displaySub": "Elegancka prezentacja kolorów w jednym miejscu."
 		},
 		"choice": {
 			"title": "Zaprojektowany dla",
 			"titleTwo": "Łatwego Wyboru",
-			"subtitle": "Połóż wymienną próbkę paznokcia bezpośrednio na palcu, aby zobaczyć, jak kolor lub wzór będzie wyglądał w rzeczywistości. Ta prosta metoda testowania ułatwia porównywanie odcieni i pewny wybór idealnego koloru.",
+			"subtitle": "Załóż wzornik paznokca bezpośrednio na palec, aby od razu zobabczyć, jak kolor lub wzór prezentuje się w rzeczywistości. Ta prosta metoda testowania ułatwia porównywanie odcieni i pomaga pewnie wybrać idealny wzór.",
 			"cta": "Zamów teraz",
 			"pill": "Nasza Innowacja"
 		},
 		"options": {
-			"title": "Trzy opcje ekspozycji. Jeden inteligentny system.",
-			"subtitle": "Wybierz konfigurację dopasowaną do Twoich potrzeb – szafkę do pełnej organizacji lub wszechstronną ramkę do elastycznej prezentacji.",
-			"pill": "Możliwości",
-			"frame": "Wersja Ramkowa",
-			"frameSub": "Minimalistyczne rozwiązanie ekspozycyjne z opcją stojaka lub montażu ściennego.",
-			"frameCta": "Odkryj ramkę",
-			"cabinet": "Wersja Szafkowa",
-			"cabinetSub": "Zintegrowane przechowywanie i ekspozycja w jednej eleganckiej jednostce.",
-			"cabinetCta": "Odkryj szafkę",
-			"display": "Display Bar",
-			"displaySub": "Minimalistyczne rozwiązanie ekspozycyjne z opcją stojaka lub montażu ściennego.",
-			"displayCta": "Odkryj Display Bar",
+			"title": "Trzy Opcje Ekspozycji. Jeden Inteligentny System.",
+			"subtitle": "Wybierz konfigurację dopasowaną do Twoich potrzeb–IND szafka zapewniająca pełną organizację, IND ramka wszechstronna lub IND uniwersalna listwa ekspozycyjna.",
+			"pill": "Nasze Możliwości",
+			"frame": "IND Ramka Ekspozycyjna",
+			"frameSub": "Minimalistyczne rozwiązanie do prezentacji wzór i kolorów paznokci.",
+			"frameCta": "Odkryj Szczegóły",
+			"cabinet": "IND Szafka Ekspozycyjna",
+			"cabinetSub": "Miejsca do przechowywania i ekspozycji w jednym.",
+			"cabinetCta": "Odkryj Szczegóły",
+			"display": "IND Listwa Ekspozycyjna",
+			"displaySub": "Minimalistyczny ekspozytor z dwustronną taśmą klejącą–pasujący do niemal każdego regału.",
+			"displayCta": "Odkryj Szczegóły",
 			"new": "Nowość"
 		},
 		"organization": {
@@ -74,7 +75,7 @@
 			"title": "Ulepsz ekspozycję swojego salonu już dziś",
 			"subtitle": "Odkryj inteligentniejszy, czystszy i bardziej elegancki sposób prezentowania kolorów, zaprojektowany zarówno dla codziennych użytkowników, jak i profesjonalistów.",
 			"pill": "Gotowy?",
-			"cta": "Odkryj nasze produkty"
+			"cta": "Zobacz Nasze Produkty"
 		}
 	},
 	"products": {
