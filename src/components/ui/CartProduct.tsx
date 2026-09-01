@@ -25,8 +25,10 @@ function CartProduct({ product }: { product: CartItem }) {
 					loading="eager"
 				/>
 			</div>
-			<div className="flex flex-col ">
-				<h3 className="leading-6 text-grayscale-500 ">{t(`products.products.${product.name}`)} </h3>
+			<div className="flex flex-col flex-1 min-w-0">
+				<h3 className="leading-6 text-grayscale-500 truncate w-full ">
+					{t(`products.products.${product.name}`)}{' '}
+				</h3>
 				<p className="leading-6 ">{totalPrice.toFixed(2).replace('.', ',')}€ </p>
 				<div
 					className={`flex items-center rounded-full bg-grayscale-100 overflow-hidden  w-[117px] h-10 gap-2 shrink-0 mt-4`}>
@@ -68,7 +70,7 @@ function CartProduct({ product }: { product: CartItem }) {
 			</div>
 			<Button
 				variant="default"
-				restClass="text-grayscale-500 transition-colors sm:p-1 rounded-full hover:bg-grayscale-100 ml-auto"
+				restClass="text-grayscale-500 transition-colors sm:p-1 rounded-full hover:bg-grayscale-100 ml-auto shrink-0 size-8"
 				aria-label={t('cart.remove')}
 				title={t('cart.remove')}
 				onClick={() => remove(product.id)}>

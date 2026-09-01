@@ -7,16 +7,16 @@
 		"socials": "Nasze Social Media"
 	},
 	"footer": {
-		"info": "Iwon Naildisplay tworzy inteligentne magnetyczne systemy ekspozycji zaprojektowane, aby podnieść prezentację kolorów lakierów w nowoczesnych salonach.",
+		"info": "Iwon Nail Display tworzy innowacyjne systemy prezentacji z wykorzystaniem unikalnych inteligentnych wzorników paznokci. Nasze rozwiązania nadają Twojemu salonowi nowoczesny wygląd i wyznaczają nowe standardy w prezentacji kolorów i wzorów.",
 		"company": {
 			"title": "Strona główna",
 			"system": "Nasz System",
 			"innovation": "Nasza Innowacja",
-			"possiblities": "Możliwości",
+			"possiblities": "Nasze Możliwości",
 			"organisation": "Organizacja"
 		},
 		"legal": {
-			"title": "Prawne",
+			"title": "Inne",
 			"tos": "Regulamin",
 			"faq": "FAQ"
 		},
@@ -68,129 +68,132 @@
 		},
 		"organization": {
 			"title": "Inteligentna Organizacja Kolorów",
-			"subtitle": "Przejrzysty system numeracji łączy każdą próbkę paznokcia z pasującą butelką lakieru, pomagając szybko znaleźć, zorganizować i zaprezentować każdy kolor.",
+			"subtitle": "Przejrzysty system numeracji łączy każdy wzornik z odpowiednią butelką lakieru, ułatwiając szybkie odnajdywanie, porządkowanie i prezentowanie każdego koloru.",
 			"pill": "Organizacja"
 		},
 		"upgrade": {
-			"title": "Ulepsz ekspozycję swojego salonu już dziś",
-			"subtitle": "Odkryj inteligentniejszy, czystszy i bardziej elegancki sposób prezentowania kolorów, zaprojektowany zarówno dla codziennych użytkowników, jak i profesjonalistów.",
+			"title": "Ulepsz Ekspozycję Swojego Salonu",
+			"subtitle": "Odkryj prostszy, bardziej uporządkowany i elegancki sposób prezentowania kolorów, stworzony z myślą zarówno o codziennej pracy, jak i profesjonalnych salonach.",
 			"pill": "Gotowy?",
 			"cta": "Zobacz Nasze Produkty"
 		}
 	},
 	"products": {
 		"pill": "Nasze Produkty",
-		"title": "Zbuduj swój idealny zestaw ekspozycyjny",
-		"subtitle": "Odkryj wszystkie komponenty systemu Iwon Nail Display zaprojektowanego do organizacji, prezentacji i wzbogacenia Twojej kolekcji lakierów.",
-		"mayLike": "Może Ci się spodobać",
+		"title": "Zbuduj Swój Idealny Zestaw Ekspozycyjny",
+		"subtitle": "Odkryj wszystkie elementy systemu Iwon Nail Display, stworzone do organizacji, prezentacji i efektownego wyeksponowania Twojej kolekcji lakierów.",
+		"mayLike": "Polecane dla Ciebie",
 		"products": {
 			"title": "Produkty",
-			"nails": "IND Nails",
-			"display": "IND Display Bar",
-			"magnetic": "IND Magnetic Nails",
-			"transparent": "IND Transparent Nails",
-			"frame": "IND Frame Display",
-			"cabinet": "IND Cabinet Display"
+			"nails": "IND Paznokieć",
+			"display": "IND Listwa Ekspozycyjna",
+			"magnetic": "IND Paznokieć Magnetyczny",
+			"transparent": "IND Paznokieć Transparentny",
+			"frame": "IND Ramka Ekspozycyjna",
+			"cabinet": "IND Szafka Ekspozycyjna"
 		},
 		"description": {
 			"nails": "IND Nails to klasyczne próbki tipów zaprojektowane do łatwej i profesjonalnej prezentacji kolorów lakierów. Można je nosić na palcu lub zawieszać, oferując praktyczne i wszechstronne rozwiązanie ekspozycyjne. Minimalne zamówienie 30 sztuk.",
-			"display": "IND Display Bar",
-			"magnetic": "IND Magnetic Nails",
-			"transparent": "IND Transparent Nails",
-			"frame": "IND Frame Display",
+			"display": "IND Listwa Ekspozycyjna to minimalistyczny ekspozytor z dwustronną taśmą klejącą–pasujący do niemal każdego regału w branży beauty oraz salonach stylizacji paznokci.",
+			"magnetic": "IND Magnetyczne Paznokcie to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z IND Rahmendisplay, IND Schrankdisplay oraz IND Displayleiste stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne. Minimalna ilość zamówienia: 10 sztuk.",
+			"transparent": "IND Paznokieć Transparentny to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z listwą ekspozycyjną IND stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne. Minimalna ilość zamówienia: 30 sztuk.",
+			"frame": "IND Ramka Ekspozycyjna to nowoczesna ekspozycja w ramie, stworzona z myślą o eleganckiej prezentacji kolorów i wzorów paznokci. Idealna do salonów kosmetycznych i sklepów, pomaga uporządkować kolekcję oraz zapewnia jej przejrzystą prezentację. Może być zamontowana na ścianie lub ustawiona jako stojąca ekspozycja, oferując estetyczny i profesjonalny wygląd.",
 			"cabinet": "IND Cabinet Display"
 		},
 		"features": {
 			"title": "Cechy",
 			"nails": [
-				"Lekkie i łatwe w użyciu",
-				"Łatwe do zdejmowania i ponownego pozycjonowania",
-				"Kompatybilne z systemami ekspozycji IND",
-				"Idealne do prezentacji kolorów w salonie"
+				"Wykonane z przezroczystego, transparentnego tworzywa",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Listwa Ekspozycyjna",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
 			],
 			"magnetic": [
-				"Magnetyczna podstawa do szybkiego mocowania",
-				"Łatwe do zdejmowania i ponownego pozycjonowania",
-				"Kompatybilne z systemami ekspozycji IND",
-				"Idealne do prezentacji kolorów w salonie"
+				"Wykonane z tworzywa sztucznego w naturalnym odcieniu",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Rahmendisplay, IND Schrankdisplay oraz IND Displayleiste",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
 			],
 			"display": [
-				"Szybka i łatwa instalacja",
-				"Wyjmowane paznokcie ekspozycyjne do bezpośredniego testowania",
-				"Przejrzysta numeracja do natychmiastowego wyboru koloru",
-				"Nieograniczona rozbudowa o dodatkowe pasy",
-				"Wyraźna prezentacja kolorów"
+				"Szybki i łatwy montaż dzięki dwustronnej taśmie klejącej",
+				"Wzorniki paznokci do przymierzania umożliwiają bezpośrednie testowanie",
+				"Czytelna numeracja umożliwiająca natychmiastowy wybór koloru",
+				"Kompatybilne z magnetycznymi wzornikami do przymierzania",
+				"Nieograniczona możliwość rozbudowy dzięki dodatkowym listwom ekspozycyjnym",
+				"Przejrzysta i estetyczna prezentacja kolorów"
 			],
 			"frame": [
-				"Elegancki design ramki do profesjonalnej prezentacji",
-				"Nadaje się do montażu ściennego lub jako stojak",
-				"Utrzymuje kolory paznokci zorganizowane i łatwe do przeglądania",
-				"Czysty i nowoczesny wygląd do każdego wnętrza"
+				"Elegancki design do profesjonalnej prezentacji",
+				"Przeznaczony do montażu ściennego lub jako stojak",
+				"Umożliwia estetyczną prezentację wzorów paznokci i akcesoriów",
+				"Nowoczesny, biały wygląd pasujący do każdego wnętrza"
 			],
 			"transparent": [
-				"Wykonane z przezroczystego tworzywa sztucznego",
-				"Naturalna i dokładna prezentacja kolorów",
-				"Kompatybilne z systemami ekspozycji IND",
-				"Można nosić na palcu lub zawieszać"
+				"Wykonane z przezroczystego, transparentnego tworzywa",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Listwa Ekspozycyjna",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
 			],
 			"cabinet": [
-				"Rozwiązanie 2 w 1 – ekspozycja i przechowywanie",
-				"Wewnętrzne półki do zorganizowanego przechowywania",
-				"Można montować na ścianie lub używać jako stojak",
-				"Czysty i profesjonalny design"
+				"Rozwiązanie 2 w 1–ekspozycja i przechowywanie",
+				"Wbudowane półki zapewniają uporządkowane przechowywanie",
+				"Dzięki kompaktowym wymiarom szafa ekspozycyjna pasuje do każdego salonu i każdego stanowiska pracy. Idealna do montażu na ścianie i profesjonalnie zaprojektowana"
 			]
 		},
 		"includes": {
 			"title": "Zawartość zestawu",
-			"nails": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
-			"magnetic": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
+			"nails": ["10 IND Paznokieć", "30 naklejek z podwójną numeracją"],
+			"magnetic": ["10 IND Paznokieć Magnetyczny", "30 naklejek z podwójną numeracją"],
 			"display": [
-				"Plastikowy pas ekspozycyjny z numeracją i dwustronną taśmą klejącą",
-				"14 paznokci do przymierzania"
+				"listwa ekspozycyjna z tworzywa sztucznego z numeracją i dwustronną taśmą klejącą",
+				"14 IND Paznokieć",
+				"30 naklejek z podwójną numeracją"
 			],
 			"frame": [
-				"IND Frame Display (stojak i montaż ścienny)",
-				"Pomoc montażowa",
-				"30 magnetycznych paznokci",
+				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
+				"Podpórka do ustawienia",
+				"30 magnetycznych gwoździ (naturalny kolor)",
 				"60 naklejek z podwójną numeracją",
-				"2x kołki 6mm i śruby",
-				"Plastikowa pomoc z 4 magnesami"
+				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
+				"Listewka pomocnicza z tworzywa z 4 magnesami"
 			],
-			"transparent": ["10 magnetycznych paznokci (kolor transparentny)", "30 naklejek z podwójną numeracją"],
+			"transparent": ["10 IND Paznokieć Transparentny", "30 naklejek z podwójną numeracją"],
 			"cabinet": [
-				"IND Frame Display (stojak i montaż ścienny)",
-				"30 magnetycznych paznokci",
+				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
+				"Podpórka do ustawienia",
+				"30 magnetycznych gwoździ (naturalny kolor)",
 				"60 naklejek z podwójną numeracją",
-				"2x kołki 6mm i śruby",
-				"Plastikowa pomoc z 4 magnesami"
+				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
+				"Listewka pomocnicza z tworzywa z 4 magnesami"
 			]
 		},
 		"dimensions": {
 			"title": "Wymiary",
-			"nails": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
-			"magnetic": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
-			"display": ["Długość (D) - 48mm", "Szerokość (S) - 10mm", "Wysokość (W) - 10mm", "Długość stopy - 25mm"],
+			"nails": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
+			"display": ["250 mm x 30 mm x 8 mm ( L x B x H)"],
 			"frame": [
-				"IND Frame Display: 305 mm x 252 mm x 17 mm (D x S x G)",
-				"Pomoc plastikowa: 148 mm x 40 mm x 5 mm (D x S x G)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (D x S x G), stopa: 25mm",
+				"IND Szafka Ekspozycyjna: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Listewka pomocnicza: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Paznokcie Magnetyczne: 48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm",
 				"Rozstaw otworów montażowych: 215 mm"
 			],
-			"transparent": [
-				"Długość (D) - 48mm",
-				"Szerokość (S) - 10mm",
-				"Wysokość (W) - 10mm",
-				"Długość stopy - 25mm"
-			],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
 			"cabinet": [
-				"IND Cabinet Display: 305 mm x 252 mm x 97 mm (D x S x G)",
-				"Pomoc plastikowa: 148 mm x 40 mm x 5 mm (D x S x G)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (D x S x G), stopa: 25mm",
+				"IND Szafka Ekspozycyjna: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Listewka pomocnicza: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Paznokcie Magnetyczne: 48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm",
 				"Rozstaw otworów montażowych: 215 mm"
 			]
 		},
-		"details": "Zobacz szczegóły",
-		"add": "Dodaj do koszyka",
+		"details": "Szczegóły",
+		"add": "Dodaj do Koszyka",
 		"patent": "Ten produkt jest chroniony niemieckim patentem nr"
 	},
 	"faq": {
@@ -288,18 +291,22 @@
 		"shipping": "Dostawa",
 		"total": "Razem",
 		"free": "Bezpłatna",
-		"quote": "Przejdź do zapytania",
-		"freeShipping": "Darmowa dostawa",
-		"shippingInfo": "Ze względu na duże zainteresowanie mogą wystąpić opóźnienia w dostawie.",
+		"quote": "Przejdź do formularza",
+		"freeShipping": "Do darmowej wysyłki brakuje",
+		"shippingInfo": "Z uwagi na dużą ilość zamówień mogą wystąpić opóźnienia.",
 		"order": "Złóż zamówienie",
-		"orderTitle": "Poproś o BEZPŁATNĄ WYCENĘ",
+		"orderTitle": "Formularz Zamówienia",
 		"name": "Twoje imię",
 		"lastName": "Twoje nazwisko",
-		"email": "Twój adres e-mail",
+		"address": "Adres Dostawy",
+		"zipCode": "Kod pocztowy",
+		"city": "Miasto",
+		"instagram": "Nazwa na Instagramie",
+		"email": "Adres Email",
 		"message": "Dodatkowa wiadomość",
-		"enterMessage": "Wpisz swoją wiadomość...",
+		"enterMessage": "Napisz swoją wiadomość...",
 		"read": "Zapoznałem/am się z",
-		"terms": "polityką prywatności.",
+		"terms": "polityką ochrony danych osobowych.",
 		"pill": "Wysyłka w ciągu 24 godzin od otrzymania płatności.",
 		"success": "Twoje zamówienie zostało pomyślnie złożone.",
 		"successTitle": "Potwierdzenie",

@@ -10,7 +10,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCartStore } from '../stores/CartStore'
 import { CartInformation } from './CartModal'
-import Pill from './Pill'
 
 function OrderForm({
 	cartInformation,
@@ -32,7 +31,11 @@ function OrderForm({
 	const contactSchema = z.object({
 		firstName: z.string().nonempty(t('validation.firstNameRequired')).min(3, t('validation.firstNameMin')),
 		lastName: z.string().nonempty(t('validation.lastNameRequired')).min(3, t('validation.lastNameMin')),
+		address: z.string(t('validation.address')),
+		zipCode: z.string(t('validation.zipCode')),
+		city: z.string(t('validation.city')),
 		email: z.email(t('validation.emailInvalid')),
+		instagram: z.string().optional(),
 		message: z.string().optional(),
 		terms: z.boolean().refine(val => val === true, {
 			message: t('validation.termsRequired'),
@@ -64,6 +67,7 @@ function OrderForm({
 			id="order-form">
 			<div className="w-full grid grid-cols-2 gap-2 xs:gap-3">
 				<Input
+					required
 					type="text"
 					id="firstName"
 					name="firstName"
@@ -76,6 +80,7 @@ function OrderForm({
 					placeholder={t('cart.name')}
 				/>
 				<Input
+					required
 					type="text"
 					id="lastName"
 					name="lastName"
@@ -89,17 +94,74 @@ function OrderForm({
 				/>
 			</div>
 			<Input
+				required
 				type="text"
-				id="email"
-				name="email"
-				label={t('cart.email')}
-				formRegister={register('email')}
-				error={errors?.email || null}
-				message={errors?.email?.message || null}
+				id="address"
+				name="address"
+				label={t('cart.address')}
+				formRegister={register('address')}
+				error={errors?.address || null}
+				message={errors?.address?.message || null}
 				disabled={isSubmitting}
-				autoComplete="email"
-				placeholder={t('cart.email')}
+				autoComplete="address"
+				placeholder={t('cart.address')}
 			/>
+			<div className="w-full grid grid-cols-2 gap-2 xs:gap-3">
+				<Input
+					required
+					type="text"
+					id="zipCode"
+					name="zipCode"
+					label={t('cart.zipCode')}
+					formRegister={register('zipCode')}
+					error={errors?.zipCode || null}
+					message={errors?.zipCode?.message || null}
+					disabled={isSubmitting}
+					autoComplete="zipCode"
+					placeholder={t('cart.zipCode')}
+				/>
+				<Input
+					required
+					type="text"
+					id="city"
+					name="city"
+					label={t('cart.city')}
+					formRegister={register('city')}
+					error={errors?.city || null}
+					message={errors?.city?.message || null}
+					disabled={isSubmitting}
+					autoComplete="city"
+					placeholder={t('cart.city')}
+				/>
+			</div>
+			<div className="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-3 gap-6">
+				<Input
+					required
+					type="text"
+					id="email"
+					name="email"
+					label={t('cart.email')}
+					formRegister={register('email')}
+					error={errors?.email || null}
+					message={errors?.email?.message || null}
+					disabled={isSubmitting}
+					autoComplete="email"
+					placeholder={t('cart.email')}
+				/>
+				<Input
+					type="text"
+					id="instagram"
+					name="instagram"
+					label={t('cart.instagram')}
+					formRegister={register('instagram')}
+					error={errors?.instagram || null}
+					message={errors?.instagram?.message || null}
+					disabled={isSubmitting}
+					autoComplete="instagram"
+					placeholder={t('cart.instagram')}
+				/>
+			</div>
+
 			<div className="w-full flex flex-col gap-4">
 				<Input
 					textarea

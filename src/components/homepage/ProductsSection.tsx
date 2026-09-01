@@ -83,7 +83,7 @@ const ProductsBoxes = async () => {
 		<div
 			className="flex flex-row flex-wrap justify-center gap-4 mt-12 lg:gap-x-[15px] 
     lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[1fr_1fr] lg:h-[616px] lg:mt-14">
-			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-4 " data-aos="fade-in">
+			<div className="w-full max-w-[343px] h-[343px] lg:max-w-none lg:h-auto lg:row-span-4" data-aos="fade-in">
 				<ProductsBox
 					title={t('homepage.products.organizers')}
 					subtitle={t('homepage.products.organizersSub')}
@@ -164,7 +164,9 @@ const ProductsBox = ({
 				</svg>
 				<div className="text-center lg:text-start">
 					<h3 className="capitalize leading-7 text-[18px] lg:text-xl lg:leading-8 ">{title}</h3>
-					<p className="text-grayscale-500 leading-5 text-sm lg:text-base lg:leading-6">{subtitle}</p>
+					<p className="text-grayscale-500 leading-5 text-sm lg:text-base lg:leading-6 text-balance">
+						{subtitle}
+					</p>
 				</div>
 			</div>
 			<Image

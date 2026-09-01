@@ -23,7 +23,7 @@ export const products: Product[] = [
 			'/assets/nails/nail-3.png',
 			'/assets/nails/nail-4.png',
 		],
-		patent: '10 2019 135 058.',
+		patent: '10 2019 135 058',
 	},
 	{
 		id: 1,
@@ -36,7 +36,7 @@ export const products: Product[] = [
 			'/assets/magnetic/magnetic-nails-3.png',
 			'/assets/magnetic/magnetic-nails-4.png',
 		],
-		patent: '10 2019 135 058.',
+		patent: '10 2019 135 058',
 	},
 	{
 		id: 2,
@@ -49,7 +49,7 @@ export const products: Product[] = [
 			'/assets/transparent/transparent-nails-3.png',
 			'/assets/transparent/transparent-nails-4.png',
 		],
-		patent: 'This product is protected by German Patent No. 10 2019 135 058.',
+		patent: '10 2019 135 058',
 	},
 	{
 		id: 3,

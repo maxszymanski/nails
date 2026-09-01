@@ -33,12 +33,13 @@ async function HomeHeader({ lng }: { lng: string }) {
 			/>
 			<div className="md:absolute md:inset-0 lg:w-full">
 				<div className="md:max-w-[1172px] lg:mx-auto h-full px-4 ">
-					<div className="flex flex-col gap-4 items-center md:items-start lg:gap-6 md:pt-24 text-center md:text-left max-w-[480px] md:max-w-[540px]">
-						<h1 className="leading-12 text-[40px] md:text-5xl md:leading-14 lg:text-[64px] lg:leading-18">
+					<div className="flex flex-col gap-4 items-center md:items-start lg:gap-6 md:pt-24 text-center md:text-left max-w-[480px] md:max-w-[640px]">
+						<h1
+							className={`leading-12 text-[40px] md:text-5xl md:leading-14  ${lng != 'en' ? 'lg:text-[56px] lg:leading-16}' : 'lg:text-[64px] lg:leading-18'}`}>
 							{t('homepage.header.title')} <br />
 							{t('homepage.header.titleTwo')}
 						</h1>
-						<p className="text-grayscale-500 leading-6 w-full md:pr-20 lg:pr-15">
+						<p className="text-grayscale-500 leading-6 w-full md:pr-20 lg:pr-15 text-balance">
 							{t('homepage.header.subtitle')}
 						</p>
 						<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit">

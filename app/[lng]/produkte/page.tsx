@@ -42,13 +42,13 @@ async function page({ params }: { params: Params }) {
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20 px-4">
 					<div className="flex flex-col w-full items-center">
 						<div
-							className=" flex flex-col items-center text-center mb-6  max-w-[670px] -tracking-[1%]"
+							className=" flex flex-col items-center text-center mb-6  max-w-[940px] -tracking-[1%]"
 							data-aos="fade-in">
 							<Pill text={t('products.pill')} />
 							<h1 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 ">
 								{t('products.title')}
 							</h1>
-							<p className="text-grayscale-500 leading-6 w-full max-w-[470px] mx-auto ">
+							<p className="text-grayscale-500 leading-6 w-full max-w-[680px] mx-auto text-balance ">
 								{t('products.subtitle')}
 							</p>
 						</div>

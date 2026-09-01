@@ -17,7 +17,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 							{t('homepage.choice.title')} <br />
 							{t('homepage.choice.titleTwo')}
 						</h2>
-						<p className="text-grayscale-500 leading-6 w-full max-w-[481px]">
+						<p className="text-grayscale-500 leading-6 w-full max-w-[540px] text-balance">
 							{t('homepage.choice.subtitle')}
 						</p>
 					</div>

@@ -42,9 +42,9 @@ function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 			)}
 			{list && (
 				<ul
-					className={`w-full transition-all text-grayscale-500 duration-300 ml-4 text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px]  ' : 'invisible opacity-20 max-h-0 '} `}>
+					className={`w-full transition-all text-grayscale-500 duration-300 ml-6 text-sm md:text-base select-none  ${isOpen ? 'visible opacity-100 max-h-[500px]  ' : 'invisible opacity-20 max-h-0 '} `}>
 					{list.map((item, idx) => (
-						<li key={idx} className="list-disc list-inside leading-6">
+						<li key={idx} className="list-disc list-outside leading-6">
 							{item}
 						</li>
 					))}

@@ -87,101 +87,110 @@
 		"products": {
 			"title": "Products",
 			"nails": "IND Nails",
-			"display": "IND Display Bar",
+			"display": "IND Displaybar",
 			"magnetic": "IND Magnetic Nails",
 			"transparent": "IND Transparent Nails",
 			"frame": "IND Frame Display",
 			"cabinet": "IND Cabinet Display"
 		},
 		"description": {
-			"nails": "IND Nails are classic sample tips designed for easy and professional presentation of nail polish colors. They can be worn on a finger or hung, offering a practical and versatile display solution. Minimum order 30 pieces.",
-			"display": "IND Display Bar",
-			"magnetic": "IND Magnetic Nails",
-			"transparent": "IND Transparent Nails",
-			"frame": "IND Frame Display",
-			"cabinet": "IND Cabinet Display"
+			"nails": "IND Nails are removable tips designed for the professional display of nail colors and nail art. They can be placed directly on the finger, allowing for a realistic assessment of the color against the hand. They offer an innovative and versatile display solution. Minimum order quantity: 30 pieces.",
+			"display": "The IND Display Strip is a minimalist display unit featuring double-sided adhesive tape-suitable for almost any shelving unit in the beauty and nail styling industries.",
+			"magnetic": "IND Magnetic Nails are removable tips designed for the professional presentation of nail polish colors and nail art. These tips can be tried on directly on the finger, allowing for a realistic visualization of the color on the hand. When combined with the IND Rahmendisplay, IND Schrankdisplay, and IND Displayleiste, they form an innovative and versatile display solution. Minimum order quantity: 10 pieces.",
+			"transparent": "IND Transparent Nail Tips are removable swatches designed for the professional presentation of nail polish colors and nail art. They can be tried on directly, allowing for a realistic visualization of the color on the hand. When paired with the IND display rail, they offer an innovative and versatile display solution. Minimum order quantity: 30 pieces.",
+			"frame": "IND Frame Display is a modern, framed display designed for the elegant presentation of nail colors and designs. Ideal for beauty salons and retail stores, it helps organize your collection while ensuring a clear, attractive display. It can be wall-mounted or used as a freestanding unit, offering a stylish and professional look.",
+			"cabinet": "IND Cabinet Display combines elegant presentation with practical storage. Its exterior resembles a classic framed display, while the interior features shelves for organizing nail accessories. The cabinet opens for easy access to its contents and can be placed on a countertop or mounted on the wall."
 		},
 		"features": {
 			"title": "Features",
 			"nails": [
-				"Lightweight and easy to use",
-				"Easy to remove and reposition",
-				"Compatible with IND display systems",
-				"Ideal for salon color presentation"
+				"Made of clear, transparent plastic",
+				"Natural and precise color reproduction",
+				"Can be connected to the IND Display Strip",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
 			],
 			"magnetic": [
-				"Magnetic base for quick attachment",
-				"Easy to remove and reposition",
-				"Compatible with IND display systems",
-				"Ideal for salon color presentation"
+				"Made of plastic in a natural shade",
+				"Natural and precise color reproduction",
+				"Can be connected to the IND frame display, IND cabinet display, and IND display bar.",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
 			],
 			"display": [
-				"Quick and easy installation",
-				"Removable display nails for direct testing",
-				"Clear numbering for instant color selection",
-				"Unlimited expansion with additional strips",
-				"Clear color presentation"
+				"Quick and easy installation with double-sided adhesive tape",
+				"Swatches with magnets allow for direct color testing",
+				"Clear numbering enables instant color selection",
+				"Compatible with magnetic swatches",
+				"Unlimited possibilities for expanding the collection with additional display strips",
+				"Clear and aesthetic color presentation"
 			],
 			"frame": [
 				"Elegant frame design for professional presentation",
-				"Suitable for wall mounting or standing display",
-				"Keeps nail colors organized and easy to view",
-				"Clean and modern look for any interior"
+				"Designed for both wall-mounted and freestanding installation",
+				"Enables an aesthetic presentation of swatches and accessories",
+				"Modern white finish that complements any interior"
 			],
 			"transparent": [
 				"Made from clear, transparent plastic",
-				"Natural and accurate color presentation",
-				"Compatible with IND display systems",
-				"Can be worn on a finger or hung for display"
+				"Natural and precise color reproduction",
+				"Can be connected to the IND frame display, IND cabinet display, and IND display bar",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
 			],
 			"cabinet": [
-				"2-in-1 display and storage solution",
-				"Interior shelves for organized storage",
-				"Can be wall-mounted or used as a standing unit",
-				"Clean and professional design"
+				"2-in-1 solution – display and storage",
+				"Built-in shelves provide organized storage",
+				"Thanks to its compact dimensions, the display cabinet fits into any salon or workstation. It is ideal for wall mounting and features a professional design"
 			]
 		},
 		"includes": {
 			"title": "What's Included",
-			"nails": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
-			"magnetic": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
+			"nails": ["10 IND Nail Tips", "30 stickers with double numbering"],
+			"magnetic": ["10 IND Magnetic Nail Tips", "30 stickers with double numbering"],
 			"display": [
 				"Plastic display strip with numbering and double-sided adhesive tape",
-				"Includes 14 try-on nails"
+				"14 IND Nail Tips",
+				"30 stickers with double numbering"
 			],
 			"frame": [
-				"IND Frame Display (stand and wall mounting)",
+				"IND Frame Display (for freestanding or wall-mounted installation)",
 				"Installation aid",
-				"30 magnetic nails",
+				"30 magnetic nails (natural color)",
 				"60 stickers with double numbering",
-				"2x dowels 6mm and screws",
-				"Plastic aid with 4 magnets"
+				"2x dowels (Ø 6 mm) and screws",
+				"Auxiliary plastic strip with 4 magnets"
 			],
-			"transparent": ["10 magnetic nails (transparent color)", "30 stickers with double numbering"],
+			"transparent": ["10 IND Transparent Nail Tips", "30 stickers with double numbering"],
 			"cabinet": [
-				"IND Frame Display (stand and wall mounting)",
-				"30 magnetic nails",
+				"IND Cabinet Display (for freestanding or wall-mounted installation)",
+				"Installation aid",
+				"30 magnetic nails (natural color)",
 				"60 stickers with double numbering",
-				"2x dowels 6mm and screws",
-				"Plastic aid with 4 magnets"
+				"Plastic aid with 4 magnets",
+				"2x dowels (Ø 6 mm) and screws",
+				"Auxiliary plastic strip with 4 magnets"
 			]
 		},
 		"dimensions": {
 			"title": "Dimensions",
-			"nails": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
-			"magnetic": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
-			"display": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"nails": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
+			"display": ["250 mm x 8 mm x 30 mm (L x W x H)"],
 			"frame": [
-				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x T)",
-				"Plasitc aid: 148 mm x 40 mm x 5 mm ( L x W x T)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x T), footprint: 25mm",
+				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x D)",
+				"Auxiliary strip: 148 mm x 40 mm x 5 mm ( L x W x D)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm",
 				"Hole spacing mounting: 215 mm"
 			],
-			"transparent": ["Length (L) - 48mm", "Width (W) - 10mm", "Height (H) - 10mm", "Foot length - 25 mm"],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
 			"cabinet": [
-				"IND Cabinet Display: 305 mm x 252 mm x 97 mm ( L x W x T)",
-				"Plasitc aid: 148 mm x 40 mm x 5 mm ( L x W x T)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x T), footprint: 25mm",
+				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x D)",
+				"Auxiliary strip: 148 mm x 40 mm x 5 mm ( L x W x D)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm",
 				"Hole spacing mounting: 215 mm"
 			]
 		},
@@ -288,9 +297,13 @@
 		"freeShipping": "Free Shipping",
 		"shippingInfo": "Due to high demand there may be delays in delivery.",
 		"order": "Place an order",
-		"orderTitle": "Request your NO-OBLIGATION QUOTE",
+		"orderTitle": "Oder Form",
 		"name": "Your Name",
 		"lastName": "Your Last Name",
+		"address": "Delivery Address",
+		"zipCode": "Postal Code",
+		"city": "City",
+		"instagram": "Instagram Username",
 		"email": "Your Email Address",
 		"message": "Additional Message",
 		"enterMessage": "Please enter your message...",

@@ -8,20 +8,22 @@ interface InputType extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaE
 	formRegister?: UseFormRegisterReturn
 	textarea?: boolean
 	label?: string
+	required?: boolean
 }
 
-function Input({ error, textarea = false, message, label, formRegister, ...rest }: InputType) {
+function Input({ error, textarea = false, message, label, required, formRegister, ...rest }: InputType) {
 	return (
 		<div className="flex w-full flex-col">
 			{label && (
 				<label className="text-grayscale-500 mb-2 leading-6" htmlFor={rest.id}>
 					{label}
+					{required && <span className="text-my-purple">*</span>}
 				</label>
 			)}
 			<div className="relative w-full">
 				{textarea ? (
 					<textarea
-						className={`disabled:opacity-50 placehoder:text-grayscale-500/50 w-full rounded-2xl border  bg-dark px-4 text-sm  resize-none placeholder:leading-6 placeholder:font-outfit outline-none transition-colors duration-300 leading-6 h-32  focus:border-grayscale-500 outline-grayscale-200 py-2  ${
+						className={`disabled:opacity-50 placehoder:text-grayscale-500/50 w-full rounded-2xl border  bg-dark px-4 text-sm  resize-none  placeholder:leading-6 placeholder:font-outfit outline-none transition-colors duration-300 leading-6 h-10  focus:border-grayscale-500 outline-grayscale-200 py-1.5  ${
 							error ? 'border-alert text-alert' : 'border-grayscale-200 hover:border-grayscale-100'
 						}`}
 						{...formRegister}

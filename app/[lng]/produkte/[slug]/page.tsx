@@ -98,12 +98,15 @@ async function page({ params }: { params: Params }) {
 								{t(`products.products.${product.name}`)}
 							</h1>
 							{product.patent && (
-								<p className="text-sm leading-5 text-grayscale-500 opacity-50 mb-4">
-									{t(`products.patent`)} <span className="inline-block">{product.patent}</span>
+								<p className="text-sm leading-5 text-grayscale-500 opacity-50 mb-4 text-balance">
+									{t(`products.patent`)}{' '}
+									<span className="inline-block">
+										{product.patent} {lng === 'de' ? 'geschützt.' : '.'}
+									</span>
 								</p>
 							)}
 
-							<p className="text-sm leading-5 text-grayscale-500 mb-6">
+							<p className="text-sm leading-5 text-grayscale-500 mb-6  lg:text-base lg:leading-6">
 								{t(`products.description.${product.name}`)}
 							</p>
 							<p className="text-[32px] leading-10 lg:text-5xl lg:leading-14 mb-4">

@@ -36,7 +36,7 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 				/>
 			</Link>
 			<div className="flex items-center gap-2 justify-between">
-				<h2 className="text-xl leading-8 -tracking-[1%] text-grayscale-500">
+				<h2 className="text-xl leading-8 -tracking-[1%] text-grayscale-500 truncate ">
 					{t(`products.products.${item.name}`)}{' '}
 				</h2>
 				<p className="text-xl leading-8">{item.price.toFixed(2).replace('.', ',')}€ </p>

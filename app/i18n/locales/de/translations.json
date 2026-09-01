@@ -7,17 +7,17 @@
 		"socials": "Soziale Medien"
 	},
 	"footer": {
-		"info": "Iwon Naildisplay entwickelt intelligente magnetische Display-Systeme, die die Präsentation von Nagelfarben in modernen Salons auf ein neues Niveau heben.",
+		"info": "Iwon Nail Display entwickelt innovative Präsentationssysteme mit einzigartigen intelligenten Anprobenägeln. Unsere Lösungen verleihen Ihrem Studio einen modernen Look und setzen neue Maßstäbe in der Präsentation von Farben und Designs.",
 		"company": {
 			"title": "Startseite",
 			"system": "Unser System",
 			"innovation": "Unsere Innovation",
-			"possiblities": "Die Möglichkeiten",
-			"organisation": "Die Organisation"
+			"possiblities": "Unsere Kompetenzen",
+			"organisation": "Organisation"
 		},
 		"legal": {
 			"title": "Satzung",
-			"tos": "AGB",
+			"tos": "Satzung",
 			"faq": "FAQ"
 		},
 		"copyright": "Alle Rechte vorbehalten."
@@ -52,27 +52,28 @@
 			"pill": "Unsere Innovation"
 		},
 		"options": {
-			"title": "Drei Display-Optionen. Ein intelligentes System.",
-			"subtitle": "Wählen Sie die Konfiguration, die Ihren Bedürfnissen entspricht – ein Aufbewahrungsschrank für volle Organisation oder ein vielseitiger Rahmen für flexible Präsentation.",
-			"pill": "Die Möglichkeiten",
-			"frame": "Rahmen-Version",
-			"frameSub": "Eine minimalistische Display-Lösung mit Steh- oder Wandmontageoption.",
-			"frameCta": "Rahmen entdecken",
-			"cabinet": "Schrank-Version",
-			"cabinetSub": "Integrierte Aufbewahrung und Präsentation in einer eleganten Einheit.",
-			"cabinetCta": "Schrank entdecken",
-			"display": "Display Bar",
-			"displaySub": "Eine minimalistische Display-Lösung mit Steh- oder Wandmontageoption.",
-			"displayCta": "Display Bar entdecken",
-			"new": "Neu"
+			"title": "Drei Optionen. ",
+			"titleTwo": "Ein Intelligentes System.",
+			"subtitle": "Wählen Sie die passende Konfiguration – IND-Schrank für maximale Organisation, IND-Rahmen für vielseitige Nutzung oder universelle IND-Kunststoff-Displayleiste.",
+			"pill": "Unsere Kompetenzen",
+			"frame": "IND Rahmen Display",
+			"frameSub": "Eine minimalistische Lösung zur räsentation von Nageldesigns und -farben.",
+			"frameCta": "Entdecken Sie die Details",
+			"cabinet": "IND Schrank Display",
+			"cabinetSub": "Aufbewahrung und Präsentation in einem.",
+			"cabinetCta": "Entdecken Sie die Details",
+			"display": "IND Kunststoffleiste",
+			"displaySub": "Minimalistisches Display mit doppelseitigem Klebeband, passend für nahezu jedes bestehende Regal in der Beauty-Branche und in Nagelstudios.",
+			"displayCta": "Entdecken Sie die Details",
+			"new": "Neuheit"
 		},
 		"organization": {
-			"title": "Intelligente Farborganisation",
-			"subtitle": "Ein klares Nummerierungssystem verbindet jeden Muster-Nagel mit der passenden Nagellackflasche und hilft dabei, jede Farbe schnell zu finden, zu organisieren und zu präsentieren.",
+			"title": "Intelligente Farbordnung",
+			"subtitle": "Ein übersichtliches Nummerierungssystem verknüpft jedes Farbmuster mit dem entsprechenden Nagellackfläschchen, wodurch sich jede Farbe leicht und schnell finden, ordnen und präsentieren lässt.",
 			"pill": "Organisation"
 		},
 		"upgrade": {
-			"title": "Modernisieren Sie Ihr Salon-Display noch heute",
+			"title": "Werten Sie die Präsentation in Ihrem Salon auf",
 			"subtitle": "Entdecken Sie eine intelligentere, sauberere und elegantere Art, Farben zu präsentieren – entwickelt für den täglichen Gebrauch und Nagelprofis.",
 			"pill": "Bereit?",
 			"cta": "Zu Unseren Produkten"
@@ -80,113 +81,121 @@
 	},
 	"products": {
 		"pill": "Unsere Produkte",
-		"title": "Stellen Sie Ihr perfektes Display-Setup zusammen",
-		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems, das entwickelt wurde, um Ihre Nagellackkollektion zu organisieren, zu präsentieren und aufzuwerten.",
-		"mayLike": "Das könnte Ihnen auch gefallen",
+		"title": "Gestalten Sie Ihr individuelles Display-System",
+		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems – entwickelt für die Organisation, Präsentation und ansprechende Präsentation Ihrer Nagellackkollektion.",
+		"mayLike": "Für Sie Empfohlen",
 		"products": {
 			"title": "Produkte",
-			"nails": "IND Nails",
-			"display": "IND Display Bar",
-			"magnetic": "IND Magnetic Nails",
-			"transparent": "IND Transparent Nails",
-			"frame": "IND Frame Display",
-			"cabinet": "IND Cabinet Display"
+			"nails": "IND Nägel",
+			"display": "IND Kunststoffleiste",
+			"magnetic": "IND Magnetische Nägel ",
+			"transparent": "IND Transparente Nägels",
+			"frame": "IND Rahmen Display",
+			"cabinet": "IND Schrank Display"
 		},
 		"description": {
-			"nails": "IND Nails sind klassische Muster-Tips für die einfache und professionelle Präsentation von Nagellackfarben. Sie können am Finger getragen oder aufgehängt werden und bieten eine praktische und vielseitige Display-Lösung. Mindestbestellmenge 30 Stück.",
-			"display": "IND Display Bar",
-			"magnetic": "IND Magnetic Nails",
-			"transparent": "IND Transparent Nails",
-			"frame": "IND Frame Display",
-			"cabinet": "IND Cabinet Display"
+			"nails": "IND Nägel sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 30 Stück.",
+			"display": "IND Kunststoffleiste ist eine minimalistische Präsentationseinheit mit doppelseitigem Klebeband – geeignet für nahezu jedes Regalsystem in der Beauty- und Nagelstyling-Branche.",
+			"magnetic": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 10 Stück.",
+			"transparent": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 30 Stück.",
+			"frame": "Der IND Display Frame ist ein modernes Display mit Rahmen, das für die elegante Präsentation von Nagelfarben und -designs konzipiert wurde. Er eignet sich ideal für Kosmetikstudios sowie den Einzelhandel, hilft bei der Organisation Ihrer Kollektion und sorgt für eine übersichtliche, ansprechende Warenpräsentation. Das Display lässt sich sowohl an der Wand montieren als auch freistehend nutzen und verleiht Ihrem Angebot einen stilvollen, professionellen Look.",
+			"cabinet": "Die IND-Vitrine verbindet eine elegante Präsentation mit praktischem Stauraum. Ihr Äußeres erinnert an eine klassische Vitrine mit Rahmen, während der Innenraum über Ablagen zur geordneten Aufbewahrung von Nagelzubehör verfügt. Der Schrank lässt sich für einen einfachen Zugriff auf den Inhalt öffnen und kann entweder auf einer Arbeitsfläche aufgestellt oder an der Wand montiert werden."
 		},
 		"features": {
-			"title": "Eigenschaften",
+			"title": "Produktmerkmale",
 			"nails": [
-				"Leicht und einfach zu verwenden",
-				"Einfach zu entfernen und neu zu positionieren",
-				"Kompatibel mit IND Display-Systemen",
-				"Ideal für die Farbpräsentation im Salon"
+				"Aus Kunststoff in Naturfarbe",
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
 			],
 			"magnetic": [
-				"Magnetische Basis für schnelle Befestigung",
-				"Einfach zu entfernen und neu zu positionieren",
-				"Kompatibel mit IND Display-Systemen",
-				"Ideal für die Farbpräsentation im Salon"
+				"Aus Kunststoff in Naturfarbton gefertigt",
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit dem IND Rahmendisplay, dem IND Schrankdisplay und der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
 			],
 			"display": [
-				"Schnelle und einfache Installation",
-				"Abnehmbare Display-Nägel zum direkten Testen",
-				"Klare Nummerierung für sofortige Farbauswahl",
-				"Unbegrenzte Erweiterung mit zusätzlichen Streifen",
-				"Klare Farbpräsentation"
+				"Schnelle und einfache Installation dank doppelseitigem Klebeband",
+				"Abnehmbare Anprobenägel zum direkten Testen",
+				"Klare Nummerierung für eine sofortige Farbauswahl",
+				"Kombinierbar mit magnetischen Anprobenägeln",
+				"Unbegrenzte Erweiterungsmöglichkeiten mit zusätzlichen Displayleisten",
+				"Übersichtliche und klare Farbpräsentation"
 			],
 			"frame": [
-				"Elegantes Rahmendesign für professionelle Präsentation",
-				"Geeignet für Wandmontage oder Standaufstellung",
-				"Hält Nagelfarben organisiert und übersichtlich",
-				"Sauberes und modernes Aussehen für jedes Interieur"
+				"Elegantes Design für eine professionelle Präsentation",
+				"Geeignet für Wandmontage oder als Standdisplay",
+				"Präsentiert Nageldesigns und Accessoires übersichtlich",
+				"Modernes, weißes Design passend für jedes Interieur"
 			],
 			"transparent": [
 				"Aus klarem, transparentem Kunststoff gefertigt",
-				"Natürliche und genaue Farbdarstellung",
-				"Kompatibel mit IND Display-Systemen",
-				"Kann am Finger getragen oder zur Präsentation aufgehängt werden"
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
 			],
 			"cabinet": [
 				"2-in-1 Display- und Aufbewahrungslösung",
-				"Innenregale für geordnete Aufbewahrung",
-				"Kann wandmontiert oder als Standgerät verwendet werden",
-				"Sauberes und professionelles Design"
+				"Integrierte Regale sorgen für eine übersichtliche Aufbewahrung",
+				"Dank seiner kompakten Größe passt das Schrank-Display in jeden Salon und in jede Arbeitsecke. Ideal für die Wandmontage und professionell gestaltet"
 			]
 		},
 		"includes": {
-			"title": "Lieferumfang",
-			"nails": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
-			"magnetic": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
+			"title": "Lieferumfang des Sets",
+			"nails": ["10 IND Nägel", "30 Aufkleber mit doppelter Nummerierung"],
+			"magnetic": ["10 IND Magnetische Nägel", "30 Aufkleber mit doppelter Nummerierung"],
 			"display": [
-				"Kunststoff-Display-Streifen mit Nummerierung und doppelseitigem Klebeband",
-				"Inklusive 14 Anprob-Nägel"
+				"Kunststoff-Displayleiste mit Nummerierung und doppelseitigem Klebeband",
+				"14 IND Nägel",
+				"30 Aufkleber mit doppelter Nummerierung"
 			],
 			"frame": [
-				"IND Frame Display (Steh- und Wandmontage)",
-				"Montagehilfe",
-				"30 magnetische Nägel",
+				"IND Display (für Stand- und Wandmontage)",
+				"Aufstellhilfe ",
+				"30 magnetische Nägel (Farbton: Natur)",
 				"60 Aufkleber mit doppelter Nummerierung",
-				"2x Dübel 6mm und Schrauben",
+				"2 Dübel (Ø 6 mm) inkl. Schrauben",
 				"Kunststoffhilfe mit 4 Magneten"
 			],
-			"transparent": ["10 magnetische Nägel (transparente Farbe)", "30 Aufkleber mit doppelter Nummerierung"],
+			"transparent": ["10 IND IND Transparente Nägel", "30 Aufkleber mit doppelter Nummerierung"],
 			"cabinet": [
-				"IND Frame Display (Steh- und Wandmontage)",
-				"30 magnetische Nägel",
+				"IND Display (für Stand- und Wandmontage)",
+				"Aufstellhilfe",
+				"30 magnetische Nägel (Farbton: Natur)",
 				"60 Aufkleber mit doppelter Nummerierung",
-				"2x Dübel 6mm und Schrauben",
+				"2 Dübel (Ø 6 mm) inkl. Schrauben",
 				"Kunststoffhilfe mit 4 Magneten"
 			]
 		},
 		"dimensions": {
 			"title": "Abmessungen",
-			"nails": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
-			"magnetic": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
-			"display": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"nails": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
+			"display": ["250 mm x 30 mm x 8 mm ( L x B x H)"],
 			"frame": [
-				"IND Frame Display: 305 mm x 252 mm x 17 mm (L x B x T)",
-				"Kunststoffhilfe: 148 mm x 40 mm x 5 mm (L x B x T)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (L x B x T), Fußabdruck: 25mm",
-				"Lochabstand Montage: 215 mm"
+				"IND Display Rahmen : 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Abmessungen Kunststoffhilfe: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Magnetische Nägel: 48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm",
+				"Montage-Lochabstand: 215 mm"
 			],
-			"transparent": ["Länge (L) - 48mm", "Breite (B) - 10mm", "Höhe (H) - 10mm", "Fußlänge - 25mm"],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
 			"cabinet": [
-				"IND Cabinet Display: 305 mm x 252 mm x 97 mm (L x B x T)",
-				"Kunststoffhilfe: 148 mm x 40 mm x 5 mm (L x B x T)",
-				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm (L x B x T), Fußabdruck: 25mm",
-				"Lochabstand Montage: 215 mm"
+				"IND Shrank Display: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Abmessungen Kunststoffhilfe: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Magnetische Nägel: 48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm",
+				"Montage-Lochabstand: 215 mm"
 			]
 		},
-		"details": "Details ansehen",
+		"details": "Details",
 		"add": "In den Warenkorb",
-		"patent": "Dieses Produkt ist durch das deutsche Patent Nr. geschützt."
+		"patent": "Dieses Produkt ist durch das deutsche Patent Nr."
 	},
 	"faq": {
 		"pill": "FAQ",
@@ -279,20 +288,24 @@
 		"closeModal": "Modal schließen",
 		"remove": "Entfernen",
 		"empty": "Ihr Warenkorb ist leer",
-		"value": "Produktwert",
-		"shipping": "Versand",
-		"total": "Gesamt",
+		"value": "Wert der Produkte",
+		"shipping": "Lieferung",
+		"total": "Zusammen",
 		"free": "Kostenlos",
-		"quote": "Zur Anfrage",
-		"freeShipping": "Kostenloser Versand",
-		"shippingInfo": "Aufgrund der hohen Nachfrage kann es zu Lieferverzögerungen kommen.",
+		"quote": "Gehen Sie zum Formular",
+		"freeShipping": "Betrag für kostenlosen Versand",
+		"shippingInfo": "Aufgrund eines hohen Bestellaufkommens kann es zu Verzögerungen kommen.",
 		"order": "Bestellung aufgeben",
-		"orderTitle": "Fordern Sie Ihr UNVERBINDLICHES ANGEBOT an",
-		"name": "Ihr Vorname",
+		"orderTitle": "Bestellformular",
+		"name": "Ihr Name",
 		"lastName": "Ihr Nachname",
-		"email": "Ihre E-Mail-Adresse",
+		"address": "Lieferadresse",
+		"zipCode": "PLZ",
+		"city": "Stadt",
+		"instagram": "Instagram-Name",
+		"email": "E-Mail-Adresse",
 		"message": "Zusätzliche Nachricht",
-		"enterMessage": "Bitte geben Sie Ihre Nachricht ein...",
+		"enterMessage": "Schreiben Sie Ihre Nachricht...",
 		"read": "Ich habe die",
 		"terms": "Datenschutzerklärung gelesen.",
 		"pill": "Versand innerhalb von 24 Stunden nach Zahlungseingang.",
