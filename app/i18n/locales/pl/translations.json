@@ -83,6 +83,7 @@
 		"title": "Zbuduj Swój Idealny Zestaw Ekspozycyjny",
 		"subtitle": "Odkryj wszystkie elementy systemu Iwon Nail Display, stworzone do organizacji, prezentacji i efektownego wyeksponowania Twojej kolekcji lakierów.",
 		"mayLike": "Polecane dla Ciebie",
+		"tax": "plus ustawowy podatek VAT.",
 		"products": {
 			"title": "Produkty",
 			"nails": "IND Paznokieć",
@@ -315,14 +316,31 @@
 		"emailSend": "Wysłaliśmy Ci e-mail ze szczegółami płatności. Sprawdź swoją skrzynkę odbiorczą i dokończ płatność, aby sfinalizować zamówienie.",
 		"spam": "Jeśli nie widzisz e-maila, sprawdź folder spam.",
 		"thanks": "Dziękujemy za wybranie Iwon Naildisplay!",
-		"close": "Rozumiem!"
+		"close": "Rozumiem!",
+		"orderError": "Nie udało się wysłać zamówienia. Spróbuj ponownie."
 	},
 	"validation": {
 		"firstNameRequired": "Proszę podać imię",
 		"firstNameMin": "Imię musi mieć co najmniej 3 znaki",
 		"lastNameRequired": "Proszę podać nazwisko",
 		"lastNameMin": "Nazwisko musi mieć co najmniej 3 znaki",
+		"address": "Proszę podać adres",
+		"zipCode": "Proszę podać kod pocztowy",
+		"zipCodeInvalid": "Podaj poprawny kod pocztowy",
+		"city": "Proszę podać miasto",
+		"cityMin": "Miasto musi mieć co najmniej 2 znaki",
 		"emailInvalid": "Podaj poprawny adres e-mail",
 		"termsRequired": "Proszę zaakceptować politykę prywatności"
+	},
+	"compatible": {
+		"title": "Kompatybilne Produkty IKEA",
+		"skadis-one": "Tablice Perforowana",
+		"skadis-two": "Półka na obrazy",
+		"mosslanda": "Półka na obrazy",
+		"compatible": "Kompatybilne Produkty IKEA",
+		"back": "Powrót",
+		"article": "Nr art.",
+		"copy": "Skopiuj numer aktykułu",
+		"copiedToClipboard": "Skopiowano do schowka"
 	}
 }

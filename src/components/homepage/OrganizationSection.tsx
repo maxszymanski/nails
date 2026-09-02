@@ -9,7 +9,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 
 	return (
 		<>
-			<section className="py-25 lg:py-30">
+			<section className="py-25 lg:py-30" id="organisation">
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20">
 					<div className="flex flex-col w-full items-center">
 						<div className=" flex flex-col items-center text-center mb-6  max-w-[720px]" data-aos="fade-in">

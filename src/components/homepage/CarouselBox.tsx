@@ -42,7 +42,15 @@ const CardImage = ({ src, large = false, alt }: { src: string; large?: boolean; 
 	return (
 		<div
 			className={`${large ? 'w-[286px] lg:w-[480px]' : ' lg:w-[300px] w-[179px]'} relative rounded-2xl lg:rounded-3xl overflow-hidden shrink-0 lg:h-[420px] h-[250px] mx-2`}>
-			<Image src={src} alt={alt} fill className="object-cover object-center" sizes={large ? '480px' : '300px'} />
+			<Image
+				src={src}
+				alt={alt}
+				fill
+				className="object-cover object-center"
+				sizes={large ? '480px' : '300px'}
+				loading="eager"
+				quality={100}
+			/>
 		</div>
 	)
 }

@@ -8,9 +8,9 @@ import { useCartStore } from '../stores/CartStore'
 import CartProduct from './CartProduct'
 import { useState } from 'react'
 import OrderForm from './OrderForm'
-import { useFormContext } from 'react-hook-form'
 import Spinner from './Spinner'
 import LogoLink from './LogoLink'
+import CompatibleProducts from './CompatibleProducts'
 
 export type CartInformation = {
 	items: {
@@ -61,14 +61,16 @@ function CartModal() {
 				<div className="flex items-center justify-between gap-2 pb-4 sm:pb-6 border-b border-grayscale-200">
 					<h2 className="sm:text-xl sm:leading-8  leading-6">
 						{' '}
-						{step === 1 ? t('cart.title') : step === 2 ? t('cart.orderTitle') : t('cart.successTitle')}
+						{step === 1 && t('cart.title')} {step === 2 && t('cart.orderTitle')}{' '}
+						{step === 3 && t('cart.successTitle')}
+						{step === 4 && t('compatible.title')}
 					</h2>
 					<Button
 						variant="default"
 						restClass="text-my-purple hover:text-my-purple/80 transition-colors sm:p-1 rounded-full hover:bg-grayscale-100"
 						aria-label={t('cart.closeModal')}
 						onClick={() => {
-							if (step === 2) {
+							if (step === 2 || step === 4) {
 								setStep(1)
 							} else {
 								closeModal()
@@ -122,7 +124,19 @@ function CartModal() {
 				{step === 1 && (
 					<div className="lg:flex-1 min-h-0 lg:overflow-y-auto py-4 lg:py-6 flex flex-col gap-6 my-scrollbar">
 						{items.length > 0 ? (
-							items.map(product => <CartProduct product={product} key={product.id} />)
+							<>
+								{items.map(product => (
+									<CartProduct product={product} key={product.id} />
+								))}{' '}
+								<div className="pt-6 border-t border-grayscale-200 w-full">
+									<Button
+										onClick={() => setStep(4)}
+										variant="default"
+										restClass="w-full h-10 bg-grayscale-100 transition-colors hover:bg-grayscale-100/70 text-grayscale-500 text-sm leading-5 font-medium rounded-2xl">
+										{t('compatible.compatible')}
+									</Button>
+								</div>
+							</>
 						) : (
 							<p className="text-grayscale-500 text-center">{t('cart.empty')}</p>
 						)}
@@ -136,23 +150,33 @@ function CartModal() {
 						setStep={setStep}
 					/>
 				)}
-				{items.length > 0 && (
+
+				{step === 4 && <CompatibleProducts onClick={() => setStep(1)} />}
+
+				{step != 4 && items.length > 0 && (
 					<div className="mt-auto flex flex-col w-full pt-4">
 						<p className="w-full flex justify-between gap-2 items-center leading-6 mb-2">
 							<span className="text-grayscale-500">{t('cart.value')}:</span>
-							<span>{totalValue.toFixed(2).replace('.', ',')}€</span>
+							<span>
+								{totalValue.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
+							</span>
 						</p>
 						<p className="w-full flex justify-between gap-2 items-center leading-6 mb-6">
 							<span className="text-grayscale-500">{t('cart.shipping')}:</span>
 							{shipping === 0 ? (
 								<span>{t('cart.free')}</span>
 							) : (
-								<span>{shipping.toFixed(2).replace('.', ',')}€</span>
+								<span>
+									{shipping.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
+								</span>
 							)}
 						</p>
 						<p className="w-full flex justify-between gap-2 items-center leading-8 mb-4 text-xl">
 							<span>{t('cart.total')}:</span>
-							<span>{totalWithShipping.toFixed(2).replace('.', ',')}€</span>
+							<span>
+								{totalWithShipping.toFixed(2).replace('.', ',')}€{' '}
+								<span className="opacity-50 ">(+VAT)</span>
+							</span>
 						</p>
 						{step === 1 ? (
 							<Button

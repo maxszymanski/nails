@@ -29,7 +29,9 @@ function CartProduct({ product }: { product: CartItem }) {
 				<h3 className="leading-6 text-grayscale-500 truncate w-full ">
 					{t(`products.products.${product.name}`)}{' '}
 				</h3>
-				<p className="leading-6 ">{totalPrice.toFixed(2).replace('.', ',')}€ </p>
+				<p className="leading-6 text-nowrap ">
+					{totalPrice.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>{' '}
+				</p>
 				<div
 					className={`flex items-center rounded-full bg-grayscale-100 overflow-hidden  w-[117px] h-10 gap-2 shrink-0 mt-4`}>
 					<Button

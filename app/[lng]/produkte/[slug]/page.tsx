@@ -109,8 +109,11 @@ async function page({ params }: { params: Params }) {
 							<p className="text-sm leading-5 text-grayscale-500 mb-6  lg:text-base lg:leading-6">
 								{t(`products.description.${product.name}`)}
 							</p>
-							<p className="text-[32px] leading-10 lg:text-5xl lg:leading-14 mb-4">
-								{product.price.toFixed(2).replace('.', ',')}€
+							<p className=" mb-4 flex items-end gap-4">
+								<span className="text-[32px] leading-10 lg:text-5xl lg:leading-14">
+									{product.price.toFixed(2).replace('.', ',')}€
+								</span>
+								<span className="text-sm text-grayscale-500 leading-5 mb-2">{t('products.tax')}</span>
 							</p>
 							<AddToCard product={product} />
 							<div className="flex flex-col">

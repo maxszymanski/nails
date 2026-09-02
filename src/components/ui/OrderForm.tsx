@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCartStore } from '../stores/CartStore'
 import { CartInformation } from './CartModal'
+import { toast } from 'react-toastify'
 
 function OrderForm({
 	cartInformation,
@@ -25,15 +26,19 @@ function OrderForm({
 	const { t } = useT('translations')
 	const pathname = usePathname()
 
-	const lng = pathname.slice(0, 3)
+	const lng = pathname.split('/')[1] || 'en'
 	const clearCart = useCartStore(state => state.clearCart)
 
 	const contactSchema = z.object({
 		firstName: z.string().nonempty(t('validation.firstNameRequired')).min(3, t('validation.firstNameMin')),
 		lastName: z.string().nonempty(t('validation.lastNameRequired')).min(3, t('validation.lastNameMin')),
-		address: z.string(t('validation.address')),
-		zipCode: z.string(t('validation.zipCode')),
-		city: z.string(t('validation.city')),
+		address: z.string().trim().nonempty(t('validation.address')),
+		zipCode: z
+			.string()
+			.trim()
+			.nonempty(t('validation.zipCode'))
+			.regex(/^(\d{2}-\d{3}|\d{5})$/, t('validation.zipCodeInvalid')),
+		city: z.string().trim().nonempty(t('validation.city')).min(2, t('validation.cityMin')),
 		email: z.email(t('validation.emailInvalid')),
 		instagram: z.string().optional(),
 		message: z.string().optional(),
@@ -53,11 +58,32 @@ function OrderForm({
 
 	const onSubmit: SubmitHandler<ContactType> = async data => {
 		setIsSubmitting(true)
-		await new Promise(resolve => setTimeout(resolve, 2000))
-		reset()
-		clearCart()
-		setIsSubmitting(false)
-		setStep(3)
+
+		try {
+			const response = await fetch('/api/order', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					customer: data,
+					cart: cartInformation,
+					lng,
+				}),
+			})
+
+			if (!response.ok) {
+				throw new Error('Order request failed')
+			}
+
+			reset()
+			clearCart()
+			setStep(3)
+		} catch {
+			toast.error(t('cart.orderError'))
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	return (
@@ -76,7 +102,7 @@ function OrderForm({
 					error={errors?.firstName || null}
 					message={errors?.firstName?.message || null}
 					disabled={isSubmitting}
-					autoComplete="firstName"
+					autoComplete="given-name"
 					placeholder={t('cart.name')}
 				/>
 				<Input
@@ -89,7 +115,7 @@ function OrderForm({
 					error={errors?.lastName || null}
 					message={errors?.lastName?.message || null}
 					disabled={isSubmitting}
-					autoComplete="lastName"
+					autoComplete="family-name"
 					placeholder={t('cart.lastName')}
 				/>
 			</div>
@@ -103,7 +129,7 @@ function OrderForm({
 				error={errors?.address || null}
 				message={errors?.address?.message || null}
 				disabled={isSubmitting}
-				autoComplete="address"
+				autoComplete="street-address"
 				placeholder={t('cart.address')}
 			/>
 			<div className="w-full grid grid-cols-2 gap-2 xs:gap-3">
@@ -117,7 +143,8 @@ function OrderForm({
 					error={errors?.zipCode || null}
 					message={errors?.zipCode?.message || null}
 					disabled={isSubmitting}
-					autoComplete="zipCode"
+					autoComplete="postal-code"
+					inputMode="numeric"
 					placeholder={t('cart.zipCode')}
 				/>
 				<Input
@@ -130,7 +157,7 @@ function OrderForm({
 					error={errors?.city || null}
 					message={errors?.city?.message || null}
 					disabled={isSubmitting}
-					autoComplete="city"
+					autoComplete="address-level2"
 					placeholder={t('cart.city')}
 				/>
 			</div>
@@ -183,7 +210,7 @@ function OrderForm({
 							<Link
 								target="_blanc"
 								rel="noopener noreferrer"
-								href={`${lng}/datenschutzerklarung`}
+								href={`/${lng}/datenschutzerklarung`}
 								className="underline hover:text-black-primary duration-300">
 								{' '}
 								{t('cart.terms')}

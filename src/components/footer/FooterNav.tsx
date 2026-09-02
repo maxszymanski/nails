@@ -15,10 +15,10 @@ async function FooterNav({ lng }: { lng: string }) {
 	]
 
 	const company = [
-		{ name: t('footer.company.system'), href: `system` },
-		{ name: t('footer.company.innovation'), href: `innovation` },
-		{ name: t('footer.company.possiblities'), href: `possibilities` },
-		{ name: t('footer.company.organisation'), href: `organisation` },
+		{ name: t('footer.company.system'), href: `#system` },
+		{ name: t('footer.company.innovation'), href: `#innovation` },
+		{ name: t('footer.company.possiblities'), href: `#kompetenzen` },
+		{ name: t('footer.company.organisation'), href: `#organisation` },
 	]
 	const legal = [
 		{ name: t('footer.legal.tos'), href: `datenschutzerklarung` },
@@ -96,7 +96,7 @@ async function FooterNav({ lng }: { lng: string }) {
 					</li>
 					{company.map(item => (
 						<li key={item.name}>
-							<LinkButton variant="footer" href={`/${lng}/${item.href}`}>
+							<LinkButton variant="footer" href={`/${lng}${item.href}`}>
 								{item.name}
 							</LinkButton>
 						</li>

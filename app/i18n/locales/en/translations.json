@@ -84,6 +84,7 @@
 		"title": "Build Your Perfect Display Setup",
 		"subtitle": "Discover all components of the Iwon Nail Display system designed to organize, present and elevate your nail color collection.",
 		"mayLike": "You May Also Like",
+		"tax": "plus statutory VAT.",
 		"products": {
 			"title": "Products",
 			"nails": "IND Nails",
@@ -317,14 +318,31 @@
 		"emailSend": "We've sent you an email with payment details. Please check your inbox and complete the payment to finalize your order.",
 		"spam": "If you don't see it, please check your spam folder.",
 		"thanks": "Thank you for choosing Iwon Naildisplay!",
-		"close": "Got it!"
+		"close": "Got it!",
+		"orderError": "We couldn't send your order. Please try again."
 	},
 	"validation": {
 		"firstNameRequired": "Please enter your first name",
 		"firstNameMin": "First name must be at least 3 characters",
 		"lastNameRequired": "Please enter your last name",
 		"lastNameMin": "Last name must be at least 3 characters",
+		"address": "Please enter your address",
+		"zipCode": "Please enter your postal code",
+		"zipCodeInvalid": "Please enter a valid postal code",
+		"city": "Please enter your city",
+		"cityMin": "City must be at least 2 characters",
 		"emailInvalid": "Please enter a valid email address",
 		"termsRequired": "Please accept the terms and conditions"
+	},
+	"compatible": {
+		"title": "Compatible IKEA Products",
+		"skadis-one": "White Pegboard",
+		"skadis-two": "White Shelf",
+		"mosslanda": "Picture Ledge",
+		"compatible": "Compatible IKEA Products",
+		"back": "Go Back",
+		"article": "Article no.",
+		"copy": "Copy article number",
+		"copiedToClipboard": "Copied to clipboard"
 	}
 }

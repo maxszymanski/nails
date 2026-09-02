@@ -7,7 +7,7 @@ async function ProductsSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 
 	return (
-		<section className="bg-[#F8F2EA]  py-12 lg:py-16 relative z-0 overflow-hidden">
+		<section className="bg-[#F8F2EA]  py-12 lg:py-16 relative z-0 overflow-hidden" id="system">
 			<svg
 				width="847"
 				height="750"

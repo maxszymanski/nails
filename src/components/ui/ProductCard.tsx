@@ -39,7 +39,9 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 				<h2 className="text-xl leading-8 -tracking-[1%] text-grayscale-500 truncate ">
 					{t(`products.products.${item.name}`)}{' '}
 				</h2>
-				<p className="text-xl leading-8">{item.price.toFixed(2).replace('.', ',')}€ </p>
+				<p className="text-xl leading-8 text-nowrap">
+					{item.price.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
+				</p>
 			</div>
 			<div className="grid grid-cols-2 gap-3 ">
 				<LinkButton href={`/${lng}/produkte/${item.slug}`} variant="secondary">

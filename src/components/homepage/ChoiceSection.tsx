@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function ChoiceSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 	return (
-		<section className="pb-25 lg:pb-30">
+		<section className="pb-25 lg:pb-30" id="innovation">
 			<div className="wrapper px-4 relative z-3  flex flex-col-reverse items-center gap-12 md:flex-row md:gap- md:justify-between">
 				<div className="flex flex-col w-full items-center md:items-start md:w-fit">
 					<div

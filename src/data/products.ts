@@ -8,6 +8,12 @@ export type Product = {
 	images: string[]
 	patent?: string
 }
+export type CompatibleProduct = {
+	id: string
+	name: string
+	lng: string
+	image: string
+}
 
 export const SHIPPING = 15
 
@@ -86,5 +92,44 @@ export const products: Product[] = [
 			'/assets/display/display-nails-3.png',
 			'/assets/display/display-nails-4.png',
 		],
+	},
+]
+
+export const compatibleProducts: CompatibleProduct[] = [
+	{
+		name: 'skadis',
+		lng: 'skadis-one',
+		id: '503.208.05',
+		image: '/assets/skadis-one.png',
+	},
+	{
+		name: 'skadis',
+		lng: 'skadis-two',
+		id: '003.207.99',
+		image: '/assets/skadis-two.png',
+	},
+	{
+		name: 'mosslanda',
+		lng: 'mosslanda',
+		id: '902.921.03',
+		image: '/assets/mosslanda-one.png',
+	},
+	{
+		name: 'mosslanda',
+		lng: 'mosslanda',
+		id: '402.917.66',
+		image: '/assets/mosslanda-two.png',
+	},
+	{
+		name: 'mosslanda',
+		lng: 'mosslanda',
+		id: '705.869.41',
+		image: '/assets/mosslanda-three.png',
+	},
+	{
+		name: 'mosslanda',
+		lng: 'mosslanda',
+		id: '805.898.35',
+		image: '/assets/mosslanda-four.png',
 	},
 ]

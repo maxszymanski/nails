@@ -35,7 +35,7 @@ function MoreCard({ product, lng }: { product: Product; lng: string }) {
 					{t(`products.products.${product.name}`)}{' '}
 				</h3>
 				<p className="text-lg leading-7 xl:text-xl xl:leading-8">
-					{product.price.toFixed(2).replace('.', ',')}€{' '}
+					{product.price.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
 				</p>
 			</div>
 			<Button variant="primary" restClass="w-full mt-auto" onClick={addItemToCart}>

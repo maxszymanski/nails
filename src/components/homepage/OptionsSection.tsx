@@ -6,7 +6,7 @@ import LinkButton from '../ui/LinkButton'
 async function OptionsSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 	return (
-		<section className="w-full bg-[#231F2D] py-12 lg:py-16">
+		<section className="w-full bg-[#231F2D] py-12 lg:py-16" id="kompetenzen">
 			<div className="wrapper px-4 flex flex-col gap-12 lg:gap-14">
 				<div className="flex flex-col w-full items-center" data-aos="fade-in">
 					<div className=" flex flex-col items-center text-center mb-6  max-w-[575px]">
