@@ -149,7 +149,7 @@
 		},
 		"includes": {
 			"title": "Zawartość zestawu",
-			"nails": ["10 IND Paznokieć", "30 naklejek z podwójną numeracją"],
+			"nails": ["12 IND Paznokieć", "30 naklejek z podwójną numeracją"],
 			"magnetic": ["10 IND Paznokieć Magnetyczny", "30 naklejek z podwójną numeracją"],
 			"display": [
 				"listwa ekspozycyjna z tworzywa sztucznego z numeracją i dwustronną taśmą klejącą",
@@ -164,7 +164,7 @@
 				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
 				"Listewka pomocnicza z tworzywa z 4 magnesami"
 			],
-			"transparent": ["10 IND Paznokieć Transparentny", "30 naklejek z podwójną numeracją"],
+			"transparent": ["12 IND Paznokieć Transparentny", "30 naklejek z podwójną numeracją"],
 			"cabinet": [
 				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
 				"Podpórka do ustawienia",
@@ -254,32 +254,32 @@
 	},
 	"faqItems": [
 		{
-			"title": "Jak często mogę ponownie używać/przeprojektowywać paznokcie?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Czy magnetyczne paznokcie można używać wielokrotnie?",
+			"answer": "Magnetyczne paznokcie mogą być używane wielokrotnie, jednak nie jest to zalecane. W każdej chwili można zamówić dodatkowe paznokcie. Zapraszamy do kontaktu!"
 		},
 		{
-			"title": "Na co muszę zwrócić uwagę podczas użytkowania?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Na co powinienem zwrócić szczególną uwagę przy używaniu magnetycznych paznokci?",
+			"answer": "Magnetyczne paznokcie wykonane są z odpornego tworzywa. Należy jednak pamiętać, że przy niewłaściwym użytkowaniu może dojść do skaleczeń."
 		},
 		{
-			"title": "Czy mogę zamówić bezpłatną próbkę?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Czy istnieje możliwość zamówienia bezpłatnej próbki?",
+			"answer": "Niestety w tej chwili nie dysponujemy bezpłatnymi próbkami."
 		},
 		{
-			"title": "Jakie są koszty wysyłki przy zamówieniu?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Jakie są koszty przesyłki?",
+			"answer": "Koszt przesyłki na terenie Niemiec jest bezpłatny. Przy zamówieniu z innych krajów zaproponujemy indywidualną ofertę."
 		},
 		{
-			"title": "Czy występują odchylenia w jakości produktu?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Czy są jakieś odchylenia w opisie produktów?",
+			"answer": "Każdy ekspozytor jest starannie wykonany ręcznie i jest wyjątkowy. W związku z tym mogą występować drobne odchylenia, takie jak różnice w odcieniu koloru lub drobne szczeliny."
 		},
 		{
-			"title": "Czy ekspozytory IND są dostępne w innych kolorach?",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"title": "Czy są ramki i szafki prezentacyjne w innych kolorach?",
+			"answer": "W tej chwili możemy zaoferować tylko kolor „biały”. Aktualnie pracujemy nad rozwiązaniem, które pozwoli na indywidualną kolorystykę ramek i szafek."
 		},
 		{
 			"title": "Instrukcje higieniczne",
-			"answer": "Paznokcie można przeprojektowywać wielokrotnie. Jednak nie jest to zalecane. Możesz zamówić u nas zamienniki w dowolnym momencie. Skontaktuj się z nami!"
+			"answer": "Aby zapewnić optymalną higienę, prosimy o dokładne umycie rąk środkiem dezynfekującym przed przymierzeniem Magnetycznych paznokci."
 		}
 	],
 	"cart": {

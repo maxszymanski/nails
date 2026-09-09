@@ -150,7 +150,7 @@
 		},
 		"includes": {
 			"title": "What's Included",
-			"nails": ["10 IND Nail Tips", "30 stickers with double numbering"],
+			"nails": ["12 IND Nail Tips", "30 stickers with double numbering"],
 			"magnetic": ["10 IND Magnetic Nail Tips", "30 stickers with double numbering"],
 			"display": [
 				"Plastic display strip with numbering and double-sided adhesive tape",
@@ -165,7 +165,7 @@
 				"2x dowels (Ø 6 mm) and screws",
 				"Auxiliary plastic strip with 4 magnets"
 			],
-			"transparent": ["10 IND Transparent Nail Tips", "30 stickers with double numbering"],
+			"transparent": ["12 IND Transparent Nail Tips", "30 stickers with double numbering"],
 			"cabinet": [
 				"IND Cabinet Display (for freestanding or wall-mounted installation)",
 				"Installation aid",
@@ -256,32 +256,32 @@
 	},
 	"faqItems": [
 		{
-			"title": "How often can I reuse/redesign the nails?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "Can the magnetic nails be reused?",
+			"answer": "The magnetic nails can be reused; however, this is not recommended. Additional nails can be ordered at any time. Please feel free to contact us!"
 		},
 		{
-			"title": "What do I need to pay attention to when using them?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "What should I pay particular attention to when using the magnetic nails?",
+			"answer": "The magnetic nails are made of durable material. However, please note that improper use may result in injury."
 		},
 		{
-			"title": "Can I order a free sample?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "Is it possible to order a free sample?",
+			"answer": "Unfortunately, we are currently unable to offer free samples."
 		},
 		{
-			"title": "If I place an order, how much are the shipping costs?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "What are the shipping costs?",
+			"answer": "Shipping within Germany is free of charge. For orders from other countries, we will provide an individual shipping quote."
 		},
 		{
-			"title": "Are there any deviations in the product quality?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "Are there any variations from the product description?",
+			"answer": "Each display is carefully handcrafted and unique. Therefore, minor variations may occur, such as slight differences in color shade or small gaps."
 		},
 		{
-			"title": "Are the IND displays also available in other colors?",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"title": "Are the display frames and cabinets available in other colors?",
+			"answer": "At the moment, we can only offer the color \"white\". We are currently working on a solution that will allow for individual color customization of the frames and cabinets."
 		},
 		{
 			"title": "Hygiene instructions",
-			"answer": "The nails can be redesigned multiple times. However, this is not recommended. You can order replacements from us at any time. Contact us!"
+			"answer": "To ensure optimal hygiene, please wash and disinfect your hands thoroughly before trying on the magnetic nails."
 		}
 	],
 	"cart": {

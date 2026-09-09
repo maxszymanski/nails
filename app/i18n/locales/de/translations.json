@@ -150,7 +150,7 @@
 		},
 		"includes": {
 			"title": "Lieferumfang des Sets",
-			"nails": ["10 IND Nägel", "30 Aufkleber mit doppelter Nummerierung"],
+			"nails": ["12 IND Nägel", "30 Aufkleber mit doppelter Nummerierung"],
 			"magnetic": ["10 IND Magnetische Nägel", "30 Aufkleber mit doppelter Nummerierung"],
 			"display": [
 				"Kunststoff-Displayleiste mit Nummerierung und doppelseitigem Klebeband",
@@ -165,7 +165,7 @@
 				"2 Dübel (Ø 6 mm) inkl. Schrauben",
 				"Kunststoffhilfe mit 4 Magneten"
 			],
-			"transparent": ["10 IND IND Transparente Nägel", "30 Aufkleber mit doppelter Nummerierung"],
+			"transparent": ["12 IND IND Transparente Nägel", "30 Aufkleber mit doppelter Nummerierung"],
 			"cabinet": [
 				"IND Display (für Stand- und Wandmontage)",
 				"Aufstellhilfe",
@@ -255,32 +255,32 @@
 	},
 	"faqItems": [
 		{
-			"title": "Wie oft kann ich die Nails wiederverwenden/neu gestalten?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Wie oft kann ich die Nägel wiederverwenden/neu designen?",
+			"answer": "Die Nägel können mehrfach designt werden. Allerdings wird dies nicht empfohlen. Sie haben jederzeit die Möglichkeit Ersatz bei uns zu bestellen.  Kontaktieren Sie uns!"
 		},
 		{
 			"title": "Worauf muss ich bei der Verwendung achten?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"answer": "Die Nägel sind aus strapazierfähigen Kunststoff hergestellt. Bitte beachten Sie, dass bei unsachgemäßen Gebrauch oder übermäßiger mechanischer Beanspruchung ein erhöhtes Verletzungsrisiko entstehen kann. Bitte überprüfen Sie in regelmäßigen Abständen die Aufstecknägel auf eventuelle Beschädigung. "
 		},
 		{
-			"title": "Kann ich ein kostenloses Muster bestellen?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Kann ich ein kostenfreies Muster bestellen?",
+			"answer": "Zurzeit können wir leider keine kostenfreien Muster bereitstellen."
 		},
 		{
-			"title": "Wie hoch sind die Versandkosten bei einer Bestellung?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Wenn ich eine Bestellung aufgebe, wie hoch sind die Versandkosten?",
+			"answer": "Innerhalb Deutschlands ist der Versand grundsätzlich kostenlos. Egal welche Menge Sie bei uns bestellen. Für Bestellungen aus anderen Ländern, erstellen wir Ihnen gerne ein individuelles und maßgeschneidertes Angebot."
 		},
 		{
-			"title": "Gibt es Abweichungen in der Produktqualität?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Gibt es Abweichungen in der Produktbeschaffenheit?",
+			"answer": "Jedes Display wird aus nachhaltigen Materialien in sorgfältiger Handarbeit hergestellt und ist ein Unikat. Dementsprechend kann es zu geringen Abweichungen, wie z.B Farbunterschieden oder abweichenden Spaltmaßen kommen."
 		},
 		{
-			"title": "Sind die IND Displays auch in anderen Farben erhältlich?",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Gibt es die IND Displays auch in anderen Farben?",
+			"answer": "Zum aktuellen Zeitpunkt können wir nur die Farbe \"Weiß\" anbieten. Es wird  zur Zeit an einer Lösung für eine individuelle Farbgestaltung der Displays gearbeitet."
 		},
 		{
-			"title": "Hygienehinweise",
-			"answer": "Die Nails können mehrmals neu gestaltet werden. Dies wird jedoch nicht empfohlen. Sie können jederzeit Ersatz bei uns bestellen. Kontaktieren Sie uns!"
+			"title": "Hinweise zur Hygiene",
+			"answer": "Um eine optimale Hygiene zu gewährleisten, bitten wir Sie, vor der Anprobe der Aufstecknägel Ihre Hände gründlich mit einem Desinfektionsmittel zu reinigen."
 		}
 	],
 	"cart": {

@@ -22,7 +22,7 @@ export const products: Product[] = [
 		id: 0,
 		name: 'nails',
 		slug: `fingernagel`,
-		price: 0.6,
+		price: 7.2,
 		images: [
 			'/assets/nails/nail.png',
 			'/assets/nails/nail-2.png',
@@ -35,7 +35,7 @@ export const products: Product[] = [
 		id: 1,
 		name: 'magnetic',
 		slug: `magnetnagel`,
-		price: 1,
+		price: 12,
 		images: [
 			'/assets/magnetic/magnetic-nails.png',
 			'/assets/magnetic/magnetic-nails-2.png',
@@ -48,7 +48,7 @@ export const products: Product[] = [
 		id: 2,
 		name: 'transparent',
 		slug: `transparente-nagel`,
-		price: 0.6,
+		price: 7.2,
 		images: [
 			'/assets/transparent/transparent-nails.png',
 			'/assets/transparent/transparent-nails-2.png',
@@ -85,7 +85,7 @@ export const products: Product[] = [
 		id: 5,
 		name: 'display',
 		slug: `nagelstreifen`,
-		price: 18.9,
+		price: 14.9,
 		images: [
 			'/assets/display/display-nails.png',
 			'/assets/display/display-nails-2.png',
