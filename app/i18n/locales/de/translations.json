@@ -39,7 +39,7 @@
 			"organizersSub": "Ordnung und bequemer Zugriff auf jede Farbe.",
 			"magnetic": "Magnetische Nägel",
 			"magneticSub": "Mühelose Farbprüfung.",
-			"nonmagnetic": "Ichtmagnetische Nägel",
+			"nonmagnetic": "Nichtmagnetische Nägel",
 			"nonmagneticSub": "Eine einfache Möglichkeit, Farben zu testen und zu vergleichen.",
 			"display": "Kunststoffleiste",
 			"displaySub": "Eine elegante Präsentation von Farben an einem Ort."
@@ -95,10 +95,10 @@
 			"cabinet": "IND Schrank Display"
 		},
 		"description": {
-			"nails": "IND Nägel sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 30 Stück.",
+			"nails": "IND Nägel sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung.",
 			"display": "IND Kunststoffleiste ist eine minimalistische Präsentationseinheit mit doppelseitigem Klebeband – geeignet für nahezu jedes Regalsystem in der Beauty- und Nagelstyling-Branche.",
 			"magnetic": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 10 Stück.",
-			"transparent": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 30 Stück.",
+			"transparent": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung.",
 			"frame": "Der IND Display Frame ist ein modernes Display mit Rahmen, das für die elegante Präsentation von Nagelfarben und -designs konzipiert wurde. Er eignet sich ideal für Kosmetikstudios sowie den Einzelhandel, hilft bei der Organisation Ihrer Kollektion und sorgt für eine übersichtliche, ansprechende Warenpräsentation. Das Display lässt sich sowohl an der Wand montieren als auch freistehend nutzen und verleiht Ihrem Angebot einen stilvollen, professionellen Look.",
 			"cabinet": "Die IND-Vitrine verbindet eine elegante Präsentation mit praktischem Stauraum. Ihr Äußeres erinnert an eine klassische Vitrine mit Rahmen, während der Innenraum über Ablagen zur geordneten Aufbewahrung von Nagelzubehör verfügt. Der Schrank lässt sich für einen einfachen Zugriff auf den Inhalt öffnen und kann entweder auf einer Arbeitsfläche aufgestellt oder an der Wand montiert werden."
 		},
@@ -150,8 +150,8 @@
 		},
 		"includes": {
 			"title": "Lieferumfang des Sets",
-			"nails": ["12 IND Nägel", "30 Aufkleber mit doppelter Nummerierung"],
-			"magnetic": ["10 IND Magnetische Nägel", "30 Aufkleber mit doppelter Nummerierung"],
+			"nails": ["12 IND Nägel", "24 Aufkleber mit doppelter Nummerierung"],
+			"magnetic": ["10 IND Magnetische Nägel", "20 Aufkleber mit doppelter Nummerierung"],
 			"display": [
 				"Kunststoff-Displayleiste mit Nummerierung und doppelseitigem Klebeband",
 				"14 IND Nägel",
@@ -165,7 +165,7 @@
 				"2 Dübel (Ø 6 mm) inkl. Schrauben",
 				"Kunststoffhilfe mit 4 Magneten"
 			],
-			"transparent": ["12 IND IND Transparente Nägel", "30 Aufkleber mit doppelter Nummerierung"],
+			"transparent": ["12 IND IND Transparente Nägel", "24 Aufkleber mit doppelter Nummerierung"],
 			"cabinet": [
 				"IND Display (für Stand- und Wandmontage)",
 				"Aufstellhilfe",

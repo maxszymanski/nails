@@ -94,10 +94,10 @@
 			"cabinet": "IND Szafka Ekspozycyjna"
 		},
 		"description": {
-			"nails": "IND Nails to klasyczne próbki tipów zaprojektowane do łatwej i profesjonalnej prezentacji kolorów lakierów. Można je nosić na palcu lub zawieszać, oferując praktyczne i wszechstronne rozwiązanie ekspozycyjne. Minimalne zamówienie 30 sztuk.",
+			"nails": "IND Nails to klasyczne próbki tipów zaprojektowane do łatwej i profesjonalnej prezentacji kolorów lakierów. Można je nosić na palcu lub zawieszać, oferując praktyczne i wszechstronne rozwiązanie ekspozycyjne.",
 			"display": "IND Listwa Ekspozycyjna to minimalistyczny ekspozytor z dwustronną taśmą klejącą–pasujący do niemal każdego regału w branży beauty oraz salonach stylizacji paznokci.",
 			"magnetic": "IND Magnetyczne Paznokcie to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z IND Rahmendisplay, IND Schrankdisplay oraz IND Displayleiste stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne. Minimalna ilość zamówienia: 10 sztuk.",
-			"transparent": "IND Paznokieć Transparentny to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z listwą ekspozycyjną IND stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne. Minimalna ilość zamówienia: 30 sztuk.",
+			"transparent": "IND Paznokieć Transparentny to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z listwą ekspozycyjną IND stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne.",
 			"frame": "IND Ramka Ekspozycyjna to nowoczesna ekspozycja w ramie, stworzona z myślą o eleganckiej prezentacji kolorów i wzorów paznokci. Idealna do salonów kosmetycznych i sklepów, pomaga uporządkować kolekcję oraz zapewnia jej przejrzystą prezentację. Może być zamontowana na ścianie lub ustawiona jako stojąca ekspozycja, oferując estetyczny i profesjonalny wygląd.",
 			"cabinet": "IND Cabinet Display"
 		},
@@ -149,8 +149,8 @@
 		},
 		"includes": {
 			"title": "Zawartość zestawu",
-			"nails": ["12 IND Paznokieć", "30 naklejek z podwójną numeracją"],
-			"magnetic": ["10 IND Paznokieć Magnetyczny", "30 naklejek z podwójną numeracją"],
+			"nails": ["12 IND Paznokieć", "24 naklejek z podwójną numeracją"],
+			"magnetic": ["10 IND Paznokieć Magnetyczny", "20 naklejek z podwójną numeracją"],
 			"display": [
 				"listwa ekspozycyjna z tworzywa sztucznego z numeracją i dwustronną taśmą klejącą",
 				"14 IND Paznokieć",
@@ -164,7 +164,7 @@
 				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
 				"Listewka pomocnicza z tworzywa z 4 magnesami"
 			],
-			"transparent": ["12 IND Paznokieć Transparentny", "30 naklejek z podwójną numeracją"],
+			"transparent": ["12 IND Paznokieć Transparentny", "24 naklejek z podwójną numeracją"],
 			"cabinet": [
 				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
 				"Podpórka do ustawienia",
