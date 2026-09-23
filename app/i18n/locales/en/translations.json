@@ -154,8 +154,8 @@
 			"magnetic": ["10 IND Magnetic Nail Tips", "20 stickers with double numbering"],
 			"display": [
 				"Plastic display strip with numbering and double-sided adhesive tape",
-				"14 IND Nail Tips",
-				"30 stickers with double numbering"
+				"12 IND Nail Tips",
+				"24 stickers with double numbering"
 			],
 			"frame": [
 				"IND Frame Display (for freestanding or wall-mounted installation)",
@@ -319,7 +319,8 @@
 		"spam": "If you don't see it, please check your spam folder.",
 		"thanks": "Thank you for choosing Iwon Naildisplay!",
 		"close": "Got it!",
-		"orderError": "We couldn't send your order. Please try again."
+		"orderError": "We couldn't send your order. Please try again.",
+		"orderExpired": "This order attempt has expired. Please contact us to check its status before placing another order."
 	},
 	"validation": {
 		"firstNameRequired": "Please enter your first name",

@@ -14,14 +14,9 @@ import CompatibleProducts from './CompatibleProducts'
 
 export type CartInformation = {
 	items: {
-		name: string
-		image: string
-		price: number
+		id: number
 		quantity: number
 	}[]
-	totalValue: number
-	shipping: number
-	totalWithShipping: number
 }
 
 function CartModal() {
@@ -40,18 +35,11 @@ function CartModal() {
 
 	const progress = Math.min(100, (totalValue / 150) * 100)
 
-	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'localhost:3000'
-
 	const cartInformation: CartInformation = {
 		items: items.map(item => ({
-			name: t(`products.products.${item.name}`),
-			image: `${baseUrl}${item.image}`,
-			price: item.price,
+			id: item.id,
 			quantity: item.quantity,
 		})),
-		totalValue: parseFloat(totalValue.toFixed(2)),
-		shipping,
-		totalWithShipping: parseFloat(totalWithShipping.toFixed(2)),
 	}
 
 	return (

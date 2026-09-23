@@ -153,8 +153,8 @@
 			"magnetic": ["10 IND Paznokieć Magnetyczny", "20 naklejek z podwójną numeracją"],
 			"display": [
 				"listwa ekspozycyjna z tworzywa sztucznego z numeracją i dwustronną taśmą klejącą",
-				"14 IND Paznokieć",
-				"30 naklejek z podwójną numeracją"
+				"12 IND Paznokieć",
+				"24 naklejek z podwójną numeracją"
 			],
 			"frame": [
 				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
@@ -317,7 +317,8 @@
 		"spam": "Jeśli nie widzisz e-maila, sprawdź folder spam.",
 		"thanks": "Dziękujemy za wybranie Iwon Naildisplay!",
 		"close": "Rozumiem!",
-		"orderError": "Nie udało się wysłać zamówienia. Spróbuj ponownie."
+		"orderError": "Nie udało się wysłać zamówienia. Spróbuj ponownie.",
+		"orderExpired": "Ta próba zamówienia wygasła. Skontaktuj się z nami, aby sprawdzić jej status przed złożeniem kolejnego zamówienia."
 	},
 	"validation": {
 		"firstNameRequired": "Proszę podać imię",

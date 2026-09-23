@@ -11,6 +11,8 @@ import { usePathname } from 'next/navigation'
 import { useCartStore } from '../stores/CartStore'
 import { CartInformation } from './CartModal'
 import { toast } from 'react-toastify'
+import { useRef } from 'react'
+import { getOrderAttempt } from '@/src/lib/order-attempt'
 
 function OrderForm({
 	cartInformation,
@@ -28,6 +30,7 @@ function OrderForm({
 
 	const lng = pathname.split('/')[1] || 'en'
 	const clearCart = useCartStore(state => state.clearCart)
+	const submitting = useRef(false)
 
 	const contactSchema = z.object({
 		firstName: z.string().nonempty(t('validation.firstNameRequired')).min(3, t('validation.firstNameMin')),
@@ -57,31 +60,54 @@ function OrderForm({
 	} = useForm<ContactType>({ resolver: zodResolver(contactSchema) })
 
 	const onSubmit: SubmitHandler<ContactType> = async data => {
+		if (submitting.current || isSubmitting) return
+		if (cartInformation.items.length === 0) {
+			toast.error(t('cart.empty'))
+			return
+		}
+		submitting.current = true
 		setIsSubmitting(true)
 
 		try {
+			const payload = {
+				customer: data,
+				cart: { items: [...cartInformation.items].sort((a, b) => a.id - b.id) },
+				lng,
+			}
+			const attempt = await getOrderAttempt(JSON.stringify(payload))
 			const response = await fetch('/api/order', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					customer: data,
-					cart: cartInformation,
-					lng,
+					...payload,
+					orderId: attempt.orderId,
+					createdAt: attempt.createdAt,
 				}),
 			})
 
 			if (!response.ok) {
+				const result = await response.json()
+				if (result.code === 'ORDER_EXPIRED') {
+					toast.error(t('cart.orderExpired'))
+					return
+				}
 				throw new Error('Order request failed')
 			}
 
+			try {
+				sessionStorage.removeItem(attempt.storageKey)
+			} catch {
+				// Storage cleanup must not turn an accepted order into a retry.
+			}
 			reset()
 			clearCart()
 			setStep(3)
 		} catch {
 			toast.error(t('cart.orderError'))
 		} finally {
+			submitting.current = false
 			setIsSubmitting(false)
 		}
 	}
