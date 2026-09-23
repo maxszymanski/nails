@@ -55,7 +55,7 @@ const templates = {
 		paypal: 'Adres PayPal',
 		shippingTitle: 'Wysyłka',
 		shipping:
-			'Paczka zostanie nadana na poczcie w ciągu 3 dni roboczych od momentu zaksięgowania wpłaty, na adres dostawy podany przez Ciebie w formularzu.',
+			'Paczka zostanie nadana na poczcie w ciągu 24 godzin od momentu zaksięgowania wpłaty, na adres dostawy podany przez Ciebie w formularzu.',
 		instagram:
 			'Jeśli masz pytania o wymiary do regałów IKEA, napisz do nas na Instagramie (@iwonnaildisplay).',
 		regards: 'Pozdrawiamy, Twój zespół Iwonnaildisplay',
@@ -78,7 +78,7 @@ const templates = {
 		paypal: 'PayPal-Adresse',
 		shippingTitle: 'Versand',
 		shipping:
-			'Der Versand erfolgt innerhalb von 3 Werktagen nach Erhalt des Geldes an die von dir im Formular angegebene Lieferadresse.',
+			'Der Versand erfolgt innerhalb von 24 Stunden nach Zahlungseingang an die von dir im Formular angegebene Lieferadresse.',
 		instagram:
 			'Bei Fragen zu den Maßen für deine IKEA-Regale schreib uns einfach auf Instagram (@iwonnaildisplay).',
 		regards: 'Liebe Grüße, Dein Team von Iwonnaildisplay',
@@ -101,7 +101,7 @@ const templates = {
 		paypal: 'PayPal address',
 		shippingTitle: 'Shipping',
 		shipping:
-			'Your package will be shipped within 3 business days of the payment being credited, to the delivery address provided in the form.',
+			'Your package will be shipped within 24 hours of the payment being credited, to the delivery address provided in the form.',
 		instagram:
 			'If you have any questions about the dimensions for IKEA shelves, please contact us on Instagram (@iwonnaildisplay).',
 		regards: 'Best regards, Your Iwonnaildisplay Team',
