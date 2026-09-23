@@ -2,52 +2,14 @@ import { getT } from '@/app/i18n'
 import Pill from '@/src/components/ui/Pill'
 import { Params } from '../layout'
 import ProductCard from '@/src/components/ui/ProductCard'
+import { products } from '@/src/data/products'
 
 async function page({ params }: { params: Params }) {
 	const { lng } = await params
 
 	const { t } = await getT('translations')
 
-	const products = [
-		{ id: 0, name: 'nails', href: `fingernagel`, price: 0.6, image: '/assets/nails.png' },
-
-		{
-			id: 1,
-			name: 'magnetic',
-			href: `magnetnagel`,
-			price: 0.6,
-			image: '/assets/magnetic-nails.png',
-		},
-
-		{
-			id: 2,
-			name: 'transparent',
-			href: `transparente-nagel`,
-			price: 0.6,
-			image: '/assets/transparent-nails.png',
-		},
-		{
-			id: 3,
-			name: 'frame',
-			href: `rahmendisplay`,
-			price: 0.6,
-			image: '/assets/frame-nails.png',
-		},
-		{
-			id: 4,
-			name: 'cabinet',
-			href: `vitrinenauslage`,
-			price: 0.6,
-			image: '/assets/cabinet-nails.png',
-		},
-		{
-			id: 5,
-			name: 'display',
-			href: `nagelstreifen`,
-			price: 0.6,
-			image: '/assets/display-nails.png',
-		},
-	]
+	
 	return (
 		<main className="flex-1 ">
 			<section className="mt-36 lg:mt-36">
