@@ -1,0 +1,346 @@
+{
+	"nav": {
+		"home": "Strona główna",
+		"products": "Produkty",
+		"legal": "Regulamin",
+		"faq": "FAQ",
+		"socials": "Nasze Social Media"
+	},
+	"footer": {
+		"info": "Iwon Nail Display tworzy innowacyjne systemy prezentacji z wykorzystaniem unikalnych inteligentnych wzorników paznokci. Nasze rozwiązania nadają Twojemu salonowi nowoczesny wygląd i wyznaczają nowe standardy w prezentacji kolorów i wzorów.",
+		"company": {
+			"title": "Strona główna",
+			"system": "Nasz System",
+			"innovation": "Nasza Innowacja",
+			"possiblities": "Nasze Możliwości",
+			"organisation": "Organizacja"
+		},
+		"legal": {
+			"title": "Inne",
+			"tos": "Regulamin",
+			"faq": "FAQ"
+		},
+		"copyright": "Wszelkie prawa zastrzeżone."
+	},
+	"homepage": {
+		"header": {
+			"title": "Profesjonalna Ekspozycja",
+			"titleTwo": "Kolorów Paznokci",
+			"subtitle": "Zaprezentuj swoje kolory w elegancki i przejrzysty sposób. Nasze profesjonalne ekspozytory pomagają uporządkować kolekcję, ułatwiają wybór odcienia i wspierają skuteczną sprzedaż.",
+			"cta": "Zobacz Nasze Produkty"
+		},
+		"products": {
+			"title": "Najlepszy sposób na",
+			"titleTwo": "Prezentację Kolorów Paznokci",
+			"subtitle": "Modułowy system ekspozycji kolorów paznokci, zaprojektowany zarówno do codziennego użytku, jak i profesjonalnych salonów–pomaga organizować prezentację i ułatwia wybór koloru.",
+			"cta": "Zobacz Nasze Produkty",
+			"pill": "Nasz System",
+			"organizers": "Organizery",
+			"organizersSub": "Porządek i wygodny dostęp do każdego koloru.",
+			"magnetic": "Paznokcie Magnetyczne",
+			"magneticSub": "Testowanie kolorów bez wysiłku.",
+			"nonmagnetic": "Paznokcie Niemagnetyczne",
+			"nonmagneticSub": "Prosty sposób na testowanie i porównywanie kolorów.",
+			"display": "IND Listwy Ekspozycyjne",
+			"displaySub": "Elegancka prezentacja kolorów w jednym miejscu."
+		},
+		"choice": {
+			"title": "Zaprojektowany dla",
+			"titleTwo": "Łatwego Wyboru",
+			"subtitle": "Załóż wzornik paznokca bezpośrednio na palec, aby od razu zobabczyć, jak kolor lub wzór prezentuje się w rzeczywistości. Ta prosta metoda testowania ułatwia porównywanie odcieni i pomaga pewnie wybrać idealny wzór.",
+			"cta": "Zamów teraz",
+			"pill": "Nasza Innowacja"
+		},
+		"options": {
+			"title": "Trzy Opcje Ekspozycji. Jeden Inteligentny System.",
+			"subtitle": "Wybierz konfigurację dopasowaną do Twoich potrzeb–IND szafka zapewniająca pełną organizację, IND ramka wszechstronna lub IND uniwersalna listwa ekspozycyjna.",
+			"pill": "Nasze Możliwości",
+			"frame": "IND Ramka Ekspozycyjna",
+			"frameSub": "Minimalistyczne rozwiązanie do prezentacji wzór i kolorów paznokci.",
+			"frameCta": "Odkryj Szczegóły",
+			"cabinet": "IND Szafka Ekspozycyjna",
+			"cabinetSub": "Miejsca do przechowywania i ekspozycji w jednym.",
+			"cabinetCta": "Odkryj Szczegóły",
+			"display": "IND Listwa Ekspozycyjna",
+			"displaySub": "Minimalistyczny ekspozytor z dwustronną taśmą klejącą–pasujący do niemal każdego regału.",
+			"displayCta": "Odkryj Szczegóły",
+			"new": "Nowość"
+		},
+		"organization": {
+			"title": "Inteligentna Organizacja Kolorów",
+			"subtitle": "Przejrzysty system numeracji łączy każdy wzornik z odpowiednią butelką lakieru, ułatwiając szybkie odnajdywanie, porządkowanie i prezentowanie każdego koloru.",
+			"pill": "Organizacja"
+		},
+		"upgrade": {
+			"title": "Ulepsz Ekspozycję Swojego Salonu",
+			"subtitle": "Odkryj prostszy, bardziej uporządkowany i elegancki sposób prezentowania kolorów, stworzony z myślą zarówno o codziennej pracy, jak i profesjonalnych salonach.",
+			"pill": "Gotowy?",
+			"cta": "Zobacz Nasze Produkty"
+		}
+	},
+	"products": {
+		"pill": "Nasze Produkty",
+		"title": "Zbuduj Swój Idealny Zestaw Ekspozycyjny",
+		"subtitle": "Odkryj wszystkie elementy systemu Iwon Nail Display, stworzone do organizacji, prezentacji i efektownego wyeksponowania Twojej kolekcji lakierów.",
+		"mayLike": "Polecane dla Ciebie",
+		"tax": "plus ustawowy podatek VAT.",
+		"products": {
+			"title": "Produkty",
+			"nails": "IND Paznokieć",
+			"display": "IND Listwa Ekspozycyjna",
+			"magnetic": "IND Paznokieć Magnetyczny",
+			"transparent": "IND Paznokieć Transparentny",
+			"frame": "IND Ramka Ekspozycyjna",
+			"cabinet": "IND Szafka Ekspozycyjna"
+		},
+		"description": {
+			"nails": "IND Nails to klasyczne próbki tipów zaprojektowane do łatwej i profesjonalnej prezentacji kolorów lakierów. Można je nosić na palcu lub zawieszać, oferując praktyczne i wszechstronne rozwiązanie ekspozycyjne.",
+			"display": "IND Listwa Ekspozycyjna to minimalistyczny ekspozytor z dwustronną taśmą klejącą–pasujący do niemal każdego regału w branży beauty oraz salonach stylizacji paznokci.",
+			"magnetic": "IND Magnetyczne Paznokcie to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z IND Rahmendisplay, IND Schrankdisplay oraz IND Displayleiste stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne. Minimalna ilość zamówienia: 10 sztuk.",
+			"transparent": "IND Paznokieć Transparentny to zdejmowane wzorniki do profesjonalnej prezentacji kolorów lakierów i zdobień paznokci. Wzorniki można przymierzać bezpośrednio na palcu, co pozwala na realistyczne przedstawienie koloru na dłoni. W połączeniu z listwą ekspozycyjną IND stanowią innowacyjne i wszechstronne rozwiązanie ekspozycyjne.",
+			"frame": "IND Ramka Ekspozycyjna to nowoczesna ekspozycja w ramie, stworzona z myślą o eleganckiej prezentacji kolorów i wzorów paznokci. Idealna do salonów kosmetycznych i sklepów, pomaga uporządkować kolekcję oraz zapewnia jej przejrzystą prezentację. Może być zamontowana na ścianie lub ustawiona jako stojąca ekspozycja, oferując estetyczny i profesjonalny wygląd.",
+			"cabinet": "IND Cabinet Display"
+		},
+		"features": {
+			"title": "Cechy",
+			"nails": [
+				"Wykonane z przezroczystego, transparentnego tworzywa",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Listwa Ekspozycyjna",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
+			],
+			"magnetic": [
+				"Wykonane z tworzywa sztucznego w naturalnym odcieniu",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Rahmendisplay, IND Schrankdisplay oraz IND Displayleiste",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
+			],
+			"display": [
+				"Szybki i łatwy montaż dzięki dwustronnej taśmie klejącej",
+				"Wzorniki paznokci do przymierzania umożliwiają bezpośrednie testowanie",
+				"Czytelna numeracja umożliwiająca natychmiastowy wybór koloru",
+				"Kompatybilne z magnetycznymi wzornikami do przymierzania",
+				"Nieograniczona możliwość rozbudowy dzięki dodatkowym listwom ekspozycyjnym",
+				"Przejrzysta i estetyczna prezentacja kolorów"
+			],
+			"frame": [
+				"Elegancki design do profesjonalnej prezentacji",
+				"Przeznaczony do montażu ściennego lub jako stojak",
+				"Umożliwia estetyczną prezentację wzorów paznokci i akcesoriów",
+				"Nowoczesny, biały wygląd pasujący do każdego wnętrza"
+			],
+			"transparent": [
+				"Wykonane z przezroczystego, transparentnego tworzywa",
+				"Naturalne i precyzyjne odwzorowanie koloru",
+				"Możliwość połączenia z IND Listwa Ekspozycyjna",
+				"Można je założyć bezpośrednio na jeden palec lub na wszystkie dziesięć palców",
+				"Dzięki kształtowi litery U i funkcji sprężynującej wzorniki samodzielnie utrzymują się na palcach",
+				"Dopasowują się do każdego kształtu palców"
+			],
+			"cabinet": [
+				"Rozwiązanie 2 w 1–ekspozycja i przechowywanie",
+				"Wbudowane półki zapewniają uporządkowane przechowywanie",
+				"Dzięki kompaktowym wymiarom szafa ekspozycyjna pasuje do każdego salonu i każdego stanowiska pracy. Idealna do montażu na ścianie i profesjonalnie zaprojektowana"
+			]
+		},
+		"includes": {
+			"title": "Zawartość zestawu",
+			"nails": ["12 IND Paznokieć", "24 naklejek z podwójną numeracją"],
+			"magnetic": ["10 IND Paznokieć Magnetyczny", "20 naklejek z podwójną numeracją"],
+			"display": [
+				"listwa ekspozycyjna z tworzywa sztucznego z numeracją i dwustronną taśmą klejącą",
+				"14 IND Paznokieć",
+				"30 naklejek z podwójną numeracją"
+			],
+			"frame": [
+				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
+				"Podpórka do ustawienia",
+				"30 magnetycznych gwoździ (naturalny kolor)",
+				"60 naklejek z podwójną numeracją",
+				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
+				"Listewka pomocnicza z tworzywa z 4 magnesami"
+			],
+			"transparent": ["12 IND Paznokieć Transparentny", "24 naklejek z podwójną numeracją"],
+			"cabinet": [
+				"IND Szafka Ekspozycyjna (do montażu stojącego i ściennego)",
+				"Podpórka do ustawienia",
+				"30 magnetycznych gwoździ (naturalny kolor)",
+				"60 naklejek z podwójną numeracją",
+				"2 kołki rozporowe (Ø 6 mm) z wkrętami",
+				"Listewka pomocnicza z tworzywa z 4 magnesami"
+			]
+		},
+		"dimensions": {
+			"title": "Wymiary",
+			"nails": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
+			"display": ["250 mm x 30 mm x 8 mm ( L x B x H)"],
+			"frame": [
+				"IND Szafka Ekspozycyjna: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Listewka pomocnicza: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Paznokcie Magnetyczne: 48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm",
+				"Rozstaw otworów montażowych: 215 mm"
+			],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm"],
+			"cabinet": [
+				"IND Szafka Ekspozycyjna: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Listewka pomocnicza: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Paznokcie Magnetyczne: 48 mm x 10 mm x 10 mm ( L x B x H), Stopka: 25mm",
+				"Rozstaw otworów montażowych: 215 mm"
+			]
+		},
+		"details": "Szczegóły",
+		"add": "Dodaj do Koszyka",
+		"patent": "Ten produkt jest chroniony niemieckim patentem nr"
+	},
+	"faq": {
+		"pill": "FAQ",
+		"title": "Często zadawane pytania",
+		"subtitle": "Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych produktów, procesu zamówienia i działania systemu."
+	},
+	"privacy": {
+		"pill": "Ostatnia aktualizacja: 18.03.2026",
+		"title": "Informacje prawne",
+		"subtitle": "Informacje zgodnie z § 5 TMG",
+		"general": "Informacje ogólne",
+		"generalOne": "Poniższe informacje dają przegląd tego, jak Twoje dane osobowe są zbierane i przetwarzane podczas odwiedzania naszej strony internetowej. Dane osobowe to wszelkie dane, za pomocą których możesz zostać zidentyfikowany. Podmiotem odpowiedzialnym za przetwarzanie danych na tej stronie jest:",
+		"phone": "Telefon",
+		"data": "Zbieranie danych na naszej stronie",
+		"dataOne": "Jak zbieramy Twoje dane?",
+		"dataOneSub": "Twoje dane są zbierane z jednej strony poprzez to, że nam je przekazujesz, na przykład składając zamówienie lub wypełniając formularz kontaktowy lub zamówienia. Inne dane są zbierane automatycznie podczas odwiedzania naszej strony przez systemy IT. Są to przede wszystkim dane techniczne, takie jak typ przeglądarki, system operacyjny lub czas wyświetlenia strony.",
+		"dataTwo": "Do czego wykorzystujemy Twoje dane?",
+		"dataTwoSub": "Używamy Twoich danych, aby:",
+		"dataTwoList": [
+			"przetwarzać i realizować zamówienia",
+			"obsługiwać płatności i dostawy",
+			"odpowiadać na zapytania",
+			"zapewnić prawidłowe funkcjonowanie strony",
+			"ulepszać nasze usługi i doświadczenia użytkownika"
+		],
+		"legal": "Podstawa prawna przetwarzania",
+		"legalSub": "Twoje dane są przetwarzane zgodnie z RODO na podstawie:",
+		"legalSubList": [
+			"Art. 6 ust. 1 lit. b – przetwarzanie niezbędne do wykonania umowy (zamówienia)",
+			"Art. 6 ust. 1 lit. c – obowiązki prawne (np. przepisy podatkowe)",
+			"Art. 6 ust. 1 lit. f – uzasadnione interesy (funkcjonalność strony, analityka)"
+		],
+		"dataSharing": "Udostępnianie danych",
+		"dataSharingSub": "Udostępniamy Twoje dane tylko wtedy, gdy jest to konieczne, na przykład:",
+		"dataSharingSubList": ["dostawcom płatności", "firmom kurierskim", "dostawcom IT i hostingu"],
+		"dataSharingUnderlist": "Wszyscy zewnętrzni dostawcy są zobowiązani do przestrzegania przepisów o ochronie danych.",
+		"cookies": "Pliki cookie i analityka",
+		"cookiesUnder": "Nasza strona używa plików cookie, aby zapewnić prawidłowe działanie i poprawić doświadczenie użytkownika. Niektóre pliki cookie są niezbędne, inne pomagają nam analizować zachowanie użytkowników. Możesz kontrolować lub wyłączyć pliki cookie w ustawieniach przeglądarki.",
+		"retention": "Przechowywanie danych",
+		"retentionSub": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to niezbędne do wypełnienia zobowiązań umownych i prawnych. Następnie dane są usuwane, chyba że przepisy prawa wymagają dalszego przechowywania.",
+		"rights": "Twoje prawa",
+		"rightsSub": "Masz prawo do",
+		"rightsList": [
+			"dostępu do swoich przechowywanych danych (art. 15 RODO)",
+			"poprawienia nieprawidłowych danych (art. 16 RODO)",
+			"usunięcia danych (art. 17 RODO)",
+			"ograniczenia przetwarzania (art. 18 RODO)",
+			"sprzeciwu wobec przetwarzania (art. 21 RODO)",
+			"przenoszenia danych (art. 20 RODO)"
+		],
+		"rightsUnderlist": "Możesz skontaktować się z nami w dowolnym momencie w sprawie swoich danych.",
+		"security": "Bezpieczeństwo danych",
+		"securitySub": "Podejmujemy odpowiednie techniczne i organizacyjne środki w celu ochrony Twoich danych. Jednak transmisja danych przez Internet (np. e-mail) może mieć luki w zabezpieczeniach.",
+		"disclaimer": "Zastrzeżenie",
+		"disclaimerSub": "Informacje na tej stronie służą wyłącznie celom informacyjnym. Nie gwarantujemy kompletności, dokładności ani aktualności treści. Nasza strona może zawierać linki do zewnętrznych stron trzecich. Nie mamy wpływu na ich treść i nie ponosimy za nią odpowiedzialności. Za treść linkowanych stron odpowiada ich dostawca. Jeśli zauważysz naruszenia prawa na naszej stronie, prosimy o poinformowanie nas. Usuniemy takie treści niezwłocznie."
+	},
+	"faqItems": [
+		{
+			"title": "Czy magnetyczne paznokcie można używać wielokrotnie?",
+			"answer": "Magnetyczne paznokcie mogą być używane wielokrotnie, jednak nie jest to zalecane. W każdej chwili można zamówić dodatkowe paznokcie. Zapraszamy do kontaktu!"
+		},
+		{
+			"title": "Na co powinienem zwrócić szczególną uwagę przy używaniu magnetycznych paznokci?",
+			"answer": "Magnetyczne paznokcie wykonane są z odpornego tworzywa. Należy jednak pamiętać, że przy niewłaściwym użytkowaniu może dojść do skaleczeń."
+		},
+		{
+			"title": "Czy istnieje możliwość zamówienia bezpłatnej próbki?",
+			"answer": "Niestety w tej chwili nie dysponujemy bezpłatnymi próbkami."
+		},
+		{
+			"title": "Jakie są koszty przesyłki?",
+			"answer": "Koszt przesyłki na terenie Niemiec jest bezpłatny. Przy zamówieniu z innych krajów zaproponujemy indywidualną ofertę."
+		},
+		{
+			"title": "Czy są jakieś odchylenia w opisie produktów?",
+			"answer": "Każdy ekspozytor jest starannie wykonany ręcznie i jest wyjątkowy. W związku z tym mogą występować drobne odchylenia, takie jak różnice w odcieniu koloru lub drobne szczeliny."
+		},
+		{
+			"title": "Czy są ramki i szafki prezentacyjne w innych kolorach?",
+			"answer": "W tej chwili możemy zaoferować tylko kolor „biały”. Aktualnie pracujemy nad rozwiązaniem, które pozwoli na indywidualną kolorystykę ramek i szafek."
+		},
+		{
+			"title": "Instrukcje higieniczne",
+			"answer": "Aby zapewnić optymalną higienę, prosimy o dokładne umycie rąk środkiem dezynfekującym przed przymierzeniem Magnetycznych paznokci."
+		}
+	],
+	"cart": {
+		"addedToCart": "Produkt dodany do koszyka",
+		"title": "Twój koszyk",
+		"closeModal": "Zamknij okno",
+		"remove": "Usuń",
+		"empty": "Twój koszyk jest pusty",
+		"value": "Wartość produktów",
+		"shipping": "Dostawa",
+		"total": "Razem",
+		"free": "Bezpłatna",
+		"quote": "Przejdź do formularza",
+		"freeShipping": "Do darmowej wysyłki brakuje",
+		"shippingInfo": "Z uwagi na dużą ilość zamówień mogą wystąpić opóźnienia.",
+		"order": "Złóż zamówienie",
+		"orderTitle": "Formularz Zamówienia",
+		"name": "Twoje imię",
+		"lastName": "Twoje nazwisko",
+		"address": "Adres Dostawy",
+		"zipCode": "Kod pocztowy",
+		"city": "Miasto",
+		"instagram": "Nazwa na Instagramie",
+		"email": "Adres Email",
+		"message": "Dodatkowa wiadomość",
+		"enterMessage": "Napisz swoją wiadomość...",
+		"read": "Zapoznałem/am się z",
+		"terms": "polityką ochrony danych osobowych.",
+		"pill": "Wysyłka w ciągu 24 godzin od otrzymania płatności.",
+		"success": "Twoje zamówienie zostało pomyślnie złożone.",
+		"successTitle": "Potwierdzenie",
+		"thankYou": "Zamówienie złożone!",
+		"subtitle": "Twoje zamówienie zostało pomyślnie przesłane.",
+		"emailSend": "Wysłaliśmy Ci e-mail ze szczegółami płatności. Sprawdź swoją skrzynkę odbiorczą i dokończ płatność, aby sfinalizować zamówienie.",
+		"spam": "Jeśli nie widzisz e-maila, sprawdź folder spam.",
+		"thanks": "Dziękujemy za wybranie Iwon Naildisplay!",
+		"close": "Rozumiem!",
+		"orderError": "Nie udało się wysłać zamówienia. Spróbuj ponownie."
+	},
+	"validation": {
+		"firstNameRequired": "Proszę podać imię",
+		"firstNameMin": "Imię musi mieć co najmniej 3 znaki",
+		"lastNameRequired": "Proszę podać nazwisko",
+		"lastNameMin": "Nazwisko musi mieć co najmniej 3 znaki",
+		"address": "Proszę podać adres",
+		"zipCode": "Proszę podać kod pocztowy",
+		"zipCodeInvalid": "Podaj poprawny kod pocztowy",
+		"city": "Proszę podać miasto",
+		"cityMin": "Miasto musi mieć co najmniej 2 znaki",
+		"emailInvalid": "Podaj poprawny adres e-mail",
+		"termsRequired": "Proszę zaakceptować politykę prywatności"
+	},
+	"compatible": {
+		"title": "Kompatybilne Produkty IKEA",
+		"skadis-one": "Tablice Perforowana",
+		"skadis-two": "Półka na obrazy",
+		"mosslanda": "Półka na obrazy",
+		"compatible": "Kompatybilne Produkty IKEA",
+		"back": "Powrót",
+		"article": "Nr art.",
+		"copy": "Skopiuj numer aktykułu",
+		"copiedToClipboard": "Skopiowano do schowka"
+	}
+}

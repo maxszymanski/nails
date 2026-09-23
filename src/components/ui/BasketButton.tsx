@@ -1,9 +1,34 @@
+'use client'
+import { useCartStore } from '../stores/CartStore'
+import useModalStore from '../stores/modalStore'
 import Button from './Button'
 
 function BasketButton() {
+	const totalQuantity = useCartStore(state => state.items.reduce((sum, i) => sum + i.quantity, 0))
+
+	const setOpenModal = useModalStore(state => state.setOpenModal)
+
+	const handleOpenCart = () => {
+		if (totalQuantity < 1) {
+			return
+		}
+		setOpenModal('cart')
+	}
+
 	return (
-		<Button variant="rounded">
-			<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<Button variant="rounded" onClick={handleOpenCart}>
+			{totalQuantity > 0 && (
+				<span className="absolute top-0 right-0 size-4 shrink-0 rounded-full bg-[#C8102E] text-white flex items-center justify-center text-xs leading-4 font-medium pointer-events-none">
+					{totalQuantity}
+				</span>
+			)}
+			<svg
+				width="19"
+				height="18"
+				viewBox="0 0 19 18"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				className="pointer-events-none">
 				<path
 					d="M0.790132 14.7003C0.735407 14.9465 0.736665 15.2018 0.793816 15.4475C0.850966 15.6931 0.962549 15.9227 1.12033 16.1195C1.27811 16.3162 1.47805 16.475 1.70541 16.5841C1.93277 16.6933 2.18173 16.75 2.43392 16.75H15.9076C16.1598 16.75 16.4088 16.6933 16.6361 16.5841C16.8635 16.475 17.0634 16.3162 17.2212 16.1195C17.379 15.9227 17.4906 15.6931 17.5477 15.4475C17.6049 15.2018 17.6061 14.9465 17.5514 14.7003L15.8672 7.12137C15.784 6.74737 15.5759 6.41289 15.277 6.17314C14.9782 5.93339 14.6065 5.8027 14.2234 5.80263H4.11813C3.735 5.8027 3.36334 5.93339 3.0645 6.17314C2.76565 6.41289 2.55748 6.74737 2.47434 7.12137L0.790132 14.7003Z"
 					stroke="#565656"

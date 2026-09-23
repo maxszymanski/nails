@@ -6,7 +6,7 @@ import Image from 'next/image'
 async function ChoiceSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 	return (
-		<section className="pb-25 lg:pb-30">
+		<section className="pb-25 lg:pb-30" id="innovation">
 			<div className="wrapper px-4 relative z-3  flex flex-col-reverse items-center gap-12 md:flex-row md:gap- md:justify-between">
 				<div className="flex flex-col w-full items-center md:items-start md:w-fit">
 					<div
@@ -17,11 +17,11 @@ async function ChoiceSection({ lng }: { lng: string }) {
 							{t('homepage.choice.title')} <br />
 							{t('homepage.choice.titleTwo')}
 						</h2>
-						<p className="text-grayscale-500 leading-6 w-full max-w-[481px]">
+						<p className="text-grayscale-500 leading-6 w-full max-w-[540px] text-balance">
 							{t('homepage.choice.subtitle')}
 						</p>
 					</div>
-					<LinkButton href={`${lng}/products`} variant="primary" restClass="w-fit" data-aos="fade-in">
+					<LinkButton href={`${lng}/produkte`} variant="primary" restClass="w-fit" data-aos="fade-in">
 						{t('homepage.choice.cta')}
 						<svg
 							width="20px"

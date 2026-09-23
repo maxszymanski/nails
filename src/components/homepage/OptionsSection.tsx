@@ -6,13 +6,14 @@ import LinkButton from '../ui/LinkButton'
 async function OptionsSection({ lng }: { lng: string }) {
 	const { t } = await getT('translations')
 	return (
-		<section className="w-full bg-[#231F2D] py-12 lg:py-16">
+		<section className="w-full bg-[#231F2D] py-12 lg:py-16" id="kompetenzen">
 			<div className="wrapper px-4 flex flex-col gap-12 lg:gap-14">
 				<div className="flex flex-col w-full items-center" data-aos="fade-in">
 					<div className=" flex flex-col items-center text-center mb-6  max-w-[575px]">
 						<Pill text={t('homepage.options.pill')} />
 						<h2 className=" leading-12 text-[40px] md:text-5xl md:leading-14   mt-2 mb-4 text-white">
-							{t('homepage.options.title')}
+							{t('homepage.options.title')} {lng === 'de' && <br />}{' '}
+							{lng === 'de' && t('homepage.options.titleTwo')}
 						</h2>
 						<p className="text-[#BCBCBC] leading-6 w-full ">{t('homepage.options.subtitle')}</p>
 					</div>
@@ -30,7 +31,8 @@ async function OptionsSection({ lng }: { lng: string }) {
 								image="/assets/option-one.png"
 								alt="frame version"
 								cta={t('homepage.options.frameCta')}
-								href={`${lng}/products/frame`}
+								href={`${lng}/produkte/rahmendisplay`}
+								lng={lng}
 							/>
 						</div>
 						<div
@@ -43,7 +45,8 @@ async function OptionsSection({ lng }: { lng: string }) {
 								image="/assets/option-one.png"
 								alt="cabinet version"
 								cta={t('homepage.options.cabinetCta')}
-								href={`${lng}/products/cabinet`}
+								href={`${lng}/produkte/vitrinenauslage`}
+								lng={lng}
 							/>
 						</div>
 					</div>
@@ -57,7 +60,8 @@ async function OptionsSection({ lng }: { lng: string }) {
 							image="/assets/option-three.png"
 							alt="display bar"
 							cta={t('homepage.options.displayCta')}
-							href={`${lng}/products/display-bar`}
+							href={`${lng}/products/nagelstreifen`}
+							lng={lng}
 							isDisplay
 						/>
 					</div>
@@ -76,6 +80,7 @@ const Card = async ({
 	alt,
 	href,
 	cta,
+	lng,
 }: {
 	title: string
 	subtitle: string
@@ -85,6 +90,7 @@ const Card = async ({
 	alt: string
 	href: string
 	cta: string
+	lng: string
 }) => {
 	const { t } = await getT('translations')
 	return (
@@ -101,7 +107,7 @@ const Card = async ({
 						)}
 					</h3>
 					<p
-						className={`text-grayscale-500 leading-5 text-sm lg:text-base lg:leading-6 ${!isDisplay ? 'md:max-w-[226px]' : ''}`}>
+						className={`text-grayscale-500 leading-5 text-sm lg:text-base lg:leading-6 text-balance ${!isDisplay ? 'md:max-w-[250px] ' : ''} ${lng === 'de' && 'md:max-w-[390px]'}`}>
 						{subtitle}
 					</p>
 				</div>

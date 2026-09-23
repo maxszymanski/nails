@@ -3,7 +3,8 @@
 		"home": "Home",
 		"products": "Products",
 		"legal": "Legal",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"socials": "Socials"
 	},
 	"footer": {
 		"info": "Iwon Naildisplay creates smart magnetic display systems designed to elevate nail color presentation in modern salons.",
@@ -82,17 +83,121 @@
 		"pill": "Our Products",
 		"title": "Build Your Perfect Display Setup",
 		"subtitle": "Discover all components of the Iwon Nail Display system designed to organize, present and elevate your nail color collection.",
+		"mayLike": "You May Also Like",
+		"tax": "plus statutory VAT.",
 		"products": {
 			"title": "Products",
 			"nails": "IND Nails",
-			"display": "IND Display Bar",
+			"display": "IND Displaybar",
 			"magnetic": "IND Magnetic Nails",
 			"transparent": "IND Transparent Nails",
 			"frame": "IND Frame Display",
 			"cabinet": "IND Cabinet Display"
 		},
+		"description": {
+			"nails": "IND Nails are removable tips designed for the professional display of nail colors and nail art. They can be placed directly on the finger, allowing for a realistic assessment of the color against the hand. They offer an innovative and versatile display solution.",
+			"display": "The IND Display Strip is a minimalist display unit featuring double-sided adhesive tape-suitable for almost any shelving unit in the beauty and nail styling industries.",
+			"magnetic": "IND Magnetic Nails are removable tips designed for the professional presentation of nail polish colors and nail art. These tips can be tried on directly on the finger, allowing for a realistic visualization of the color on the hand. When combined with the IND Rahmendisplay, IND Schrankdisplay, and IND Displayleiste, they form an innovative and versatile display solution. Minimum order quantity: 10 pieces.",
+			"transparent": "IND Transparent Nail Tips are removable swatches designed for the professional presentation of nail polish colors and nail art. They can be tried on directly, allowing for a realistic visualization of the color on the hand. When paired with the IND display rail, they offer an innovative and versatile display solution.",
+			"frame": "IND Frame Display is a modern, framed display designed for the elegant presentation of nail colors and designs. Ideal for beauty salons and retail stores, it helps organize your collection while ensuring a clear, attractive display. It can be wall-mounted or used as a freestanding unit, offering a stylish and professional look.",
+			"cabinet": "IND Cabinet Display combines elegant presentation with practical storage. Its exterior resembles a classic framed display, while the interior features shelves for organizing nail accessories. The cabinet opens for easy access to its contents and can be placed on a countertop or mounted on the wall."
+		},
+		"features": {
+			"title": "Features",
+			"nails": [
+				"Made of clear, transparent plastic",
+				"Natural and precise color reproduction",
+				"Can be connected to the IND Display Strip",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
+			],
+			"magnetic": [
+				"Made of plastic in a natural shade",
+				"Natural and precise color reproduction",
+				"Can be connected to the IND frame display, IND cabinet display, and IND display bar.",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
+			],
+			"display": [
+				"Quick and easy installation with double-sided adhesive tape",
+				"Swatches with magnets allow for direct color testing",
+				"Clear numbering enables instant color selection",
+				"Compatible with magnetic swatches",
+				"Unlimited possibilities for expanding the collection with additional display strips",
+				"Clear and aesthetic color presentation"
+			],
+			"frame": [
+				"Elegant frame design for professional presentation",
+				"Designed for both wall-mounted and freestanding installation",
+				"Enables an aesthetic presentation of swatches and accessories",
+				"Modern white finish that complements any interior"
+			],
+			"transparent": [
+				"Made from clear, transparent plastic",
+				"Natural and precise color reproduction",
+				"Can be connected to the IND frame display, IND cabinet display, and IND display bar",
+				"Can be placed directly on one stick or all ten fingers",
+				"Thanks to the U-shaped design and spring mechanism, the swatches stay securely attached to the sticks",
+				"Suitable for every finger shape"
+			],
+			"cabinet": [
+				"2-in-1 solution – display and storage",
+				"Built-in shelves provide organized storage",
+				"Thanks to its compact dimensions, the display cabinet fits into any salon or workstation. It is ideal for wall mounting and features a professional design"
+			]
+		},
+		"includes": {
+			"title": "What's Included",
+			"nails": ["12 IND Nail Tips", "24 stickers with double numbering"],
+			"magnetic": ["10 IND Magnetic Nail Tips", "20 stickers with double numbering"],
+			"display": [
+				"Plastic display strip with numbering and double-sided adhesive tape",
+				"14 IND Nail Tips",
+				"30 stickers with double numbering"
+			],
+			"frame": [
+				"IND Frame Display (for freestanding or wall-mounted installation)",
+				"Installation aid",
+				"30 magnetic nails (natural color)",
+				"60 stickers with double numbering",
+				"2x dowels (Ø 6 mm) and screws",
+				"Auxiliary plastic strip with 4 magnets"
+			],
+			"transparent": ["12 IND Transparent Nail Tips", "24 stickers with double numbering"],
+			"cabinet": [
+				"IND Cabinet Display (for freestanding or wall-mounted installation)",
+				"Installation aid",
+				"30 magnetic nails (natural color)",
+				"60 stickers with double numbering",
+				"Plastic aid with 4 magnets",
+				"2x dowels (Ø 6 mm) and screws",
+				"Auxiliary plastic strip with 4 magnets"
+			]
+		},
+		"dimensions": {
+			"title": "Dimensions",
+			"nails": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
+			"display": ["250 mm x 8 mm x 30 mm (L x W x H)"],
+			"frame": [
+				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x D)",
+				"Auxiliary strip: 148 mm x 40 mm x 5 mm ( L x W x D)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm",
+				"Hole spacing mounting: 215 mm"
+			],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm"],
+			"cabinet": [
+				"IND Frame Display: 305 mm x 252 mm x 17 mm ( L x W x D)",
+				"Auxiliary strip: 148 mm x 40 mm x 5 mm ( L x W x D)",
+				"IND Magnetic Nail: 48 mm x 10 mm x 10 mm ( L x W x H), Base: 25mm",
+				"Hole spacing mounting: 215 mm"
+			]
+		},
 		"details": "See details",
-		"add": "Add to Cart"
+		"add": "Add to Cart",
+		"patent": "This product is protected by German Patent No."
 	},
 	"faq": {
 		"pill": "FAQ",
@@ -148,5 +253,96 @@
 		"securitySub": "We take appropriate technical and organizational measures to protect your data. However, data transmission over the Internet (e.g. email) may have security vulnerabilities.",
 		"disclaimer": "Disclaimer",
 		"disclaimerSub": "The information on this website is provided for general informational purposes only. We make no guarantees regarding the completeness accuracy, or timeliness of the content. Our website may contain links to external third-party websites. We have no control over their content and accept no liability for it. The respective provider is responsible for the content of linked pages. If you become aware of any legal violations on our website, please inform us. We will remove such content immediately."
+	},
+	"faqItems": [
+		{
+			"title": "Can the magnetic nails be reused?",
+			"answer": "The magnetic nails can be reused; however, this is not recommended. Additional nails can be ordered at any time. Please feel free to contact us!"
+		},
+		{
+			"title": "What should I pay particular attention to when using the magnetic nails?",
+			"answer": "The magnetic nails are made of durable material. However, please note that improper use may result in injury."
+		},
+		{
+			"title": "Is it possible to order a free sample?",
+			"answer": "Unfortunately, we are currently unable to offer free samples."
+		},
+		{
+			"title": "What are the shipping costs?",
+			"answer": "Shipping within Germany is free of charge. For orders from other countries, we will provide an individual shipping quote."
+		},
+		{
+			"title": "Are there any variations from the product description?",
+			"answer": "Each display is carefully handcrafted and unique. Therefore, minor variations may occur, such as slight differences in color shade or small gaps."
+		},
+		{
+			"title": "Are the display frames and cabinets available in other colors?",
+			"answer": "At the moment, we can only offer the color \"white\". We are currently working on a solution that will allow for individual color customization of the frames and cabinets."
+		},
+		{
+			"title": "Hygiene instructions",
+			"answer": "To ensure optimal hygiene, please wash and disinfect your hands thoroughly before trying on the magnetic nails."
+		}
+	],
+	"cart": {
+		"addedToCart": "Product added to cart",
+		"title": "Your Cart",
+		"closeModal": "Close modal",
+		"remove": "Remove",
+		"empty": "Your cart is empty",
+		"value": "Value of Products",
+		"shipping": "Shipping",
+		"total": "Total",
+		"free": "Free",
+		"quote": "Go to Quote",
+		"freeShipping": "Free Shipping",
+		"shippingInfo": "Due to high demand there may be delays in delivery.",
+		"order": "Place an order",
+		"orderTitle": "Oder Form",
+		"name": "Your Name",
+		"lastName": "Your Last Name",
+		"address": "Delivery Address",
+		"zipCode": "Postal Code",
+		"city": "City",
+		"instagram": "Instagram Username",
+		"email": "Your Email Address",
+		"message": "Additional Message",
+		"enterMessage": "Please enter your message...",
+		"read": "I have read the",
+		"terms": "data protection declaration.",
+		"pill": "Shipping within 24 hours after payment is received.",
+		"success": "Your order has been successfully placed.",
+		"successTitle": "Confirmation",
+		"thankYou": "Order Placed!",
+		"subtitle": "Your order has been successfully submitted.",
+		"emailSend": "We've sent you an email with payment details. Please check your inbox and complete the payment to finalize your order.",
+		"spam": "If you don't see it, please check your spam folder.",
+		"thanks": "Thank you for choosing Iwon Naildisplay!",
+		"close": "Got it!",
+		"orderError": "We couldn't send your order. Please try again."
+	},
+	"validation": {
+		"firstNameRequired": "Please enter your first name",
+		"firstNameMin": "First name must be at least 3 characters",
+		"lastNameRequired": "Please enter your last name",
+		"lastNameMin": "Last name must be at least 3 characters",
+		"address": "Please enter your address",
+		"zipCode": "Please enter your postal code",
+		"zipCodeInvalid": "Please enter a valid postal code",
+		"city": "Please enter your city",
+		"cityMin": "City must be at least 2 characters",
+		"emailInvalid": "Please enter a valid email address",
+		"termsRequired": "Please accept the terms and conditions"
+	},
+	"compatible": {
+		"title": "Compatible IKEA Products",
+		"skadis-one": "White Pegboard",
+		"skadis-two": "White Shelf",
+		"mosslanda": "Picture Ledge",
+		"compatible": "Compatible IKEA Products",
+		"back": "Go Back",
+		"article": "Article no.",
+		"copy": "Copy article number",
+		"copiedToClipboard": "Copied to clipboard"
 	}
 }

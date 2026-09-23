@@ -2,7 +2,346 @@
 	"nav": {
 		"home": "Startseite",
 		"products": "Produkte",
-		"legal": "Rechtlich",
-		"faq": "FAQ"
+		"legal": "Satzung",
+		"faq": "FAQ",
+		"socials": "Soziale Medien"
+	},
+	"footer": {
+		"info": "Iwon Nail Display entwickelt innovative Präsentationssysteme mit einzigartigen intelligenten Anprobenägeln. Unsere Lösungen verleihen Ihrem Studio einen modernen Look und setzen neue Maßstäbe in der Präsentation von Farben und Designs.",
+		"company": {
+			"title": "Startseite",
+			"system": "Unser System",
+			"innovation": "Unsere Innovation",
+			"possiblities": "Unsere Kompetenzen",
+			"organisation": "Organisation"
+		},
+		"legal": {
+			"title": "Satzung",
+			"tos": "Satzung",
+			"faq": "FAQ"
+		},
+		"copyright": "Alle Rechte vorbehalten."
+	},
+	"homepage": {
+		"header": {
+			"title": "Professionelles Display ",
+			"titleTwo": "für Nagellackfarben",
+			"subtitle": "Präsentieren Sie Ihre Farben auf elegante und übersichtliche Weise. Unsere professionellen Displays helfen dabei, Ihre Kollektion zu ordnen, erleichtern die Farbauswahl und unterstützen einen effektiven Verkauf.",
+			"cta": "Zu Unseren Produkten"
+		},
+		"products": {
+			"title": "Die Beste Art Der",
+			"titleTwo": "Präsentation Von Nagelfarben",
+			"subtitle": "Das modulare Präsentationssystem mit Anprobenägeln für Nagelfarben wurde sowohl für den täglichen Gebrauch als auch für professionelle Salons entwickelt – es hilft, die Präsentation zu organisieren und die Farbauswahl zu erleichtern.",
+			"cta": "Zu Unseren Produkten",
+			"pill": "Unser System",
+			"organizers": "Organisatoren",
+			"organizersSub": "Ordnung und bequemer Zugriff auf jede Farbe.",
+			"magnetic": "Magnetische Nägel",
+			"magneticSub": "Mühelose Farbprüfung.",
+			"nonmagnetic": "Nichtmagnetische Nägel",
+			"nonmagneticSub": "Eine einfache Möglichkeit, Farben zu testen und zu vergleichen.",
+			"display": "Kunststoffleiste",
+			"displaySub": "Eine elegante Präsentation von Farben an einem Ort."
+		},
+		"choice": {
+			"title": "Entwickelt Für Eine",
+			"titleTwo": "Einfache Auswahl",
+			"subtitle": "Setzen Sie die Anprobenägel direkt auf den Finger und sehen Sie sofort, wie Farbe oder Design in Wirklichkeit wirken. Diese einfache Methode erleichtert den Vergleich von Farbtönen und die Wahl der idealen Farbe.",
+			"cta": "Jetzt Bestellen",
+			"pill": "Unsere Innovation"
+		},
+		"options": {
+			"title": "Drei Optionen. ",
+			"titleTwo": "Ein Intelligentes System.",
+			"subtitle": "Wählen Sie die passende Konfiguration – IND-Schrank für maximale Organisation, IND-Rahmen für vielseitige Nutzung oder universelle IND-Kunststoff-Displayleiste.",
+			"pill": "Unsere Kompetenzen",
+			"frame": "IND Rahmen Display",
+			"frameSub": "Eine minimalistische Lösung zur räsentation von Nageldesigns und -farben.",
+			"frameCta": "Entdecken Sie die Details",
+			"cabinet": "IND Schrank Display",
+			"cabinetSub": "Aufbewahrung und Präsentation in einem.",
+			"cabinetCta": "Entdecken Sie die Details",
+			"display": "IND Kunststoffleiste",
+			"displaySub": "Minimalistisches Display mit doppelseitigem Klebeband, passend für nahezu jedes bestehende Regal in der Beauty-Branche und in Nagelstudios.",
+			"displayCta": "Entdecken Sie die Details",
+			"new": "Neuheit"
+		},
+		"organization": {
+			"title": "Intelligente Farbordnung",
+			"subtitle": "Ein übersichtliches Nummerierungssystem verknüpft jedes Farbmuster mit dem entsprechenden Nagellackfläschchen, wodurch sich jede Farbe leicht und schnell finden, ordnen und präsentieren lässt.",
+			"pill": "Organisation"
+		},
+		"upgrade": {
+			"title": "Werten Sie die Präsentation in Ihrem Salon auf",
+			"subtitle": "Entdecken Sie eine intelligentere, sauberere und elegantere Art, Farben zu präsentieren – entwickelt für den täglichen Gebrauch und Nagelprofis.",
+			"pill": "Bereit?",
+			"cta": "Zu Unseren Produkten"
+		}
+	},
+	"products": {
+		"pill": "Unsere Produkte",
+		"title": "Gestalten Sie Ihr individuelles Display-System",
+		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems – entwickelt für die Organisation, Präsentation und ansprechende Präsentation Ihrer Nagellackkollektion.",
+		"mayLike": "Für Sie Empfohlen",
+		"tax": "zzgl. gesetzlicher MwSt",
+		"products": {
+			"title": "Produkte",
+			"nails": "IND Nägel",
+			"display": "IND Kunststoffleiste",
+			"magnetic": "IND Magnetische Nägel ",
+			"transparent": "IND Transparente Nägels",
+			"frame": "IND Rahmen Display",
+			"cabinet": "IND Schrank Display"
+		},
+		"description": {
+			"nails": "IND Nägel sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung.",
+			"display": "IND Kunststoffleiste ist eine minimalistische Präsentationseinheit mit doppelseitigem Klebeband – geeignet für nahezu jedes Regalsystem in der Beauty- und Nagelstyling-Branche.",
+			"magnetic": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung. Mindestbestellmenge: 10 Stück.",
+			"transparent": "IND Nails Transparent sind abnehmbare Mustertips zur professionellen Präsentation von Nagellackfarben und Designs. Die Tips können direkt am Finger anprobiert werden und ermöglichen eine realistische Farbdarstellung auf der Hand. In Kombination mit der IND Displayleiste bieten sie eine innovative und vielseitige Display-Lösung.",
+			"frame": "Der IND Display Frame ist ein modernes Display mit Rahmen, das für die elegante Präsentation von Nagelfarben und -designs konzipiert wurde. Er eignet sich ideal für Kosmetikstudios sowie den Einzelhandel, hilft bei der Organisation Ihrer Kollektion und sorgt für eine übersichtliche, ansprechende Warenpräsentation. Das Display lässt sich sowohl an der Wand montieren als auch freistehend nutzen und verleiht Ihrem Angebot einen stilvollen, professionellen Look.",
+			"cabinet": "Die IND-Vitrine verbindet eine elegante Präsentation mit praktischem Stauraum. Ihr Äußeres erinnert an eine klassische Vitrine mit Rahmen, während der Innenraum über Ablagen zur geordneten Aufbewahrung von Nagelzubehör verfügt. Der Schrank lässt sich für einen einfachen Zugriff auf den Inhalt öffnen und kann entweder auf einer Arbeitsfläche aufgestellt oder an der Wand montiert werden."
+		},
+		"features": {
+			"title": "Produktmerkmale",
+			"nails": [
+				"Aus Kunststoff in Naturfarbe",
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
+			],
+			"magnetic": [
+				"Aus Kunststoff in Naturfarbton gefertigt",
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit dem IND Rahmendisplay, dem IND Schrankdisplay und der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
+			],
+			"display": [
+				"Schnelle und einfache Installation dank doppelseitigem Klebeband",
+				"Abnehmbare Anprobenägel zum direkten Testen",
+				"Klare Nummerierung für eine sofortige Farbauswahl",
+				"Kombinierbar mit magnetischen Anprobenägeln",
+				"Unbegrenzte Erweiterungsmöglichkeiten mit zusätzlichen Displayleisten",
+				"Übersichtliche und klare Farbpräsentation"
+			],
+			"frame": [
+				"Elegantes Design für eine professionelle Präsentation",
+				"Geeignet für Wandmontage oder als Standdisplay",
+				"Präsentiert Nageldesigns und Accessoires übersichtlich",
+				"Modernes, weißes Design passend für jedes Interieur"
+			],
+			"transparent": [
+				"Aus klarem, transparentem Kunststoff gefertigt",
+				"Natürliche und präzise Farbdarstellung",
+				"Kombinierbar mit der IND Displayleiste",
+				"Kann direkt auf einen Finger oder auf alle zehn Finger aufgesetzt werden",
+				"Dank der U-Form und Federfunktion halten die Mustertips selbstständig auf den Fingern",
+				"Passen sich jeder Fingerform an"
+			],
+			"cabinet": [
+				"2-in-1 Display- und Aufbewahrungslösung",
+				"Integrierte Regale sorgen für eine übersichtliche Aufbewahrung",
+				"Dank seiner kompakten Größe passt das Schrank-Display in jeden Salon und in jede Arbeitsecke. Ideal für die Wandmontage und professionell gestaltet"
+			]
+		},
+		"includes": {
+			"title": "Lieferumfang des Sets",
+			"nails": ["12 IND Nägel", "24 Aufkleber mit doppelter Nummerierung"],
+			"magnetic": ["10 IND Magnetische Nägel", "20 Aufkleber mit doppelter Nummerierung"],
+			"display": [
+				"Kunststoff-Displayleiste mit Nummerierung und doppelseitigem Klebeband",
+				"14 IND Nägel",
+				"30 Aufkleber mit doppelter Nummerierung"
+			],
+			"frame": [
+				"IND Display (für Stand- und Wandmontage)",
+				"Aufstellhilfe ",
+				"30 magnetische Nägel (Farbton: Natur)",
+				"60 Aufkleber mit doppelter Nummerierung",
+				"2 Dübel (Ø 6 mm) inkl. Schrauben",
+				"Kunststoffhilfe mit 4 Magneten"
+			],
+			"transparent": ["12 IND IND Transparente Nägel", "24 Aufkleber mit doppelter Nummerierung"],
+			"cabinet": [
+				"IND Display (für Stand- und Wandmontage)",
+				"Aufstellhilfe",
+				"30 magnetische Nägel (Farbton: Natur)",
+				"60 Aufkleber mit doppelter Nummerierung",
+				"2 Dübel (Ø 6 mm) inkl. Schrauben",
+				"Kunststoffhilfe mit 4 Magneten"
+			]
+		},
+		"dimensions": {
+			"title": "Abmessungen",
+			"nails": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
+			"magnetic": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
+			"display": ["250 mm x 30 mm x 8 mm ( L x B x H)"],
+			"frame": [
+				"IND Display Rahmen : 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Abmessungen Kunststoffhilfe: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Magnetische Nägel: 48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm",
+				"Montage-Lochabstand: 215 mm"
+			],
+			"transparent": ["48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm"],
+			"cabinet": [
+				"IND Shrank Display: 305 mm x 252 mm x 17 mm ( L x B x D)",
+				"Abmessungen Kunststoffhilfe: 158 mm x 40 mm x 5 mm ( L x B x D)",
+				"Magnetische Nägel: 48 mm x 10 mm x 10 mm ( L x B x H), Fußlänge: 25mm",
+				"Montage-Lochabstand: 215 mm"
+			]
+		},
+		"details": "Details",
+		"add": "In den Warenkorb",
+		"patent": "Dieses Produkt ist durch das deutsche Patent Nr."
+	},
+	"faq": {
+		"pill": "FAQ",
+		"title": "Häufig gestellte Fragen",
+		"subtitle": "Finden Sie Antworten auf die häufigsten Fragen zu unseren Produkten, dem Bestellvorgang und der Funktionsweise des Systems."
+	},
+	"privacy": {
+		"pill": "Letzte Aktualisierung: 18.03.2026",
+		"title": "Impressum",
+		"subtitle": "Angaben gemäß § 5 TMG",
+		"general": "Allgemeine Informationen",
+		"generalOne": "Die folgenden Informationen geben einen Überblick darüber, wie Ihre personenbezogenen Daten beim Besuch unserer Website erhoben und verarbeitet werden. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
+		"phone": "Telefon",
+		"data": "Datenerhebung auf unserer Website",
+		"dataOne": "Wie erfassen wir Ihre Daten?",
+		"dataOneSub": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, zum Beispiel durch eine Bestellung oder das Ausfüllen eines Kontakt- oder Bestellformulars. Andere Daten werden beim Besuch unserer Website automatisch durch IT-Systeme erfasst. Das sind vor allem technische Daten wie Browsertyp, Betriebssystem oder Uhrzeit des Seitenaufrufs.",
+		"dataTwo": "Wofür nutzen wir Ihre Daten?",
+		"dataTwoSub": "Wir verwenden Ihre Daten, um:",
+		"dataTwoList": [
+			"Bestellungen zu bearbeiten und auszuführen",
+			"Zahlungen und Lieferungen abzuwickeln",
+			"Anfragen zu beantworten",
+			"den ordnungsgemäßen Betrieb der Website sicherzustellen",
+			"unsere Dienste und die Benutzererfahrung zu verbessern"
+		],
+		"legal": "Rechtsgrundlage der Verarbeitung",
+		"legalSub": "Ihre Daten werden gemäß DSGVO auf folgender Grundlage verarbeitet:",
+		"legalSubList": [
+			"Art. 6 Abs. 1 lit. b – Verarbeitung zur Vertragserfüllung (Bestellungen)",
+			"Art. 6 Abs. 1 lit. c – gesetzliche Verpflichtungen (z. B. steuerliche Vorschriften)",
+			"Art. 6 Abs. 1 lit. f – berechtigte Interessen (Website-Funktionalität, Analyse)"
+		],
+		"dataSharing": "Datenweitergabe",
+		"dataSharingSub": "Wir geben Ihre Daten nur weiter, wenn es notwendig ist, zum Beispiel an:",
+		"dataSharingSubList": ["Zahlungsanbieter", "Versandunternehmen", "IT- und Hosting-Anbieter"],
+		"dataSharingUnderlist": "Alle Drittanbieter sind verpflichtet, die Datenschutzbestimmungen einzuhalten.",
+		"cookies": "Cookies und Analyse",
+		"cookiesUnder": "Unsere Website verwendet Cookies, um die ordnungsgemäße Funktionalität sicherzustellen und die Benutzererfahrung zu verbessern. Einige Cookies sind notwendig, während andere uns helfen, das Nutzerverhalten zu analysieren. Sie können Cookies in Ihren Browsereinstellungen steuern oder deaktivieren.",
+		"retention": "Datenspeicherung",
+		"retentionSub": "Wir speichern Ihre personenbezogenen Daten nur so lange, wie es zur Erfüllung vertraglicher und gesetzlicher Pflichten erforderlich ist. Danach werden die Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.",
+		"rights": "Ihre Rechte",
+		"rightsSub": "Sie haben das Recht auf",
+		"rightsList": [
+			"Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)",
+			"Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+			"Löschung Ihrer Daten (Art. 17 DSGVO)",
+			"Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+			"Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+			"Datenübertragbarkeit (Art. 20 DSGVO)"
+		],
+		"rightsUnderlist": "Sie können uns jederzeit bezüglich Ihrer Daten kontaktieren.",
+		"security": "Datensicherheit",
+		"securitySub": "Wir treffen geeignete technische und organisatorische Maßnahmen zum Schutz Ihrer Daten. Die Datenübertragung im Internet (z. B. per E-Mail) kann jedoch Sicherheitslücken aufweisen.",
+		"disclaimer": "Haftungsausschluss",
+		"disclaimerSub": "Die Informationen auf dieser Website dienen ausschließlich allgemeinen Informationszwecken. Wir übernehmen keine Garantie für die Vollständigkeit, Richtigkeit oder Aktualität der Inhalte. Unsere Website kann Links zu externen Websites Dritter enthalten. Wir haben keinen Einfluss auf deren Inhalte und übernehmen keine Haftung dafür. Für die Inhalte verlinkter Seiten ist der jeweilige Anbieter verantwortlich. Sollten Sie auf unserer Website Rechtsverstöße feststellen, bitten wir Sie, uns darüber zu informieren. Wir werden solche Inhalte umgehend entfernen."
+	},
+	"faqItems": [
+		{
+			"title": "Wie oft kann ich die Nägel wiederverwenden/neu designen?",
+			"answer": "Die Nägel können mehrfach designt werden. Allerdings wird dies nicht empfohlen. Sie haben jederzeit die Möglichkeit Ersatz bei uns zu bestellen.  Kontaktieren Sie uns!"
+		},
+		{
+			"title": "Worauf muss ich bei der Verwendung achten?",
+			"answer": "Die Nägel sind aus strapazierfähigen Kunststoff hergestellt. Bitte beachten Sie, dass bei unsachgemäßen Gebrauch oder übermäßiger mechanischer Beanspruchung ein erhöhtes Verletzungsrisiko entstehen kann. Bitte überprüfen Sie in regelmäßigen Abständen die Aufstecknägel auf eventuelle Beschädigung. "
+		},
+		{
+			"title": "Kann ich ein kostenfreies Muster bestellen?",
+			"answer": "Zurzeit können wir leider keine kostenfreien Muster bereitstellen."
+		},
+		{
+			"title": "Wenn ich eine Bestellung aufgebe, wie hoch sind die Versandkosten?",
+			"answer": "Innerhalb Deutschlands ist der Versand grundsätzlich kostenlos. Egal welche Menge Sie bei uns bestellen. Für Bestellungen aus anderen Ländern, erstellen wir Ihnen gerne ein individuelles und maßgeschneidertes Angebot."
+		},
+		{
+			"title": "Gibt es Abweichungen in der Produktbeschaffenheit?",
+			"answer": "Jedes Display wird aus nachhaltigen Materialien in sorgfältiger Handarbeit hergestellt und ist ein Unikat. Dementsprechend kann es zu geringen Abweichungen, wie z.B Farbunterschieden oder abweichenden Spaltmaßen kommen."
+		},
+		{
+			"title": "Gibt es die IND Displays auch in anderen Farben?",
+			"answer": "Zum aktuellen Zeitpunkt können wir nur die Farbe \"Weiß\" anbieten. Es wird  zur Zeit an einer Lösung für eine individuelle Farbgestaltung der Displays gearbeitet."
+		},
+		{
+			"title": "Hinweise zur Hygiene",
+			"answer": "Um eine optimale Hygiene zu gewährleisten, bitten wir Sie, vor der Anprobe der Aufstecknägel Ihre Hände gründlich mit einem Desinfektionsmittel zu reinigen."
+		}
+	],
+	"cart": {
+		"addedToCart": "Produkt zum Warenkorb hinzugefügt",
+		"title": "Ihr Warenkorb",
+		"closeModal": "Modal schließen",
+		"remove": "Entfernen",
+		"empty": "Ihr Warenkorb ist leer",
+		"value": "Wert der Produkte",
+		"shipping": "Lieferung",
+		"total": "Zusammen",
+		"free": "Kostenlos",
+		"quote": "Gehen Sie zum Formular",
+		"freeShipping": "Betrag für kostenlosen Versand",
+		"shippingInfo": "Aufgrund eines hohen Bestellaufkommens kann es zu Verzögerungen kommen.",
+		"order": "Bestellung aufgeben",
+		"orderTitle": "Bestellformular",
+		"name": "Ihr Name",
+		"lastName": "Ihr Nachname",
+		"address": "Lieferadresse",
+		"zipCode": "PLZ",
+		"city": "Stadt",
+		"instagram": "Instagram-Name",
+		"email": "E-Mail-Adresse",
+		"message": "Zusätzliche Nachricht",
+		"enterMessage": "Schreiben Sie Ihre Nachricht...",
+		"read": "Ich habe die",
+		"terms": "Datenschutzerklärung gelesen.",
+		"pill": "Versand innerhalb von 24 Stunden nach Zahlungseingang.",
+		"success": "Ihre Bestellung wurde erfolgreich aufgegeben.",
+		"successTitle": "Bestätigung",
+		"thankYou": "Bestellung aufgegeben!",
+		"subtitle": "Ihre Bestellung wurde erfolgreich übermittelt.",
+		"emailSend": "Wir haben Ihnen eine E-Mail mit den Zahlungsdetails gesendet. Bitte prüfen Sie Ihren Posteingang und schließen Sie die Zahlung ab, um Ihre Bestellung abzuschließen.",
+		"spam": "Falls Sie die E-Mail nicht finden, prüfen Sie bitte Ihren Spam-Ordner.",
+		"thanks": "Vielen Dank, dass Sie Iwon Naildisplay gewählt haben!",
+		"close": "Verstanden!",
+		"orderError": "Die Bestellung konnte nicht gesendet werden. Bitte versuche es erneut."
+	},
+	"validation": {
+		"firstNameRequired": "Bitte geben Sie Ihren Vornamen ein",
+		"firstNameMin": "Der Vorname muss mindestens 3 Zeichen lang sein",
+		"lastNameRequired": "Bitte geben Sie Ihren Nachnamen ein",
+		"lastNameMin": "Der Nachname muss mindestens 3 Zeichen lang sein",
+		"address": "Bitte geben Sie Ihre Adresse ein",
+		"zipCode": "Bitte geben Sie Ihre Postleitzahl ein",
+		"zipCodeInvalid": "Bitte geben Sie eine gültige Postleitzahl ein",
+		"city": "Bitte geben Sie Ihre Stadt ein",
+		"cityMin": "Die Stadt muss mindestens 2 Zeichen lang sein",
+		"emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+		"termsRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
+	},
+	"compatible": {
+		"title": "Kompatible IKEA-Produkte",
+		"skadis-one": "Lochplatten",
+		"skadis-two": "Bilderleiste",
+		"mosslanda": "Bilderleiste",
+		"compatible": "Kompatible IKEA-Produkte",
+		"back": "Zurück",
+		"article": "Artikel-Nr.",
+		"copy": "Artikel-Nr. kopieren",
+		"copiedToClipboard": "In die Zwischenablage kopiert"
 	}
 }

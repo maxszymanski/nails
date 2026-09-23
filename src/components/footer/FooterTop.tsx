@@ -9,7 +9,7 @@ function FooterTop({ lng }: { lng: string }) {
 			<div className="flex items-center gap-6">
 				<div className="flex items-center gap-3">
 					<LinkButton
-						href={'https://www.instagram.com/company/nails-dev/'}
+						href={'https://www.instagram.com/iwonnaildisplay'}
 						target="_blank"
 						variant="default"
 						aria-label="instagram"
@@ -23,7 +23,7 @@ function FooterTop({ lng }: { lng: string }) {
 						</svg>
 					</LinkButton>
 					<LinkButton
-						href={'https://www.facebook.com/company/nails-dev/'}
+						href={'https://www.facebook.com/iwonnaildisplay'}
 						target="_blank"
 						variant="default"
 						aria-label="facebook"
@@ -37,10 +37,10 @@ function FooterTop({ lng }: { lng: string }) {
 						</svg>
 					</LinkButton>
 					<LinkButton
-						href={'https://www.linkedin.com/company/nails-dev/'}
+						href={'https://www.tiktok.com/@iwonnaildisplay'}
 						target="_blank"
 						variant="default"
-						aria-label="linkedin"
+						aria-label="tiktok"
 						rel="noopener noreferrer"
 						restClass="rounded-full size-10 shrink-0 border border-[#E9DDC880] hover:bg-[#E9DDC880] relative  ">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

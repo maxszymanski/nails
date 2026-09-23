@@ -6,13 +6,19 @@ import { dir } from 'i18next'
 import AosProvider from '@/src/components/ui/AosProvider'
 import Navbar from '@/src/components/nav/Navbar'
 import Footer from '@/src/components/footer/Footer'
+import Toaster from '@/src/components/ui/Toaster'
+import ModalsControler from '@/src/components/ui/ModalsControler'
 
 const outfit = Outfit({
 	subsets: ['latin'],
+	variable: '--font-outfit',
 })
 
 export const metadata: Metadata = {
-	title: 'Iwon',
+	title: {
+		template: '%s | Iwon',
+		default: 'Iwon',
+	},
 	description: 'Iwon nails',
 }
 
@@ -36,6 +42,8 @@ export default async function RootLayout({
 			<body className="tracking-shrink flex flex-col relative w-full my-scrollbar bg-white text-black-primary h-full">
 				<Navbar lng={lng} />
 				<AosProvider>{children}</AosProvider>
+				<Toaster />
+				<ModalsControler />
 				<Footer lng={lng} />
 			</body>
 		</html>

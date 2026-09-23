@@ -23,7 +23,7 @@ function NavList({
 			linkName: `${t('nav.products')}`,
 		},
 		{
-			href: `/${lng}/rechtlich"`,
+			href: `/${lng}/datenschutzerklarung`,
 			linkName: `${t('nav.legal')}`,
 		},
 		{ href: `/${lng}/faq`, linkName: `${t('nav.faq')}` },
@@ -46,7 +46,7 @@ function NavList({
 					<button
 						className="text-sm  leading-5 font-medium bg-transparent text-grayscale-500 duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-start flex items-center justify-between"
 						onClick={toggleIsSocialOpen}>
-						Socials{' '}
+						{t('nav.socials')}{' '}
 						<svg
 							width="24"
 							height="24"
@@ -66,7 +66,7 @@ function NavList({
 					<div
 						className={`transition-all duration-300 flex flex-col w-full items-start px-2 justify-between gap-2 ${isSocialOpen ? 'visible opacity-100 max-h-75 pb-8 pt-2 ' : 'invisible opacity-20 max-h-0 '} `}>
 						<Link
-							href={'https://www.instagram.com/company/nails-dev/'}
+							href={'https://www.instagram.com/iwonnaildisplay'}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`text-sm flex items-center gap-2 leading-5 font-medium bg-transparent duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-grayscale-500`}>
@@ -84,7 +84,7 @@ function NavList({
 							Instagram
 						</Link>
 						<Link
-							href={'https://www.facebook.com/company/nails-dev/'}
+							href={'https://www.facebook.com/iwonnaildisplay'}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`text-sm flex items-center gap-2 leading-5 font-medium bg-transparent duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-grayscale-500`}>
@@ -102,7 +102,7 @@ function NavList({
 							Facebook
 						</Link>
 						<Link
-							href={'https://www.linkedin.com/company/nails-dev/'}
+							href={'https://www.tiktok.com/@iwonnaildisplay'}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`text-sm flex items-center gap-2 leading-5 font-medium bg-transparent duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-grayscale-500`}>
@@ -117,7 +117,7 @@ function NavList({
 									fill="#565656"
 								/>
 							</svg>
-							Linkedin
+							TikTok
 						</Link>
 					</div>
 				</li>
