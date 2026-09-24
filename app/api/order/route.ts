@@ -1,6 +1,9 @@
 import { Resend } from 'resend'
 import { z } from 'zod'
-import { products, SHIPPING } from '@/src/data/products'
+import { products } from '@/src/data/products'
+import { company } from '@/src/data/company'
+import { cartSchema, deliverySchema, CheckoutError } from '@/src/lib/checkout'
+import { getOrderQuote } from '@/src/lib/order-quote'
 import en from '@/app/i18n/locales/en/translations.json'
 import de from '@/app/i18n/locales/de/translations.json'
 import pl from '@/app/i18n/locales/pl/translations.json'
@@ -11,29 +14,21 @@ const orderSchema = z.strictObject({
 	orderId: z.uuid(),
 	createdAt: z.iso.datetime(),
 	lng: z.enum(['pl', 'de', 'en']).catch('en'),
-	customer: z.object({
+	expectedTotalCents: z.number().int().positive(),
+	expectedVatRate: z.number().nonnegative(),
+	customer: deliverySchema.extend({
+		companyName: z.string().trim().max(200),
 		firstName: z.string().trim().min(3).max(100),
 		lastName: z.string().trim().min(3).max(100),
 		address: z.string().trim().min(1).max(300),
-		zipCode: z.string().trim().regex(/^(\d{2}-\d{3}|\d{5})$/),
+		zipCode: z.string().trim().min(2).max(12).regex(/^[A-Za-z0-9 -]+$/),
 		city: z.string().trim().min(2).max(100),
 		email: z.email(),
 		instagram: z.string().max(100).optional(),
 		message: z.string().max(5000).optional(),
 		terms: z.literal(true),
-	}),
-	cart: z.strictObject({
-		items: z
-			.array(
-				z.strictObject({
-					id: z.number().int().nonnegative(),
-					quantity: z.number().int().positive().max(10000),
-				}),
-			)
-			.min(1)
-			.max(products.length)
-			.refine(items => new Set(items.map(item => item.id)).size === items.length),
-	}),
+	}).refine(customer => !customer.isBusiness || customer.companyName.length > 0),
+	cart: cartSchema,
 })
 
 const templates = {
@@ -53,6 +48,7 @@ const templates = {
 		bic: 'BIC',
 		optionPaypal: 'Opcja 2: PayPal',
 		paypal: 'Adres PayPal',
+		payPaypal: 'Zapłać przez PayPal',
 		shippingTitle: 'Wysyłka',
 		shipping:
 			'Paczka zostanie nadana na poczcie w ciągu 24 godzin od momentu zaksięgowania wpłaty, na adres dostawy podany przez Ciebie w formularzu.',
@@ -76,6 +72,7 @@ const templates = {
 		bic: 'BIC',
 		optionPaypal: 'Option 2: PayPal',
 		paypal: 'PayPal-Adresse',
+		payPaypal: 'Mit PayPal bezahlen',
 		shippingTitle: 'Versand',
 		shipping:
 			'Der Versand erfolgt innerhalb von 24 Stunden nach Zahlungseingang an die von dir im Formular angegebene Lieferadresse.',
@@ -99,6 +96,7 @@ const templates = {
 		bic: 'BIC',
 		optionPaypal: 'Option 2: PayPal',
 		paypal: 'PayPal address',
+		payPaypal: 'Pay with PayPal',
 		shippingTitle: 'Shipping',
 		shipping:
 			'Your package will be shipped within 24 hours of the payment being credited, to the delivery address provided in the form.',
@@ -159,8 +157,17 @@ export async function POST(req: Request) {
 	if (!Number.isSafeInteger(subtotalCents) || subtotalCents <= 1) {
 		return Response.json({ error: 'Invalid order total' }, { status: 400 })
 	}
-	const shippingCents = subtotalCents >= 15000 ? 0 : Math.round(SHIPPING * 100)
-	const totalWithShipping = (subtotalCents + shippingCents) / 100
+	let quote
+	try {
+		quote = await getOrderQuote(parsed.data.cart, customer)
+	} catch (error) {
+		if (error instanceof CheckoutError) return Response.json({ code: error.code }, { status: error.status })
+		return Response.json({ code: 'QUOTE_UNAVAILABLE' }, { status: 503 })
+	}
+	if (quote.totalCents !== parsed.data.expectedTotalCents || quote.vatRate !== parsed.data.expectedVatRate) {
+		return Response.json({ code: 'QUOTE_CHANGED' }, { status: 409 })
+	}
+	const totalWithShipping = quote.totalCents / 100
 	const template = templates[lng]
 	const numericOrderId = BigInt(`0x${orderId.replaceAll('-', '')}`) % BigInt(10_000_000_000)
 	const orderNumber = `IND-${numericOrderId.toString().padStart(10, '0')}`
@@ -170,7 +177,7 @@ export async function POST(req: Request) {
 	const paymentRecipient = process.env.PAYMENT_RECIPIENT
 	const paymentIban = process.env.PAYMENT_IBAN
 	const paymentBic = process.env.PAYMENT_BIC
-	const paypalEmail = process.env.PAYPAL_EMAIL
+	const paypalEmail = process.env.PAYPAL_EMAIL?.trim()
 
 	if (
 		!apiKey ||
@@ -180,10 +187,23 @@ export async function POST(req: Request) {
 		!paymentRecipient?.trim() ||
 		!paymentIban?.trim() ||
 		!paymentBic?.trim() ||
-		!paypalEmail?.trim()
+		!paypalEmail ||
+		!z.email().safeParse(paypalEmail).success
 	) {
 		return Response.json({ error: 'Missing order configuration' }, { status: 503 })
 	}
+	const paypalUrl = new URL('https://www.paypal.com/cgi-bin/webscr')
+	paypalUrl.search = new URLSearchParams({
+		cmd: '_xclick',
+		business: paypalEmail,
+		item_name: `${company.name} - ${orderNumber}`,
+		item_number: orderNumber,
+		currency_code: 'EUR',
+		amount: totalWithShipping.toFixed(2),
+		// The amount already includes delivery and VAT calculated by the server.
+		shipping: '0.00',
+		tax: '0.00',
+	}).toString()
 
 	const itemsHtml = items
 		.map(
@@ -198,6 +218,27 @@ export async function POST(req: Request) {
 				</tr>`,
 		)
 		.join('')
+	const labels = translations[lng].checkout
+	const summaryHtml = `
+		<p>${labels.netProducts}: ${formatPrice(quote.subtotalCents / 100, lng)}</p>
+		<p>${labels.productVat} (${quote.vatRate}%): ${formatPrice(quote.productVatCents / 100, lng)}</p>
+		<p>${labels.grossShipping}: ${formatPrice(quote.shippingCents / 100, lng)}</p>
+		<p>${labels.includedVat} (${quote.vatRate}%): ${formatPrice(quote.vatCents / 100, lng)}</p>
+		${customer.isBusiness ? `<p>${labels.companyName}: ${escapeHtml(customer.companyName)}<br>${labels.vatId}: ${escapeHtml(customer.vatId || '-')}</p>` : ''}
+	`
+	const companyFooterHtml = `
+		<div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e5e5e5; color: #565656; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere;">
+			<p style="margin: 0;"><strong>${escapeHtml(company.name)}</strong><br>
+			${translations[lng].footer.owner}: ${escapeHtml(company.owner)}<br>
+			${escapeHtml(company.street)}<br>${company.postalCode} ${company.city}</p>
+			<p style="margin: 8px 0;">
+				<a href="${company.phoneHref}" style="color: #565656;">${company.phone}</a><br>
+				<a href="${company.website}" style="color: #565656;">iwonnaildisplay.de</a><br>
+				<a href="mailto:${company.email}" style="color: #565656;">${company.email}</a>
+			</p>
+			<p style="margin: 0;">USt-IdNr.: ${company.vatId}<br>Steuernummer: 147/5193/3161</p>
+		</div>
+	`
 
 	const html = `
 		<div style="margin: 0; padding: 32px 16px; background: #f2f2f2; font-family: Arial, sans-serif; color: #060606; line-height: 1.5;">
@@ -218,6 +259,7 @@ export async function POST(req: Request) {
 
 					<div style="margin-top: 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 14px; padding: 18px;">
 						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">${template.optionPaypal}</h2>
+						<p style="margin: 0 0 12px;"><a href="${escapeHtml(paypalUrl.toString())}" style="display: inline-block; padding: 12px 18px; background: #725fff; color: #ffffff; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 700;">${template.payPaypal}</a></p>
 						<p style="margin: 0; color: #565656;"><strong style="color: #060606;">${template.paypal}:</strong> ${escapeHtml(paypalEmail)}</p>
 					</div>
 
@@ -233,6 +275,7 @@ export async function POST(req: Request) {
 						</thead>
 						<tbody>${itemsHtml}</tbody>
 					</table>
+					${summaryHtml}
 
 					<div style="margin-top: 16px; padding: 16px 18px; background: #725fff; border-radius: 14px; color: #ffffff;">
 						<p style="margin: 0; font-size: 13px; opacity: 0.86;">${template.total}</p>
@@ -243,13 +286,15 @@ export async function POST(req: Request) {
 					<p style="margin: 0 0 10px; color: #565656; font-size: 15px;">${template.shipping}</p>
 					<p style="margin: 0 0 22px; color: #565656; font-size: 15px;">${template.instagram}</p>
 					<p style="margin: 0; color: #060606; font-size: 15px; font-weight: 600;">${template.regards}</p>
+					${companyFooterHtml}
 				</div>
 			</div>
 		</div>
 	`
 
 	const customerName = escapeHtml(`${customer.firstName} ${customer.lastName}`)
-	const deliveryAddress = escapeHtml(`${customer.address}, ${customer.zipCode} ${customer.city}`)
+	const countryName = new Intl.DisplayNames([lng], { type: 'region' }).of(customer.country)
+	const deliveryAddress = escapeHtml(`${customer.address}, ${customer.zipCode} ${customer.city}, ${countryName}`)
 
 	const ownerHtml = `
 		<div style="margin: 0; padding: 32px 16px; background: #f2f2f2; font-family: Arial, sans-serif; color: #060606; line-height: 1.5;">
@@ -283,11 +328,13 @@ export async function POST(req: Request) {
 						</thead>
 						<tbody>${itemsHtml}</tbody>
 					</table>
+					${summaryHtml}
 
 					<div style="margin-top: 16px; padding: 16px 18px; background: #725fff; border-radius: 14px; color: #ffffff;">
 						<p style="margin: 0; font-size: 13px; opacity: 0.86;">Do zapłaty razem z dostawą</p>
 						<p style="margin: 2px 0 0; font-size: 24px; line-height: 1.2; font-weight: 700;">${formatPrice(totalWithShipping, lng)}</p>
 					</div>
+					${companyFooterHtml}
 				</div>
 			</div>
 		</div>
@@ -298,7 +345,7 @@ export async function POST(req: Request) {
 		const { data, error } = await resend.batch.send(
 			[
 				{ from: fromEmail, to: ownerEmail, subject: `Nowe zamówienie #${orderNumber}`, html: ownerHtml },
-				{ from: fromEmail, to: customer.email, subject: `${template.subject} #${orderNumber} 💅`, html },
+				{ from: fromEmail, to: customer.email, replyTo: company.email, subject: `${template.subject} #${orderNumber} 💅`, html },
 			],
 			{ idempotencyKey: `order/${orderId}`, batchValidation: 'strict' },
 		)

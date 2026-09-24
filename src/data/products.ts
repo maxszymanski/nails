@@ -15,8 +15,6 @@ export type CompatibleProduct = {
 	image: string
 }
 
-export const SHIPPING = 15
-
 export const products: Product[] = [
 	{
 		id: 0,

@@ -7,6 +7,8 @@
 		"socials": "Soziale Medien"
 	},
 	"footer": {
+		"contact": "Kontakt",
+		"owner": "Inhaber",
 		"info": "Iwon Nail Display entwickelt innovative Präsentationssysteme mit einzigartigen intelligenten Anprobenägeln. Unsere Lösungen verleihen Ihrem Studio einen modernen Look und setzen neue Maßstäbe in der Präsentation von Farben und Designs.",
 		"company": {
 			"title": "Startseite",
@@ -268,7 +270,7 @@
 		},
 		{
 			"title": "Wenn ich eine Bestellung aufgebe, wie hoch sind die Versandkosten?",
-			"answer": "Innerhalb Deutschlands ist der Versand grundsätzlich kostenlos. Egal welche Menge Sie bei uns bestellen. Für Bestellungen aus anderen Ländern, erstellen wir Ihnen gerne ein individuelles und maßgeschneidertes Angebot."
+			"answer": "Für Standardbestellungen bis 2 kg kostet der Versand innerhalb Deutschlands 4,90 € inkl. MwSt. Ab einem Warenwert von 50 € inkl. MwSt. ist er kostenlos. Der Versand nach Polen und in die übrigen EU-Länder kostet 9,90 € inkl. MwSt. Für den Versand außerhalb der EU sowie Großbestellungen über 2 kg kontaktieren Sie uns bitte per E-Mail für ein individuelles Angebot: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Gibt es Abweichungen in der Produktbeschaffenheit?",
@@ -320,6 +322,28 @@
 		"close": "Verstanden!",
 		"orderError": "Die Bestellung konnte nicht gesendet werden. Bitte versuche es erneut.",
 		"orderExpired": "Dieser Bestellversuch ist abgelaufen. Bitte kontaktiere uns, um den Status zu prüfen, bevor du erneut bestellst."
+	},
+	"checkout": {
+		"country": "Lieferland",
+		"outsideEu": "Außerhalb der EU / Gebiete mit besonderen MwSt.-Regeln",
+		"business": "Als Unternehmen bestellen",
+		"companyName": "Firmenname",
+		"companyRequired": "Bitte geben Sie den Firmennamen ein.",
+		"vatId": "USt-IdNr. mit Länderpräfix (optional, MIAS/VIES-Prüfung)",
+		"manualQuote": "Versand außerhalb der EU und Großbestellungen (über 2 kg): Bitte kontaktieren Sie uns per E-Mail für ein individuelles Angebot.",
+		"netProducts": "Warenwert netto",
+		"productVat": "MwSt. auf Produkte",
+		"grossShipping": "Versand inkl. MwSt.",
+		"includedVat": "Enthaltene MwSt. gesamt",
+		"calculating": "Bestellbetrag wird berechnet...",
+		"retry": "Neu berechnen",
+		"errors": {
+			"VAT_INVALID": "Die USt-IdNr. konnte nicht bestätigt werden. Bitte prüfen Sie die Nummer und das Lieferland oder kontaktieren Sie uns.",
+			"VAT_UNAVAILABLE": "Die MIAS/VIES-Prüfung ist vorübergehend nicht verfügbar. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
+			"MANUAL_QUOTE": "Für diese Lieferung ist ein individuelles Angebot erforderlich. Bitte kontaktieren Sie uns per E-Mail.",
+			"QUOTE_CHANGED": "Bestellbetrag oder MwSt.-Satz haben sich geändert. Bitte berechnen Sie die Bestellung vor der Bestätigung erneut.",
+			"QUOTE_UNAVAILABLE": "Die Bestellung konnte nicht berechnet werden. Bitte versuchen Sie es erneut."
+		}
 	},
 	"validation": {
 		"firstNameRequired": "Bitte geben Sie Ihren Vornamen ein",

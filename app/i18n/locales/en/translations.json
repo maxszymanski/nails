@@ -7,6 +7,8 @@
 		"socials": "Socials"
 	},
 	"footer": {
+		"contact": "Contact",
+		"owner": "Owner",
 		"info": "Iwon Naildisplay creates smart magnetic display systems designed to elevate nail color presentation in modern salons.",
 
 		"company": {
@@ -269,7 +271,7 @@
 		},
 		{
 			"title": "What are the shipping costs?",
-			"answer": "Shipping within Germany is free of charge. For orders from other countries, we will provide an individual shipping quote."
+			"answer": "For standard orders up to 2 kg, shipping within Germany costs €4.90 including VAT and is free for product orders of €50 or more including VAT. Shipping to Poland and other EU countries costs €9.90 including VAT. For shipping outside the EU and wholesale orders over 2 kg, please contact us by email for an individual quote: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Are there any variations from the product description?",
@@ -321,6 +323,28 @@
 		"close": "Got it!",
 		"orderError": "We couldn't send your order. Please try again.",
 		"orderExpired": "This order attempt has expired. Please contact us to check its status before placing another order."
+	},
+	"checkout": {
+		"country": "Delivery country",
+		"outsideEu": "Outside the EU / special VAT territories",
+		"business": "Order as a business",
+		"companyName": "Company name",
+		"companyRequired": "Please enter your company name",
+		"vatId": "EU VAT ID with country prefix (optional, VIES verification)",
+		"manualQuote": "Shipping outside the EU and wholesale orders (over 2 kg): please contact us by email for an individual quote.",
+		"netProducts": "Products excluding VAT",
+		"productVat": "VAT on products",
+		"grossShipping": "Shipping including VAT",
+		"includedVat": "Total VAT included",
+		"calculating": "Calculating your order...",
+		"retry": "Recalculate",
+		"errors": {
+			"VAT_INVALID": "The EU VAT ID could not be verified. Check the number and its delivery-country prefix, or contact us.",
+			"VAT_UNAVAILABLE": "VIES verification is temporarily unavailable. Please try again or contact us by email.",
+			"MANUAL_QUOTE": "This delivery requires an individual quote. Please contact us by email.",
+			"QUOTE_CHANGED": "The order amount or VAT rate has changed. Recalculate before confirming your order again.",
+			"QUOTE_UNAVAILABLE": "Your order could not be calculated. Please try again."
+		}
 	},
 	"validation": {
 		"firstNameRequired": "Please enter your first name",

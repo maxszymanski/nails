@@ -7,6 +7,8 @@
 		"socials": "Nasze Social Media"
 	},
 	"footer": {
+		"contact": "Kontakt",
+		"owner": "Właściciel",
 		"info": "Iwon Nail Display tworzy innowacyjne systemy prezentacji z wykorzystaniem unikalnych inteligentnych wzorników paznokci. Nasze rozwiązania nadają Twojemu salonowi nowoczesny wygląd i wyznaczają nowe standardy w prezentacji kolorów i wzorów.",
 		"company": {
 			"title": "Strona główna",
@@ -267,7 +269,7 @@
 		},
 		{
 			"title": "Jakie są koszty przesyłki?",
-			"answer": "Koszt przesyłki na terenie Niemiec jest bezpłatny. Przy zamówieniu z innych krajów zaproponujemy indywidualną ofertę."
+			"answer": "Dla standardowych zamówień do 2 kg dostawa na terenie Niemiec kosztuje 4,90 € brutto i jest bezpłatna od 50 € wartości produktów brutto. Dostawa do Polski i pozostałych krajów UE kosztuje 9,90 € brutto. Wysyłka poza UE oraz zamówienia hurtowe (powyżej 2 kg) – prosimy o kontakt e-mailowy w celu indywidualnej wyceny: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Czy są jakieś odchylenia w opisie produktów?",
@@ -319,6 +321,28 @@
 		"close": "Rozumiem!",
 		"orderError": "Nie udało się wysłać zamówienia. Spróbuj ponownie.",
 		"orderExpired": "Ta próba zamówienia wygasła. Skontaktuj się z nami, aby sprawdzić jej status przed złożeniem kolejnego zamówienia."
+	},
+	"checkout": {
+		"country": "Kraj dostawy",
+		"outsideEu": "Poza UE / terytoria ze szczególnymi zasadami VAT",
+		"business": "Zamawiam jako firma",
+		"companyName": "Nazwa firmy",
+		"companyRequired": "Proszę podać nazwę firmy",
+		"vatId": "NIP-UE z prefiksem kraju (opcjonalnie, weryfikacja VIES)",
+		"manualQuote": "Wysyłka poza UE oraz zamówienia hurtowe (powyżej 2 kg) – prosimy o kontakt e-mailowy w celu indywidualnej wyceny.",
+		"netProducts": "Produkty netto",
+		"productVat": "VAT od produktów",
+		"grossShipping": "Dostawa brutto",
+		"includedVat": "W tym VAT łącznie",
+		"calculating": "Obliczanie kwoty zamówienia...",
+		"retry": "Przelicz ponownie",
+		"errors": {
+			"VAT_INVALID": "Nie potwierdzono NIP-UE. Sprawdź numer i jego zgodność z krajem dostawy lub skontaktuj się z nami.",
+			"VAT_UNAVAILABLE": "Weryfikacja VIES jest chwilowo niedostępna. Spróbuj ponownie lub skontaktuj się z nami e-mailowo.",
+			"MANUAL_QUOTE": "Ta dostawa wymaga indywidualnej wyceny. Prosimy o kontakt e-mailowy.",
+			"QUOTE_CHANGED": "Kwota zamówienia lub stawka VAT uległa zmianie. Przelicz zamówienie przed ponownym zatwierdzeniem.",
+			"QUOTE_UNAVAILABLE": "Nie udało się obliczyć zamówienia. Spróbuj ponownie."
+		}
 	},
 	"validation": {
 		"firstNameRequired": "Proszę podać imię",

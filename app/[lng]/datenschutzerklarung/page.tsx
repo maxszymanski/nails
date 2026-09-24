@@ -1,6 +1,7 @@
 import { getT } from '@/app/i18n'
 
 import Pill from '@/src/components/ui/Pill'
+import { company } from '@/src/data/company'
 
 export async function generateMetadata() {
 	const { t } = await getT('translations')
@@ -31,7 +32,7 @@ async function page() {
 								Grillparzerstr. 12 <br />
 								40699 Erkrath <br /> Germany <br />
 								{t('privacy.phone')}: +49 (0) 177 3500405 <br />
-								E-Mail: info@iwonnaildisplay.de
+								E-Mail: <a className="underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
 							</p>
 						</div>
 					</div>

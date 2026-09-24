@@ -8,9 +8,9 @@ import { useCartStore } from '../stores/CartStore'
 import CartProduct from './CartProduct'
 import { useState } from 'react'
 import OrderForm from './OrderForm'
-import Spinner from './Spinner'
 import LogoLink from './LogoLink'
 import CompatibleProducts from './CompatibleProducts'
+import { products } from '@/src/data/products'
 
 export type CartInformation = {
 	items: {
@@ -27,13 +27,7 @@ function CartModal() {
 
 	const items = useCartStore(state => state.items)
 
-	const totalValue = useCartStore(state => state.items.reduce((sum, i) => sum + i.price * i.quantity, 0))
-
-	const shipping = totalValue >= 150 ? 0 : 15
-	const totalWithShipping = totalValue + shipping
-	const toFreeShipping = Math.max(0, 150 - totalValue)
-
-	const progress = Math.min(100, (totalValue / 150) * 100)
+	const totalValue = items.reduce((sum, item) => sum + Math.round((products.find(product => product.id === item.id)?.price || 0) * 100) * item.quantity, 0) / 100
 
 	const cartInformation: CartInformation = {
 		items: items.map(item => ({
@@ -141,109 +135,15 @@ function CartModal() {
 
 				{step === 4 && <CompatibleProducts onClick={() => setStep(1)} />}
 
-				{step != 4 && items.length > 0 && (
-					<div className="mt-auto flex flex-col w-full pt-4">
-						<p className="w-full flex justify-between gap-2 items-center leading-6 mb-2">
-							<span className="text-grayscale-500">{t('cart.value')}:</span>
-							<span>
-								{totalValue.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
-							</span>
+				{step === 1 && items.length > 0 && (
+					<div className="mt-auto flex flex-col w-full pt-4 gap-4">
+						<p className="w-full flex justify-between gap-3 items-center leading-6">
+							<span className="text-grayscale-500">{t('checkout.netProducts')}:</span>
+							<span className="shrink-0">{totalValue.toFixed(2).replace('.', ',')} EUR</span>
 						</p>
-						<p className="w-full flex justify-between gap-2 items-center leading-6 mb-6">
-							<span className="text-grayscale-500">{t('cart.shipping')}:</span>
-							{shipping === 0 ? (
-								<span>{t('cart.free')}</span>
-							) : (
-								<span>
-									{shipping.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
-								</span>
-							)}
-						</p>
-						<p className="w-full flex justify-between gap-2 items-center leading-8 mb-4 text-xl">
-							<span>{t('cart.total')}:</span>
-							<span>
-								{totalWithShipping.toFixed(2).replace('.', ',')}€{' '}
-								<span className="opacity-50 ">(+VAT)</span>
-							</span>
-						</p>
-						{step === 1 ? (
-							<Button
-								variant="primary"
-								type="button"
-								restClass="w-full mb-4"
-								onClick={e => {
-									e.preventDefault()
-									setStep(2)
-								}}>
-								{t('cart.quote')}
-								<svg
-									width="20px"
-									height="20px"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<g id="Arrow / Arrow_Right_SM">
-										<path
-											id="Vector"
-											d="M7 12H17M17 12L13 8M17 12L13 16"
-											stroke="#FFFFFF"
-											strokeWidth="2"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										/>
-									</g>
-								</svg>
-							</Button>
-						) : (
-							<Button
-								variant="primary"
-								restClass="w-full mb-4"
-								type="submit"
-								form="order-form"
-								disabled={isSubmitting}>
-								<span className={` flex items-center   ${isSubmitting ? 'invisible' : 'visible'}`}>
-									{t('cart.order')}{' '}
-									<svg
-										width="20px"
-										height="20px"
-										viewBox="0 0 24 24"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<g id="Arrow / Arrow_Right_SM">
-											<path
-												id="Vector"
-												d="M7 12H17M17 12L13 8M17 12L13 16"
-												stroke="#FFFFFF"
-												strokeWidth="2"
-												strokeLinecap="round"
-												strokeLinejoin="round"
-											/>
-										</g>
-									</svg>
-								</span>{' '}
-								{isSubmitting && <Spinner restClass="absolute left-1/2 -translate-x-1/2" />}
-							</Button>
-						)}
-						<div className="w-full flex flex-col pt-4 border-t border-grayscale-200">
-							<p className="w-full flex justify-between gap-2 items-center leading-6 mb-2">
-								<span className="text-grayscale-500">{t('cart.freeShipping')}:</span>
-								{shipping === 0 ? (
-									<span>{t('cart.free')}</span>
-								) : (
-									<span className="text-black-primary">
-										{toFreeShipping.toFixed(2).replace('.', ',')}€
-									</span>
-								)}
-							</p>
-							<div className="w-full rounded-full h-[5px] bg-grayscale-200 relative overflow-hidden mb-4">
-								<div
-									className="h-full absolute transition-all duration-300 rounded-full w-full top-0 left-0 bg-my-purple"
-									style={{ maxWidth: `${progress}%` }}></div>
-							</div>
-							<p className="text-center text-grayscale-500 text-sm leading-5 opacity-50">
-								{t('cart.shippingInfo')}
-							</p>
-						</div>
+						<Button variant="primary" type="button" restClass="w-full mb-4" onClick={() => setStep(2)}>
+							{t('cart.quote')}
+						</Button>
 					</div>
 				)}
 				{step === 3 && (

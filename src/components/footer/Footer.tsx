@@ -1,6 +1,7 @@
 import { getT } from '@/app/i18n'
 import FooterNav from './FooterNav'
 import FooterTop from './FooterTop'
+import { company } from '@/src/data/company'
 
 async function Footer({ lng }: { lng: string }) {
 	const year = new Date().getFullYear()
@@ -12,6 +13,22 @@ async function Footer({ lng }: { lng: string }) {
 				<div className="p-4 wrapper lg:pt-18 lg:pb-6 relative z-2">
 					<FooterTop lng={lng} />
 					<FooterNav lng={lng} />
+					<div className="mt-8 pt-6 border-t border-[#E9DDC880]">
+						<h2 className="text-base leading-6 mb-3">{t('footer.contact')}</h2>
+						<address className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-italic text-sm leading-6 text-grayscale-500">
+							<div>
+								<p>{company.name}</p>
+								<p>{t('footer.owner')}: {company.owner}</p>
+								<p>{company.street}<br />{company.postalCode} {company.city}</p>
+								<p>USt-IdNr.: {company.vatId}</p>
+							</div>
+							<div className="flex flex-col items-start gap-1 min-w-0">
+								<a className="underline break-all hover:text-black-primary" href={`mailto:${company.email}`}>{company.email}</a>
+								<a className="underline hover:text-black-primary" href={company.phoneHref}>{company.phone}</a>
+								<a className="underline break-all hover:text-black-primary" href={company.website}>iwonnaildisplay.de</a>
+							</div>
+						</address>
+					</div>
 					<div className="w-full flex items-center justify-center mt-12 lg:mt-14">
 						<p className="text-grayscale-500/50 text-sm md:text-base leading-5 md:leading-6">
 							© Iwon Nails Display {year}, {t('footer.copyright')}
