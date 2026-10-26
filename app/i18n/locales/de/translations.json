@@ -270,7 +270,7 @@
 		},
 		{
 			"title": "Wenn ich eine Bestellung aufgebe, wie hoch sind die Versandkosten?",
-			"answer": "Für Standardbestellungen bis 2 kg kostet der Versand innerhalb Deutschlands 4,90 € inkl. MwSt. Ab einem Warenwert von 50 € inkl. MwSt. ist er kostenlos. Der Versand nach Polen und in die übrigen EU-Länder kostet 9,90 € inkl. MwSt. Für den Versand außerhalb der EU sowie Großbestellungen über 2 kg kontaktieren Sie uns bitte per E-Mail für ein individuelles Angebot: Iwon@iwonnaildisplay.de."
+			"answer": "Für Standardbestellungen bis 2 kg kostet der Versand innerhalb Deutschlands 4,90 € inkl. MwSt. Ab einem Warenwert von 50 € inkl. MwSt. ist er kostenlos. Der Versand nach Polen und in die übrigen EU-Länder kostet 9,90 €, der Versand in die Vereinigten Arabischen Emirate und nach Katar 25,49 €. Für den Versand in andere Nicht-EU-Länder sowie Großbestellungen über 2 kg kontaktieren Sie uns bitte per E-Mail für ein individuelles Angebot: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Gibt es Abweichungen in der Produktbeschaffenheit?",
@@ -325,12 +325,13 @@
 	},
 	"checkout": {
 		"country": "Lieferland",
-		"outsideEu": "Außerhalb der EU / Gebiete mit besonderen MwSt.-Regeln",
+		"outsideEu": "Anderes Nicht-EU-Land / Gebiet mit besonderen MwSt.-Regeln",
 		"business": "Als Unternehmen bestellen",
 		"companyName": "Firmenname",
 		"companyRequired": "Bitte geben Sie den Firmennamen ein.",
 		"vatId": "USt-IdNr. mit Länderpräfix (optional, MIAS/VIES-Prüfung)",
-		"manualQuote": "Versand außerhalb der EU und Großbestellungen (über 2 kg): Bitte kontaktieren Sie uns per E-Mail für ein individuelles Angebot.",
+		"manualQuote": "Versand in andere Nicht-EU-Länder und Großbestellungen (über 2 kg): Bitte kontaktieren Sie uns per E-Mail für ein individuelles Angebot.",
+		"importTaxes": "Shop-MwSt.: 0 % (Ausfuhr in ein Nicht-EU-Land). Bei der Zustellung können lokale Einfuhrumsatzsteuer, Zoll- oder Beförderungsgebühren anfallen.",
 		"netProducts": "Warenwert netto",
 		"productVat": "MwSt. auf Produkte",
 		"grossShipping": "Versand inkl. MwSt.",

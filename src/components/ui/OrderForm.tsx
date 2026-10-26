@@ -13,7 +13,7 @@ import { CartInformation } from './CartModal'
 import { toast } from 'react-toastify'
 import { useEffect, useRef, useState } from 'react'
 import { getOrderAttempt } from '@/src/lib/order-attempt'
-import { VAT_RATES, type Quote } from '@/src/lib/checkout'
+import { isExportCountry, VAT_RATES, type Quote } from '@/src/lib/checkout'
 import Button from './Button'
 import Spinner from './Spinner'
 import { company } from '@/src/data/company'
@@ -78,9 +78,10 @@ function OrderForm({
 		defaultValues: { country: 'DE', isBusiness: false, companyName: '', vatId: '' },
 	})
 	const [country, isBusiness, vatId] = useWatch({ control, name: ['country', 'isBusiness', 'vatId'] })
+	const exportCountry = isExportCountry(country)
 	const quotePayload = JSON.stringify({
 		cart: cartInformation,
-		delivery: { country, isBusiness, vatId: isBusiness ? vatId : '' },
+		delivery: { country, isBusiness, vatId: isBusiness && !exportCountry ? vatId : '' },
 	})
 	const quoteKey = `${quoteRevision}:${quotePayload}`
 	const currentResult = quoteResult?.key === quoteKey ? quoteResult : null
@@ -123,7 +124,7 @@ function OrderForm({
 
 		try {
 			const payload = {
-				customer: { ...data, vatId: data.isBusiness ? data.vatId : '', companyName: data.isBusiness ? data.companyName : '' },
+				customer: { ...data, vatId: data.isBusiness && !isExportCountry(data.country) ? data.vatId : '', companyName: data.isBusiness ? data.companyName : '' },
 				cart: { items: [...cartInformation.items].sort((a, b) => a.id - b.id) },
 				lng,
 				expectedTotalCents: quote.totalCents,
@@ -191,6 +192,7 @@ function OrderForm({
 				{t('checkout.manualQuote')}{' '}
 				<a className="block underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
 			</p>
+			{exportCountry && <p className="text-sm leading-6 text-grayscale-500">{t('checkout.importTaxes')}</p>}
 			{!manualQuote && <>
 			<label className="flex items-center gap-3">
 				<input type="checkbox" {...register('isBusiness')} disabled={isSubmitting} className="size-5 shrink-0 accent-my-purple" />
@@ -200,9 +202,9 @@ function OrderForm({
 				<Input required id="companyName" name="companyName" label={t('checkout.companyName')}
 					formRegister={register('companyName')} error={errors.companyName || null} message={errors.companyName?.message || null}
 					disabled={isSubmitting} autoComplete="organization" placeholder={t('checkout.companyName')} />
-				<Input id="vatId" name="vatId" label={t('checkout.vatId')}
+				{!exportCountry && <Input id="vatId" name="vatId" label={t('checkout.vatId')}
 					formRegister={register('vatId')} error={errors.vatId || null} message={errors.vatId?.message || null}
-					disabled={isSubmitting} autoComplete="off" placeholder="PL1234567890" />
+					disabled={isSubmitting} autoComplete="off" placeholder="PL1234567890" />}
 			</div>}
 			<div className="w-full grid grid-cols-2 gap-2 xs:gap-3">
 				<Input

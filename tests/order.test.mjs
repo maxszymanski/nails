@@ -309,6 +309,8 @@ for (const [country, rate, productVat, shippingVat, total] of [
 	['EE', 24, 173, 192, 1883],
 	['RO', 21, 151, 172, 1861],
 	['SK', 23, 166, 185, 1876],
+	['AE', 0, 0, 0, 3269],
+	['QA', 0, 0, 0, 3269],
 ]) {
 	test(`quotes and orders use ${rate}% VAT for ${country} and final delivery prices`, async () => {
 		const api = harness()
@@ -323,10 +325,21 @@ for (const [country, rate, productVat, shippingVat, total] of [
 		assert.equal(quote.productVatCents, productVat)
 		assert.equal(quote.shippingVatCents, shippingVat)
 		assert.equal(quote.vatCents, productVat + shippingVat)
-		assert.equal(quote.shippingCents, country === 'DE' ? 490 : 990)
+		assert.equal(quote.shippingCents, country === 'DE' ? 490 : ['AE', 'QA'].includes(country) ? 2549 : 990)
 		assert.equal(quote.totalCents, total)
 		assert.equal((await api.post(body)).status, 200)
 		for (const mail of api.calls[0].emails) assert.ok(mail.html.includes(`(${rate}%)`))
+	})
+}
+
+for (const country of ['AE', 'QA']) {
+	test(`does not use EU VIES for export orders to ${country}`, async () => {
+		const api = harness()
+		const body = order()
+		body.cart.items = [{ id: 0, quantity: 1 }]
+		Object.assign(body.customer, { country, isBusiness: true, companyName: 'Test company', vatId: `${country}123456` })
+		Object.assign(body, { expectedTotalCents: 3269, expectedVatRate: 0 })
+		assert.equal((await api.post(body)).status, 200)
 	})
 }
 

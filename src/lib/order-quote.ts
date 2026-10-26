@@ -1,7 +1,8 @@
-import { calculateQuote, CheckoutError, type Cart, type Delivery } from '@/src/lib/checkout'
+import { calculateQuote, CheckoutError, isExportCountry, type Cart, type Delivery } from '@/src/lib/checkout'
 
 export async function getOrderQuote(cart: Cart, delivery: Delivery) {
 	const standardQuote = calculateQuote(cart, delivery.country)
+	if (isExportCountry(delivery.country)) return standardQuote
 	if (!delivery.isBusiness || !delivery.vatId || delivery.country === 'DE') return standardQuote
 	const countryCode = delivery.country === 'GR' ? 'EL' : delivery.country
 	if (!delivery.vatId.startsWith(countryCode) || !/^[A-Z]{2}[A-Z0-9]{2,12}$/.test(delivery.vatId)) {

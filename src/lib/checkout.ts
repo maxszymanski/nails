@@ -1,13 +1,21 @@
 import { z } from 'zod'
 import { products } from '@/src/data/products'
 
-// Standard rates: https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm
-// Reviewed 2026-09-23. Special VAT territories require an individual quote.
+// EU standard rates: https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm
+// AE and QA are treated as 0% German VAT exports; local import taxes remain the customer's responsibility.
+// Reviewed 2026-10-26. Other non-EU and special VAT territories require an individual quote.
 export const VAT_RATES = {
 	AT: 20, BE: 21, BG: 20, CY: 19, CZ: 21, DE: 19, DK: 25, EE: 24, GR: 24,
 	ES: 21, FI: 25.5, FR: 20, HR: 25, HU: 27, IE: 23, IT: 22, LT: 21, LU: 17,
 	LV: 21, MT: 18, NL: 21, PL: 23, PT: 23, RO: 21, SE: 25, SI: 22, SK: 23,
+	AE: 0, QA: 0,
 } as const
+
+export const EXPORT_COUNTRIES = ['AE', 'QA'] as const
+
+export function isExportCountry(country: string) {
+	return (EXPORT_COUNTRIES as readonly string[]).includes(country)
+}
 
 export const deliverySchema = z.object({
 	country: z.string().regex(/^(?:[A-Z]{2}|OTHER)$/),
@@ -60,7 +68,9 @@ export function calculateQuote(cart: Cart, country: string, vatExempt = false): 
 	const vatRate = vatExempt && country !== 'DE' ? 0 : VAT_RATES[country as keyof typeof VAT_RATES]
 	const productVatCents = Math.round(subtotalCents * vatRate / 100)
 	const productsGrossCents = subtotalCents + productVatCents
-	const shippingCents = country === 'DE' ? (productsGrossCents >= 5000 ? 0 : 490) : 990
+	const shippingCents = country === 'DE'
+		? (productsGrossCents >= 5000 ? 0 : 490)
+		: isExportCountry(country) ? 2549 : 990
 	// Delivery prices are final amounts: extract their VAT, do not add it again.
 	const shippingVatCents = shippingCents - Math.round(shippingCents * 100 / (100 + vatRate))
 	return {

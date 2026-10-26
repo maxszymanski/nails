@@ -271,7 +271,7 @@
 		},
 		{
 			"title": "What are the shipping costs?",
-			"answer": "For standard orders up to 2 kg, shipping within Germany costs €4.90 including VAT and is free for product orders of €50 or more including VAT. Shipping to Poland and other EU countries costs €9.90 including VAT. For shipping outside the EU and wholesale orders over 2 kg, please contact us by email for an individual quote: Iwon@iwonnaildisplay.de."
+			"answer": "For standard orders up to 2 kg, shipping within Germany costs €4.90 including VAT and is free for product orders of €50 or more including VAT. Shipping to Poland and other EU countries costs €9.90, while shipping to the United Arab Emirates and Qatar costs €25.49. For shipping to other non-EU countries and wholesale orders over 2 kg, please contact us by email for an individual quote: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Are there any variations from the product description?",
@@ -326,12 +326,13 @@
 	},
 	"checkout": {
 		"country": "Delivery country",
-		"outsideEu": "Outside the EU / special VAT territories",
+		"outsideEu": "Other non-EU country / special VAT territory",
 		"business": "Order as a business",
 		"companyName": "Company name",
 		"companyRequired": "Please enter your company name",
 		"vatId": "EU VAT ID with country prefix (optional, VIES verification)",
-		"manualQuote": "Shipping outside the EU and wholesale orders (over 2 kg): please contact us by email for an individual quote.",
+		"manualQuote": "Shipping to other non-EU countries and wholesale orders (over 2 kg): please contact us by email for an individual quote.",
+		"importTaxes": "Store VAT: 0% (non-EU export). Local import VAT, customs duties or carrier fees may be charged on delivery.",
 		"netProducts": "Products excluding VAT",
 		"productVat": "VAT on products",
 		"grossShipping": "Shipping including VAT",
