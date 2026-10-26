@@ -108,6 +108,8 @@ const invalidCases = {
 	'negative total': body => { body.cart.totalWithShipping = -10 },
 	'forged shipping': body => { body.cart.shipping = 0 },
 	'forged price': body => { body.cart.items[0].price = 0.01 },
+	'forged product weight': body => { body.cart.items[0].weightGrams = 1 },
+	'forged cart weight': body => { body.cart.totalWeightGrams = 1 },
 	'forged product name': body => { body.cart.items[0].name = 'Another product' },
 	'missing address': body => { body.customer.address = ' ' },
 	'unaccepted terms': body => { body.customer.terms = false },
@@ -155,7 +157,7 @@ test('rejects an invalid PayPal recipient before sending email', async () => {
 })
 
 for (const [lng, country, rate, amount, button] of [
-	['pl', 'PL', 23, '18.76', 'Zapłać przez PayPal'],
+	['pl', 'PL', 23, '20.85', 'Zapłać przez PayPal'],
 	['de', 'DE', 19, '13.47', 'Mit PayPal bezahlen'],
 	['en', 'DE', 19, '13.47', 'Pay with PayPal'],
 ]) {
@@ -304,13 +306,13 @@ test('browser retry identity survives remounts and persists no customer details'
 
 for (const [country, rate, productVat, shippingVat, total] of [
 	['DE', 19, 137, 78, 1347],
-	['PL', 23, 166, 185, 1876],
-	['FI', 25.5, 184, 201, 1894],
-	['EE', 24, 173, 192, 1883],
-	['RO', 21, 151, 172, 1861],
-	['SK', 23, 166, 185, 1876],
-	['AE', 0, 0, 0, 3269],
-	['QA', 0, 0, 0, 3269],
+	['PL', 23, 166, 224, 2085],
+	['FI', 25.5, 184, 244, 2103],
+	['EE', 24, 173, 232, 2092],
+	['RO', 21, 151, 208, 2070],
+	['SK', 23, 166, 224, 2085],
+	['AE', 0, 0, 0, 3019],
+	['QA', 0, 0, 0, 3019],
 ]) {
 	test(`quotes and orders use ${rate}% VAT for ${country} and final delivery prices`, async () => {
 		const api = harness()
@@ -325,28 +327,91 @@ for (const [country, rate, productVat, shippingVat, total] of [
 		assert.equal(quote.productVatCents, productVat)
 		assert.equal(quote.shippingVatCents, shippingVat)
 		assert.equal(quote.vatCents, productVat + shippingVat)
-		assert.equal(quote.shippingCents, country === 'DE' ? 490 : ['AE', 'QA'].includes(country) ? 2549 : 990)
+		assert.equal(quote.shippingCents, country === 'DE' ? 490 : ['AE', 'QA'].includes(country) ? 2299 : 1199)
 		assert.equal(quote.totalCents, total)
 		assert.equal((await api.post(body)).status, 200)
 		for (const mail of api.calls[0].emails) assert.ok(mail.html.includes(`(${rate}%)`))
 	})
 }
 
-for (const country of ['AE', 'QA']) {
+for (const [country, shipping] of [
+	['AE', 2299], ['QA', 2299], ['CH', 1699],
+	...['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA'].map(country => [country, 1999]),
+]) {
 	test(`does not use EU VIES for export orders to ${country}`, async () => {
 		const api = harness()
 		const body = order()
 		body.cart.items = [{ id: 0, quantity: 1 }]
 		Object.assign(body.customer, { country, isBusiness: true, companyName: 'Test company', vatId: `${country}123456` })
-		Object.assign(body, { expectedTotalCents: 3269, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: 720 + shipping, expectedVatRate: 0 })
 		assert.equal((await api.post(body)).status, 200)
+	})
+}
+
+test('calculates the weight of each catalog product in grams', () => {
+	const { calculateQuote } = loadModule('src/lib/checkout.ts')
+	for (const [id, weightGrams] of [[0, 30], [1, 35], [2, 30], [3, 890], [4, 2181], [5, 109]]) {
+		assert.equal(calculateQuote({ items: [{ id, quantity: 1 }] }, 'DE').totalWeightGrams, weightGrams)
+		assert.equal(calculateQuote({ items: [{ id, quantity: 3 }] }, 'DE').totalWeightGrams, weightGrams * 3)
+	}
+})
+
+test('recalculates mixed cart weight after quantity changes and removal', () => {
+	const { calculateQuote } = loadModule('src/lib/checkout.ts')
+	const cart = { items: [
+		{ id: 0, quantity: 3 }, { id: 1, quantity: 2 }, { id: 2, quantity: 4 },
+		{ id: 3, quantity: 1 }, { id: 4, quantity: 1 }, { id: 5, quantity: 2 },
+	] }
+	assert.equal(calculateQuote(cart, 'DE').totalWeightGrams, 3569)
+	cart.items[5].quantity = 3
+	assert.equal(calculateQuote(cart, 'DE').totalWeightGrams, 3678)
+	cart.items[5].quantity = 1
+	assert.equal(calculateQuote(cart, 'DE').totalWeightGrams, 3460)
+	cart.items = cart.items.filter(item => item.id !== 4)
+	assert.equal(calculateQuote(cart, 'DE').totalWeightGrams, 1279)
+})
+
+test('quote API accepts orders between 2 and 20 kg without adding weight to customer emails', async () => {
+	const api = harness()
+	const body = order()
+	const response = await api.quote({ cart: body.cart, delivery: { country: 'DE', isBusiness: false, vatId: '' } })
+	assert.equal(response.status, 200)
+	const { quote } = await response.json()
+	assert.equal(quote.totalWeightGrams, 2181)
+	assert.equal(quote.totalCents, body.expectedTotalCents)
+	assert.equal(quote.shippingCents, 0)
+	assert.equal((await api.post(body)).status, 200)
+	assert.doesNotMatch(api.calls[0].emails[1].html, /totalWeightGrams|weightGrams|2181 g/)
+})
+
+for (const lng of ['pl', 'de', 'en']) {
+	test(`only owner emails show server-calculated product weight for ${lng} orders`, async () => {
+		const { calculateQuote } = loadModule('src/lib/checkout.ts')
+		for (const [items, weight] of [
+			[[{ id: 0, quantity: 1 }], '30 g (0,03 kg)'],
+			[[{ id: 4, quantity: 1 }], '2181 g (2,181 kg)'],
+			[[{ id: 4, quantity: 2 }, { id: 1, quantity: 3 }, { id: 5, quantity: 1 }], '4576 g (4,576 kg)'],
+		]) {
+			const api = harness()
+			const body = order()
+			body.lng = lng
+			body.cart.items = items
+			body.expectedTotalCents = calculateQuote(body.cart, body.customer.country).totalCents
+			assert.equal((await api.post(body)).status, 200)
+			const [owner, customer] = api.calls[0].emails
+			assert.equal(owner.to, environment.ORDER_OWNER_EMAIL)
+			assert.ok(owner.html.includes(`Waga produktów (bez opakowania):</strong> ${weight}`))
+			assert.equal(customer.to, body.customer.email)
+			assert.ok(!customer.html.includes('Waga produktów'))
+			assert.ok(!customer.html.includes(weight))
+		}
 	})
 }
 
 test('German free shipping threshold uses gross products, including exactly 50 EUR', () => {
 	for (const [price, gross, shipping] of [[42.01, 4999, 490], [42.02, 5000, 0], [43, 5117, 0]]) {
 		const { calculateQuote } = loadModule('src/lib/checkout.ts', {
-			'@/src/data/products': { products: [{ id: 0, price }] },
+			'@/src/data/products': { products: [{ id: 0, price, weightGrams: 30 }] },
 		})
 		const result = calculateQuote({ items: [{ id: 0, quantity: 1 }] }, 'DE')
 		assert.equal(result.totalCents, gross + shipping)
@@ -354,17 +419,102 @@ test('German free shipping threshold uses gross products, including exactly 50 E
 	}
 })
 
+for (const [countries, prices] of [
+	[['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'GR', 'ES', 'FI', 'FR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'], [1199, 2049, 2549, 3149]],
+	[['CH'], [1699, 2999, 3799, 5199]],
+	[['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'MC', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA'], [1999, 3299, 4099, 5599]],
+	[['AE', 'QA'], [2299, 4899, 6499, 10399]],
+]) {
+	test(`shipping weight boundaries and final prices for ${countries.join(', ')}`, () => {
+		for (const [weightGrams, band] of [[1, 0], [1999, 0], [2000, 0], [2001, 1], [4999, 1], [5000, 1], [5001, 2], [9999, 2], [10000, 2], [10001, 3], [19999, 3], [20000, 3]]) {
+			const { calculateQuote } = loadModule('src/lib/checkout.ts', {
+				'@/src/data/products': { products: [{ id: 0, price: 10, weightGrams }] },
+			})
+			for (const country of countries) {
+				for (const vatExempt of [false, true]) {
+					const quote = calculateQuote({ items: [{ id: 0, quantity: 1 }] }, country, vatExempt)
+					assert.equal(quote.shippingCents, prices[band], `${country}: ${weightGrams} g`)
+					assert.equal(quote.totalCents, quote.subtotalCents + quote.productVatCents + prices[band])
+				}
+			}
+		}
+	})
+}
+
+test('exactly 20 kg is accepted but 20 kg plus 1 g is blocked in every supported country', () => {
+	for (const weightGrams of [20000, 20001]) {
+		const { calculateQuote, VAT_RATES } = loadModule('src/lib/checkout.ts', {
+			'@/src/data/products': { products: [{ id: 0, price: 100, weightGrams }] },
+		})
+		for (const country of Object.keys(VAT_RATES)) {
+			const quote = () => calculateQuote({ items: [{ id: 0, quantity: 1 }] }, country)
+			if (weightGrams === 20000) assert.doesNotThrow(quote, country)
+			else assert.throws(quote, error => error.code === 'WEIGHT_LIMIT' && error.status === 422, country)
+		}
+	}
+})
+
+for (const country of ['DE', 'PL', 'CH', 'NO', 'MC', 'AE', 'QA']) {
+	test(`quote and order APIs block over 20 kg to ${country} before VIES or email`, async () => {
+		const api = harness()
+		const body = order()
+		body.cart.items = [{ id: 4, quantity: 10 }]
+		const delivery = { country, isBusiness: true, vatId: `${country}123456789` }
+		Object.assign(body.customer, delivery, { companyName: 'Test company' })
+		for (const response of [await api.quote({ cart: body.cart, delivery }), await api.post(body)]) {
+			assert.equal(response.status, 422)
+			assert.equal((await response.json()).code, 'WEIGHT_LIMIT')
+		}
+		assert.equal(api.calls.length, 0)
+	})
+}
+
+test('quantity changes and mixed products choose a new shipping band', () => {
+	const { calculateQuote } = loadModule('src/lib/checkout.ts')
+	const cart = { items: [{ id: 3, quantity: 2 }, { id: 5, quantity: 2 }] }
+	assert.equal(calculateQuote(cart, 'PL').shippingCents, 1199) // 1998 g
+	cart.items.push({ id: 0, quantity: 1 })
+	assert.equal(calculateQuote(cart, 'PL').shippingCents, 2049)
+	cart.items[0].quantity = 6
+	assert.equal(calculateQuote(cart, 'PL').shippingCents, 2549)
+	cart.items[0].quantity = 12
+	assert.equal(calculateQuote(cart, 'PL').shippingCents, 3149)
+	cart.items[0].quantity = 23
+	assert.throws(() => calculateQuote(cart, 'PL'), /WEIGHT_LIMIT/)
+})
+
+test('Monaco uses French VAT and the rest-of-Europe shipping prices', async () => {
+	const api = harness()
+	const body = order()
+	body.customer.country = 'MC'
+	body.expectedTotalCents = 15298
+	body.expectedVatRate = 20
+	assert.equal((await api.post(body)).status, 200)
+})
+
+test('old delivery prices cannot be submitted after a shipping price change', async () => {
+	const api = harness()
+	const body = order()
+	body.customer.country = 'PL'
+	body.expectedTotalCents = 13289
+	body.expectedVatRate = 23
+	const response = await api.post(body)
+	assert.equal(response.status, 409)
+	assert.equal((await response.json()).code, 'QUOTE_CHANGED')
+	assert.equal(api.calls.length, 0)
+})
+
 for (const price of [0, 0.01, -1]) {
 	test(`rejects catalog subtotal ${price} before delivery or VAT`, () => {
 		const { calculateQuote } = loadModule('src/lib/checkout.ts', {
-			'@/src/data/products': { products: [{ id: 0, price }] },
+			'@/src/data/products': { products: [{ id: 0, price, weightGrams: 30 }] },
 		})
 		assert.throws(() => calculateQuote({ items: [{ id: 0, quantity: 1 }] }, 'DE'), /INVALID_CART/)
 	})
 }
 
-for (const country of ['US', 'TR', 'GB', 'OTHER']) {
-	test(`blocks automatic orders and quotes outside EU: ${country}`, async () => {
+for (const country of ['US', 'RU', 'BY', 'OTHER']) {
+	test(`requires manual quotes for unsupported destinations: ${country}`, async () => {
 		const api = harness()
 		const body = order()
 		body.customer.country = country
@@ -387,8 +537,25 @@ test('changing the expected price or VAT never changes the server calculation', 
 	}
 })
 
+test('all UK orders require email regardless of value, weight, postcode or customer type', async () => {
+	for (const [isBusiness, zipCode, vatId] of [[false, 'SW1A 1AA', ''], [true, 'SW1A 1AA', ''], [true, 'SW1A 1AA', 'GB123456789'], [false, ' bt1 1aa ', '']]) {
+		const api = harness({ fetch: async () => assert.fail('No network lookup for UK orders') })
+		const body = order()
+		const delivery = { country: 'GB', isBusiness, vatId }
+		Object.assign(body.customer, delivery, { zipCode, companyName: isBusiness ? 'UK company' : '' })
+		for (const items of [[{ id: 0, quantity: 1 }], [{ id: 4, quantity: 3 }], [{ id: 4, quantity: 10 }]]) {
+			body.cart.items = items
+			for (const response of [await api.quote({ cart: body.cart, delivery }), await api.post(body)]) {
+				assert.equal(response.status, 422)
+				assert.equal((await response.json()).code, 'UK_MANUAL_QUOTE')
+			}
+		}
+		assert.equal(api.calls.length, 0)
+	}
+})
+
 test('business customers without VAT ID and domestic companies still pay VAT', async () => {
-	for (const [country, vatId, total, rate] of [['DE', 'DE123456789', 11899, 19], ['PL', '', 13289, 23]]) {
+	for (const [country, vatId, total, rate] of [['DE', 'DE123456789', 11899, 19], ['PL', '', 14348, 23]]) {
 		const api = harness()
 		const body = order()
 		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Test company' })
@@ -397,8 +564,8 @@ test('business customers without VAT ID and domestic companies still pay VAT', a
 	}
 })
 
-test('cross-border companies get 0% only after VIES verification, with Greek EL prefix', async () => {
-	for (const [country, vatId, prefix] of [['PL', 'PL1234567890', 'PL'], ['GR', 'EL123456789', 'EL']]) {
+test('cross-border companies get 0% only after VIES verification, with Greek and Monaco prefixes', async () => {
+	for (const [country, vatId, prefix] of [['PL', 'PL1234567890', 'PL'], ['GR', 'EL123456789', 'EL'], ['MC', 'FR12345678901', 'FR']]) {
 		let checks = 0
 		const api = harness({ fetch: async (url, options) => {
 			assert.equal(url, 'https://ec.europa.eu/taxation_customs/vies/rest-api/check-vat-number')
@@ -410,7 +577,7 @@ test('cross-border companies get 0% only after VIES verification, with Greek EL 
 		} })
 		const body = order()
 		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Company <test>' })
-		Object.assign(body, { expectedTotalCents: 10989, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: country === 'MC' ? 13298 : 12048, expectedVatRate: 0 })
 		const quoted = await api.quote({ cart: body.cart, delivery: { country, vatId, isBusiness: true } })
 		assert.equal((await quoted.json()).quote.vatRate, 0)
 		assert.equal((await api.post(body)).status, 200)
@@ -457,6 +624,96 @@ test('VAT ID prefix must match the delivery country', async () => {
 test('accepts alphanumeric EU postcodes', async () => {
 	const body = order()
 	Object.assign(body.customer, { country: 'NL', zipCode: '1234 AB' })
-	Object.assign(body, { expectedVatRate: 21, expectedTotalCents: 13089 })
+	Object.assign(body, { expectedVatRate: 21, expectedTotalCents: 14148 })
 	assert.equal((await harness().post(body)).status, 200)
 })
+
+// Independent expectations for the agreed checkout configuration, not a tax-law audit.
+const auditDestinations = [
+	...Object.entries({ AT: 20, BE: 21, BG: 20, CY: 19, CZ: 21, DK: 25, EE: 24, GR: 24, ES: 21, FI: 25.5, FR: 20, HR: 25, HU: 27, IE: 23, IT: 22, LT: 21, LU: 17, LV: 21, MT: 18, NL: 21, PL: 23, PT: 23, RO: 21, SE: 25, SI: 22, SK: 23 })
+		.map(([country, rate]) => [country, rate, [1199, 2049, 2549, 3149], true]),
+	['DE', 19, null, false],
+	['CH', 0, [1699, 2999, 3799, 5199], false],
+	...['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA']
+		.map(country => [country, 0, [1999, 3299, 4099, 5599], false]),
+	['MC', 20, [1999, 3299, 4099, 5599], true],
+	...['AE', 'QA'].map(country => [country, 0, [2299, 4899, 6499, 10399], false]),
+]
+
+function roundFraction(numerator, denominator) {
+	return Number((2n * BigInt(numerator) + BigInt(denominator)) / (2n * BigInt(denominator)))
+}
+
+test('calculation audit includes every supported destination', () => {
+	const { VAT_RATES } = loadModule('src/lib/checkout.ts')
+	assert.deepEqual(auditDestinations.map(([country]) => country).sort(), Object.keys(VAT_RATES).sort())
+})
+
+for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
+	test(`independent quote, email and PayPal calculation audit: ${country}`, async () => {
+		let viesChecks = 0
+		const prefix = country === 'GR' ? 'EL' : country === 'MC' ? 'FR' : country
+		const api = harness({ fetch: async (url, options) => {
+			assert.ok(viesEligible, `Unexpected VIES for ${country}`)
+			assert.equal(url, 'https://ec.europa.eu/taxation_customs/vies/rest-api/check-vat-number')
+			const data = JSON.parse(options.body)
+			assert.equal(data.countryCode, prefix)
+			viesChecks++
+			return Response.json({ ...data, valid: true })
+		} })
+		for (const [items, subtotalCents, totalWeightGrams, band] of [
+			[[{ id: 0, quantity: 1 }], 720, 30, 0],
+			[[{ id: 3, quantity: 2 }, { id: 5, quantity: 2 }], 18978, 1998, 0],
+			[[{ id: 4, quantity: 1 }], 9999, 2181, 1],
+			[[{ id: 4, quantity: 3 }], 29997, 6543, 2],
+			[[{ id: 4, quantity: 8 }], 79992, 17448, 3],
+		]) {
+			for (const mode of ['private', 'business', 'businessVatId']) {
+				const vatRate = mode === 'businessVatId' && viesEligible ? 0 : standardRate
+				const productVatCents = roundFraction(subtotalCents * (vatRate * 10), 1000)
+				const shippingCents = country === 'DE' ? (subtotalCents + productVatCents >= 5000 ? 0 : 490) : prices[band]
+				const shippingVatCents = shippingCents - roundFraction(shippingCents * 1000, 1000 + vatRate * 10)
+				const expected = {
+					totalWeightGrams, subtotalCents, productVatCents, shippingCents, shippingVatCents,
+					vatCents: productVatCents + shippingVatCents, vatRate,
+					totalCents: subtotalCents + productVatCents + shippingCents,
+				}
+				const delivery = { country, isBusiness: mode !== 'private', vatId: mode === 'businessVatId' ? `${prefix}123456789` : '' }
+				const body = order()
+				body.cart.items = items
+				Object.assign(body.customer, delivery, { companyName: delivery.isBusiness ? 'Test business' : '' })
+				Object.assign(body, { expectedTotalCents: expected.totalCents, expectedVatRate: vatRate })
+				const response = await api.quote({ cart: body.cart, delivery })
+				assert.equal(response.status, 200, `${mode}, ${totalWeightGrams} g`)
+				assert.deepEqual((await response.json()).quote, expected)
+				const accepted = await api.post(body)
+				assert.equal(accepted.status, 200)
+				assert.equal((await accepted.json()).totalWithShipping, expected.totalCents / 100)
+				const emails = api.calls.at(-1).emails
+				const labels = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/en/translations.json'), 'utf8')).checkout
+				const money = cents => new Intl.NumberFormat('en', { style: 'currency', currency: 'EUR' }).format(cents / 100)
+				for (const email of emails) {
+					assert.ok(email.html.includes(`${labels.netProducts}: ${money(subtotalCents)}`))
+					assert.ok(email.html.includes(`${labels.productVat} (${vatRate}%): ${money(productVatCents)}`))
+					assert.ok(email.html.includes(`${labels.grossShipping}: ${money(shippingCents)}`))
+					assert.ok(email.html.includes(`${labels.includedVat} (${vatRate}%): ${money(expected.vatCents)}`))
+					assert.ok(email.html.includes(money(expected.totalCents)))
+				}
+				const href = emails[1].html.match(/href="(https:\/\/www\.paypal\.com\/cgi-bin\/webscr\?[^"]+)"/)[1]
+				const paypal = new URL(href.replaceAll('&amp;', '&'))
+				assert.equal(paypal.searchParams.get('amount'), (expected.totalCents / 100).toFixed(2))
+				assert.equal(paypal.searchParams.get('tax'), '0.00')
+				assert.equal(paypal.searchParams.get('shipping'), '0.00')
+			}
+		}
+		assert.equal(viesChecks, viesEligible ? 10 : 0)
+		const callsBefore = api.calls.length
+		const body = order()
+		body.customer.country = country
+		body.cart.items = [{ id: 4, quantity: 10 }]
+		const blocked = await api.post(body)
+		assert.equal(blocked.status, 422)
+		assert.equal((await blocked.json()).code, 'WEIGHT_LIMIT')
+		assert.equal(api.calls.length, callsBefore)
+	})
+}

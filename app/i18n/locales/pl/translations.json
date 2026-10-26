@@ -269,7 +269,7 @@
 		},
 		{
 			"title": "Jakie są koszty przesyłki?",
-			"answer": "Dla standardowych zamówień do 2 kg dostawa na terenie Niemiec kosztuje 4,90 € brutto i jest bezpłatna od 50 € wartości produktów brutto. Dostawa do Polski i pozostałych krajów UE kosztuje 9,90 €, a do Zjednoczonych Emiratów Arabskich i Kataru 25,49 €. Wysyłka do pozostałych krajów poza UE oraz zamówienia hurtowe (powyżej 2 kg) – prosimy o kontakt e-mailowy w celu indywidualnej wyceny: Iwon@iwonnaildisplay.de."
+			"answer": "Niemcy: 4,90 € brutto, darmowa dostawa od 50 € wartości produktów brutto (do 20 kg). Polska i pozostałe kraje UE poza Niemcami: do 2 kg – 11,99 €, do 5 kg – 20,49 €, do 10 kg – 25,49 €, do 20 kg – 31,49 €. Szwajcaria: do 2 kg – 16,99 €, do 5 kg – 29,99 €, do 10 kg – 37,99 €, do 20 kg – 51,99 €. Pozostałe obsługiwane kraje Europy: do 2 kg – 19,99 €, do 5 kg – 32,99 €, do 10 kg – 40,99 €, do 20 kg – 55,99 €. Zjednoczone Emiraty Arabskie i Katar: do 2 kg – 22,99 €, do 5 kg – 48,99 €, do 10 kg – 64,99 €, do 20 kg – 103,99 €. Są to końcowe ceny dostawy; ewentualne opłaty importowe nie są wliczone. Wszystkie zamówienia do Wielkiej Brytanii, w tym Irlandii Północnej, obsługujemy wyłącznie przez e-mail. Dostawy do krajów niewymienionych w formularzu wymagają bezpośredniego kontaktu w celu indywidualnej wyceny: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Czy są jakieś odchylenia w opisie produktów?",
@@ -329,7 +329,6 @@
 		"companyName": "Nazwa firmy",
 		"companyRequired": "Proszę podać nazwę firmy",
 		"vatId": "NIP-UE z prefiksem kraju (opcjonalnie, weryfikacja VIES)",
-		"manualQuote": "Wysyłka do pozostałych krajów poza UE oraz zamówienia hurtowe (powyżej 2 kg) – prosimy o kontakt e-mailowy w celu indywidualnej wyceny.",
 		"importTaxes": "VAT sklepu: 0% (eksport poza UE). Przy odbiorze mogą zostać naliczone lokalne podatki importowe, cło lub opłaty przewoźnika.",
 		"netProducts": "Produkty netto",
 		"productVat": "VAT od produktów",
@@ -341,6 +340,8 @@
 			"VAT_INVALID": "Nie potwierdzono NIP-UE. Sprawdź numer i jego zgodność z krajem dostawy lub skontaktuj się z nami.",
 			"VAT_UNAVAILABLE": "Weryfikacja VIES jest chwilowo niedostępna. Spróbuj ponownie lub skontaktuj się z nami e-mailowo.",
 			"MANUAL_QUOTE": "Ta dostawa wymaga indywidualnej wyceny. Prosimy o kontakt e-mailowy.",
+			"UK_MANUAL_QUOTE": "Wszystkie zamówienia do Wielkiej Brytanii, w tym Irlandii Północnej, obsługujemy wyłącznie przez e-mail. Prosimy o kontakt.",
+			"WEIGHT_LIMIT": "To zamówienie przekracza limit 20 kg. Zamówienie online jest niedostępne. Prosimy o bezpośredni kontakt e-mailowy w celu wyceny dostawy.",
 			"QUOTE_CHANGED": "Kwota zamówienia lub stawka VAT uległa zmianie. Przelicz zamówienie przed ponownym zatwierdzeniem.",
 			"QUOTE_UNAVAILABLE": "Nie udało się obliczyć zamówienia. Spróbuj ponownie."
 		}

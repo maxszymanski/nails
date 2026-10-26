@@ -36,7 +36,7 @@ function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 			</button>
 			{answer && (
 				<p
-					className={` text-grayscale-500 pr-4 sm:pr-6 transition-all duration-300  text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px] pb-6 ' : 'invisible opacity-20 max-h-0 '}  `}>
+					className={` text-grayscale-500 pr-4 sm:pr-6 transition-all duration-300  text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-none pb-6 ' : 'invisible opacity-20 max-h-0 '}  `}>
 					{answer}
 				</p>
 			)}

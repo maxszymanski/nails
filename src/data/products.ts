@@ -5,6 +5,7 @@ export type Product = {
 	name: ProductName
 	slug: string
 	price: number
+	weightGrams: number
 	images: string[]
 	patent?: string
 }
@@ -21,6 +22,7 @@ export const products: Product[] = [
 		name: 'nails',
 		slug: `fingernagel`,
 		price: 7.2,
+		weightGrams: 30,
 		images: [
 			'/assets/nails/nail.png',
 			'/assets/nails/nail-2.png',
@@ -34,6 +36,7 @@ export const products: Product[] = [
 		name: 'magnetic',
 		slug: `magnetnagel`,
 		price: 12,
+		weightGrams: 35,
 		images: [
 			'/assets/magnetic/magnetic-nails.png',
 			'/assets/magnetic/magnetic-nails-2.png',
@@ -47,6 +50,7 @@ export const products: Product[] = [
 		name: 'transparent',
 		slug: `transparente-nagel`,
 		price: 7.2,
+		weightGrams: 30,
 		images: [
 			'/assets/transparent/transparent-nails.png',
 			'/assets/transparent/transparent-nails-2.png',
@@ -60,6 +64,7 @@ export const products: Product[] = [
 		name: 'frame',
 		slug: `rahmendisplay`,
 		price: 79.99,
+		weightGrams: 890,
 		images: [
 			'/assets/frame/frame-nails.png',
 			'/assets/frame/frame-nails-2.png',
@@ -72,6 +77,7 @@ export const products: Product[] = [
 		name: 'cabinet',
 		slug: `vitrinenauslage`,
 		price: 99.99,
+		weightGrams: 2181,
 		images: [
 			'/assets/cabinet/cabinet-nails.png',
 			'/assets/cabinet/cabinet-nails-2.png',
@@ -84,6 +90,7 @@ export const products: Product[] = [
 		name: 'display',
 		slug: `nagelstreifen`,
 		price: 14.9,
+		weightGrams: 109,
 		images: [
 			'/assets/display/display-nails.png',
 			'/assets/display/display-nails-2.png',

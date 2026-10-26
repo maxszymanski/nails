@@ -318,6 +318,7 @@ export async function POST(req: Request) {
 					</div>
 
 					<h2 style="margin: 26px 0 12px; color: #060606; font-size: 20px; line-height: 1.3;">Co spakować</h2>
+					<p style="margin: 0 0 12px; color: #565656;"><strong style="color: #060606;">Waga produktów (bez opakowania):</strong> ${quote.totalWeightGrams} g (${new Intl.NumberFormat('pl', { maximumFractionDigits: 3 }).format(quote.totalWeightGrams / 1000)} kg)</p>
 					<table style="width: 100%; border-collapse: collapse; font-size: 14px;">
 						<thead>
 							<tr>
