@@ -26,7 +26,7 @@ function loadModule(relativePath, overrides = {}, env = environment, globals = {
 	if (cache.has(filename)) return cache.get(filename)
 	if (filename.endsWith('.json')) return JSON.parse(readFileSync(filename, 'utf8'))
 	const compiled = ts.transpileModule(readFileSync(filename, 'utf8'), {
-		compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true },
+		compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true, jsx: ts.JsxEmit.ReactJSX },
 	}).outputText
 	const exports = {}
 	cache.set(filename, exports)
@@ -420,13 +420,13 @@ test('German free shipping threshold uses gross products, including exactly 50 E
 })
 
 for (const [countries, prices] of [
-	[['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'GR', 'ES', 'FI', 'FR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'], [1199, 2049, 2549, 3149]],
-	[['CH'], [1699, 2999, 3799, 5199]],
-	[['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'MC', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA'], [1999, 3299, 4099, 5599]],
-	[['AE', 'QA'], [2299, 4899, 6499, 10399]],
+	[['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'GR', 'ES', 'FI', 'FR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'MC'], [1199, 2049, 2549, 3149, 4849]],
+	[['CH'], [1699, 2999, 3799, 5199, 6599]],
+	[['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA'], [1999, 3299, 4099, 5599, 7099]],
+	[['AE', 'QA'], [2299, 4899, 6499, 10399, 14499]],
 ]) {
 	test(`shipping weight boundaries and final prices for ${countries.join(', ')}`, () => {
-		for (const [weightGrams, band] of [[1, 0], [1999, 0], [2000, 0], [2001, 1], [4999, 1], [5000, 1], [5001, 2], [9999, 2], [10000, 2], [10001, 3], [19999, 3], [20000, 3]]) {
+		for (const [weightGrams, band] of [[1, 0], [1999, 0], [2000, 0], [2001, 1], [4999, 1], [5000, 1], [5001, 2], [9999, 2], [10000, 2], [10001, 3], [19999, 3], [20000, 3], [20001, 4], [29999, 4], [30000, 4]]) {
 			const { calculateQuote } = loadModule('src/lib/checkout.ts', {
 				'@/src/data/products': { products: [{ id: 0, price: 10, weightGrams }] },
 			})
@@ -441,24 +441,55 @@ for (const [countries, prices] of [
 	})
 }
 
-test('exactly 20 kg is accepted but 20 kg plus 1 g is blocked in every supported country', () => {
-	for (const weightGrams of [20000, 20001]) {
+test('cart blocks the form above 30 kg and unlocks when quantities decrease', () => {
+	const React = require('react')
+	const { renderToStaticMarkup } = require('react-dom/server')
+	let quantity = 1001
+	let continueButton
+	const { default: CartModal } = loadModule('src/components/ui/CartModal.tsx', {
+		react: React,
+		'react/jsx-runtime': require('react/jsx-runtime'),
+		'@/app/i18n/client': { useT: () => ({ t: key => key }) },
+		'../stores/modalStore': { __esModule: true, default: selector => selector({ closeModal() {} }) },
+		'../stores/CartStore': { useCartStore: selector => selector({ items: [{ id: 0, quantity }] }) },
+		'./Modal': { __esModule: true, default: ({ children }) => React.createElement('div', null, children) },
+		'./Button': { __esModule: true, default: ({ children, restClass, variant, ...props }) => {
+			if (children === 'cart.quote') continueButton = props
+			return React.createElement('button', { ...props, className: restClass, 'data-variant': variant }, children)
+		} },
+		'./CartProduct': { __esModule: true, default: () => null },
+		'./OrderForm': { __esModule: true, default: () => { throw new Error('Blocked form must not render') } },
+		'./LogoLink': { __esModule: true, default: () => null },
+		'./CompatibleProducts': { __esModule: true, default: () => null },
+	})
+	for (const [count, blocked] of [[1001, true], [1000, false], [999, false], [1001, true]]) {
+		quantity = count
+		const html = renderToStaticMarkup(React.createElement(CartModal))
+		assert.equal(continueButton.disabled, blocked)
+		assert.equal(Boolean(continueButton['aria-describedby']), blocked)
+		assert.equal(html.includes('checkout.errors.WEIGHT_LIMIT'), blocked)
+		assert.equal(html.includes('mailto:Iwon@iwonnaildisplay.de'), blocked)
+	}
+})
+
+test('all destinations including Germany accept exactly 30 kg and block heavier orders', () => {
+	for (const weightGrams of [20000, 20001, 30000, 30001, 31500, 31501]) {
 		const { calculateQuote, VAT_RATES } = loadModule('src/lib/checkout.ts', {
 			'@/src/data/products': { products: [{ id: 0, price: 100, weightGrams }] },
 		})
 		for (const country of Object.keys(VAT_RATES)) {
 			const quote = () => calculateQuote({ items: [{ id: 0, quantity: 1 }] }, country)
-			if (weightGrams === 20000) assert.doesNotThrow(quote, country)
+			if (weightGrams <= 30000) assert.doesNotThrow(quote, country)
 			else assert.throws(quote, error => error.code === 'WEIGHT_LIMIT' && error.status === 422, country)
 		}
 	}
 })
 
 for (const country of ['DE', 'PL', 'CH', 'NO', 'MC', 'AE', 'QA']) {
-	test(`quote and order APIs block over 20 kg to ${country} before VIES or email`, async () => {
+	test(`quote and order APIs block above the DHL limit to ${country} before VIES or email`, async () => {
 		const api = harness()
 		const body = order()
-		body.cart.items = [{ id: 4, quantity: 10 }]
+		body.cart.items = [{ id: 4, quantity: 15 }]
 		const delivery = { country, isBusiness: true, vatId: `${country}123456789` }
 		Object.assign(body.customer, delivery, { companyName: 'Test company' })
 		for (const response of [await api.quote({ cart: body.cart, delivery }), await api.post(body)]) {
@@ -480,14 +511,16 @@ test('quantity changes and mixed products choose a new shipping band', () => {
 	cart.items[0].quantity = 12
 	assert.equal(calculateQuote(cart, 'PL').shippingCents, 3149)
 	cart.items[0].quantity = 23
+	assert.equal(calculateQuote(cart, 'PL').shippingCents, 4849)
+	cart.items[0].quantity = 34
 	assert.throws(() => calculateQuote(cart, 'PL'), /WEIGHT_LIMIT/)
 })
 
-test('Monaco uses French VAT and the rest-of-Europe shipping prices', async () => {
+test('Monaco uses French VAT and the EU shipping prices', async () => {
 	const api = harness()
 	const body = order()
 	body.customer.country = 'MC'
-	body.expectedTotalCents = 15298
+	body.expectedTotalCents = 14048
 	body.expectedVatRate = 20
 	assert.equal((await api.post(body)).status, 200)
 })
@@ -577,7 +610,7 @@ test('cross-border companies get 0% only after VIES verification, with Greek and
 		} })
 		const body = order()
 		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Company <test>' })
-		Object.assign(body, { expectedTotalCents: country === 'MC' ? 13298 : 12048, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
 		const quoted = await api.quote({ cart: body.cart, delivery: { country, vatId, isBusiness: true } })
 		assert.equal((await quoted.json()).quote.vatRate, 0)
 		assert.equal((await api.post(body)).status, 200)
@@ -631,13 +664,13 @@ test('accepts alphanumeric EU postcodes', async () => {
 // Independent expectations for the agreed checkout configuration, not a tax-law audit.
 const auditDestinations = [
 	...Object.entries({ AT: 20, BE: 21, BG: 20, CY: 19, CZ: 21, DK: 25, EE: 24, GR: 24, ES: 21, FI: 25.5, FR: 20, HR: 25, HU: 27, IE: 23, IT: 22, LT: 21, LU: 17, LV: 21, MT: 18, NL: 21, PL: 23, PT: 23, RO: 21, SE: 25, SI: 22, SK: 23 })
-		.map(([country, rate]) => [country, rate, [1199, 2049, 2549, 3149], true]),
+		.map(([country, rate]) => [country, rate, [1199, 2049, 2549, 3149, 4849], true]),
 	['DE', 19, null, false],
-	['CH', 0, [1699, 2999, 3799, 5199], false],
+	['CH', 0, [1699, 2999, 3799, 5199, 6599], false],
 	...['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA']
-		.map(country => [country, 0, [1999, 3299, 4099, 5599], false]),
-	['MC', 20, [1999, 3299, 4099, 5599], true],
-	...['AE', 'QA'].map(country => [country, 0, [2299, 4899, 6499, 10399], false]),
+		.map(country => [country, 0, [1999, 3299, 4099, 5599, 7099], false]),
+	['MC', 20, [1199, 2049, 2549, 3149, 4849], true],
+	...['AE', 'QA'].map(country => [country, 0, [2299, 4899, 6499, 10399, 14499], false]),
 ]
 
 function roundFraction(numerator, denominator) {
@@ -667,6 +700,7 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 			[[{ id: 4, quantity: 1 }], 9999, 2181, 1],
 			[[{ id: 4, quantity: 3 }], 29997, 6543, 2],
 			[[{ id: 4, quantity: 8 }], 79992, 17448, 3],
+			[[{ id: 4, quantity: 10 }], 99990, 21810, 4],
 		]) {
 			for (const mode of ['private', 'business', 'businessVatId']) {
 				const vatRate = mode === 'businessVatId' && viesEligible ? 0 : standardRate
@@ -706,11 +740,11 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 				assert.equal(paypal.searchParams.get('shipping'), '0.00')
 			}
 		}
-		assert.equal(viesChecks, viesEligible ? 10 : 0)
+		assert.equal(viesChecks, viesEligible ? 12 : 0)
 		const callsBefore = api.calls.length
 		const body = order()
 		body.customer.country = country
-		body.cart.items = [{ id: 4, quantity: 10 }]
+		body.cart.items = [{ id: 4, quantity: 15 }]
 		const blocked = await api.post(body)
 		assert.equal(blocked.status, 422)
 		assert.equal((await blocked.json()).code, 'WEIGHT_LIMIT')

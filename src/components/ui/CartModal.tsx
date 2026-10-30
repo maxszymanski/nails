@@ -11,6 +11,8 @@ import OrderForm from './OrderForm'
 import LogoLink from './LogoLink'
 import CompatibleProducts from './CompatibleProducts'
 import { products } from '@/src/data/products'
+import { company } from '@/src/data/company'
+import { MAX_SHIPPING_WEIGHT_GRAMS } from '@/src/lib/checkout'
 
 export type CartInformation = {
 	items: {
@@ -25,12 +27,15 @@ function CartModal() {
 	const [step, setStep] = useState(1)
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const titleId = useId()
+	const weightWarningId = useId()
 	const titleRef = useRef<HTMLHeadingElement>(null)
 	useEffect(() => { titleRef.current?.focus() }, [step])
 
 	const items = useCartStore(state => state.items)
 
 	const totalValue = items.reduce((sum, item) => sum + Math.round((products.find(product => product.id === item.id)?.price || 0) * 100) * item.quantity, 0) / 100
+	const totalWeightGrams = items.reduce((sum, item) => sum + (products.find(product => product.id === item.id)?.weightGrams || 0) * item.quantity, 0)
+	const exceedsWeightLimit = totalWeightGrams > MAX_SHIPPING_WEIGHT_GRAMS
 
 	const cartInformation: CartInformation = {
 		items: items.map(item => ({
@@ -145,7 +150,13 @@ function CartModal() {
 							<span className="text-grayscale-500">{t('checkout.netProducts')}:</span>
 							<span className="shrink-0">{totalValue.toFixed(2).replace('.', ',')} EUR</span>
 						</p>
-						<Button variant="primary" type="button" restClass="w-full mb-4" onClick={() => setStep(2)}>
+						{exceedsWeightLimit && <div id={weightWarningId} role="alert" className="text-sm leading-6">
+							<p className="text-red-700">{t('checkout.errors.WEIGHT_LIMIT')}</p>
+							<a className="block underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
+						</div>}
+						<Button variant="primary" type="button" restClass="w-full mb-4" disabled={exceedsWeightLimit}
+							aria-describedby={exceedsWeightLimit ? weightWarningId : undefined}
+							onClick={() => { if (!exceedsWeightLimit) setStep(2) }}>
 							{t('cart.quote')}
 						</Button>
 					</div>

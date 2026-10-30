@@ -15,13 +15,16 @@ export const VAT_RATES = {
 
 export const EXPORT_COUNTRIES = Object.keys(VAT_RATES).filter(country => VAT_RATES[country as keyof typeof VAT_RATES] === 0)
 
-const REST_OF_EUROPE = ['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'MC', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA']
-const SHIPPING_WEIGHT_LIMITS = [2000, 5000, 10000, 20000]
+const REST_OF_EUROPE = ['AL', 'AD', 'BA', 'ME', 'IS', 'XK', 'LI', 'MK', 'MD', 'NO', 'SM', 'RS', 'TR', 'UA', 'VA']
+export const MAX_SHIPPING_WEIGHT_GRAMS = 30000
+const SHIPPING_WEIGHT_LIMITS = [2000, 5000, 10000, 20000, MAX_SHIPPING_WEIGHT_GRAMS]
+// DHL Filialpreise: Paeckchen M up to 2 kg, Paket above 2 kg. Reviewed 2026-10-30.
+// https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html
 const SHIPPING_RATES = {
-	eu: [1199, 2049, 2549, 3149],
-	switzerland: [1699, 2999, 3799, 5199],
-	restOfEurope: [1999, 3299, 4099, 5599],
-	uaeQatar: [2299, 4899, 6499, 10399],
+	eu: [1199, 2049, 2549, 3149, 4849],
+	switzerland: [1699, 2999, 3799, 5199, 6599],
+	restOfEurope: [1999, 3299, 4099, 5599, 7099],
+	uaeQatar: [2299, 4899, 6499, 10399, 14499],
 }
 
 export function isExportCountry(country: string) {
@@ -81,7 +84,7 @@ export function calculateQuote(cart: Cart, country: string, vatExempt = false): 
 	}
 	if (!Number.isSafeInteger(subtotalCents) || subtotalCents <= 1) throw new CheckoutError('INVALID_CART', 400)
 	const weightBand = SHIPPING_WEIGHT_LIMITS.findIndex(limit => totalWeightGrams <= limit)
-	if (weightBand === -1) throw new CheckoutError('WEIGHT_LIMIT')
+	if (totalWeightGrams > MAX_SHIPPING_WEIGHT_GRAMS) throw new CheckoutError('WEIGHT_LIMIT')
 	const vatRate = vatExempt && country !== 'DE' ? 0 : VAT_RATES[country as keyof typeof VAT_RATES]
 	const productVatCents = Math.round(subtotalCents * vatRate / 100)
 	const productsGrossCents = subtotalCents + productVatCents

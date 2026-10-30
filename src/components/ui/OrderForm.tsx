@@ -35,7 +35,7 @@ function OrderForm({
 	const lng = pathname.split('/')[1] || 'en'
 	const clearCart = useCartStore(state => state.clearCart)
 	const submitting = useRef(false)
-	const [quoteResult, setQuoteResult] = useState<{ key: string; quote?: Quote; code?: string } | null>(null)
+	const [quoteResult, setQuoteResult] = useState<{ key: string; country: string; quote?: Quote; code?: string } | null>(null)
 	const [quoteRevision, setQuoteRevision] = useState(0)
 	const countryNames = new Intl.DisplayNames([lng], { type: 'region' })
 	const money = (cents: number) => new Intl.NumberFormat(lng, { style: 'currency', currency: 'EUR' }).format(cents / 100)
@@ -87,7 +87,9 @@ function OrderForm({
 	const quoteKey = `${quoteRevision}:${quotePayload}`
 	const currentResult = quoteResult?.key === quoteKey ? quoteResult : null
 	const quote = currentResult?.quote
-	const productsGrossCents = quote ? quote.subtotalCents + quote.productVatCents : 0
+	const summaryQuote = quote || quoteResult?.quote
+	const summaryCountry = quoteResult?.country || country
+	const productsGrossCents = summaryQuote ? summaryQuote.subtotalCents + summaryQuote.productVatCents : 0
 	const toFreeShipping = Math.max(0, 5000 - productsGrossCents)
 	const freeShippingProgress = Math.min(100, productsGrossCents / 5000 * 100)
 	const errorCode = country === 'GB' ? 'UK_MANUAL_QUOTE' : currentResult?.code
@@ -104,14 +106,14 @@ function OrderForm({
 				})
 				const result = await response.json()
 				if (!controller.signal.aborted) {
-					setQuoteResult({ key: quoteKey, ...(response.ok ? { quote: result.quote } : { code: result.code || 'QUOTE_UNAVAILABLE' }) })
+					setQuoteResult({ key: quoteKey, country, ...(response.ok ? { quote: result.quote } : { code: result.code || 'QUOTE_UNAVAILABLE' }) })
 				}
 			} catch {
-				if (!controller.signal.aborted) setQuoteResult({ key: quoteKey, code: 'QUOTE_UNAVAILABLE' })
+				if (!controller.signal.aborted) setQuoteResult({ key: quoteKey, country, code: 'QUOTE_UNAVAILABLE' })
 			}
 		}, 400)
 		return () => { clearTimeout(timeout); controller.abort() }
-	}, [quotePayload, quoteKey])
+	}, [quotePayload, quoteKey, country])
 
 	const onSubmit: SubmitHandler<ContactType> = async data => {
 		if (submitting.current || isSubmitting) return
@@ -152,7 +154,7 @@ function OrderForm({
 				}
 				if (result.code) {
 					toast.error(errorMessage(result.code))
-					setQuoteResult({ key: quoteKey, code: result.code })
+					setQuoteResult({ key: quoteKey, country, code: result.code })
 					return
 				}
 				throw new Error('Order request failed')
@@ -195,12 +197,10 @@ function OrderForm({
 				<p className="text-red-700">{errorMessage(errorCode || 'MANUAL_QUOTE')}</p>
 				<a className="block underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
 			</div>}
-			{quote && exportCountry && <p className="text-sm leading-6 text-grayscale-500">{t('checkout.importTaxes')}</p>}
+			{summaryQuote && isExportCountry(summaryCountry) && <p className="text-sm leading-6 text-grayscale-500">{t('checkout.importTaxes')}</p>}
 			{!manualQuote && <>
-			<label className="flex items-center gap-3">
-				<input type="checkbox" {...register('isBusiness')} disabled={isSubmitting} className="size-5 shrink-0 accent-my-purple" />
-				{t('checkout.business')}
-			</label>
+			<Checkbox name="isBusiness" label={t('checkout.business')}
+				formRegister={register('isBusiness')} disabled={isSubmitting} />
 			{isBusiness && <div className="flex flex-col gap-6">
 				<Input required id="companyName" name="companyName" label={t('checkout.companyName')}
 					formRegister={register('companyName')} error={errors.companyName || null} message={errors.companyName?.message || null}
@@ -345,37 +345,41 @@ function OrderForm({
 				className={`rounded-full bg-my-purple/7 px-3 min-h-8 py-1.5 flex items-center justify-center text-my-purple text-[13px] leading-5 w-full text-center select-none`}>
 				{t('cart.pill')}
 			</p>
-			<div className="border-t border-grayscale-200 pt-4" aria-live="polite" aria-busy={!currentResult}>
-				{!currentResult && <p className="text-sm">{t('checkout.calculating')}</p>}
+			<div className="relative border-t border-grayscale-200 pt-4" aria-live="polite" aria-busy={!currentResult}>
+				{!currentResult && <div role="status" className="absolute inset-x-0 top-4 bottom-0 flex items-center justify-center text-center">
+					<p className="text-sm">{t('checkout.calculating')}</p>
+				</div>}
 				{errorCode && <div role="alert" className="flex flex-col gap-3">
 					<p className="text-sm text-red-700">{errorMessage(errorCode)}</p>
 					<Button type="button" variant="default" disabled={isSubmitting} onClick={() => setQuoteRevision(value => value + 1)}>{t('checkout.retry')}</Button>
 				</div>}
-				{quote && <dl className="flex flex-col gap-2 text-sm">
-					<div className="flex justify-between gap-3"><dt>{t('checkout.netProducts')}</dt><dd className="shrink-0">{money(quote.subtotalCents)}</dd></div>
-					<div className="flex justify-between gap-3"><dt>{t('checkout.productVat')} ({quote.vatRate}%)</dt><dd className="shrink-0">{money(quote.productVatCents)}</dd></div>
-					<div className="flex justify-between gap-3"><dt>{t('checkout.grossShipping')}</dt><dd className="shrink-0">{money(quote.shippingCents)}</dd></div>
-					<div className="flex justify-between gap-3 text-lg mt-2"><dt>{t('cart.total')}</dt><dd className="shrink-0">{money(quote.totalCents)}</dd></div>
-					<div className="flex justify-between gap-3 text-grayscale-500"><dt>{t('checkout.includedVat')} ({quote.vatRate}%)</dt><dd className="shrink-0">{money(quote.vatCents)}</dd></div>
-					{country === 'DE' && <div className="flex justify-between gap-3 mt-2 text-grayscale-500">
-						<dt>{t(quote.shippingCents === 0 ? 'cart.shipping' : 'cart.freeShipping')}</dt>
-						<dd className="shrink-0">{quote.shippingCents === 0 ? t('cart.free') : money(toFreeShipping)}</dd>
+				{!errorCode && <div className={!currentResult ? 'invisible' : undefined} aria-hidden={!currentResult}>
+				<dl className="flex flex-col gap-2 text-sm">
+					<div className="flex justify-between gap-3"><dt>{t('checkout.netProducts')}</dt><dd className="shrink-0">{money(summaryQuote?.subtotalCents ?? 0)}</dd></div>
+					<div className="flex justify-between gap-3"><dt>{t('checkout.productVat')} ({summaryQuote?.vatRate ?? 0}%)</dt><dd className="shrink-0">{money(summaryQuote?.productVatCents ?? 0)}</dd></div>
+					<div className="flex justify-between gap-3"><dt>{t('checkout.grossShipping')}</dt><dd className="shrink-0">{money(summaryQuote?.shippingCents ?? 0)}</dd></div>
+					<div className="flex justify-between gap-3 text-lg mt-2"><dt>{t('cart.total')}</dt><dd className="shrink-0">{money(summaryQuote?.totalCents ?? 0)}</dd></div>
+					<div className="flex justify-between gap-3 text-grayscale-500"><dt>{t('checkout.includedVat')} ({summaryQuote?.vatRate ?? 0}%)</dt><dd className="shrink-0">{money(summaryQuote?.vatCents ?? 0)}</dd></div>
+					{summaryCountry === 'DE' && <div className="flex justify-between gap-3 mt-2 text-grayscale-500">
+						<dt>{t(summaryQuote?.shippingCents === 0 ? 'cart.shipping' : 'cart.freeShipping')}</dt>
+						<dd className="shrink-0">{summaryQuote?.shippingCents === 0 ? t('cart.free') : money(toFreeShipping)}</dd>
 					</div>}
-				</dl>}
-				{quote && country === 'DE' && (
+				</dl>
+				{summaryCountry === 'DE' && (
 					<div
 						role="progressbar"
 						aria-label={t('cart.freeShipping')}
 						aria-valuemin={0}
 						aria-valuemax={100}
 						aria-valuenow={freeShippingProgress}
-						aria-valuetext={quote.shippingCents === 0 ? `${t('cart.shipping')}: ${t('cart.free')}` : `${t('cart.freeShipping')}: ${money(toFreeShipping)}`}
+						aria-valuetext={summaryQuote?.shippingCents === 0 ? `${t('cart.shipping')}: ${t('cart.free')}` : `${t('cart.freeShipping')}: ${money(toFreeShipping)}`}
 						className="w-full rounded-full h-[5px] bg-grayscale-200 overflow-hidden mt-4">
 						<div
 							className="h-full rounded-full bg-my-purple transition-[width] duration-300 motion-reduce:transition-none"
 							style={{ width: `${freeShippingProgress}%` }} />
 					</div>
 				)}
+				</div>}
 			</div>
 			<Button type="submit" variant="primary" restClass="w-full relative" aria-label={t(isSubmitting ? 'a11y.submitting' : 'cart.order')} disabled={isSubmitting || !quote}>
 				<span className={isSubmitting ? 'invisible' : ''}>{t('cart.order')}</span>

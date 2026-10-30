@@ -23,7 +23,21 @@ export async function generateMetadata({ params }: { params: Params }, parent: R
 		return {}
 	}
 
-	return pageMetadata(lng, product.name, `/produkte/${slug}`, parent)
+	const metadata = await pageMetadata(lng, product.name, `/produkte/${slug}`, parent)
+	const image = {
+		nails: '/og-image-nail.png',
+		magnetic: '/og-image-nail.png',
+		transparent: '/og-image-nail.png',
+		display: '/og-image-displaybar.png',
+		cabinet: '/og-image-frame.png',
+		frame: '/og-image-frame.png',
+	}[product.name]
+
+	return {
+		...metadata,
+		openGraph: { ...metadata.openGraph, images: [image] },
+		twitter: { ...metadata.twitter, images: [image] },
+	}
 }
 
 export const revalidate = 86400

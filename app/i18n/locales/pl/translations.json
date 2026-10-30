@@ -345,7 +345,7 @@
 		},
 		{
 			"title": "Jakie są koszty przesyłki?",
-			"answer": "Niemcy: 4,90 € brutto, darmowa dostawa od 50 € wartości produktów brutto (do 20 kg). Polska i pozostałe kraje UE poza Niemcami: do 2 kg – 11,99 €, do 5 kg – 20,49 €, do 10 kg – 25,49 €, do 20 kg – 31,49 €. Szwajcaria: do 2 kg – 16,99 €, do 5 kg – 29,99 €, do 10 kg – 37,99 €, do 20 kg – 51,99 €. Pozostałe obsługiwane kraje Europy: do 2 kg – 19,99 €, do 5 kg – 32,99 €, do 10 kg – 40,99 €, do 20 kg – 55,99 €. Zjednoczone Emiraty Arabskie i Katar: do 2 kg – 22,99 €, do 5 kg – 48,99 €, do 10 kg – 64,99 €, do 20 kg – 103,99 €. Są to końcowe ceny dostawy; ewentualne opłaty importowe nie są wliczone. Wszystkie zamówienia do Wielkiej Brytanii, w tym Irlandii Północnej, obsługujemy wyłącznie przez e-mail. Dostawy do krajów niewymienionych w formularzu wymagają bezpośredniego kontaktu w celu indywidualnej wyceny: Iwon@iwonnaildisplay.de."
+			"answer": "Niemcy: 4,90 € brutto, darmowa dostawa od 50 € wartości produktów brutto (do 30 kg). Polska i pozostałe kraje UE poza Niemcami oraz Monaco: do 2 kg – 11,99 €, do 5 kg – 20,49 €, do 10 kg – 25,49 €, do 20 kg – 31,49 €, do 30 kg – 48,49 €. Szwajcaria: do 2 kg – 16,99 €, do 5 kg – 29,99 €, do 10 kg – 37,99 €, do 20 kg – 51,99 €, do 30 kg – 65,99 €. Pozostałe obsługiwane kraje Europy: do 2 kg – 19,99 €, do 5 kg – 32,99 €, do 10 kg – 40,99 €, do 20 kg – 55,99 €, do 30 kg – 70,99 €. Zjednoczone Emiraty Arabskie i Katar: do 2 kg – 22,99 €, do 5 kg – 48,99 €, do 10 kg – 64,99 €, do 20 kg – 103,99 €, do 30 kg – 144,99 €. Są to końcowe ceny dostawy; ewentualne opłaty importowe nie są wliczone. Zamówienia powyżej limitu wagowego wymagają kontaktu e-mailowego. Wszystkie zamówienia do Wielkiej Brytanii, w tym Irlandii Północnej, obsługujemy wyłącznie przez e-mail. Dostawy do krajów niewymienionych w formularzu wymagają bezpośredniego kontaktu w celu indywidualnej wyceny: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Czy są jakieś odchylenia w opisie produktów?",
@@ -417,7 +417,7 @@
 			"VAT_UNAVAILABLE": "Weryfikacja VIES jest chwilowo niedostępna. Spróbuj ponownie lub skontaktuj się z nami e-mailowo.",
 			"MANUAL_QUOTE": "Ta dostawa wymaga indywidualnej wyceny. Prosimy o kontakt e-mailowy.",
 			"UK_MANUAL_QUOTE": "Wszystkie zamówienia do Wielkiej Brytanii, w tym Irlandii Północnej, obsługujemy wyłącznie przez e-mail. Prosimy o kontakt.",
-			"WEIGHT_LIMIT": "To zamówienie przekracza limit 20 kg. Zamówienie online jest niedostępne. Prosimy o bezpośredni kontakt e-mailowy w celu wyceny dostawy.",
+			"WEIGHT_LIMIT": "To zamówienie przekracza limit 30 kg. Zamówienie online jest niedostępne. Prosimy o bezpośredni kontakt e-mailowy w celu wyceny dostawy.",
 			"QUOTE_CHANGED": "Kwota zamówienia lub stawka VAT uległa zmianie. Przelicz zamówienie przed ponownym zatwierdzeniem.",
 			"QUOTE_UNAVAILABLE": "Nie udało się obliczyć zamówienia. Spróbuj ponownie."
 		}
