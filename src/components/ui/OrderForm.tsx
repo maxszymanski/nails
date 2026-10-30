@@ -80,9 +80,10 @@ function OrderForm({
 	const [country, isBusiness, vatId] = useWatch({ control, name: ['country', 'isBusiness', 'vatId'] })
 	const exportCountry = isExportCountry(country)
 	const acceptsVatId = !exportCountry && country !== 'GB'
+	const quoteVatId = isBusiness && acceptsVatId && country !== 'DE' ? vatId.trim().replace(/[\s.-]/g, '').toUpperCase() : ''
 	const quotePayload = JSON.stringify({
 		cart: cartInformation,
-		delivery: { country, isBusiness, vatId: isBusiness && acceptsVatId ? vatId : '' },
+		delivery: { country, isBusiness: Boolean(quoteVatId), vatId: quoteVatId },
 	})
 	const quoteKey = `${quoteRevision}:${quotePayload}`
 	const currentResult = quoteResult?.key === quoteKey ? quoteResult : null
