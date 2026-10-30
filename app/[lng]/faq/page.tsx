@@ -1,39 +1,20 @@
 import { getT } from '@/app/i18n'
 import FaqSection from '@/src/components/ui/FaqSection'
 import Pill from '@/src/components/ui/Pill'
+import type { Metadata, ResolvingMetadata } from 'next'
+import type { Params } from '../layout'
+import { pageMetadata } from '@/src/lib/seo'
 
-export async function generateMetadata() {
-	const { t } = await getT('translations')
-
-	return {
-		title: t(`nav.faq`),
-		description: t(`nav.faq`),
-		// openGraph: {
-		// 	title: t(`products.pill`),
-		// 	description: t(`products.pill`),
-		// 	images: [
-		// 		{
-		// 			url: product.image,
-		// 			width: 1200,
-		// 			height: 630,
-		// 			alt: t(`products.pill`),
-		// 		},
-		// 	],
-		// },
-		// twitter: {
-		// 	card: 'summary_large_image',
-		// 	title: t(`products.pill`),
-		// 	description: t(`products.pill`),
-		// 	images: [product.image],
-		// },
-	}
+export async function generateMetadata({ params }: { params: Params }, parent: ResolvingMetadata): Promise<Metadata> {
+	const { lng } = await params
+	return pageMetadata(lng, 'faq', '/faq', parent)
 }
 
 async function page() {
 	const { t } = await getT('translations')
 
 	return (
-		<main className="flex-1">
+		<main id="main-content" tabIndex={-1} className="flex-1">
 			<section className="mt-24 lg:mt-36">
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20 px-4">
 					<div className="flex flex-col w-full items-center">

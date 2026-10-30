@@ -4,15 +4,18 @@ import MobileCarousel from '@/src/components/products/MobileCarousel'
 import FaqAccordeon from '@/src/components/ui/FaqAccordeon'
 import MoreCard from '@/src/components/ui/MoreCard'
 import { products } from '@/src/data/products'
-import { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { languages } from '@/app/i18n/settings'
+import { pageMetadata } from '@/src/lib/seo'
+import JsonLd from '@/src/components/ui/JsonLd'
+import { productStructuredData } from '@/src/lib/structured-data'
 
 type Params = Promise<{ slug: string; lng: string }>
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-	const { slug } = await params
+export async function generateMetadata({ params }: { params: Params }, parent: ResolvingMetadata): Promise<Metadata> {
+	const { slug, lng } = await params
 
 	const product = products.find(c => c.slug === slug)
 
@@ -20,30 +23,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 		return {}
 	}
 
-	const { t } = await getT('translations')
-
-	return {
-		title: t(`products.products.${product.name}`),
-		description: t(`products.products.${product.name}`),
-		// openGraph: {
-		// 	title: t(`products.products.${product.name}`),
-		// 	description: t(`products.products.${product.name}`),
-		// 	images: [
-		// 		{
-		// 			url: product.images[0],
-		// 			width: 1200,
-		// 			height: 630,
-		// 			alt: t(`products.products.${product.name}`),
-		// 		},
-		// 	],
-		// },
-		// twitter: {
-		// 	card: 'summary_large_image',
-		// 	title: t(`products.products.${product.name}`),
-		// 	description: t(`products.products.${product.name}`),
-		// 	images: [product.images[0]],
-		// },
-	}
+	return pageMetadata(lng, product.name, `/produkte/${slug}`, parent)
 }
 
 export const revalidate = 86400
@@ -73,7 +53,8 @@ async function page({ params }: { params: Params }) {
 	const restProducts = products.filter(p => p.id !== product.id).slice(0, 4)
 
 	return (
-		<main className=" flex-1">
+		<main id="main-content" tabIndex={-1} className=" flex-1">
+			<JsonLd data={productStructuredData(product, lng, t(`products.products.${product.name}`), t(`products.description.${product.name}`))} />
 			<section className="mt-24 lg:mt-36">
 				<div className="w-full px-4 wrapper">
 					<div className="flex flex-col gap-6 lg:flex-row  pb-25 lg:pb-30">
@@ -91,7 +72,7 @@ async function page({ params }: { params: Params }) {
 								</Link>
 							</div>
 
-							<MobileCarousel images={product.images} />
+							<MobileCarousel images={product.images} alts={product.images.map((_, index) => t(`images.products.${product.name}.${index}`))} />
 						</div>
 						<div className="max-w-[542px] lg:mt-10 w-full mx-auto lg:mx-0" data-aos="fade-up">
 							<h1 className="text-[32px] leading-10 lg:text-5xl lg:leading-14">

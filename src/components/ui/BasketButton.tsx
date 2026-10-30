@@ -2,8 +2,10 @@
 import { useCartStore } from '../stores/CartStore'
 import useModalStore from '../stores/modalStore'
 import Button from './Button'
+import { useT } from '@/app/i18n/client'
 
 function BasketButton() {
+	const { t } = useT('translations')
 	const totalQuantity = useCartStore(state => state.items.reduce((sum, i) => sum + i.quantity, 0))
 
 	const setOpenModal = useModalStore(state => state.setOpenModal)
@@ -16,7 +18,7 @@ function BasketButton() {
 	}
 
 	return (
-		<Button variant="rounded" onClick={handleOpenCart}>
+		<Button type="button" variant="rounded" onClick={handleOpenCart} aria-label={t('a11y.cart', { count: totalQuantity })} aria-haspopup="dialog" aria-disabled={totalQuantity < 1}>
 			{totalQuantity > 0 && (
 				<span className="absolute top-0 right-0 size-4 shrink-0 rounded-full bg-[#C8102E] text-white flex items-center justify-center text-xs leading-4 font-medium pointer-events-none">
 					{totalQuantity}

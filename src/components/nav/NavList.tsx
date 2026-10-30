@@ -44,6 +44,9 @@ function NavList({
 				<li
 					className={`w-full flex lg:hidden flex-col  overflow-hidden duration-500 relative  transition-all lg:opacity-100 lg:translate-y-0 lg:delay-0 ${!isExpanded ? 'opacity-0  -translate-y-4 delay-200' : 'opacity-100 translate-y-0 delay-500'}`}>
 					<button
+						type="button"
+						aria-expanded={isSocialOpen}
+						aria-controls="mobile-social-links"
 						className="text-sm  leading-5 font-medium bg-transparent text-grayscale-500 duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] text-start flex items-center justify-between"
 						onClick={toggleIsSocialOpen}>
 						{t('nav.socials')}{' '}
@@ -64,6 +67,7 @@ function NavList({
 						</svg>
 					</button>
 					<div
+						id="mobile-social-links"
 						className={`transition-all duration-300 flex flex-col w-full items-start px-2 justify-between gap-2 ${isSocialOpen ? 'visible opacity-100 max-h-75 pb-8 pt-2 ' : 'invisible opacity-20 max-h-0 '} `}>
 						<Link
 							href={'https://www.instagram.com/iwonnaildisplay'}
@@ -142,6 +146,7 @@ const NavLink = ({
 			className={`w-full flex  overflow-hidden duration-500 relative  transition-all lg:opacity-100 lg:translate-y-0 lg:delay-0 ${!isExpanded ? 'opacity-0  -translate-y-4 delay-300' : 'opacity-100 translate-y-0 delay-400'}`}>
 			<Link
 				href={href}
+				aria-current={isActive ? 'page' : undefined}
 				className={`text-sm block leading-5 font-medium bg-transparent duration-300 transition-all w-full lg:w-fit lg:hover:bg-grayscale-100 lg:px-4 py-2.5 lg:rounded-[500px] ${isActive ? 'text-black-primary' : 'text-grayscale-500'}`}>
 				{name}
 			</Link>

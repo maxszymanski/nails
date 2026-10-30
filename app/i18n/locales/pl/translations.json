@@ -1,4 +1,80 @@
 {
+	"a11y": {
+		"navigation": "Nawigacja główna",
+		"openMenu": "Otwórz menu",
+		"closeMenu": "Zamknij menu",
+		"language": "Zmień język: {{language}}",
+		"cart": "Koszyk, liczba produktów: {{count}}",
+		"increaseQuantity": "Zwiększ ilość: {{product}}",
+		"decreaseQuantity": "Zmniejsz ilość: {{product}}",
+		"backToCart": "Wróć do koszyka",
+		"submitting": "Wysyłanie zamówienia",
+		"video": "Prezentacja systemu Iwon Nail Display"
+	},
+	"images": {
+		"hero": "Białe, różowe i fioletowe tipsy wzornikowe wokół kostki z logo Iwon Nail Display",
+		"choice": "Dłoń z różowym tipsem wzornikowym założonym na palec wskazujący",
+		"organizer": "Zbliżenie białej ramki IND z rzędami tipsów i oznaczeniami numerów",
+		"magnetic": "Różowe tipsy wzornikowe z widocznymi uchwytami i magnetycznym mocowaniem",
+		"nonmagnetic": "Biały tips wzornikowy na uchwycie A01, ustawiony na kostce z logo Iwon",
+		"display": "Numerowana listwa IND z czerwonymi tipsami i osobnymi wzornikami obok",
+		"frame": "Biała ramka IND z trzema rzędami ponumerowanych tipsów wzornikowych",
+		"displayOption": "Biała listwa IND z ponumerowanymi miejscami i białymi tipsami wzornikowymi",
+		"organization": "Ramka IND z tipsami oraz arkusze naklejek z numerami do oznaczania kolorów",
+		"showImage": "Pokaż zdjęcie: {{description}}",
+		"carousel": {
+			"one": "Dwie białe ramki IND ze wzornikami w odcieniach zieleni, brązu i czerni",
+			"two": "Ramki IND z niebieskimi i turkusowymi wzornikami, obok wzorniki zielone i czarne",
+			"three": "Gabinet z pomarańczowym fotelem i ramką kolorowych wzorników na ścianie",
+			"four": "Dwie ramki IND ze wzornikami w odcieniach szarości, czerni i brązu"
+		},
+		"products": {
+			"nails": [
+				"Biały tips wzornikowy IND na uchwycie, widok z boku",
+				"Biały tips IND widziany od strony wnętrza uchwytu z oznaczeniem A01",
+				"Biały tips IND ustawiony ukośnie, z oznaczeniem A01 na uchwycie",
+				"Spód białego tipsa IND z otwartym uchwytem do zakładania na palec"
+			],
+			"magnetic": [
+				"Biały magnetyczny tips wzornikowy IND z widocznym mocowaniem pod spodem",
+				"Spód magnetycznego tipsa IND z uchwytem i szarym paskiem magnesu",
+				"Zbliżenie uchwytu magnetycznego tipsa IND i paska magnesu",
+				"Magnetyczny tips IND od spodu, z magnesem biegnącym wzdłuż uchwytu"
+			],
+			"transparent": [
+				"Przezroczysty tips wzornikowy IND z uchwytem, widok ukośny",
+				"Przezroczysty tips IND od spodu z widocznym wnętrzem uchwytu",
+				"Przezroczysty tips IND widziany z boku, z otwartym uchwytem na palec",
+				"Przezroczysty tips IND obrócony spodem do góry"
+			],
+			"frame": [
+				"Biała ramka ekspozycyjna IND z trzema rzędami ponumerowanych tipsów",
+				"Zbliżenie tipsów i numerów w białej ramce ekspozycyjnej IND",
+				"Ramka IND ze wzornikami oraz arkuszami naklejek z numerami po bokach",
+				"Arkusze naklejek z oznaczeniami A01–A30 do numerowania wzorników IND"
+			],
+			"cabinet": [
+				"Otwarta biała szafka ekspozycyjna IND z wewnętrznymi półkami",
+				"Zamknięta szafka IND z trzema rzędami tipsów na froncie",
+				"Szafka IND widziana z boku, z otwartymi drzwiczkami i półkami",
+				"Arkusze naklejek A01–A30 do oznaczania kolorów w szafce IND"
+			],
+			"display": [
+				"Biała listwa ekspozycyjna IND z numerami i białymi tipsami, widok ukośny",
+				"Zbliżenie białych tipsów na listwie IND i oznaczeń A11 oraz A12",
+				"Pusta listwa IND z numerami i otworami do mocowania tipsów",
+				"Biała listwa IND widziana z przodu, z oznaczeniami A01–A12"
+			]
+		},
+		"compatible": {
+			"skadis-one": "Biała tablica perforowana IKEA SKÅDIS",
+			"skadis-two": "Biała półka z mocowaniami do tablicy IKEA SKÅDIS",
+			"mosslanda-one": "Biała półka ekspozycyjna IKEA MOSSLANDA z przednią krawędzią",
+			"mosslanda-two": "Biała półka IKEA MOSSLANDA w dłuższej wersji",
+			"mosslanda-three": "Półka IKEA MOSSLANDA w kolorze drewna, z przednią krawędzią",
+			"mosslanda-four": "Dłuższa półka IKEA MOSSLANDA w kolorze drewna"
+		}
+	},
 	"nav": {
 		"home": "Strona główna",
 		"products": "Produkty",

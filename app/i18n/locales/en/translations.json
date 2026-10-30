@@ -1,4 +1,80 @@
 {
+	"a11y": {
+		"navigation": "Main navigation",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
+		"language": "Change language: {{language}}",
+		"cart": "Shopping cart, number of items: {{count}}",
+		"increaseQuantity": "Increase quantity: {{product}}",
+		"decreaseQuantity": "Decrease quantity: {{product}}",
+		"backToCart": "Back to cart",
+		"submitting": "Sending your order",
+		"video": "Iwon Nail Display system demonstration"
+	},
+	"images": {
+		"hero": "White, pink and purple nail colour sample tips around a cube with the Iwon Nail Display logo",
+		"choice": "Hand with a pink nail colour sample tip fitted to the index finger",
+		"organizer": "Close-up of a white IND frame with rows of sample tips and number labels",
+		"magnetic": "Pink nail colour sample tips with visible clips and magnetic attachments",
+		"nonmagnetic": "White sample tip on an A01 clip, resting on a cube with the Iwon logo",
+		"display": "Numbered IND display bar with red sample tips and loose tips beside it",
+		"frame": "White IND frame with three rows of numbered nail colour sample tips",
+		"displayOption": "White IND display bar with numbered positions and white sample tips",
+		"organization": "IND frame with sample tips and sheets of numbered colour identification stickers",
+		"showImage": "Show image: {{description}}",
+		"carousel": {
+			"one": "Two white IND frames with green, brown and black nail colour samples",
+			"two": "IND frames with blue and turquoise samples beside green and black samples",
+			"three": "Treatment room with an orange chair and a framed colour sample display on the wall",
+			"four": "Two IND frames with grey, black and brown nail colour samples"
+		},
+		"products": {
+			"nails": [
+				"White IND nail colour sample tip on a clip, viewed from the side",
+				"White IND tip viewed from inside the clip marked A01",
+				"White IND tip at an angle with the A01 label on its clip",
+				"Underside of a white IND tip with an open clip for fitting onto a finger"
+			],
+			"magnetic": [
+				"White magnetic IND sample tip with its attachment visible underneath",
+				"Underside of a magnetic IND tip with its clip and grey magnetic strip",
+				"Close-up of the clip and magnetic strip on an IND sample tip",
+				"Magnetic IND tip viewed from underneath, with a magnet along the clip"
+			],
+			"transparent": [
+				"Transparent IND nail colour sample tip with a clip, viewed at an angle",
+				"Underside of a transparent IND tip showing the inside of its clip",
+				"Transparent IND tip viewed from the side with an open finger clip",
+				"Transparent IND tip turned upside down"
+			],
+			"frame": [
+				"White IND frame display with three rows of numbered sample tips",
+				"Close-up of sample tips and number labels in a white IND frame",
+				"IND frame with sample tips and numbered sticker sheets on either side",
+				"Sheets of A01–A30 stickers for numbering IND nail colour samples"
+			],
+			"cabinet": [
+				"Open white IND display cabinet with interior shelves",
+				"Closed IND cabinet with three rows of sample tips on the front",
+				"IND cabinet viewed from the side with its door open and shelves visible",
+				"A01–A30 sticker sheets for identifying colours in an IND cabinet"
+			],
+			"display": [
+				"White numbered IND display bar with white sample tips, viewed at an angle",
+				"Close-up of white tips on an IND display bar and the A11 and A12 labels",
+				"Empty IND display bar with numbers and slots for attaching sample tips",
+				"White IND display bar viewed from the front with A01–A12 labels"
+			]
+		},
+		"compatible": {
+			"skadis-one": "White IKEA SKÅDIS pegboard",
+			"skadis-two": "White shelf with attachments for an IKEA SKÅDIS pegboard",
+			"mosslanda-one": "White IKEA MOSSLANDA picture ledge with a raised front edge",
+			"mosslanda-two": "Longer white IKEA MOSSLANDA picture ledge",
+			"mosslanda-three": "Wood-coloured IKEA MOSSLANDA picture ledge with a raised front edge",
+			"mosslanda-four": "Longer wood-coloured IKEA MOSSLANDA picture ledge"
+		}
+	},
 	"nav": {
 		"home": "Home",
 		"products": "Products",

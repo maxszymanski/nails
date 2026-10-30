@@ -27,7 +27,7 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 				className="w-full max-h-115 aspect-364/460  relative overflow-hidden rounded-2xl lg:rounded-3xl group ">
 				<Image
 					src={item.images[0]}
-					alt={item.name}
+					alt={t(`images.products.${item.name}.0`)}
 					fill
 					className="object-cover object-center group-hover:scale-110 transition-transform duration-300"
 					sizes="364px"

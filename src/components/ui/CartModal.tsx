@@ -6,7 +6,7 @@ import Button from './Button'
 import useModalStore from '../stores/modalStore'
 import { useCartStore } from '../stores/CartStore'
 import CartProduct from './CartProduct'
-import { useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import OrderForm from './OrderForm'
 import LogoLink from './LogoLink'
 import CompatibleProducts from './CompatibleProducts'
@@ -24,6 +24,9 @@ function CartModal() {
 	const closeModal = useModalStore(state => state.closeModal)
 	const [step, setStep] = useState(1)
 	const [isSubmitting, setIsSubmitting] = useState(false)
+	const titleId = useId()
+	const titleRef = useRef<HTMLHeadingElement>(null)
+	useEffect(() => { titleRef.current?.focus() }, [step])
 
 	const items = useCartStore(state => state.items)
 
@@ -37,11 +40,11 @@ function CartModal() {
 	}
 
 	return (
-		<Modal>
+		<Modal labelledBy={titleId} stopReset={isSubmitting}>
 			<div
 				className={`w-screen p-4 sm:p-8 flex flex-col min-h-full overflow-x-hidden   lg:flex-1 bg-white ${step === 1 ? 'sm:max-w-[424px] xl:max-h-full' : 'sm:max-w-[484px] '}`}>
 				<div className="flex items-center justify-between gap-2 pb-4 sm:pb-6 border-b border-grayscale-200">
-					<h2 className="sm:text-xl sm:leading-8  leading-6">
+					<h2 id={titleId} ref={titleRef} tabIndex={-1} className="sm:text-xl sm:leading-8  leading-6">
 						{' '}
 						{step === 1 && t('cart.title')} {step === 2 && t('cart.orderTitle')}{' '}
 						{step === 3 && t('cart.successTitle')}
@@ -50,7 +53,8 @@ function CartModal() {
 					<Button
 						variant="default"
 						restClass="text-my-purple hover:text-my-purple/80 transition-colors sm:p-1 rounded-full hover:bg-grayscale-100"
-						aria-label={t('cart.closeModal')}
+						aria-label={t(step === 2 || step === 4 ? 'a11y.backToCart' : 'cart.closeModal')}
+						disabled={isSubmitting}
 						onClick={() => {
 							if (step === 2 || step === 4) {
 								setStep(1)

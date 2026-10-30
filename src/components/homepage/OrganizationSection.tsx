@@ -27,7 +27,7 @@ async function OrganizationSection({ lng }: { lng: string }) {
 							src={'/assets/organization-hero.png'}
 							quality={100}
 							fill
-							alt="nails organizer"
+							alt={t('images.organization')}
 							className="object-cover object-center "
 							sizes="(max-width: 640px) 600px, 1200px"
 							data-aos="fade-in"

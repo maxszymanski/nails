@@ -89,7 +89,7 @@ const ProductsBoxes = async () => {
 					subtitle={t('homepage.products.organizersSub')}
 					smallImage="/assets/organizer-sm.png"
 					image="/assets/organizer.png"
-					alt="organizer"
+					alt={t('images.organizer')}
 				/>
 			</div>
 
@@ -99,7 +99,7 @@ const ProductsBoxes = async () => {
 					subtitle={t('homepage.products.magneticSub')}
 					smallImage="/assets/magnetic-sm.png"
 					image="/assets/magnetic.png"
-					alt="magnetic tips"
+					alt={t('images.magnetic')}
 				/>
 			</div>
 
@@ -109,7 +109,7 @@ const ProductsBoxes = async () => {
 					subtitle={t('homepage.products.nonmagneticSub')}
 					smallImage="/assets/nonmagnetic-sm.png"
 					image="/assets/nonmagnetic.png"
-					alt="non magnetic tips"
+					alt={t('images.nonmagnetic')}
 				/>
 			</div>
 
@@ -121,7 +121,7 @@ const ProductsBoxes = async () => {
 					subtitle={t('homepage.products.displaySub')}
 					smallImage="/assets/display-sm.png"
 					image="/assets/display.png"
-					alt="Proffesional Presentation"
+					alt={t('images.display')}
 					isDisplay
 				/>
 			</div>

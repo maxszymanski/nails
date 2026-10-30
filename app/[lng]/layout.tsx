@@ -1,20 +1,32 @@
 import type { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 import './globals.css'
-import { languages } from '../i18n/settings'
+import { fallbackLng, languages } from '../i18n/settings'
 import { dir } from 'i18next'
 import AosProvider from '@/src/components/ui/AosProvider'
 import Navbar from '@/src/components/nav/Navbar'
 import Footer from '@/src/components/footer/Footer'
 import Toaster from '@/src/components/ui/Toaster'
 import ModalsControler from '@/src/components/ui/ModalsControler'
+import { SITE_URL } from '@/src/lib/seo'
 
 const outfit = Outfit({
 	subsets: ['latin'],
 	variable: '--font-outfit',
 })
 
-export const metadata: Metadata = {
+const defaultMetadata: Metadata = {
+	metadataBase: new URL(SITE_URL),
+	icons: {
+		icon: [
+			{ url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+			{ url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+			{ url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+			{ url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+			{ url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+		],
+		apple: [{ url: '/apple-touche-icon.png', sizes: '180x180', type: 'image/png' }],
+	},
 	title: {
 		template: '%s | Iwon',
 		default: 'Iwon',
@@ -27,6 +39,22 @@ export async function generateStaticParams() {
 }
 
 export type Params = Promise<{ lng: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+	const { lng } = await params
+	const image = `/og-image-${languages.includes(lng) ? lng : fallbackLng}.png`
+
+	return {
+		...defaultMetadata,
+		openGraph: {
+			images: [{ url: image, width: 1200, height: 630, alt: 'Iwon Nail Display' }],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			images: [image],
+		},
+	}
+}
 
 export default async function RootLayout({
 	children,

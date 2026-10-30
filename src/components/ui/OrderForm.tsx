@@ -175,6 +175,8 @@ function OrderForm({
 
 	return (
 		<form
+			noValidate
+			aria-busy={isSubmitting}
 			className="flex-1 min-h-0  py-4 lg:py-6 flex flex-col gap-6 my-scrollbar"
 			onSubmit={handleSubmit(onSubmit)}
 			id="order-form">
@@ -278,7 +280,7 @@ function OrderForm({
 			<div className="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-3 gap-6">
 				<Input
 					required
-					type="text"
+					type="email"
 					id="email"
 					name="email"
 					label={t('cart.email')}
@@ -298,7 +300,7 @@ function OrderForm({
 					error={errors?.instagram || null}
 					message={errors?.instagram?.message || null}
 					disabled={isSubmitting}
-					autoComplete="instagram"
+					autoComplete="off"
 					placeholder={t('cart.instagram')}
 				/>
 			</div>
@@ -313,16 +315,17 @@ function OrderForm({
 					error={errors?.message || null}
 					message={errors?.message?.message || null}
 					disabled={isSubmitting}
-					autoComplete="message"
+					autoComplete="off"
 					placeholder={t('cart.enterMessage')}
 				/>
 				<Checkbox
+					required
 					name="terms"
 					label={
 						<>
 							<span>{t('cart.read')}</span>{' '}
 							<Link
-								target="_blanc"
+								target="_blank"
 								rel="noopener noreferrer"
 								href={`/${lng}/datenschutzerklarung`}
 								className="underline hover:text-black-primary duration-300">
@@ -373,7 +376,7 @@ function OrderForm({
 					</div>
 				)}
 			</div>
-			<Button type="submit" variant="primary" restClass="w-full relative" disabled={isSubmitting || !quote}>
+			<Button type="submit" variant="primary" restClass="w-full relative" aria-label={t(isSubmitting ? 'a11y.submitting' : 'cart.order')} disabled={isSubmitting || !quote}>
 				<span className={isSubmitting ? 'invisible' : ''}>{t('cart.order')}</span>
 				{isSubmitting && <Spinner restClass="absolute left-1/2 -translate-x-1/2" />}
 			</Button>

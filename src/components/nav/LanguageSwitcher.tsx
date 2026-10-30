@@ -2,9 +2,10 @@
 
 import { useRouter, usePathname } from 'next/navigation'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import Button from '../ui/Button'
 import Image from 'next/image'
+import { useT } from '@/app/i18n/client'
 
 const languagesOptions = [
 	{
@@ -25,6 +26,8 @@ const languagesOptions = [
 ]
 
 export default function LanguageSwitcher({ lng, isFooter = false }: { lng: string; isFooter?: boolean }) {
+	const { t } = useT('translations')
+	const optionsId = useId()
 	const router = useRouter()
 	const pathname = usePathname()
 	const [open, setOpen] = useState(false)
@@ -50,15 +53,27 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 	}, [])
 
 	return (
-		<div className="relative" ref={ref}>
+		<div className="relative" ref={ref}
+			onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}
+			onKeyDown={event => {
+				if (event.key === 'Escape' && open) {
+					event.stopPropagation()
+					setOpen(false)
+					ref.current?.querySelector('button')?.focus()
+				}
+			}}>
 			<Button
+				type="button"
+				aria-label={t('a11y.language', { language: current.label })}
+				aria-expanded={open}
+				aria-controls={open ? optionsId : undefined}
 				variant="switch"
 				onClick={() => setOpen(is => !is)}
 				restClass={`w-full gap-2 relative lg:w-[128px] ${isFooter ? 'bg-[#E9DDC833] hover:bg-[#e9ddc857]' : 'bg-grayscale-100  hover:bg-grayscale'}`}>
 				<span className="block relative size-5 rounded-full shrink-0 overflow-hidden">
 					<Image
 						src={current.flag}
-						alt={current.label}
+						alt=""
 						fill
 						quality={100}
 						sizes="20px"
@@ -86,11 +101,15 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 			</Button>
 			{open && (
 				<div
+					id={optionsId}
 					className={`absolute bottom-[calc(100%+4px)] lg:bottom-auto lg:top-[calc(100%+4px)] left-0 right-0  border  rounded-2xl overflow-hidden z-10 lg:rounded-lg ${isFooter ? 'bg-grayscale-400 border-[#E9DDC880]' : 'bg-white border-grayscale-100'}`}>
 					{languagesOptions.map((option, i) => (
 						<div key={option.value}>
 							{i > 0 && <div className="h-px grayscale-100" />}
 							<button
+								type="button"
+								lang={option.value}
+								aria-current={lng === option.value ? 'true' : undefined}
 								onClick={() => handleSelect(option.value)}
 								className={`w-full h-10 px-2.5 flex items-center gap-2 cursor-pointer duration-300 transition-colors ${
 									lng === option.value
@@ -104,7 +123,7 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 								<span className="block relative size-5 rounded-full shrink-0 overflow-hidden">
 									<Image
 										src={option.flag}
-										alt={option.label}
+										alt=""
 										fill
 										quality={100}
 										sizes="20px"

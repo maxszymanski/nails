@@ -49,7 +49,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 						quality={100}
 						width={477}
 						height={674}
-						alt="hand with beutifull nais"
+						alt={t('images.choice')}
 						sizes="469px"
 					/>
 					<Image
@@ -58,7 +58,7 @@ async function ChoiceSection({ lng }: { lng: string }) {
 						quality={100}
 						width={287}
 						height={404}
-						alt="hand with beutifull nais"
+						alt={t('images.choice')}
 						sizes="404px"
 					/>
 					<div className="absolute w-full bottom-0 left-0 h-25  bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_100%)] z-4"></div>

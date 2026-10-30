@@ -18,14 +18,28 @@ async function Footer({ lng }: { lng: string }) {
 						<address className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-italic text-sm leading-6 text-grayscale-500">
 							<div>
 								<p>{company.name}</p>
-								<p>{t('footer.owner')}: {company.owner}</p>
-								<p>{company.street}<br />{company.postalCode} {company.city}</p>
+								<p>
+									{t('footer.owner')}: {company.owner}
+								</p>
+								<p>
+									{company.street}
+									<br />
+									{company.postalCode} {company.city}
+								</p>
 								<p>USt-IdNr.: {company.vatId}</p>
 							</div>
 							<div className="flex flex-col items-start gap-1 min-w-0">
-								<a className="underline break-all hover:text-black-primary" href={`mailto:${company.email}`}>{company.email}</a>
-								<a className="underline hover:text-black-primary" href={company.phoneHref}>{company.phone}</a>
-								<a className="underline break-all hover:text-black-primary" href={company.website}>iwonnaildisplay.de</a>
+								<a
+									className="underline break-all hover:text-black-primary"
+									href={`mailto:${company.email}`}>
+									{company.email}
+								</a>
+								<a className="underline hover:text-black-primary" href={company.phoneHref}>
+									{company.phone}
+								</a>
+								<a className="underline break-all hover:text-black-primary" href={company.website}>
+									iwonnaildisplay.de
+								</a>
 							</div>
 						</address>
 					</div>

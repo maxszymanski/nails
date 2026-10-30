@@ -34,7 +34,7 @@ function CompatibleProducts({ onClick }: { onClick?: () => void }) {
 					<div className=" size-26 shrink-0 aspect-square relative overflow-hidden rounded-2xl  ">
 						<Image
 							src={product.image}
-							alt={product.name}
+							alt={t(`images.compatible.${product.lng}`)}
 							fill
 							className="object-cover object-center "
 							sizes="104px"

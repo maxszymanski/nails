@@ -2,20 +2,19 @@ import { getT } from '@/app/i18n'
 
 import Pill from '@/src/components/ui/Pill'
 import { company } from '@/src/data/company'
+import type { Metadata, ResolvingMetadata } from 'next'
+import type { Params } from '../layout'
+import { pageMetadata } from '@/src/lib/seo'
 
-export async function generateMetadata() {
-	const { t } = await getT('translations')
-
-	return {
-		title: t(`nav.legal`),
-		description: t(`privacy.general`),
-	}
+export async function generateMetadata({ params }: { params: Params }, parent: ResolvingMetadata): Promise<Metadata> {
+	const { lng } = await params
+	return pageMetadata(lng, 'privacy', '/datenschutzerklarung', parent)
 }
 
 async function page() {
 	const { t } = await getT('translations')
 	return (
-		<main className="flex-1">
+		<main id="main-content" tabIndex={-1} className="flex-1">
 			<section className="w-full wrapper px-4 mt-24 lg:mt-36 pb-20 lg:pb-30">
 				<div className="w-full max-w-[720px]">
 					<Pill text={t('privacy.pill')} />

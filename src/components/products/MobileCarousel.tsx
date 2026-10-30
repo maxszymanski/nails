@@ -2,8 +2,10 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
+import { useT } from '@/app/i18n/client'
 
-function MobileCarousel({ images }: { images: string[] }) {
+function MobileCarousel({ images, alts }: { images: string[]; alts: string[] }) {
+	const { t } = useT('translations')
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
@@ -35,7 +37,7 @@ function MobileCarousel({ images }: { images: string[] }) {
 								className="flex-[0_0_100%] relative aspect-square md:max-w-[542px] md:max-h-[542px] overflow-hidden cursor-grab">
 								<Image
 									src={src}
-									alt={`Product image ${i + 1}`}
+									alt={alts[i]}
 									fill
 									className="object-cover"
 									sizes="542px"
@@ -53,6 +55,7 @@ function MobileCarousel({ images }: { images: string[] }) {
 						<button
 							key={src}
 							onClick={() => scrollTo(i)}
+							aria-label={t('images.showImage', { description: alts[i] })}
 							className={`relative w-8 block h-1 shrink-0 rounded-full duration-300 transition-colors ${
 								selectedIndex === i ? 'bg-my-purple' : 'bg-grayscale-100'
 							}`}></button>
@@ -64,10 +67,11 @@ function MobileCarousel({ images }: { images: string[] }) {
 							<button
 								key={src}
 								onClick={() => scrollTo(i)}
+								aria-label={t('images.showImage', { description: alts[i] })}
 								className={`relative w-42.5 h-42.5 shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer hover:brightness-95 transition-all duration-300`}>
 								<Image
 									src={src}
-									alt={`Thumbnail ${i + 1}`}
+									alt=""
 									fill
 									className="object-cover"
 									sizes="170px"

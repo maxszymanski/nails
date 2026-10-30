@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react'
+import { InputHTMLAttributes, useId } from 'react'
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
@@ -12,12 +12,16 @@ interface InputType extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaE
 }
 
 function Input({ error, textarea = false, message, label, required, formRegister, ...rest }: InputType) {
+	const generatedId = useId()
+	const inputId = rest.id ?? generatedId
+	const errorId = `${inputId}-error`
+	const describedBy = [rest['aria-describedby'], error && message ? errorId : null].filter(Boolean).join(' ') || undefined
 	return (
 		<div className="flex w-full flex-col">
 			{label && (
-				<label className="text-grayscale-500 mb-2 leading-6" htmlFor={rest.id}>
+				<label className="text-grayscale-500 mb-2 leading-6" htmlFor={inputId}>
 					{label}
-					{required && <span className="text-my-purple">*</span>}
+					{required && <span aria-hidden="true" className="text-my-purple">*</span>}
 				</label>
 			)}
 			<div className="relative w-full">
@@ -28,11 +32,19 @@ function Input({ error, textarea = false, message, label, required, formRegister
 						}`}
 						{...formRegister}
 						{...rest}
+						id={inputId}
+						required={required}
+						aria-invalid={Boolean(error)}
+						aria-describedby={describedBy}
 					/>
 				) : (
 					<input
 						{...formRegister}
 						{...rest}
+						id={inputId}
+						required={required}
+						aria-invalid={Boolean(error)}
+						aria-describedby={describedBy}
 						className={`disabled:opacity-50 placehoder:text-grayscale-500/50 w-full rounded-full border  bg-dark px-4 text-sm h-10 placeholder:leading-6 placeholder:font-outfit outline-none transition-colors duration-300  leading-6 focus:border-grayscale-500 outline-grayscale-200 py-2 ${
 							error ? 'border-alert text-alert' : 'border-grayscale-200 hover:border-grayscale-100'
 						}`}
@@ -41,7 +53,7 @@ function Input({ error, textarea = false, message, label, required, formRegister
 			</div>
 
 			{error && message && (
-				<span className={`ml-0.5 mt-1 inline-block self-start text-xs  text-alert  `}>{message}</span>
+				<span id={errorId} role="alert" className={`ml-0.5 mt-1 inline-block self-start text-xs  text-alert  `}>{message}</span>
 			)}
 		</div>
 	)

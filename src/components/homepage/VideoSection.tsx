@@ -1,4 +1,7 @@
-function VideoSection() {
+import { getT } from '@/app/i18n'
+
+async function VideoSection() {
+	const { t } = await getT('translations')
 	return (
 		// <section className="w-full px-4 mt-16 pb-25 lg:mt-32 lg:pb-30" data-aos="fade-in">
 		// 	<div className="w-full max-w-[1040px] mx-auto rounded-2xl md:rounded-[28px] overflow-hidden  border border-grayscale-400 p-1">
@@ -15,6 +18,7 @@ function VideoSection() {
 		<section className="w-full px-4 mt-16 pb-25 lg:mt-32 lg:pb-30" data-aos="fade-in">
 			<div className="w-full max-w-[1040px] mx-auto rounded-2xl md:rounded-[28px] overflow-hidden border border-grayscale-400 p-1">
 				<video
+					aria-label={t('a11y.video')}
 					controls
 					preload="metadata"
 					poster="/assets/poster.png"

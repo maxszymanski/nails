@@ -29,7 +29,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 								subtitle={t('homepage.options.frameSub')}
 								smallImage="/assets/option-one-sm.png"
 								image="/assets/option-one.png"
-								alt="frame version"
+								alt={t('images.frame')}
 								cta={t('homepage.options.frameCta')}
 								href={`${lng}/produkte/rahmendisplay`}
 								lng={lng}
@@ -43,7 +43,7 @@ async function OptionsSection({ lng }: { lng: string }) {
 								subtitle={t('homepage.options.cabinetSub')}
 								smallImage="/assets/option-one-sm.png"
 								image="/assets/option-one.png"
-								alt="cabinet version"
+								alt={t('images.frame')}
 								cta={t('homepage.options.cabinetCta')}
 								href={`${lng}/produkte/vitrinenauslage`}
 								lng={lng}
@@ -58,9 +58,9 @@ async function OptionsSection({ lng }: { lng: string }) {
 							subtitle={t('homepage.options.displaySub')}
 							smallImage="/assets/option-three-sm.png"
 							image="/assets/option-three.png"
-							alt="display bar"
+							alt={t('images.displayOption')}
 							cta={t('homepage.options.displayCta')}
-							href={`${lng}/products/nagelstreifen`}
+							href={`/${lng}/produkte/nagelstreifen`}
 							lng={lng}
 							isDisplay
 						/>

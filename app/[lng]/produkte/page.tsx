@@ -3,32 +3,12 @@ import Pill from '@/src/components/ui/Pill'
 import { Params } from '../layout'
 import ProductCard from '@/src/components/ui/ProductCard'
 import { products } from '@/src/data/products'
+import type { Metadata, ResolvingMetadata } from 'next'
+import { pageMetadata } from '@/src/lib/seo'
 
-export async function generateMetadata() {
-	const { t } = await getT('translations')
-
-	return {
-		title: t(`nav.products`),
-		description: t(`nav.products`),
-		// openGraph: {
-		// 	title: t(`products.pill`),
-		// 	description: t(`products.pill`),
-		// 	images: [
-		// 		{
-		// 			url: product.image,
-		// 			width: 1200,
-		// 			height: 630,
-		// 			alt: t(`products.pill`),
-		// 		},
-		// 	],
-		// },
-		// twitter: {
-		// 	card: 'summary_large_image',
-		// 	title: t(`products.pill`),
-		// 	description: t(`products.pill`),
-		// 	images: [product.image],
-		// },
-	}
+export async function generateMetadata({ params }: { params: Params }, parent: ResolvingMetadata): Promise<Metadata> {
+	const { lng } = await params
+	return pageMetadata(lng, 'products', '/produkte', parent)
 }
 
 async function page({ params }: { params: Params }) {
@@ -37,7 +17,7 @@ async function page({ params }: { params: Params }) {
 	const { t } = await getT('translations')
 
 	return (
-		<main className="flex-1 ">
+		<main id="main-content" tabIndex={-1} className="flex-1 ">
 			<section className="mt-24 lg:mt-36">
 				<div className="w-full max-w-[1200px] mx-auto flex flex-col gap-12 lg:gap-20 px-4">
 					<div className="flex flex-col w-full items-center">

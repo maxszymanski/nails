@@ -100,6 +100,7 @@ const NavLink = ({ href, name, isActive = false }: { href: string; name: string;
 		<li>
 			<Link
 				href={href}
+				aria-current={isActive ? 'page' : undefined}
 				className={`text-sm block leading-5 font-medium bg-transparent duration-300 transition-colors lg:hover:bg-grayscale-100 px-4 py-2.5 lg:rounded-[500px] ${isActive ? 'text-black-primary' : 'text-grayscale-500'}`}>
 				{name}
 			</Link>

@@ -31,6 +31,8 @@ function Checkbox({
 						id={name}
 						{...rest}
 						{...formRegister}
+						aria-invalid={Boolean(error)}
+						aria-describedby={[rest['aria-describedby'], error && message ? `${name}-error` : null].filter(Boolean).join(' ') || undefined}
 						className={`peer h-4 w-4 cursor-pointer appearance-none rounded border bg-white transition-all ${error ? 'checked:border-grayscale-200 rounded-sm border-red-500' : 'border-grayscale-200  checked:bg-white '}`}
 					/>
 					<span className="text-dark pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 peer-checked:opacity-100">
@@ -57,7 +59,7 @@ function Checkbox({
 				)}
 			</label>
 			{error && (
-				<span className="ml-0.5 mt-2 inline-block self-start text-xs font-light text-alert lg:mt-1">
+				<span id={`${name}-error`} role="alert" className="ml-0.5 mt-2 inline-block self-start text-xs font-light text-alert lg:mt-1">
 					{message}
 				</span>
 			)}

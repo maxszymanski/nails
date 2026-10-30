@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 
 interface AccorderonProps {
 	idx?: number
@@ -11,6 +11,7 @@ interface AccorderonProps {
 
 function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 	const [isOpen, setIsOpen] = useState(idx === 0)
+	const panelId = useId()
 
 	return (
 		<div
@@ -18,12 +19,15 @@ function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 			data-aos="fade-up"
 			data-aos-delay={100 * idx}>
 			<button
+				type="button"
+				aria-expanded={isOpen}
+				aria-controls={panelId}
 				className={`w-full my-outline justify-between flex sm:items-center gap-4 cursor-pointer  group pb-2  ${idx === 0 ? 'pt-0' : 'pt-6 '}`}
 				onClick={() => setIsOpen(is => !is)}>
-				<p className="text-left leading-6 transition-colors duration-300 group-hover:text-black-primary/80">
+				<span className="text-left leading-6 transition-colors duration-300 group-hover:text-black-primary/80">
 					{title}
-				</p>
-				<span className="text-2xl flex items-center justify-center  text-cap  text-my-purple duration-300 transition-colors  h-6 w-6 relative ">
+				</span>
+				<span aria-hidden="true" className="text-2xl flex items-center justify-center  text-cap  text-my-purple duration-300 transition-colors  h-6 w-6 relative ">
 					<span
 						className={`absolute -top-0.5 left-0 size-6 shrink-0 w-full h-full flex items-center justify-center ${isOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300 `}>
 						-
@@ -34,6 +38,7 @@ function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 					</span>
 				</span>
 			</button>
+			<div id={panelId} aria-hidden={!isOpen}>
 			{answer && (
 				<p
 					className={` text-grayscale-500 pr-4 sm:pr-6 transition-all duration-300  text-sm md:text-base select-none ${isOpen ? 'visible opacity-100 max-h-[500px] pb-6 ' : 'invisible opacity-20 max-h-0 '}  `}>
@@ -50,6 +55,7 @@ function FaqAccordeon({ idx = 0, title, answer, list }: AccorderonProps) {
 					))}
 				</ul>
 			)}
+			</div>
 		</div>
 	)
 }

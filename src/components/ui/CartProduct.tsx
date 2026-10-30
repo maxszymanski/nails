@@ -18,7 +18,7 @@ function CartProduct({ product }: { product: CartItem }) {
 			<div className=" size-26 shrink-0 aspect-square relative overflow-hidden rounded-2xl  ">
 				<Image
 					src={product.image}
-					alt={product.name}
+					alt={t(`images.products.${product.name}.0`)}
 					fill
 					className="object-cover object-center "
 					sizes="104px"
@@ -36,7 +36,7 @@ function CartProduct({ product }: { product: CartItem }) {
 					className={`flex items-center rounded-full bg-grayscale-100 overflow-hidden  w-[117px] h-10 gap-2 shrink-0 mt-4`}>
 					<Button
 						variant="default"
-						aria-label="increase items"
+						aria-label={t('a11y.decreaseQuantity', { product: t(`products.products.${product.name}`) })}
 						restClass=" text-grayscale-500 h-full w-full  hover:bg-grayscale-200 disabled:cursor-auto disabled:hover:bg-transparent"
 						disabled={product.quantity === 1}
 						onClick={() => decrease(product.id)}>
@@ -52,7 +52,7 @@ function CartProduct({ product }: { product: CartItem }) {
 					</span>
 					<Button
 						variant="default"
-						aria-label="decrease items"
+						aria-label={t('a11y.increaseQuantity', { product: t(`products.products.${product.name}`) })}
 						restClass=" text-grayscale-500 h-full  w-full hover:bg-grayscale-200 disabled:cursor-auto disabled:pointer-events-none disabled:opacity-50"
 						onClick={() => increase(product.id)}>
 						<svg

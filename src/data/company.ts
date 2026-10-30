@@ -1,6 +1,6 @@
 export const company = {
 	name: 'Iwonnaildisplay',
-	owner: 'Tomasz Ptaszynski',
+	owner: 'Iwona Krol-Ptaszynska',
 	street: 'Grillparzerstr. 12',
 	postalCode: '40699',
 	city: 'Erkrath',

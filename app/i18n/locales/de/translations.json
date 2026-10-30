@@ -1,4 +1,80 @@
 {
+	"a11y": {
+		"navigation": "Hauptnavigation",
+		"openMenu": "Menü öffnen",
+		"closeMenu": "Menü schließen",
+		"language": "Sprache ändern: {{language}}",
+		"cart": "Warenkorb, Anzahl der Artikel: {{count}}",
+		"increaseQuantity": "Anzahl erhöhen: {{product}}",
+		"decreaseQuantity": "Anzahl verringern: {{product}}",
+		"backToCart": "Zurück zum Warenkorb",
+		"submitting": "Bestellung wird gesendet",
+		"video": "Vorstellung des Iwon Nail Display Systems"
+	},
+	"images": {
+		"hero": "Weiße, rosa und violette Mustertips um einen Würfel mit dem Iwon Nail Display Logo",
+		"choice": "Hand mit einem rosa Mustertip auf dem Zeigefinger",
+		"organizer": "Nahaufnahme eines weißen IND Rahmens mit Tip-Reihen und Nummern",
+		"magnetic": "Rosa Mustertips mit sichtbaren Halteklammern und Magnetbefestigungen",
+		"nonmagnetic": "Weißer Mustertip mit A01-Halteklammer auf einem Würfel mit Iwon Logo",
+		"display": "Nummerierte IND Displayleiste mit roten Mustertips und einzelnen Tips daneben",
+		"frame": "Weißer IND Rahmen mit drei Reihen nummerierter Mustertips",
+		"displayOption": "Weiße IND Displayleiste mit nummerierten Plätzen und weißen Mustertips",
+		"organization": "IND Rahmen mit Mustertips und Bögen mit nummerierten Aufklebern zur Farbzuordnung",
+		"showImage": "Bild anzeigen: {{description}}",
+		"carousel": {
+			"one": "Zwei weiße IND Rahmen mit grünen, braunen und schwarzen Farbmustern",
+			"two": "IND Rahmen mit blauen und türkisen Farbmustern neben grünen und schwarzen Mustern",
+			"three": "Behandlungsraum mit orangefarbenem Stuhl und einem Farbmusterrahmen an der Wand",
+			"four": "Zwei IND Rahmen mit grauen, schwarzen und braunen Farbmustern"
+		},
+		"products": {
+			"nails": [
+				"Weißer IND Mustertip mit Halteklammer in der Seitenansicht",
+				"Weißer IND Tip mit Blick in die Halteklammer mit der Nummer A01",
+				"Weißer IND Tip in Schrägansicht mit A01-Markierung an der Halteklammer",
+				"Unterseite eines weißen IND Tips mit offener Halteklammer für den Finger"
+			],
+			"magnetic": [
+				"Weißer magnetischer IND Mustertip mit sichtbarer Befestigung an der Unterseite",
+				"Unterseite eines magnetischen IND Tips mit Halteklammer und grauem Magnetstreifen",
+				"Nahaufnahme der Halteklammer und des Magnetstreifens eines IND Tips",
+				"Magnetischer IND Tip von unten mit einem Magneten entlang der Halteklammer"
+			],
+			"transparent": [
+				"Transparenter IND Mustertip mit Halteklammer in Schrägansicht",
+				"Unterseite eines transparenten IND Tips mit Blick in die Halteklammer",
+				"Transparenter IND Tip in Seitenansicht mit offener Fingerklammer",
+				"Transparenter IND Tip mit nach oben gedrehter Unterseite"
+			],
+			"frame": [
+				"Weißes IND Rahmendisplay mit drei Reihen nummerierter Mustertips",
+				"Nahaufnahme der Mustertips und Nummern in einem weißen IND Rahmen",
+				"IND Rahmen mit Mustertips und nummerierten Aufkleberbögen auf beiden Seiten",
+				"Aufkleberbögen A01–A30 zur Nummerierung von IND Farbmustern"
+			],
+			"cabinet": [
+				"Geöffnetes weißes IND Schrankdisplay mit Ablagen im Innenraum",
+				"Geschlossenes IND Schrankdisplay mit drei Tip-Reihen auf der Vorderseite",
+				"IND Schrank in Seitenansicht mit geöffneter Tür und sichtbaren Ablagen",
+				"Aufkleberbögen A01–A30 zur Farbzuordnung im IND Schrankdisplay"
+			],
+			"display": [
+				"Weiße nummerierte IND Displayleiste mit weißen Mustertips in Schrägansicht",
+				"Nahaufnahme weißer Tips auf der IND Displayleiste und der Nummern A11 und A12",
+				"Leere IND Displayleiste mit Nummern und Steckplätzen für Mustertips",
+				"Weiße IND Displayleiste in Vorderansicht mit den Nummern A01–A12"
+			]
+		},
+		"compatible": {
+			"skadis-one": "Weiße IKEA SKÅDIS Lochplatte",
+			"skadis-two": "Weiße Ablage mit Befestigungen für die IKEA SKÅDIS Lochplatte",
+			"mosslanda-one": "Weiße IKEA MOSSLANDA Bilderleiste mit erhöhtem vorderem Rand",
+			"mosslanda-two": "Längere weiße IKEA MOSSLANDA Bilderleiste",
+			"mosslanda-three": "Holzfarbene IKEA MOSSLANDA Bilderleiste mit erhöhtem vorderem Rand",
+			"mosslanda-four": "Längere holzfarbene IKEA MOSSLANDA Bilderleiste"
+		}
+	},
 	"nav": {
 		"home": "Startseite",
 		"products": "Produkte",

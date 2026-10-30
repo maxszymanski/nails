@@ -1,4 +1,5 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	ref?: React.Ref<HTMLButtonElement>
 	isActive?: boolean
 	isActiveClass?: string
 	children: React.ReactNode

@@ -9,12 +9,15 @@ import BasketButton from '../ui/BasketButton'
 import NavList from './NavList'
 
 import LanguageSwitcher from './LanguageSwitcher'
+import { useT } from '@/app/i18n/client'
 
 function Navbar({ lng }: { lng: string }) {
+	const { t } = useT('translations')
 	const [show, setShow] = useState(true)
 	const navRef = useRef(null)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isExpanded, setIsExpanded] = useState(false)
+	const menuButtonRef = useRef<HTMLButtonElement>(null)
 
 	const [isSocialOpen, setIsSocialOpen] = useState(false)
 
@@ -69,6 +72,14 @@ function Navbar({ lng }: { lng: string }) {
 		<>
 			<header className="w-full">
 				<nav
+					aria-label={t('a11y.navigation')}
+					onFocusCapture={() => setShow(true)}
+					onKeyDown={event => {
+						if (event.key === 'Escape' && isExpanded) {
+							closeNav()
+							menuButtonRef.current?.focus()
+						}
+					}}
 					className={`px-4 lg:left-1/2 lg:-translate-x-1/2 left-0 duration-400  fixed top-0 z-60 flex flex-col xl:max-w-[1172px]  xl:mx-auto  w-full transition-all ${show ? 'translate-y-0' : '-translate-y-full'} ${isExpanded ? 'overflow-y-auto max-h-dvh  h-full' : 'overflow-y-hidden max-h-22'}  lg:max-h-22 delay-200 lg:overflow-y-visible`}
 					ref={navRef}>
 					{/* mobile */}
@@ -79,10 +90,12 @@ function Navbar({ lng }: { lng: string }) {
 							<BasketButton />
 							<div className="h-6 w-px bg-grayscale"></div>
 							<Button
+								ref={menuButtonRef}
 								type="button"
-								aria-label="toogle navigation menu"
+								aria-label={t(isExpanded ? 'a11y.closeMenu' : 'a11y.openMenu')}
+								aria-expanded={isExpanded}
+								aria-controls="mobile-navigation"
 								variant="rounded"
-								role="button"
 								onClick={toogleNav}>
 								<svg
 									className={`absolute top-1/2 left-1/2 transition-opacity duration-300   -translate-x-1/2 -translate-y-1/2 ${isExpanded ? 'opacity-0' : 'opacity-100 '}`}
@@ -122,6 +135,9 @@ function Navbar({ lng }: { lng: string }) {
 						</div>
 					</div>
 					<div
+						id="mobile-navigation"
+						inert={!isExpanded}
+						aria-hidden={!isExpanded}
 						className={`lg:hidden flex flex-col h-dvh justify-between relative pb-4 w-full ${!isExpanded ? '-z-10 opacity-0 pointer-events-none delay-1000' : ' z-60 opacity-100 '}`}>
 						<NavList
 							lng={lng}

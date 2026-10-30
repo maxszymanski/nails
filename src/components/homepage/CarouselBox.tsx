@@ -2,8 +2,10 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import Image from 'next/image'
+import { useT } from '@/app/i18n/client'
 
 function CarouselBox() {
+	const { t } = useT('translations')
 	const [emblaRef] = useEmblaCarousel(
 		{
 			loop: true,
@@ -23,16 +25,16 @@ function CarouselBox() {
 			className="mx-auto w-full max-w-[2650px] select-none overflow-x-hidden active:cursor-grabbing lg:cursor-grab lg:pb-40 pb-25 mask-x-from-85%"
 			ref={emblaRef}>
 			<div className="flex w-full items-center">
-				<CardImage src="/assets/carousel/three.png" alt="carousel image 2" />
-				<CardImage src="/assets/carousel/two.png" alt="carousel image 1" large />
-				<CardImage src="/assets/carousel/one.png" alt="carousel image 1" large />
-				<CardImage src="/assets/carousel/three.png" alt="carousel image 2" />
-				<CardImage src="/assets/carousel/four.png" alt="carousel image 1" large />
-				<CardImage src="/assets/carousel/two.png" alt="carousel image 1" large />
-				<CardImage src="/assets/carousel/three.png" alt="carousel image 2" />
-				<CardImage src="/assets/carousel/one.png" alt="carousel image 1" large />
-				<CardImage src="/assets/carousel/three.png" alt="carousel image 2" />
-				<CardImage src="/assets/carousel/four.png" alt="carousel image 1" large />
+				<CardImage src="/assets/carousel/three.png" alt={t('images.carousel.three')} />
+				<CardImage src="/assets/carousel/two.png" alt={t('images.carousel.two')} large />
+				<CardImage src="/assets/carousel/one.png" alt={t('images.carousel.one')} large />
+				<CardImage src="/assets/carousel/three.png" alt="" />
+				<CardImage src="/assets/carousel/four.png" alt={t('images.carousel.four')} large />
+				<CardImage src="/assets/carousel/two.png" alt="" large />
+				<CardImage src="/assets/carousel/three.png" alt="" />
+				<CardImage src="/assets/carousel/one.png" alt="" large />
+				<CardImage src="/assets/carousel/three.png" alt="" />
+				<CardImage src="/assets/carousel/four.png" alt="" large />
 			</div>
 		</div>
 	)

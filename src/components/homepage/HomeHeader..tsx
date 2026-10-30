@@ -12,7 +12,7 @@ async function HomeHeader({ lng }: { lng: string }) {
 				quality={100}
 				width={350}
 				height={400}
-				alt="Colorful nail polishes in various shades displayed on a box with the Iwon brand logo"
+				alt={t('images.hero')}
 				priority
 				fetchPriority="high"
 				loading="eager"
@@ -24,7 +24,7 @@ async function HomeHeader({ lng }: { lng: string }) {
 				quality={100}
 				width={1048}
 				height={734}
-				alt="Colorful nail polishes in various shades displayed on a box with the Iwon brand logo"
+				alt={t('images.hero')}
 				priority
 				fetchPriority="high"
 				loading="eager"
