@@ -6,13 +6,10 @@ acceptLanguage.languages(languages)
 
 export const config = {
 	// Avoid matching for static files, API routes, etc.
-	matcher: ['/((?!api|_next/static|_next/image|assets|og-image-|favicon.ico|robots.txt|sitemap.xml|sw.js|site.webmanifest).*)'],
+	matcher: ['/((?!api|_next/|assets|og-image-|favicon-|favicon.ico|apple-touche-icon.png|robots.txt|sitemap.xml|sw.js|site.webmanifest).*)'],
 }
 
 export function proxy(req: NextRequest) {
-	if (req.nextUrl.pathname.indexOf('icon') > -1 || req.nextUrl.pathname.indexOf('chrome') > -1)
-		return NextResponse.next()
-
 	let lng
 	// Try to get language from cookie
 	const cookie = req.cookies.get(cookieName)
@@ -23,7 +20,11 @@ export function proxy(req: NextRequest) {
 	if (!lng) lng = fallbackLng
 
 	// Check if the language is already in the path
-	const lngInPath = languages.find(loc => req.nextUrl.pathname.startsWith(`/${loc}`))
+	const firstSegment = req.nextUrl.pathname.split('/')[1]
+	const lngInPath = languages.find(loc => loc === firstSegment)
+	if (!lngInPath && !['', 'produkte', 'faq', 'datenschutzerklarung'].includes(firstSegment)) {
+		return new NextResponse('Not Found', { status: 404, headers: { 'X-Robots-Tag': 'noindex' } })
+	}
 	const headers = new Headers(req.headers)
 	headers.set(headerName, lngInPath || lng)
 
@@ -37,7 +38,7 @@ export function proxy(req: NextRequest) {
 		const refererHeader = req.headers.get('referer')
 		if (refererHeader) {
 			const refererUrl = new URL(refererHeader)
-			const lngInReferer = languages.find(l => refererUrl.pathname.startsWith(`/${l}`))
+			const lngInReferer = languages.find(l => l === refererUrl.pathname.split('/')[1])
 			const response = NextResponse.next({ headers })
 			if (lngInReferer) {
 				response.cookies.set(cookieName, lngInReferer, {

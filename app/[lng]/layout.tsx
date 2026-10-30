@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 import './globals.css'
-import { fallbackLng, languages } from '../i18n/settings'
+import { languages } from '../i18n/settings'
+import { notFound } from 'next/navigation'
 import { dir } from 'i18next'
 import AosProvider from '@/src/components/ui/AosProvider'
 import Navbar from '@/src/components/nav/Navbar'
@@ -42,7 +43,8 @@ export type Params = Promise<{ lng: string }>
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
 	const { lng } = await params
-	const image = `/og-image-${languages.includes(lng) ? lng : fallbackLng}.png`
+	if (!languages.includes(lng)) notFound()
+	const image = `/og-image-${lng}.png`
 
 	return {
 		...defaultMetadata,
@@ -64,6 +66,7 @@ export default async function RootLayout({
 	params: Params
 }>) {
 	const { lng } = await params
+	if (!languages.includes(lng)) notFound()
 
 	return (
 		<html lang={lng} dir={dir(lng)} className={`${outfit.className} h-full antialiased `}>
