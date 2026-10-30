@@ -79,9 +79,10 @@ function OrderForm({
 	})
 	const [country, isBusiness, vatId] = useWatch({ control, name: ['country', 'isBusiness', 'vatId'] })
 	const exportCountry = isExportCountry(country)
+	const acceptsVatId = !exportCountry && country !== 'GB'
 	const quotePayload = JSON.stringify({
 		cart: cartInformation,
-		delivery: { country, isBusiness, vatId: isBusiness && !exportCountry ? vatId : '' },
+		delivery: { country, isBusiness, vatId: isBusiness && acceptsVatId ? vatId : '' },
 	})
 	const quoteKey = `${quoteRevision}:${quotePayload}`
 	const currentResult = quoteResult?.key === quoteKey ? quoteResult : null
@@ -89,9 +90,9 @@ function OrderForm({
 	const productsGrossCents = quote ? quote.subtotalCents + quote.productVatCents : 0
 	const toFreeShipping = Math.max(0, 5000 - productsGrossCents)
 	const freeShippingProgress = Math.min(100, productsGrossCents / 5000 * 100)
-	const errorCode = currentResult?.code
-	const manualQuote = country === 'OTHER' || errorCode === 'MANUAL_QUOTE'
-	const errorMessage = (code?: string) => t(`checkout.errors.${['VAT_INVALID', 'VAT_UNAVAILABLE', 'MANUAL_QUOTE', 'QUOTE_CHANGED'].includes(code || '') ? code : 'QUOTE_UNAVAILABLE'}`)
+	const errorCode = country === 'GB' ? 'UK_MANUAL_QUOTE' : currentResult?.code
+	const manualQuote = country === 'OTHER' || errorCode === 'MANUAL_QUOTE' || errorCode === 'WEIGHT_LIMIT' || errorCode === 'UK_MANUAL_QUOTE'
+	const errorMessage = (code?: string) => t(`checkout.errors.${['VAT_INVALID', 'VAT_UNAVAILABLE', 'MANUAL_QUOTE', 'WEIGHT_LIMIT', 'QUOTE_CHANGED', 'UK_MANUAL_QUOTE'].includes(code || '') ? code : 'QUOTE_UNAVAILABLE'}`)
 
 	useEffect(() => {
 		const controller = new AbortController()
@@ -124,7 +125,7 @@ function OrderForm({
 
 		try {
 			const payload = {
-				customer: { ...data, vatId: data.isBusiness && !isExportCountry(data.country) ? data.vatId : '', companyName: data.isBusiness ? data.companyName : '' },
+				customer: { ...data, vatId: data.isBusiness && !isExportCountry(data.country) && data.country !== 'GB' ? data.vatId : '', companyName: data.isBusiness ? data.companyName : '' },
 				cart: { items: [...cartInformation.items].sort((a, b) => a.id - b.id) },
 				lng,
 				expectedTotalCents: quote.totalCents,
@@ -184,17 +185,17 @@ function OrderForm({
 				<label htmlFor="country">{t('checkout.country')}</label>
 				<select id="country" autoComplete="country" {...register('country')} disabled={isSubmitting}
 					className="w-full min-w-0 border border-grayscale-200 rounded-lg px-3 py-3 bg-white">
-					{Object.keys(VAT_RATES).sort((a, b) => (countryNames.of(a) || a).localeCompare(countryNames.of(b) || b, lng)).map(code => (
+					{[...Object.keys(VAT_RATES), 'GB'].sort((a, b) => (countryNames.of(a) || a).localeCompare(countryNames.of(b) || b, lng)).map(code => (
 						<option key={code} value={code}>{countryNames.of(code)}</option>
 					))}
 					<option value="OTHER">{t('checkout.outsideEu')}</option>
 				</select>
 			</div>
-			<p className="text-sm leading-6 text-grayscale-500">
-				{t('checkout.manualQuote')}{' '}
+			{manualQuote && <div role="alert" className="text-sm leading-6">
+				<p className="text-red-700">{errorMessage(errorCode || 'MANUAL_QUOTE')}</p>
 				<a className="block underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
-			</p>
-			{exportCountry && <p className="text-sm leading-6 text-grayscale-500">{t('checkout.importTaxes')}</p>}
+			</div>}
+			{quote && exportCountry && <p className="text-sm leading-6 text-grayscale-500">{t('checkout.importTaxes')}</p>}
 			{!manualQuote && <>
 			<label className="flex items-center gap-3">
 				<input type="checkbox" {...register('isBusiness')} disabled={isSubmitting} className="size-5 shrink-0 accent-my-purple" />
@@ -204,7 +205,7 @@ function OrderForm({
 				<Input required id="companyName" name="companyName" label={t('checkout.companyName')}
 					formRegister={register('companyName')} error={errors.companyName || null} message={errors.companyName?.message || null}
 					disabled={isSubmitting} autoComplete="organization" placeholder={t('checkout.companyName')} />
-				{!exportCountry && <Input id="vatId" name="vatId" label={t('checkout.vatId')}
+				{acceptsVatId && <Input id="vatId" name="vatId" label={t('checkout.vatId')}
 					formRegister={register('vatId')} error={errors.vatId || null} message={errors.vatId?.message || null}
 					disabled={isSubmitting} autoComplete="off" placeholder="PL1234567890" />}
 			</div>}

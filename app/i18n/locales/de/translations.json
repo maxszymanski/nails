@@ -346,7 +346,7 @@
 		},
 		{
 			"title": "Wenn ich eine Bestellung aufgebe, wie hoch sind die Versandkosten?",
-			"answer": "Für Standardbestellungen bis 2 kg kostet der Versand innerhalb Deutschlands 4,90 € inkl. MwSt. Ab einem Warenwert von 50 € inkl. MwSt. ist er kostenlos. Der Versand nach Polen und in die übrigen EU-Länder kostet 9,90 €, der Versand in die Vereinigten Arabischen Emirate und nach Katar 25,49 €. Für den Versand in andere Nicht-EU-Länder sowie Großbestellungen über 2 kg kontaktieren Sie uns bitte per E-Mail für ein individuelles Angebot: Iwon@iwonnaildisplay.de."
+			"answer": "Deutschland: 4,90 € inkl. MwSt., versandkostenfrei ab 50 € Warenwert inkl. MwSt. (bis 20 kg). Polen und die übrigen EU-Länder außer Deutschland: bis 2 kg – 11,99 €, bis 5 kg – 20,49 €, bis 10 kg – 25,49 €, bis 20 kg – 31,49 €. Schweiz: bis 2 kg – 16,99 €, bis 5 kg – 29,99 €, bis 10 kg – 37,99 €, bis 20 kg – 51,99 €. Weitere belieferte europäische Länder: bis 2 kg – 19,99 €, bis 5 kg – 32,99 €, bis 10 kg – 40,99 €, bis 20 kg – 55,99 €. Vereinigte Arabische Emirate und Katar: bis 2 kg – 22,99 €, bis 5 kg – 48,99 €, bis 10 kg – 64,99 €, bis 20 kg – 103,99 €. Dies sind die endgültigen Versandpreise; mögliche Einfuhrabgaben sind nicht enthalten. Alle Bestellungen in das Vereinigte Königreich, einschließlich Nordirland, bearbeiten wir ausschließlich per E-Mail. Lieferungen in Länder, die nicht im Formular aufgeführt sind, erfordern ein individuelles Angebot. Bitte kontaktieren Sie uns direkt: Iwon@iwonnaildisplay.de."
 		},
 		{
 			"title": "Gibt es Abweichungen in der Produktbeschaffenheit?",
@@ -406,7 +406,6 @@
 		"companyName": "Firmenname",
 		"companyRequired": "Bitte geben Sie den Firmennamen ein.",
 		"vatId": "USt-IdNr. mit Länderpräfix (optional, MIAS/VIES-Prüfung)",
-		"manualQuote": "Versand in andere Nicht-EU-Länder und Großbestellungen (über 2 kg): Bitte kontaktieren Sie uns per E-Mail für ein individuelles Angebot.",
 		"importTaxes": "Shop-MwSt.: 0 % (Ausfuhr in ein Nicht-EU-Land). Bei der Zustellung können lokale Einfuhrumsatzsteuer, Zoll- oder Beförderungsgebühren anfallen.",
 		"netProducts": "Warenwert netto",
 		"productVat": "MwSt. auf Produkte",
@@ -418,6 +417,8 @@
 			"VAT_INVALID": "Die USt-IdNr. konnte nicht bestätigt werden. Bitte prüfen Sie die Nummer und das Lieferland oder kontaktieren Sie uns.",
 			"VAT_UNAVAILABLE": "Die MIAS/VIES-Prüfung ist vorübergehend nicht verfügbar. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
 			"MANUAL_QUOTE": "Für diese Lieferung ist ein individuelles Angebot erforderlich. Bitte kontaktieren Sie uns per E-Mail.",
+			"UK_MANUAL_QUOTE": "Alle Bestellungen in das Vereinigte Königreich, einschließlich Nordirland, bearbeiten wir ausschließlich per E-Mail. Bitte kontaktieren Sie uns.",
+			"WEIGHT_LIMIT": "Diese Bestellung überschreitet die Grenze von 20 kg. Eine Online-Bestellung ist nicht möglich. Bitte kontaktieren Sie uns direkt per E-Mail für ein Versandangebot.",
 			"QUOTE_CHANGED": "Bestellbetrag oder MwSt.-Satz haben sich geändert. Bitte berechnen Sie die Bestellung vor der Bestätigung erneut.",
 			"QUOTE_UNAVAILABLE": "Die Bestellung konnte nicht berechnet werden. Bitte versuchen Sie es erneut."
 		}
