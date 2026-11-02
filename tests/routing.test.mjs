@@ -28,7 +28,7 @@ const request = (pathname, headers = {}) => new NextRequest(`https://www.iwonnai
 for (const lng of ['pl', 'en', 'de']) {
 	test(`preserves ${lng} pages and language headers`, () => {
 		for (const suffix of ['', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutzerklarung']) {
-			const response = proxy(request(`/${lng}${suffix}`))
+			const response = proxy(request(`/${lng}${suffix}`, { cookie: 'i18next=de', 'accept-language': 'de' }))
 			assert.equal(response.status, 200)
 			assert.equal(response.headers.get('location'), null)
 			assert.equal(response.headers.get('x-i18next-current-language'), lng)
@@ -47,13 +47,21 @@ for (const pathname of ['/plx', '/plx/produkte', '/english', '/deutsch/produkte'
 }
 
 test('keeps language negotiation and query strings on existing unprefixed routes', () => {
-	for (const pathname of ['/', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutzerklarung']) {
+	for (const pathname of ['/produkte', '/produkte/fingernagel', '/faq', '/datenschutzerklarung']) {
 		const response = proxy(request(`${pathname}?source=test`, { 'accept-language': 'pl' }))
 		assert.equal(response.status, 307)
 		assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/pl${pathname}?source=test`)
 	}
-	assert.equal(proxy(request('/')).headers.get('location'), 'https://www.iwonnaildisplay.de/de/')
-	assert.equal(proxy(request('/', { cookie: 'i18next=en', 'accept-language': 'pl' })).headers.get('location'), 'https://www.iwonnaildisplay.de/en/')
+})
+
+test('root always redirects permanently to German without an intermediate trailing slash', () => {
+	for (const headers of [{}, { 'accept-language': 'en-US,en;q=0.9' }, { cookie: 'i18next=pl', 'accept-language': 'pl' }, { cookie: 'i18next=en' }]) {
+		for (const query of ['', '?source=test']) {
+			const response = proxy(request(`/${query}`, headers))
+			assert.equal(response.status, 308)
+			assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/de${query}`)
+		}
+	}
 })
 
 test('only valid full language segments in referrers can set the language cookie', () => {

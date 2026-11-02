@@ -10,6 +10,10 @@ export const config = {
 }
 
 export function proxy(req: NextRequest) {
+	if (req.nextUrl.pathname === '/') {
+		return NextResponse.redirect(new URL(`/${fallbackLng}${req.nextUrl.search}`, req.url), 308)
+	}
+
 	let lng
 	// Try to get language from cookie
 	const cookie = req.cookies.get(cookieName)
