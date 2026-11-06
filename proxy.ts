@@ -26,8 +26,11 @@ export function proxy(req: NextRequest) {
 	// Check if the language is already in the path
 	const firstSegment = req.nextUrl.pathname.split('/')[1]
 	const lngInPath = languages.find(loc => loc === firstSegment)
-	if (!lngInPath && !['', 'produkte', 'faq', 'datenschutzerklarung'].includes(firstSegment)) {
+	if (!lngInPath && !['', 'produkte', 'faq', 'datenschutz', 'datenschutzerklarung', 'impressum', 'agb', 'widerruf', 'reklamation', 'versand-zahlung'].includes(firstSegment)) {
 		return new NextResponse('Not Found', { status: 404, headers: { 'X-Robots-Tag': 'noindex' } })
+	}
+	if (req.nextUrl.pathname === '/datenschutzerklarung' || req.nextUrl.pathname === `/${lngInPath}/datenschutzerklarung`) {
+		return NextResponse.redirect(new URL(`/${lngInPath || lng}/datenschutz${req.nextUrl.search}`, req.url), 308)
 	}
 	const headers = new Headers(req.headers)
 	headers.set(headerName, lngInPath || lng)

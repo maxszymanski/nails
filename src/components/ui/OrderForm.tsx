@@ -329,7 +329,7 @@ function OrderForm({
 							<Link
 								target="_blank"
 								rel="noopener noreferrer"
-								href={`/${lng}/datenschutzerklarung`}
+								href={`/${lng}/datenschutz`}
 								className="underline hover:text-black-primary duration-300">
 								{' '}
 								{t('cart.terms')}

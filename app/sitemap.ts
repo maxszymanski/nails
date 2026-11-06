@@ -4,7 +4,7 @@ import { products } from '@/src/data/products'
 import { languageAlternates, SITE_URL } from '@/src/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const paths = ['', '/produkte', '/faq', '/datenschutzerklarung', ...products.map(product => `/produkte/${product.slug}`)]
+	const paths = ['', '/produkte', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/reklamation', '/versand-zahlung', ...products.map(product => `/produkte/${product.slug}`)]
 
 	return paths.flatMap(path => languages.map(lng => ({
 		url: `${SITE_URL}/${lng}${path}`,

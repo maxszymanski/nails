@@ -94,8 +94,13 @@
 			"organisation": "Organizacja"
 		},
 		"legal": {
-			"title": "Inne",
+			"title": "Informacje prawne",
+			"impressum": "Dane firmy",
 			"tos": "Regulamin",
+			"privacy": "Polityka prywatności",
+			"withdrawal": "Odstąpienie od umowy",
+			"complaints": "Reklamacje",
+			"shippingPayment": "Dostawa i płatności",
 			"faq": "FAQ"
 		},
 		"copyright": "Wszelkie prawa zastrzeżone."
@@ -279,6 +284,1398 @@
 		"pill": "FAQ",
 		"title": "Często zadawane pytania",
 		"subtitle": "Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych produktów, procesu zamówienia i działania systemu."
+	},
+	"impressum": {
+		"pill": "Informacje prawne",
+		"title": "Dane firmy",
+		"subtitle": "Informacje zgodnie z § 5 DDG (niemieckiej ustawy o usługach cyfrowych)",
+		"provider": "Dane usługodawcy",
+		"owner": "Właścicielka",
+		"country": "Niemcy",
+		"contact": "Kontakt",
+		"phone": "Telefon",
+		"email": "E-mail",
+		"website": "Strona internetowa",
+		"vatTitle": "Numer identyfikacyjny VAT",
+		"vatDescription": "Numer identyfikacyjny VAT zgodnie z § 27a niemieckiej ustawy o podatku od towarów i usług (UStG):",
+		"disputeTitle": "Pozasądowe rozstrzyganie sporów konsumenckich",
+		"disputeDescription": "Nie jesteśmy gotowi ani zobowiązani do udziału w postępowaniach dotyczących rozstrzygania sporów przed konsumencką komisją arbitrażową."
+	},
+	"privacyPolicy": {
+		"pill": "Prywatność",
+		"title": "Polityka prywatności",
+		"updated": "Stan na: 6 listopada 2026 r.",
+		"contact": {
+			"owner": "Właścicielka",
+			"country": "Niemcy",
+			"phone": "Telefon",
+			"email": "E-mail",
+			"website": "Strona internetowa"
+		},
+		"sections": [
+			{
+				"title": "1. Ogólne informacje o ochronie danych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Ochrona Twoich danych osobowych jest dla nas ważna. W niniejszej polityce prywatności informujemy, jakie dane osobowe przetwarzamy podczas odwiedzania naszej strony www.iwonnaildisplay.de oraz korzystania z możliwości składania zamówień i kontaktu z nami."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane osobowe to wszelkie informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby fizycznej."
+					},
+					{
+						"type": "paragraph",
+						"text": "Przetwarzanie Twoich danych osobowych odbywa się zgodnie z obowiązującymi przepisami o ochronie danych, w szczególności z ogólnym rozporządzeniem o ochronie danych (RODO)."
+					}
+				]
+			},
+			{
+				"title": "2. Administrator danych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Administratorem odpowiedzialnym za przetwarzanie danych na tej stronie jest:"
+					},
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Administrator to osoba fizyczna lub prawna, która decyduje o celach i sposobach przetwarzania danych osobowych."
+					}
+				]
+			},
+			{
+				"title": "3. Hosting i techniczne udostępnianie strony",
+				"blocks": [
+					{
+						"type": "heading",
+						"text": "3.1 Hosting przez Vercel"
+					},
+					{
+						"type": "paragraph",
+						"text": "Nasza strona jest udostępniana za pośrednictwem platformy hostingowej Vercel."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dostawca: Vercel Inc., USA."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podczas odwiedzania naszej strony mogą być przetwarzane dane niezbędne pod względem technicznym, w szczególności:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"adres IP",
+							"data i godzina żądania",
+							"odwiedzane strony i pobierane pliki",
+							"typ i wersja przeglądarki",
+							"system operacyjny",
+							"techniczne informacje o żądaniu",
+							"komunikaty o błędach i logi serwera"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Przetwarzanie to służy bezpiecznemu, stabilnemu i prawidłowemu technicznie udostępnianiu naszej strony."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną jest art. 6 ust. 1 lit. f RODO. Nasz prawnie uzasadniony interes polega na zapewnieniu bezpiecznego i sprawnego działania strony oraz możliwości wykrywania usterek technicznych i nadużyć w dostępie."
+					},
+					{
+						"type": "heading",
+						"text": "3.2 Cloudflare"
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli Cloudflare jest wykorzystywany do udostępniania lub zabezpieczania naszej strony, mogą być przetwarzane techniczne dane połączenia, w szczególności adresy IP i informacje o żądaniach."
+					},
+					{
+						"type": "paragraph",
+						"text": "W takim przypadku przetwarzanie służy technicznemu udostępnianiu strony, zapewnieniu bezpieczeństwa i ochronie przed nadużyciami w dostępie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną jest art. 6 ust. 1 lit. f RODO."
+					}
+				]
+			},
+			{
+				"title": "4. Przetwarzanie danych osobowych przy zamówieniach",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Gdy składasz zamówienie za pośrednictwem naszej strony, przetwarzamy podane przez Ciebie dane w zakresie niezbędnym do obsługi i realizacji zamówienia."
+					},
+					{
+						"type": "paragraph",
+						"text": "Mogą to być:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"imię i nazwisko",
+							"kraj",
+							"adres e-mail",
+							"ewentualnie nazwa firmy",
+							"ewentualnie numer identyfikacyjny VAT (VAT UE)",
+							"ewentualnie nazwa użytkownika na Instagramie",
+							"zamówione produkty i informacje o zamówieniu",
+							"dobrowolne wiadomości w polu uwag",
+							"dane adresowe niezbędne do dostawy"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Wykorzystujemy te dane w szczególności do:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"obsługi i potwierdzania zamówień",
+							"przekazywania informacji o statusie zamówienia",
+							"obsługi uzgodnionej płatności",
+							"przygotowania i realizacji dostawy",
+							"wypełniania ustawowych obowiązków dokumentacyjnych i archiwizacyjnych"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną jest art. 6 ust. 1 lit. b RODO, o ile przetwarzanie jest niezbędne do wykonania umowy lub podjęcia działań przed jej zawarciem."
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli przetwarzamy dane z uwagi na ustawowe obowiązki przechowywania dokumentacji lub wykazywania określonych okoliczności, podstawą jest art. 6 ust. 1 lit. c RODO."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane podane dobrowolnie są wykorzystywane wyłącznie w zakresie niezbędnym do obsługi danej sprawy."
+					}
+				]
+			},
+			{
+				"title": "5. Obsługa płatności",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Obecnie oferujemy płatność przelewem bankowym."
+					},
+					{
+						"type": "paragraph",
+						"text": "Po złożeniu zamówienia otrzymasz e-mailem informacje niezbędne do dokonania płatności."
+					},
+					{
+						"type": "paragraph",
+						"text": "W ramach obsługi płatności przetwarzamy dane niezbędne do przyporządkowania i weryfikacji otrzymanych wpłat, o ile są nam one udostępniane przez bank lub w związku z zamówieniem."
+					},
+					{
+						"type": "paragraph",
+						"text": "Mogą to być w szczególności imię i nazwisko, kwota płatności, tytuł przelewu i data płatności."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną jest art. 6 ust. 1 lit. b RODO oraz, w zakresie obowiązków ustawowych, art. 6 ust. 1 lit. c RODO."
+					}
+				]
+			},
+			{
+				"title": "6. Wysyłka i dostawa",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Do dostarczania zamówionych towarów korzystamy z usług przewoźnika DHL."
+					},
+					{
+						"type": "paragraph",
+						"text": "W zakresie niezbędnym do wysyłki przekazujemy przewoźnikowi wymagane dane osobowe, w szczególności:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"imię i nazwisko odbiorcy",
+							"adres dostawy",
+							"ewentualnie inne informacje niezbędne do doręczenia"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Przekazanie adresu e-mail lub numeru telefonu na potrzeby powiadomień o przesyłce następuje wyłącznie wtedy, gdy istnieje odpowiednia podstawa prawna."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną przekazywania danych niezbędnych do dostawy jest art. 6 ust. 1 lit. b RODO."
+					}
+				]
+			},
+			{
+				"title": "7. Wysyłanie e-maili przez Resend",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Do automatycznego wysyłania potwierdzeń zamówień i innych wiadomości transakcyjnych korzystamy z usługi Resend."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dostawca: Plus Five Five, Inc., USA (Resend)."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podczas korzystania z tej usługi mogą być przetwarzane w szczególności następujące dane osobowe:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"adres e-mail",
+							"imię i nazwisko, jeżeli znajdują się w wiadomości",
+							"informacje o zamówieniu",
+							"treść wysłanej wiadomości",
+							"techniczne informacje o dostarczeniu"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Przetwarzanie służy potwierdzaniu zamówień, przekazywaniu informacji o ich realizacji oraz zapewnieniu komunikacji z naszymi klientami."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawą prawną jest art. 6 ust. 1 lit. b RODO, o ile komunikacja jest niezbędna do wykonania umowy."
+					},
+					{
+						"type": "paragraph",
+						"text": "W pozostałych przypadkach przetwarzanie w celu zapewnienia niezawodnej komunikacji biznesowej może opierać się na art. 6 ust. 1 lit. f RODO."
+					}
+				]
+			},
+			{
+				"title": "8. Komunikacja e-mailowa",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Gdy kontaktujesz się z nami e-mailem, przetwarzamy przekazane przez Ciebie dane osobowe, na przykład imię i nazwisko, adres e-mail oraz treść wiadomości."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wykorzystujemy te dane wyłącznie do obsługi Twojego zapytania oraz ewentualnie do wykonania umowy."
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli zapytanie jest związane z umową lub działaniami przed jej zawarciem, przetwarzanie odbywa się na podstawie art. 6 ust. 1 lit. b RODO."
+					},
+					{
+						"type": "paragraph",
+						"text": "W innych przypadkach przetwarzanie odbywa się na podstawie art. 6 ust. 1 lit. f RODO. Nasz prawnie uzasadniony interes polega na odpowiednim udzielaniu odpowiedzi na otrzymywane zapytania."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane są usuwane, gdy nie są już potrzebne do obsługi sprawy, o ile nie istnieją ustawowe obowiązki przechowywania lub uzasadnione powody dalszego przechowywania."
+					}
+				]
+			},
+			{
+				"title": "9. Zgłoszenia odstąpienia od umowy i reklamacje",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "W przyszłości na naszej stronie mają zostać udostępnione elektroniczne możliwości składania oświadczeń o odstąpieniu od umowy oraz reklamacji."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podczas obsługi takich zgłoszeń mogą być przetwarzane w szczególności imię i nazwisko, adres e-mail, informacje o danej umowie lub produkcie oraz dane przekazane dobrowolnie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Celem przetwarzania jest przyjmowanie, sprawdzanie i obsługa danego oświadczenia lub zgłoszenia oraz wypełnianie obowiązków ustawowych i umownych."
+					},
+					{
+						"type": "paragraph",
+						"text": "Podstawami prawnymi mogą być w szczególności art. 6 ust. 1 lit. b i lit. c RODO."
+					}
+				]
+			},
+			{
+				"title": "10. Pliki cookies i podobne technologie",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Nasza strona może wykorzystywać technicznie niezbędne technologie zapisywania informacji i uzyskiwania do nich dostępu, o ile są one konieczne do udostępnienia wyraźnie żądanych funkcji, na przykład koszyka."
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli takie technologie są bezwzględnie niezbędne, ich dopuszczalność wynika z § 25 ust. 2 TDDDG (niemieckiej ustawy o ochronie danych w telekomunikacji i cyfrowych usługach telemedialnych). Związane z nimi przetwarzanie danych osobowych odbywa się na odpowiedniej podstawie prawnej wynikającej z RODO."
+					},
+					{
+						"type": "paragraph",
+						"text": "Według obecnego stanu wiedzy nie korzystamy z usług takich jak Google Analytics czy Meta Pixel do analizy odwiedzających stronę lub śledzenia ich w celach reklamowych."
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli w przyszłości zostaną wdrożone technologie wymagające zgody, co do zasady będą one aktywowane dopiero po uzyskaniu wymaganej zgody, a polityka prywatności zostanie odpowiednio uzupełniona."
+					}
+				]
+			},
+			{
+				"title": "11. Odbiorcy danych osobowych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "W ramach prowadzenia naszej strony i realizacji zamówień dane osobowe mogą być przekazywane następującym odbiorcom lub kategoriom odbiorców, o ile jest to niezbędne i prawnie dopuszczalne:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"dostawcy hostingu i usług technicznych",
+							"dostawcy usług e-mailowych",
+							"firmy kurierskie i logistyczne",
+							"banki i podmioty uczestniczące w obsłudze płatności",
+							"ewentualnie doradcy podatkowi i inni odbiorcy wymagani przez przepisy prawa"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane osobowe nie są przekazywane do niezależnych celów reklamowych podmiotów trzecich na podstawie opisanej tutaj obsługi zamówień."
+					}
+				]
+			},
+			{
+				"title": "12. Przekazywanie danych osobowych do państw trzecich",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Korzystanie z niektórych dostawców usług technicznych, w szczególności Vercel i Resend, może wiązać się z przetwarzaniem lub przekazywaniem danych osobowych poza Unię Europejską lub Europejski Obszar Gospodarczy."
+					},
+					{
+						"type": "paragraph",
+						"text": "Takie przetwarzanie musi spełniać wymagania art. 44 i następnych RODO."
+					},
+					{
+						"type": "paragraph",
+						"text": "W zależności od dostawcy i konkretnego przetwarzania znaczenie może mieć w szczególności odpowiednia decyzja Komisji Europejskiej stwierdzająca odpowiedni stopień ochrony lub odpowiednie zabezpieczenia, na przykład standardowe klauzule umowne."
+					}
+				]
+			},
+			{
+				"title": "13. Okres przechowywania",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Przechowujemy dane osobowe wyłącznie tak długo, jak jest to niezbędne do poszczególnych celów przetwarzania lub jak długo istnieją ustawowe obowiązki przechowywania."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane zamówień i umów są co do zasady przechowywane przez czas realizacji umowy, a następnie wyłącznie w zakresie niezbędnym do wypełnienia obowiązków ustawowych, dochodzenia roszczeń lub obrony przed nimi albo do innych zgodnych z prawem celów."
+					},
+					{
+						"type": "paragraph",
+						"text": "Niektóre dokumenty istotne podatkowo i faktury mogą podlegać ustawowym okresom przechowywania. W zależności od rodzaju dokumentów wynoszą one na przykład sześć, osiem lub dziesięć lat."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dane osobowe, które nie są już potrzebne, są usuwane lub, o ile to możliwe, anonimizowane, chyba że istnieją zgodne z prawem powody ich dalszego przechowywania."
+					}
+				]
+			},
+			{
+				"title": "14. Twoje prawa",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Zgodnie z obowiązującymi przepisami przysługują Ci w szczególności następujące prawa:"
+					},
+					{
+						"type": "list",
+						"items": [
+							{
+								"label": "Dostęp do danych (art. 15 RODO):",
+								"text": "Możesz żądać informacji o przetwarzaniu Twoich danych osobowych."
+							},
+							{
+								"label": "Sprostowanie danych (art. 16 RODO):",
+								"text": "Możesz żądać sprostowania nieprawidłowych danych."
+							},
+							{
+								"label": "Usunięcie danych (art. 17 RODO):",
+								"text": "Możesz żądać usunięcia swoich danych osobowych, jeżeli spełnione są warunki ustawowe."
+							},
+							{
+								"label": "Ograniczenie przetwarzania (art. 18 RODO):",
+								"text": "W określonych przypadkach możesz żądać ograniczenia przetwarzania."
+							},
+							{
+								"label": "Przenoszenie danych (art. 20 RODO):",
+								"text": "Po spełnieniu warunków ustawowych możesz otrzymać swoje dane w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego."
+							},
+							{
+								"label": "Sprzeciw (art. 21 RODO):",
+								"text": "Możesz wnieść sprzeciw wobec przetwarzania swoich danych osobowych, jeżeli spełnione są warunki ustawowe."
+							},
+							{
+								"label": "Wycofanie zgody (art. 7 ust. 3 RODO):",
+								"text": "Udzieloną zgodę możesz wycofać w dowolnym momencie ze skutkiem na przyszłość."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Aby skorzystać ze swoich praw, możesz w każdej chwili skontaktować się z nami:"
+					},
+					{
+						"type": "link",
+						"href": "mailto:Iwon@iwonnaildisplay.de",
+						"text": "Iwon@iwonnaildisplay.de"
+					}
+				]
+			},
+			{
+				"title": "15. Prawo wniesienia skargi do organu nadzorczego",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Zgodnie z art. 77 RODO masz prawo wnieść skargę do właściwego organu nadzorczego ds. ochrony danych, jeżeli uważasz, że przetwarzanie Twoich danych osobowych narusza RODO."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dla naszej firmy w Nadrenii Północnej-Westfalii właściwy może być w szczególności następujący organ nadzorczy:"
+					},
+					{
+						"type": "paragraph",
+						"text": "Krajowy Pełnomocnik ds. Ochrony Danych i Wolności Informacji Nadrenii Północnej-Westfalii (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, LDI NRW)",
+						"bold": true
+					},
+					{
+						"type": "link",
+						"href": "https://www.ldi.nrw.de/",
+						"text": "https://www.ldi.nrw.de/",
+						"label": "Strona internetowa"
+					},
+					{
+						"type": "paragraph",
+						"text": "Prawo wniesienia skargi do innego właściwego organu nadzorczego ds. ochrony danych pozostaje bez zmian."
+					}
+				]
+			},
+			{
+				"title": "16. Obowiązek podania danych osobowych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Informacje niezbędne do obsługi i realizacji zamówienia są wymagane, abyśmy mogli przyjąć i zrealizować Twoje zamówienie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bez wymaganych danych obsługa lub realizacja zamówienia może nie być możliwa."
+					},
+					{
+						"type": "paragraph",
+						"text": "Informacje podawane dobrowolnie są odpowiednio oznaczone."
+					}
+				]
+			},
+			{
+				"title": "17. Zautomatyzowane podejmowanie decyzji",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Według obecnego stanu wiedzy w związku z opisaną obsługą zamówień nie dochodzi do zautomatyzowanego podejmowania decyzji, w tym profilowania, w rozumieniu art. 22 RODO."
+					}
+				]
+			},
+			{
+				"title": "18. Bezpieczeństwo danych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Stosujemy odpowiednie środki techniczne i organizacyjne, aby chronić dane osobowe przed nieuprawnionym dostępem, utratą, nadużyciem i niedozwolonym przetwarzaniem."
+					},
+					{
+						"type": "paragraph",
+						"text": "Przesyłanie danych za pośrednictwem naszej strony odbywa się co do zasady w sposób szyfrowany przez HTTPS."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zwracamy uwagę, że mimo technicznych środków ochronnych komunikacja przez internet może wiązać się z zagrożeniami bezpieczeństwa."
+					}
+				]
+			},
+			{
+				"title": "19. Zmiany niniejszej polityki prywatności",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Zastrzegamy sobie prawo do dostosowania niniejszej polityki prywatności w przypadku zmian wymagań prawnych, wykorzystywanych przez nas systemów technicznych lub procesów przetwarzania danych."
+					},
+					{
+						"type": "paragraph",
+						"text": "Obowiązuje wersja aktualnie opublikowana na naszej stronie."
+					}
+				]
+			}
+		]
+	},
+	"withdrawal": {
+		"pill": "Informacje prawne",
+		"title": "Odstąpienie od umowy",
+		"updated": "Stan na: 6 listopada 2026 r.",
+		"contact": {
+			"owner": "Właścicielka",
+			"country": "Niemcy",
+			"phone": "Telefon",
+			"email": "E-mail"
+		},
+		"sections": [
+			{
+				"title": "1. Prawo odstąpienia od umowy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Konsumenci mają prawo odstąpić od umowy sprzedaży zawartej za pośrednictwem naszego sklepu internetowego w ciągu 14 dni bez podawania przyczyny."
+					},
+					{
+						"type": "paragraph",
+						"text": "Termin odstąpienia wynosi 14 dni od dnia, w którym Ty lub wskazana przez Ciebie osoba, inna niż przewoźnik, otrzymaliście zamówione towary."
+					},
+					{
+						"type": "paragraph",
+						"text": "Aby skorzystać z prawa odstąpienia, musisz poinformować nas o swojej decyzji o odstąpieniu od umowy w drodze jednoznacznego oświadczenia."
+					},
+					{
+						"type": "address",
+						"ownerLabel": true,
+						"contact": true,
+						"brandBold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Możesz poinformować nas o odstąpieniu na przykład e-mailem lub listownie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Możesz w tym celu skorzystać z zamieszczonego poniżej wzoru formularza odstąpienia. Korzystanie z tego formularza nie jest jednak obowiązkowe."
+					},
+					{
+						"type": "paragraph",
+						"text": "Aby zachować termin odstąpienia, wystarczy wysłać oświadczenie o odstąpieniu przed upływem 14-dniowego terminu."
+					}
+				]
+			},
+			{
+				"title": "2. Elektroniczne odstąpienie od umowy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Możesz również odstąpić od umowy, korzystając z naszej elektronicznej funkcji odstąpienia."
+					},
+					{
+						"type": "withdrawalLink",
+						"text": "Odstąp od umowy"
+					},
+					{
+						"type": "paragraph",
+						"text": "Za pomocą tej funkcji możesz wskazać odpowiednie zamówienie i elektronicznie potwierdzić odstąpienie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Po przesłaniu otrzymasz niezwłocznie potwierdzenie otrzymania zgłoszenia na trwałym nośniku, zazwyczaj e-mailem. Zawiera ono treść Twojego oświadczenia o odstąpieniu oraz datę i godzinę jego otrzymania."
+					},
+					{
+						"type": "paragraph",
+						"text": "Korzystanie z elektronicznej funkcji odstąpienia jest dobrowolne. Nadal możesz skorzystać z prawa odstąpienia również e-mailem lub listownie."
+					}
+				]
+			},
+			{
+				"title": "3. Skutki odstąpienia od umowy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Jeżeli odstąpisz od tej umowy, zwrócimy Ci wszystkie otrzymane od Ciebie płatności, w tym koszty najtańszej oferowanej przez nas dostawy standardowej."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dodatkowe koszty dostawy wynikające z wybrania innej niż najtańsza oferowana przez nas dostawa standardowa nie podlegają zwrotowi."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zwrot płatności nastąpi niezwłocznie, nie później niż w ciągu 14 dni od dnia otrzymania przez nas Twojego oświadczenia o odstąpieniu."
+					},
+					{
+						"type": "paragraph",
+						"text": "Co do zasady zwrotu dokonamy przy użyciu takiego samego sposobu płatności, jaki został użyty przy pierwotnej płatności, chyba że wyraźnie uzgodniono z Tobą inaczej."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nie poniesiesz żadnych dodatkowych opłat z tytułu zwrotu płatności."
+					},
+					{
+						"type": "paragraph",
+						"text": "Możemy wstrzymać zwrot płatności do czasu otrzymania towarów z powrotem lub dostarczenia przez Ciebie dowodu ich odesłania. Decydujący jest wcześniejszy z tych terminów."
+					}
+				]
+			},
+			{
+				"title": "4. Odesłanie towarów",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Musisz odesłać lub przekazać towary niezwłocznie, nie później jednak niż w ciągu 14 dni od dnia poinformowania nas o odstąpieniu, na następujący adres:"
+					},
+					{
+						"type": "address",
+						"brandBold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Termin zwrotu jest zachowany, jeżeli wyślesz towary przed upływem 14-dniowego terminu."
+					},
+					{
+						"type": "heading",
+						"text": "Koszty odesłania"
+					},
+					{
+						"type": "paragraph",
+						"text": "Ponosisz bezpośrednie koszty odesłania towarów.",
+						"bold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Pamiętaj, że zasada ta dotyczy zwykłych kosztów zwrotu przy ustawowym odstąpieniu od umowy. Twoje ustawowe prawa w przypadku towarów wadliwych lub dostarczonych niezgodnie z zamówieniem pozostają bez zmian."
+					},
+					{
+						"type": "heading",
+						"text": "Zmniejszenie wartości towarów"
+					},
+					{
+						"type": "paragraph",
+						"text": "Odpowiadasz za ewentualne zmniejszenie wartości towarów wyłącznie wtedy, gdy wynika ono z korzystania z nich w sposób wykraczający poza to, co jest konieczne do stwierdzenia ich charakteru, cech i funkcjonowania."
+					}
+				]
+			},
+			{
+				"title": "5. Wzór formularza odstąpienia od umowy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Jeżeli chcesz odstąpić od umowy, możesz skorzystać z poniższego formularza i przesłać go do nas."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do:",
+						"bold": true
+					},
+					{
+						"type": "address",
+						"email": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Ja/My (*) niniejszym informuję/informujemy (*) o moim/naszym (*) odstąpieniu od umowy sprzedaży następujących towarów:"
+					},
+					{
+						"type": "form",
+						"fields": [
+							"Zamówione towary:",
+							"Data zamówienia / otrzymania:",
+							"Imię i nazwisko konsumenta(-ów):",
+							"Adres konsumenta(-ów):",
+							"Data:",
+							"Podpis konsumenta(-ów) (tylko w przypadku zgłoszenia w formie papierowej):"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "(*) Niepotrzebne skreślić."
+					}
+				]
+			},
+			{
+				"title": "6. Informacja dla przedsiębiorców",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Ustawowe prawo odstąpienia przysługujące konsumentom co do zasady nie obejmuje umów zawieranych przez przedsiębiorców w ramach ich działalności gospodarczej lub samodzielnej działalności zawodowej."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do takich umów mają zastosowanie przepisy prawa oraz ewentualne indywidualnie uzgodnione postanowienia umowne."
+					}
+				]
+			}
+		]
+	},
+	"shippingPayment": {
+		"pill": "Informacje prawne",
+		"title": "Dostawa i płatności",
+		"subtitle": "Tutaj znajdziesz informacje o kosztach wysyłki, obsługiwanych krajach, terminach dostawy i warunkach płatności.",
+		"weightHeader": "Waga przesyłki",
+		"costHeader": "Koszt wysyłki",
+		"upTo": "Do {{weight}} kg",
+		"includingVat": "z VAT",
+		"contact": {
+			"owner": "Właścicielka",
+			"country": "Niemcy",
+			"email": "E-mail",
+			"phone": "Telefon"
+		},
+		"sections": [
+			{
+				"title": "1. Wysyłka i obsługiwane kraje",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Nasze produkty wysyłamy z Niemiec za pośrednictwem DHL."
+					},
+					{
+						"type": "paragraph",
+						"text": "Oferujemy wysyłkę międzynarodową do wielu krajów na całym świecie. Dostępność dostawy i jej koszt zależą od kraju docelowego, wagi przesyłki oraz warunków wysyłki."
+					},
+					{
+						"type": "paragraph",
+						"text": "W wymienionych poniżej regionach obowiązują nasze standardowe stawki wysyłki."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dla pozostałych krajów chętnie przygotujemy indywidualną ofertę wysyłki."
+					}
+				]
+			},
+			{
+				"title": "2. Koszty wysyłki na terenie Niemiec",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Dla dostaw na terenie Niemiec obowiązują następujące koszty wysyłki:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 30,
+								"cents": 490
+							}
+						],
+						"vatIncluded": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Darmowa dostawa przy wartości towarów od 50,00 € z VAT.",
+						"bold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Darmowa dostawa dotyczy wyłącznie przesyłek na terenie Niemiec o wadze maksymalnie 30 kg."
+					},
+					{
+						"type": "paragraph",
+						"text": "W przypadku zamówień o większej wadze prosimy o wcześniejszy kontakt."
+					}
+				]
+			},
+			{
+				"title": "3. Koszty wysyłki do Polski, pozostałych krajów UE i Monako",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Dla dostaw do Polski, pozostałych państw członkowskich Unii Europejskiej (z wyjątkiem Niemiec) oraz Monako obowiązują następujące koszty wysyłki:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1199
+							},
+							{
+								"weight": 5,
+								"cents": 2049
+							},
+							{
+								"weight": 10,
+								"cents": 2549
+							},
+							{
+								"weight": 20,
+								"cents": 3149
+							},
+							{
+								"weight": 30,
+								"cents": 4849
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "4. Koszty wysyłki do Szwajcarii",
+				"blocks": [
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1699
+							},
+							{
+								"weight": 5,
+								"cents": 2999
+							},
+							{
+								"weight": 10,
+								"cents": 3799
+							},
+							{
+								"weight": 20,
+								"cents": 5199
+							},
+							{
+								"weight": 30,
+								"cents": 6599
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "W przypadku dostaw do Szwajcarii mogą wystąpić dodatkowe należności importowe, podatki i opłaty za odprawę celną."
+					}
+				]
+			},
+			{
+				"title": "5. Koszty wysyłki do pozostałych krajów europejskich",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Dla pozostałych obsługiwanych krajów europejskich, które nie należą do wymienionych powyżej regionów wysyłki, obowiązują następujące stawki:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1999
+							},
+							{
+								"weight": 5,
+								"cents": 3299
+							},
+							{
+								"weight": 10,
+								"cents": 4099
+							},
+							{
+								"weight": 20,
+								"cents": 5599
+							},
+							{
+								"weight": 30,
+								"cents": 7099
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "6. Koszty wysyłki do Zjednoczonych Emiratów Arabskich i Kataru",
+				"blocks": [
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 2299
+							},
+							{
+								"weight": 5,
+								"cents": 4899
+							},
+							{
+								"weight": 10,
+								"cents": 6499
+							},
+							{
+								"weight": 20,
+								"cents": 10399
+							},
+							{
+								"weight": 30,
+								"cents": 14499
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "W przypadku dostaw do tych krajów mogą wystąpić dodatkowe należności importowe, podatki lub opłaty celne."
+					}
+				]
+			},
+			{
+				"title": "7. Dostawy do Zjednoczonego Królestwa",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Zamówienia do Zjednoczonego Królestwa, w tym Irlandii Północnej, obsługujemy wyłącznie po zgłoszeniu zapytania e-mailem."
+					},
+					{
+						"type": "paragraph",
+						"text": "Prosimy o kontakt przed złożeniem zamówienia:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Poinformujemy Cię o możliwościach wysyłki, kosztach oraz przewidywanym terminie dostawy."
+					}
+				]
+			},
+			{
+				"title": "8. Wysyłka na cały świat i zapytania indywidualne",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Chcesz zamówić dostawę do kraju, którego nie ma w naszym formularzu zamówienia?"
+					},
+					{
+						"type": "paragraph",
+						"text": "Skontaktuj się z nami bezpośrednio e-mailem:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Sprawdzimy możliwość wysyłki i przygotujemy indywidualną ofertę zawierającą koszty wysyłki oraz przewidywany termin dostawy."
+					},
+					{
+						"type": "paragraph",
+						"text": "To samo dotyczy zamówień, których waga przesyłki przekracza 30 kg."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wysyłka do wybranego kraju docelowego zależy od obowiązujących przepisów dotyczących wysyłki, importu i ewentualnie eksportu."
+					}
+				]
+			},
+			{
+				"title": "9. Czas przygotowania zamówienia",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": [
+							"Po otrzymaniu pełnej płatności przygotowujemy zamówienie do wysyłki zazwyczaj w ciągu ",
+							{
+								"strong": "2 dni roboczych"
+							},
+							"."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Przekazanie przesyłki do DHL następuje po zakończeniu przygotowania."
+					}
+				]
+			},
+			{
+				"title": "10. Terminy dostawy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Przewidywany termin dostawy zależy od kraju docelowego i wybranej usługi przewozowej."
+					},
+					{
+						"type": "paragraph",
+						"text": "Klient otrzymuje informacje o terminach dostawy obowiązujących dla danego kraju przed zakończeniem składania zamówienia."
+					},
+					{
+						"type": "paragraph",
+						"text": "W przypadku indywidualnych ofert wysyłki podajemy przewidywany termin dostawy razem z ofertą."
+					}
+				]
+			},
+			{
+				"title": "11. Metody płatności",
+				"blocks": [
+					{
+						"type": "heading",
+						"text": "Przelew bankowy (przedpłata)"
+					},
+					{
+						"type": "paragraph",
+						"text": "Obecnie oferujemy płatność z góry przelewem bankowym."
+					},
+					{
+						"type": "paragraph",
+						"text": "Po otrzymaniu i przyjęciu Twojego zamówienia wyślemy e-mail z potwierdzeniem zamówienia i danymi naszego rachunku bankowego."
+					},
+					{
+						"type": "paragraph",
+						"text": [
+							"Prosimy o przelanie pełnej kwoty faktury na wskazany rachunek bankowy w ciągu ",
+							{
+								"strong": "7 dni kalendarzowych od otrzymania potwierdzenia zamówienia"
+							},
+							"."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "W tytule przelewu podaj przekazany przez nas tytuł płatności, abyśmy mogli przyporządkować wpłatę do Twojego zamówienia."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zamówienie zostanie przygotowane do wysyłki po otrzymaniu pełnej płatności."
+					},
+					{
+						"type": "paragraph",
+						"text": "Co do zasady nie wysyłamy zamówień przed otrzymaniem płatności.",
+						"bold": true
+					}
+				]
+			},
+			{
+				"title": "12. Opłaty celne i należności importowe",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "W przypadku dostaw do krajów poza Unią Europejską oraz niektórych obszarów o szczególnym statusie podatkowym lub celnym mogą wystąpić dodatkowe koszty."
+					},
+					{
+						"type": "paragraph",
+						"text": "Należą do nich na przykład:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Cła importowe",
+							"VAT od importu",
+							"Opłaty za odprawę celną",
+							"Opłaty przewoźnika za obsługę celną"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Koszty te nie są uwzględnione w podanych powyżej stawkach wysyłki, chyba że zostały wyraźnie zawarte w indywidualnej ofercie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Przed złożeniem zamówienia informujemy o możliwych dodatkowych należnościach importowych i o tym, kto co do zasady je ponosi. Ich dokładna wysokość może zależeć od przepisów kraju docelowego oraz okoliczności importu."
+					}
+				]
+			},
+			{
+				"title": "13. Kontakt w sprawach dostawy i płatności",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Chętnie pomożemy w przypadku pytań o koszty wysyłki, terminy dostawy, metody płatności lub zamówienia międzynarodowe."
+					},
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Wszystkie ceny wysyłki i warunki dostawy obowiązują z zastrzeżeniem informacji wskazanych w procesie zamówienia. Przed złożeniem wiążącego zamówienia klient otrzymuje informacje o rzeczywistych kosztach wysyłki i cenie całkowitej.",
+						"italic": true
+					}
+				]
+			}
+		]
+	},
+	"complaints": {
+		"pill": "Informacje prawne",
+		"title": "Reklamacje i odpowiedzialność za wady",
+		"intro": [
+			"Przywiązujemy dużą wagę do jakości naszych produktów i zadowolenia klientów. Jeżeli produkt dotrze uszkodzony, wadliwy lub niezgodny z ustaleniami, chętnie pomożemy.",
+			"Na tej stronie dowiesz się, jak złożyć reklamację i jakie ustawowe prawa Ci przysługują."
+		],
+		"contact": {
+			"owner": "Właścicielka",
+			"country": "Niemcy",
+			"email": "E-mail",
+			"phone": "Telefon"
+		},
+		"sections": [
+			{
+				"title": "1. Kiedy możesz złożyć reklamację?",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Możesz skontaktować się z nami na przykład wtedy, gdy:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"produkt dotarł do Ciebie uszkodzony,",
+							"artykuł ma wadę materiałową lub produkcyjną,",
+							"produkt nie ma uzgodnionych właściwości,",
+							"otrzymałeś niewłaściwy artykuł,",
+							"dostarczony produkt nie działa prawidłowo."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "To, czy występuje wada w rozumieniu przepisów prawa i jakie roszczenia przysługują, zależy od obowiązujących przepisów."
+					}
+				]
+			},
+			{
+				"title": "2. Jak możesz złożyć reklamację?",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Skontaktuj się z nami e-mailem:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Abyśmy mogli jak najszybciej rozpatrzyć Twoje zgłoszenie, pomocne będą następujące informacje:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Twoje imię i nazwisko",
+							"Twój adres e-mail",
+							"Numer zamówienia, jeżeli jest dostępny",
+							"Nazwa produktu, którego dotyczy zgłoszenie",
+							"Krótki opis problemu",
+							"Jeżeli to możliwe, zdjęcia uszkodzonego lub wadliwego produktu"
+						],
+						"ordered": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Zdjęcia i numer zamówienia ułatwiają nam przyporządkowanie zgłoszenia i jego sprawdzenie. Nie są jednak obowiązkowym warunkiem skorzystania z ustawowych praw z tytułu wad."
+					},
+					{
+						"type": "paragraph",
+						"text": "Możesz skontaktować się z nami również telefonicznie:"
+					},
+					{
+						"type": "phone"
+					},
+					{
+						"type": "heading",
+						"text": "Elektroniczny formularz reklamacyjny"
+					},
+					{
+						"type": "paragraph",
+						"text": "W przyszłości udostępnimy na naszej stronie także elektroniczny formularz reklamacyjny."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do tego czasu możesz w każdej chwili przesłać nam reklamację e-mailem."
+					}
+				]
+			},
+			{
+				"title": "3. Rozpatrywanie reklamacji",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Po otrzymaniu reklamacji sprawdzimy opisane okoliczności i skontaktujemy się z Tobą w celu uzgodnienia dalszych kroków."
+					},
+					{
+						"type": "paragraph",
+						"text": "W zależności od rodzaju wady do jej sprawdzenia mogą być potrzebne dodatkowe informacje lub udostępnienie produktu, którego dotyczy zgłoszenie."
+					},
+					{
+						"type": "paragraph",
+						"text": "W miarę możliwości skontaktuj się z nami przed odesłaniem produktu, abyśmy mogli uzgodnić dalszy sposób postępowania."
+					},
+					{
+						"type": "paragraph",
+						"text": "Twoje ustawowe prawa pozostają zachowane również wtedy, gdy złożysz reklamację bez wcześniejszego kontaktu z nami."
+					}
+				]
+			},
+			{
+				"title": "4. Ustawowe prawa z tytułu wad",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Nasze produkty podlegają ustawowej odpowiedzialności za wady zgodnie z niemieckim kodeksem cywilnym (BGB)."
+					},
+					{
+						"type": "paragraph",
+						"text": "W przypadku wystąpienia wady konsumenci mają co do zasady prawo żądać doprowadzenia towaru do stanu zgodnego z umową."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zgodnie z przepisami prawa mogą wybrać jedną z następujących możliwości:"
+					},
+					{
+						"type": "list",
+						"items": [
+							{
+								"label": "Usunięcie wady:",
+								"text": "Usunięcie nieprawidłowości, na przykład przez naprawę."
+							},
+							{
+								"label": "Wymiana:",
+								"text": "Dostarczenie produktu wolnego od wad."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Ustawowe warunki i ograniczenia dotyczące danego sposobu doprowadzenia towaru do zgodności z umową pozostają bez zmian."
+					},
+					{
+						"type": "paragraph",
+						"text": "Po spełnieniu warunków ustawowych mogą ponadto przysługiwać w szczególności następujące prawa:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Odstąpienie od umowy sprzedaży",
+							"Obniżenie ceny zakupu",
+							"Odszkodowanie lub zwrot bezcelowo poniesionych wydatków"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Zwrot ceny zakupu następuje po spełnieniu przewidzianych w tym celu warunków ustawowych."
+					}
+				]
+			},
+			{
+				"title": "5. Termin dochodzenia roszczeń z tytułu wad",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "W przypadku nowych towarów ustawowy termin przedawnienia roszczeń z tytułu wad wynosi co do zasady dwa lata od dostarczenia towaru."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do sprzedaży konsumenckiej stosuje się ustawowe przepisy ochronne, w tym szczególne zasady dotyczące ciężaru dowodu."
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli w przypadku sprzedaży konsumenckiej w ciągu roku od przejścia ryzyka ujawni się stan wadliwy objęty przepisami prawa, zastosowanie mają ustawowe domniemania wynikające z § 477 BGB."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do umów z przedsiębiorcami (B2B) stosuje się odpowiednie przepisy ustawowe i skutecznie uzgodnione postanowienia umowne."
+					},
+					{
+						"type": "paragraph",
+						"text": "Niniejsze informacje nie ograniczają ustawowych praw z tytułu wad."
+					}
+				]
+			},
+			{
+				"title": "6. Koszty uzasadnionej reklamacji",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Jeżeli występuje wada i przysługuje ustawowe prawo do doprowadzenia towaru do zgodności z umową, ponosimy niezbędne w tym celu wydatki zgodnie z § 439 ust. 2 BGB."
+					},
+					{
+						"type": "paragraph",
+						"text": "Należą do nich w szczególności niezbędne:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Koszty transportu",
+							"Koszty wysyłki",
+							"Koszty robocizny",
+							"Koszty materiałów"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Jeżeli do doprowadzenia towaru do zgodności z umową konieczne jest jego odesłanie, chętnie uzgodnimy z Tobą wcześniej sposób postępowania."
+					},
+					{
+						"type": "paragraph",
+						"text": "W tym celu skontaktuj się z nami pod adresem:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "W zakresie przewidzianym w przepisach prawa nie ponosisz dodatkowych kosztów ustawowo wymaganego doprowadzenia towaru do zgodności z umową."
+					}
+				]
+			},
+			{
+				"title": "7. Uszkodzenia transportowe i nieprawidłowe dostawy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Jeżeli zamówienie dotrze z widocznymi uszkodzeniami lub zawiera niewłaściwy artykuł, prosimy o możliwie szybkie poinformowanie nas o tym."
+					},
+					{
+						"type": "paragraph",
+						"text": "Pomocny będzie krótki opis oraz, w miarę możliwości, zdjęcia opakowania i produktu, którego dotyczy zgłoszenie."
+					},
+					{
+						"type": "paragraph",
+						"text": "Niezwłoczne zgłoszenie nie jest jednak warunkiem skorzystania przez konsumentów z ustawowych praw z tytułu wad."
+					}
+				]
+			},
+			{
+				"title": "8. Różnica między reklamacją a odstąpieniem od umowy",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Pamiętaj, że reklamacja z powodu wadliwego produktu i ustawowe odstąpienie od umowy zawartej na odległość to odrębne uprawnienia."
+					},
+					{
+						"type": "paragraph",
+						"text": "Korzystasz z ustawowych praw, ponieważ produkt jest wadliwy lub nie ma uzgodnionych właściwości.",
+						"label": "Reklamacja:"
+					},
+					{
+						"type": "paragraph",
+						"text": "W ramach ustawowego prawa odstąpienia konsumenci mogą co do zasady odstąpić od umowy sprzedaży zawartej online w ciągu 14 dni bez podawania przyczyny.",
+						"label": "Odstąpienie od umowy:"
+					},
+					{
+						"type": "withdrawalLink",
+						"text": "Więcej informacji o odstąpieniu od umowy znajdziesz na naszej osobnej stronie dotyczącej prawa odstąpienia."
+					}
+				]
+			},
+			{
+				"title": "9. Dane kontaktowe i adres do reklamacji",
+				"blocks": [
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Korzystaj z tych danych kontaktowych w sprawach reklamacyjnych oraz do uzgodnienia ewentualnego odesłania produktu."
+					}
+				]
+			},
+			{
+				"title": "10. Informacja dla klientów biznesowych",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sprzedajemy nasze produkty zarówno konsumentom, jak i przedsiębiorcom."
+					},
+					{
+						"type": "paragraph",
+						"text": "Do zamówień składanych przez przedsiębiorców stosuje się odpowiednie przepisy prawa oraz ewentualne skutecznie uzgodnione postanowienia umowne."
+					},
+					{
+						"type": "paragraph",
+						"text": "W szczególności w transakcjach będących czynnościami handlowymi dla obu stron mogą mieć zastosowanie ustawowe obowiązki zbadania towaru i zgłoszenia wad zgodnie z § 377 niemieckiego kodeksu handlowego (HGB), o ile spełnione są odpowiednie warunki."
+					},
+					{
+						"type": "paragraph",
+						"text": "Powyższe zasady nie ograniczają praw konsumentów."
+					}
+				]
+			}
+		]
 	},
 	"privacy": {
 		"pill": "Ostatnia aktualizacja: 18.03.2026",

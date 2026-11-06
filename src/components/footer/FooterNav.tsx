@@ -21,8 +21,12 @@ async function FooterNav({ lng }: { lng: string }) {
 		{ name: t('footer.company.organisation'), href: `#organisation` },
 	]
 	const legal = [
-		{ name: t('footer.legal.tos'), href: `datenschutzerklarung` },
-
+		{ name: t('footer.legal.impressum'), href: `impressum` },
+		{ name: t('footer.legal.tos'), href: `agb` },
+		{ name: t('footer.legal.privacy'), href: `datenschutz` },
+		{ name: t('footer.legal.withdrawal'), href: `widerruf` },
+		{ name: t('footer.legal.complaints'), href: `reklamation` },
+		{ name: t('footer.legal.shippingPayment'), href: `versand-zahlung` },
 		{ name: t('footer.legal.faq'), href: `faq` },
 	]
 

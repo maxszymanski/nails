@@ -27,7 +27,7 @@ const request = (pathname, headers = {}) => new NextRequest(`https://www.iwonnai
 
 for (const lng of ['pl', 'en', 'de']) {
 	test(`preserves ${lng} pages and language headers`, () => {
-		for (const suffix of ['', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutzerklarung']) {
+		for (const suffix of ['', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/reklamation', '/versand-zahlung']) {
 			const response = proxy(request(`/${lng}${suffix}`, { cookie: 'i18next=de', 'accept-language': 'de' }))
 			assert.equal(response.status, 200)
 			assert.equal(response.headers.get('location'), null)
@@ -47,11 +47,25 @@ for (const pathname of ['/plx', '/plx/produkte', '/english', '/deutsch/produkte'
 }
 
 test('keeps language negotiation and query strings on existing unprefixed routes', () => {
-	for (const pathname of ['/produkte', '/produkte/fingernagel', '/faq', '/datenschutzerklarung']) {
+	for (const pathname of ['/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/reklamation', '/versand-zahlung']) {
 		const response = proxy(request(`${pathname}?source=test`, { 'accept-language': 'pl' }))
 		assert.equal(response.status, 307)
 		assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/pl${pathname}?source=test`)
 	}
+})
+
+test('legacy privacy URLs redirect permanently to datenschutz and preserve language and query strings', () => {
+	for (const lng of ['de', 'pl', 'en']) {
+		for (const query of ['', '?source=test']) {
+			const response = proxy(request(`/${lng}/datenschutzerklarung${query}`, { 'accept-language': 'en' }))
+			assert.equal(response.status, 308)
+			assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/${lng}/datenschutz${query}`)
+		}
+	}
+	const response = proxy(request('/datenschutzerklarung?source=test', { 'accept-language': 'pl' }))
+	assert.equal(response.status, 308)
+	assert.equal(response.headers.get('location'), 'https://www.iwonnaildisplay.de/pl/datenschutz?source=test')
+	assert.equal(proxy(request('/plx/datenschutzerklarung')).status, 404)
 })
 
 test('root always redirects permanently to German without an intermediate trailing slash', () => {

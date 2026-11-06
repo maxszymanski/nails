@@ -1,5 +1,25 @@
 export const pageSeo = {
 	de: {
+		impressum: {
+			title: 'Impressum',
+			description: 'Anbieterinformationen und Kontaktdaten von Iwon Nail Display. Angaben zum Unternehmen und zur Kontaktaufnahme.',
+		},
+		agb: {
+			title: 'Allgemeine Geschäftsbedingungen (AGB)',
+			description: 'Allgemeine Geschäftsbedingungen von Iwon Nail Display. Informationen zu Bestellung, Vertragsschluss und Zahlungsbedingungen.',
+		},
+		widerruf: {
+			title: 'Widerrufsbelehrung',
+			description: 'Informationen zum Widerruf bei Iwon Nail Display: Widerrufsrecht, Fristen und Ablauf der Rücksendung.',
+		},
+		reklamation: {
+			title: 'Reklamation',
+			description: 'Informationen zur Reklamation bei Iwon Nail Display. Kontakt und Vorgehen bei beschädigten oder fehlerhaften Produkten.',
+		},
+		'versand-zahlung': {
+			title: 'Versand & Zahlung',
+			description: 'Informationen zu Versand und Zahlung bei Iwon Nail Display. Versandkosten, Lieferbedingungen und Zahlungsmöglichkeiten im Überblick.',
+		},
 		products: {
 			title: 'Produkte: Displays & Mustertips',
 			description: 'Entdecken Sie das IND-System: abnehmbare Mustertips, magnetische Nägel, Displayleisten sowie Rahmen- und Schrankdisplays für Ihr Nagelstudio.',
@@ -38,6 +58,26 @@ export const pageSeo = {
 		},
 	},
 	en: {
+		impressum: {
+			title: 'Legal Notice',
+			description: 'Company information and contact details for Iwon Nail Display. Find information about the seller and how to get in touch.',
+		},
+		agb: {
+			title: 'Terms & Conditions',
+			description: 'Terms and conditions for purchases from Iwon Nail Display. Information about orders, contracts and payment terms.',
+		},
+		widerruf: {
+			title: 'Right of Withdrawal',
+			description: 'Information about withdrawing from a purchase at Iwon Nail Display, including withdrawal periods and the return process.',
+		},
+		reklamation: {
+			title: 'Product Complaints',
+			description: 'Information about product complaints at Iwon Nail Display. Contact details and steps to report damaged or faulty products.',
+		},
+		'versand-zahlung': {
+			title: 'Shipping & Payment',
+			description: 'Shipping and payment information for Iwon Nail Display. Find delivery costs, shipping conditions and payment options.',
+		},
 		products: {
 			title: 'Products: Displays & Sample Tips',
 			description: 'Explore the IND system: removable colour sample tips, magnetic tips, display bars, frame displays and storage cabinets for your nail salon.',
@@ -76,6 +116,26 @@ export const pageSeo = {
 		},
 	},
 	pl: {
+		impressum: {
+			title: 'Dane firmy',
+			description: 'Dane firmy i informacje kontaktowe Iwon Nail Display. Sprawdź informacje o sprzedawcy i sposoby kontaktu.',
+		},
+		agb: {
+			title: 'Regulamin sklepu',
+			description: 'Regulamin zakupów w Iwon Nail Display. Informacje o składaniu zamówień, zawieraniu umowy i warunkach płatności.',
+		},
+		widerruf: {
+			title: 'Odstąpienie od umowy',
+			description: 'Informacje o odstąpieniu od umowy w Iwon Nail Display: terminy, zasady zgłoszenia i przebieg zwrotu produktów.',
+		},
+		reklamation: {
+			title: 'Reklamacje',
+			description: 'Informacje o reklamacjach w Iwon Nail Display. Sprawdź, jak zgłosić uszkodzony lub wadliwy produkt i skontaktować się ze sprzedawcą.',
+		},
+		'versand-zahlung': {
+			title: 'Dostawa i płatności',
+			description: 'Informacje o dostawie i płatnościach w Iwon Nail Display. Koszty wysyłki, warunki dostawy oraz dostępne metody płatności.',
+		},
 		products: {
 			title: 'Produkty: ekspozytory i wzorniki',
 			description: 'Odkryj system IND: zdejmowane tipsy wzornikowe, wzorniki magnetyczne, listwy, ramki i szafki ekspozycyjne. Dobierz elementy do swojego salonu paznokci.',

@@ -8,7 +8,7 @@ import { pageMetadata } from '@/src/lib/seo'
 
 export async function generateMetadata({ params }: { params: Params }, parent: ResolvingMetadata): Promise<Metadata> {
 	const { lng } = await params
-	return pageMetadata(lng, 'privacy', '/datenschutzerklarung', parent)
+	return pageMetadata(lng, 'agb', '/agb', parent)
 }
 
 async function page() {

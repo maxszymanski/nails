@@ -94,8 +94,13 @@
 			"organisation": "Organisation"
 		},
 		"legal": {
-			"title": "Satzung",
-			"tos": "Satzung",
+			"title": "Rechtliches",
+			"impressum": "Impressum",
+			"tos": "AGB",
+			"privacy": "Datenschutzerklärung",
+			"withdrawal": "Widerrufsbelehrung",
+			"complaints": "Reklamation",
+			"shippingPayment": "Versand & Zahlung",
 			"faq": "FAQ"
 		},
 		"copyright": "Alle Rechte vorbehalten."
@@ -280,6 +285,1398 @@
 		"pill": "FAQ",
 		"title": "Häufig gestellte Fragen",
 		"subtitle": "Finden Sie Antworten auf die häufigsten Fragen zu unseren Produkten, dem Bestellvorgang und der Funktionsweise des Systems."
+	},
+	"impressum": {
+		"pill": "Rechtliches",
+		"title": "Impressum",
+		"subtitle": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)",
+		"provider": "Angaben zum Diensteanbieter",
+		"owner": "Inhaberin",
+		"country": "Deutschland",
+		"contact": "Kontakt",
+		"phone": "Telefon",
+		"email": "E-Mail",
+		"website": "Website",
+		"vatTitle": "Umsatzsteuer-Identifikationsnummer",
+		"vatDescription": "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz (UStG):",
+		"disputeTitle": "Verbraucherstreitbeilegung",
+		"disputeDescription": "Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+	},
+	"privacyPolicy": {
+		"pill": "Datenschutz",
+		"title": "Datenschutzerklärung",
+		"updated": "Stand: 06. November 2026",
+		"contact": {
+			"owner": "Inhaberin",
+			"country": "Deutschland",
+			"phone": "Telefon",
+			"email": "E-Mail",
+			"website": "Website"
+		},
+		"sections": [
+			{
+				"title": "1. Allgemeine Hinweise zum Datenschutz",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Mit dieser Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir beim Besuch unserer Website www.iwonnaildisplay.de sowie bei der Nutzung unserer Bestell- und Kommunikationsmöglichkeiten verarbeiten."
+					},
+					{
+						"type": "paragraph",
+						"text": "Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Verarbeitung Ihrer personenbezogenen Daten erfolgt im Rahmen der geltenden Datenschutzgesetze, insbesondere der Datenschutz-Grundverordnung (DSGVO)."
+					}
+				]
+			},
+			{
+				"title": "2. Verantwortliche Stelle",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:"
+					},
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Verantwortliche Stelle ist die natürliche oder juristische Person, die über die Zwecke und Mittel der Verarbeitung personenbezogener Daten entscheidet."
+					}
+				]
+			},
+			{
+				"title": "3. Hosting und technische Bereitstellung der Website",
+				"blocks": [
+					{
+						"type": "heading",
+						"text": "3.1 Hosting durch Vercel"
+					},
+					{
+						"type": "paragraph",
+						"text": "Unsere Website wird über die Hosting-Plattform Vercel bereitgestellt."
+					},
+					{
+						"type": "paragraph",
+						"text": "Anbieter: Vercel Inc., USA."
+					},
+					{
+						"type": "paragraph",
+						"text": "Beim Besuch unserer Website können technisch erforderliche Daten verarbeitet werden, insbesondere:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"IP-Adresse",
+							"Datum und Uhrzeit der Anfrage",
+							"aufgerufene Seiten und Dateien",
+							"Browsertyp und Browserversion",
+							"Betriebssystem",
+							"technische Anfrageinformationen",
+							"Fehlermeldungen und Serverprotokolle"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Diese Verarbeitung dient der sicheren, stabilen und technisch einwandfreien Bereitstellung unserer Website."
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht darin, unsere Website sicher und funktionsfähig bereitzustellen sowie technische Störungen und missbräuchliche Zugriffe erkennen zu können."
+					},
+					{
+						"type": "heading",
+						"text": "3.2 Cloudflare"
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit Cloudflare für die Auslieferung oder Absicherung unserer Website eingesetzt wird, können technische Verbindungsdaten, insbesondere IP-Adressen und Anfrageinformationen, verarbeitet werden."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Verarbeitung dient in diesem Fall der technischen Bereitstellung, Sicherheit und Abwehr missbräuchlicher Zugriffe."
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO."
+					}
+				]
+			},
+			{
+				"title": "4. Verarbeitung personenbezogener Daten bei Bestellungen",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wenn Sie über unsere Website eine Bestellung aufgeben, verarbeiten wir die von Ihnen angegebenen Daten, soweit dies zur Bearbeitung und Abwicklung Ihrer Bestellung erforderlich ist."
+					},
+					{
+						"type": "paragraph",
+						"text": "Hierzu können gehören:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Vor- und Nachname",
+							"Land",
+							"E-Mail-Adresse",
+							"gegebenenfalls Firmenname",
+							"gegebenenfalls Umsatzsteuer-Identifikationsnummer (USt-IdNr.)",
+							"gegebenenfalls Instagram-Benutzername",
+							"bestellte Produkte und Bestellinformationen",
+							"freiwillige Mitteilungen im Bemerkungsfeld",
+							"für die Lieferung erforderliche Adressdaten"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir verwenden diese Daten insbesondere zur:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Bearbeitung und Bestätigung von Bestellungen",
+							"Kommunikation über den Bestellstatus",
+							"Abwicklung der vereinbarten Zahlung",
+							"Vorbereitung und Durchführung der Lieferung",
+							"Erfüllung gesetzlicher Dokumentations- und Aufbewahrungspflichten"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Verarbeitung zur Durchführung eines Vertrags oder vorvertraglicher Maßnahmen erforderlich ist."
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit wir Daten aufgrund gesetzlicher Aufbewahrungs- oder Nachweispflichten verarbeiten, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO."
+					},
+					{
+						"type": "paragraph",
+						"text": "Freiwillige Angaben werden nur insoweit verwendet, wie dies zur Bearbeitung des jeweiligen Anliegens erforderlich ist."
+					}
+				]
+			},
+			{
+				"title": "5. Zahlungsabwicklung",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Derzeit bieten wir die Zahlung per Banküberweisung an."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nach Aufgabe einer Bestellung erhalten Sie die zur Zahlung erforderlichen Informationen per E-Mail."
+					},
+					{
+						"type": "paragraph",
+						"text": "Im Rahmen der Zahlungsabwicklung verarbeiten wir die für die Zuordnung und Überprüfung von Zahlungseingängen notwendigen Daten, soweit diese uns durch die Bank oder im Zusammenhang mit der Bestellung zur Verfügung stehen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Hierzu können insbesondere Name, Zahlungsbetrag, Verwendungszweck und Zahlungsdatum gehören."
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO sowie, soweit gesetzliche Pflichten bestehen, Art. 6 Abs. 1 lit. c DSGVO."
+					}
+				]
+			},
+			{
+				"title": "6. Versand und Lieferung",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für die Zustellung bestellter Waren nutzen wir den Versanddienstleister DHL."
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit für den Versand erforderlich, übermitteln wir an den Versanddienstleister die notwendigen personenbezogenen Daten, insbesondere:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Name des Empfängers",
+							"Lieferanschrift",
+							"gegebenenfalls weitere zur Zustellung erforderliche Informationen"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Eine Weitergabe der E-Mail-Adresse oder Telefonnummer für Versandbenachrichtigungen erfolgt nur, sofern hierfür eine entsprechende Rechtsgrundlage besteht."
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage der für die Lieferung notwendigen Datenübermittlung ist Art. 6 Abs. 1 lit. b DSGVO."
+					}
+				]
+			},
+			{
+				"title": "7. Versand von E-Mails über Resend",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für den automatisierten Versand von Bestellbestätigungen und sonstigen transaktionsbezogenen E-Mails verwenden wir den Dienst Resend."
+					},
+					{
+						"type": "paragraph",
+						"text": "Anbieter: Plus Five Five, Inc., USA (Resend)."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei der Nutzung dieses Dienstes können insbesondere folgende personenbezogene Daten verarbeitet werden:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"E-Mail-Adresse",
+							"Name, sofern in der Nachricht enthalten",
+							"Bestellinformationen",
+							"Inhalt der versendeten Nachricht",
+							"technische Informationen zur Zustellung"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Verarbeitung erfolgt, um Bestellungen zu bestätigen, Informationen zur Bestellabwicklung zu übermitteln und die Kommunikation mit unseren Kunden sicherzustellen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Kommunikation zur Vertragsabwicklung erforderlich ist."
+					},
+					{
+						"type": "paragraph",
+						"text": "Im Übrigen kann die Verarbeitung zur Gewährleistung einer zuverlässigen geschäftlichen Kommunikation auf Art. 6 Abs. 1 lit. f DSGVO beruhen."
+					}
+				]
+			},
+			{
+				"title": "8. Kommunikation per E-Mail",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten personenbezogenen Daten, beispielsweise Ihren Namen, Ihre E-Mail-Adresse und den Inhalt Ihrer Nachricht."
+					},
+					{
+						"type": "paragraph",
+						"text": "Diese Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage und gegebenenfalls zur Durchführung eines Vertrags."
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit Ihre Anfrage im Zusammenhang mit einem Vertrag oder vorvertraglichen Maßnahmen steht, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO."
+					},
+					{
+						"type": "paragraph",
+						"text": "In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sachgerechten Beantwortung eingehender Anfragen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten oder berechtigten Gründe für eine weitere Speicherung entgegenstehen."
+					}
+				]
+			},
+			{
+				"title": "9. Widerrufs- und Reklamationsanfragen",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Über unsere Website sollen künftig elektronische Möglichkeiten zur Erklärung eines Widerrufs sowie zur Einreichung von Reklamationen bereitgestellt werden."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei der Bearbeitung solcher Anfragen können insbesondere Name, E-Mail-Adresse, Angaben zum betreffenden Vertrag oder Produkt sowie die freiwillig übermittelten Informationen verarbeitet werden."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zweck der Verarbeitung ist die Entgegennahme, Prüfung und Bearbeitung der jeweiligen Erklärung oder Anfrage sowie die Erfüllung gesetzlicher und vertraglicher Pflichten."
+					},
+					{
+						"type": "paragraph",
+						"text": "Als Rechtsgrundlagen kommen insbesondere Art. 6 Abs. 1 lit. b und lit. c DSGVO in Betracht."
+					}
+				]
+			},
+			{
+				"title": "10. Cookies und ähnliche Technologien",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Unsere Website kann technisch notwendige Speicher- und Zugriffstechnologien einsetzen, soweit diese für die Bereitstellung ausdrücklich gewünschter Funktionen, beispielsweise des Warenkorbs, erforderlich sind."
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit solche Technologien unbedingt erforderlich sind, richtet sich ihre Zulässigkeit nach § 25 Abs. 2 TDDDG. Die damit verbundene Verarbeitung personenbezogener Daten erfolgt auf einer jeweils einschlägigen Rechtsgrundlage nach der DSGVO."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nach derzeitigem Kenntnisstand setzen wir keine Dienste wie Google Analytics oder Meta Pixel zur Analyse oder werblichen Nachverfolgung von Websitebesuchern ein."
+					},
+					{
+						"type": "paragraph",
+						"text": "Sollten künftig einwilligungspflichtige Technologien eingesetzt werden, werden diese grundsätzlich erst nach Erteilung der erforderlichen Einwilligung aktiviert und die Datenschutzerklärung entsprechend ergänzt."
+					}
+				]
+			},
+			{
+				"title": "11. Empfänger personenbezogener Daten",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Im Rahmen des Betriebs unserer Website und der Durchführung von Bestellungen können personenbezogene Daten an folgende Empfänger oder Kategorien von Empfängern weitergegeben werden, soweit dies erforderlich und rechtlich zulässig ist:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Hosting- und technische Dienstleister",
+							"E-Mail-Dienstleister",
+							"Versand- und Logistikunternehmen",
+							"Banken und an der Zahlungsabwicklung beteiligte Stellen",
+							"gegebenenfalls Steuerberater und sonstige gesetzlich erforderliche Empfänger"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Eine Weitergabe personenbezogener Daten zu eigenständigen Werbezwecken Dritter erfolgt nicht auf Grundlage der hier beschriebenen Bestellabwicklung."
+					}
+				]
+			},
+			{
+				"title": "12. Übermittlung personenbezogener Daten in Drittländer",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bei der Nutzung bestimmter technischer Dienstleister, insbesondere Vercel und Resend, kann eine Verarbeitung oder Übermittlung personenbezogener Daten außerhalb der Europäischen Union bzw. des Europäischen Wirtschaftsraums stattfinden."
+					},
+					{
+						"type": "paragraph",
+						"text": "Eine solche Verarbeitung muss den Anforderungen der Art. 44 ff. DSGVO entsprechen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Je nach Anbieter und konkreter Verarbeitung können hierfür insbesondere ein einschlägiger Angemessenheitsbeschluss der Europäischen Kommission oder geeignete Garantien, beispielsweise Standardvertragsklauseln, maßgeblich sein."
+					}
+				]
+			},
+			{
+				"title": "13. Speicherdauer",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wir speichern personenbezogene Daten nur so lange, wie dies für die jeweiligen Verarbeitungszwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bestell- und Vertragsdaten werden grundsätzlich für die Dauer der Vertragsabwicklung und darüber hinaus nur aufbewahrt, soweit dies für gesetzliche Pflichten, die Geltendmachung oder Abwehr von Ansprüchen oder andere rechtmäßige Zwecke erforderlich ist."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für bestimmte steuerlich relevante Unterlagen und Rechnungen können gesetzliche Aufbewahrungsfristen gelten. Diese betragen je nach Art der Unterlagen beispielsweise sechs, acht oder zehn Jahre."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nicht mehr erforderliche personenbezogene Daten werden gelöscht oder, soweit möglich, anonymisiert, sofern keine rechtmäßigen Gründe für eine weitere Speicherung bestehen."
+					}
+				]
+			},
+			{
+				"title": "14. Ihre Rechte",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie haben nach Maßgabe der geltenden gesetzlichen Bestimmungen insbesondere folgende Rechte:"
+					},
+					{
+						"type": "list",
+						"items": [
+							{
+								"label": "Auskunft (Art. 15 DSGVO):",
+								"text": "Sie können Auskunft über die Verarbeitung Ihrer personenbezogenen Daten verlangen."
+							},
+							{
+								"label": "Berichtigung (Art. 16 DSGVO):",
+								"text": "Sie können die Berichtigung unrichtiger Daten verlangen."
+							},
+							{
+								"label": "Löschung (Art. 17 DSGVO):",
+								"text": "Sie können unter den gesetzlichen Voraussetzungen die Löschung Ihrer personenbezogenen Daten verlangen."
+							},
+							{
+								"label": "Einschränkung der Verarbeitung (Art. 18 DSGVO):",
+								"text": "Sie können unter bestimmten Voraussetzungen die Einschränkung der Verarbeitung verlangen."
+							},
+							{
+								"label": "Datenübertragbarkeit (Art. 20 DSGVO):",
+								"text": "Sie können unter den gesetzlichen Voraussetzungen Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format erhalten."
+							},
+							{
+								"label": "Widerspruch (Art. 21 DSGVO):",
+								"text": "Sie können unter den gesetzlichen Voraussetzungen der Verarbeitung Ihrer personenbezogenen Daten widersprechen."
+							},
+							{
+								"label": "Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO):",
+								"text": "Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Zur Ausübung Ihrer Rechte können Sie sich jederzeit an uns wenden:"
+					},
+					{
+						"type": "link",
+						"href": "mailto:Iwon@iwonnaildisplay.de",
+						"text": "Iwon@iwonnaildisplay.de"
+					}
+				]
+			},
+			{
+				"title": "15. Beschwerderecht bei einer Aufsichtsbehörde",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie haben gemäß Art. 77 DSGVO das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für unser Unternehmen in Nordrhein-Westfalen kommt insbesondere folgende Aufsichtsbehörde in Betracht:"
+					},
+					{
+						"type": "paragraph",
+						"text": "Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)",
+						"bold": true
+					},
+					{
+						"type": "link",
+						"href": "https://www.ldi.nrw.de/",
+						"text": "https://www.ldi.nrw.de/",
+						"label": "Website"
+					},
+					{
+						"type": "paragraph",
+						"text": "Das Recht, sich bei einer anderen zuständigen Datenschutzaufsichtsbehörde zu beschweren, bleibt unberührt."
+					}
+				]
+			},
+			{
+				"title": "16. Pflicht zur Bereitstellung personenbezogener Daten",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Die für die Bearbeitung und Durchführung einer Bestellung erforderlichen Angaben werden benötigt, damit wir Ihre Bestellung entgegennehmen und abwickeln können."
+					},
+					{
+						"type": "paragraph",
+						"text": "Ohne die erforderlichen Daten kann eine Bearbeitung oder Durchführung der Bestellung gegebenenfalls nicht erfolgen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit Angaben freiwillig sind, werden diese entsprechend gekennzeichnet."
+					}
+				]
+			},
+			{
+				"title": "17. Automatisierte Entscheidungsfindung",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Nach derzeitigem Kenntnisstand findet im Zusammenhang mit der beschriebenen Bestellabwicklung keine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO statt."
+					}
+				]
+			},
+			{
+				"title": "18. Datensicherheit",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wir treffen angemessene technische und organisatorische Maßnahmen, um personenbezogene Daten vor unbefugtem Zugriff, Verlust, Missbrauch und unzulässiger Verarbeitung zu schützen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Datenübertragung über unsere Website erfolgt grundsätzlich verschlüsselt über HTTPS."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir weisen darauf hin, dass die Kommunikation über das Internet trotz technischer Schutzmaßnahmen Sicherheitsrisiken aufweisen kann."
+					}
+				]
+			},
+			{
+				"title": "19. Änderungen dieser Datenschutzerklärung",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich gesetzliche Anforderungen, unsere eingesetzten technischen Systeme oder unsere Datenverarbeitungsprozesse ändern."
+					},
+					{
+						"type": "paragraph",
+						"text": "Es gilt die jeweils auf unserer Website veröffentlichte Fassung."
+					}
+				]
+			}
+		]
+	},
+	"withdrawal": {
+		"pill": "Rechtliches",
+		"title": "Widerrufsbelehrung",
+		"updated": "Stand: 06. November 2026",
+		"contact": {
+			"owner": "Inhaberin",
+			"country": "Deutschland",
+			"phone": "Telefon",
+			"email": "E-Mail"
+		},
+		"sections": [
+			{
+				"title": "1. Widerrufsrecht",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Verbraucher haben das Recht, einen über unseren Online-Shop geschlossenen Kaufvertrag innerhalb von 14 Tagen ohne Angabe von Gründen zu widerrufen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem Sie oder eine von Ihnen benannte Person, die nicht das Transportunternehmen ist, die bestellten Waren erhalten haben bzw. hat."
+					},
+					{
+						"type": "paragraph",
+						"text": "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns durch eine eindeutige Erklärung über Ihren Entschluss informieren, den Vertrag zu widerrufen."
+					},
+					{
+						"type": "address",
+						"ownerLabel": true,
+						"contact": true,
+						"brandBold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie können uns beispielsweise per E-Mail oder Brief über Ihren Widerruf informieren."
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie können hierfür das nachfolgende Muster-Widerrufsformular verwenden. Die Verwendung dieses Formulars ist jedoch nicht verpflichtend."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zur Wahrung der Widerrufsfrist genügt es, wenn Sie Ihre Widerrufserklärung vor Ablauf der 14-tägigen Frist absenden."
+					}
+				]
+			},
+			{
+				"title": "2. Elektronischer Widerruf",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie können Ihren Vertrag auch über unsere elektronische Widerrufsfunktion widerrufen."
+					},
+					{
+						"type": "withdrawalLink",
+						"text": "Vertrag widerrufen"
+					},
+					{
+						"type": "paragraph",
+						"text": "Über diese Funktion können Sie die betreffende Bestellung angeben und Ihren Widerruf elektronisch bestätigen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nach der Übermittlung erhalten Sie unverzüglich eine Eingangsbestätigung auf einem dauerhaften Datenträger, in der Regel per E-Mail. Diese enthält den Inhalt Ihrer Widerrufserklärung sowie Datum und Uhrzeit ihres Eingangs."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Nutzung der elektronischen Widerrufsfunktion ist freiwillig. Ihr Widerrufsrecht können Sie weiterhin auch per E-Mail oder Brief ausüben."
+					}
+				]
+			},
+			{
+				"title": "3. Folgen des Widerrufs",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wenn Sie diesen Vertrag widerrufen, erstatten wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Kosten unserer günstigsten angebotenen Standardlieferung."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zusätzliche Lieferkosten, die dadurch entstanden sind, dass Sie eine andere als unsere günstigste angebotene Standardlieferung gewählt haben, werden nicht erstattet."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Rückzahlung erfolgt unverzüglich, spätestens innerhalb von 14 Tagen ab dem Tag, an dem Ihre Widerrufserklärung bei uns eingegangen ist."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir verwenden für die Rückzahlung grundsätzlich dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Zahlung eingesetzt haben, sofern mit Ihnen nicht ausdrücklich etwas anderes vereinbart wurde."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für die Rückzahlung entstehen Ihnen keine zusätzlichen Entgelte."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir können die Rückzahlung verweigern, bis wir die Waren zurückerhalten haben oder Sie einen Nachweis über die Rücksendung erbracht haben. Maßgeblich ist der jeweils frühere Zeitpunkt."
+					}
+				]
+			},
+			{
+				"title": "4. Rücksendung der Waren",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie müssen die Waren unverzüglich, spätestens jedoch innerhalb von 14 Tagen ab dem Tag, an dem Sie uns über Ihren Widerruf informiert haben, an folgende Adresse zurücksenden oder übergeben:"
+					},
+					{
+						"type": "address",
+						"brandBold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Rücksendefrist ist gewahrt, wenn Sie die Waren vor Ablauf der 14-tägigen Frist absenden."
+					},
+					{
+						"type": "heading",
+						"text": "Kosten der Rücksendung"
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.",
+						"bold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Bitte beachten Sie, dass diese Regelung die gewöhnlichen Rücksendekosten bei einem gesetzlichen Widerruf betrifft. Ihre gesetzlichen Rechte bei mangelhaften oder falsch gelieferten Waren bleiben unberührt."
+					},
+					{
+						"type": "heading",
+						"text": "Wertverlust der Waren"
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie müssen für einen etwaigen Wertverlust der Waren nur dann aufkommen, wenn dieser Wertverlust auf einen Umgang mit den Waren zurückzuführen ist, der zur Prüfung ihrer Beschaffenheit, Eigenschaften und Funktionsweise nicht notwendig war."
+					}
+				]
+			},
+			{
+				"title": "5. Muster-Widerrufsformular",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wenn Sie den Vertrag widerrufen möchten, können Sie das folgende Formular verwenden und an uns übermitteln."
+					},
+					{
+						"type": "paragraph",
+						"text": "An:",
+						"bold": true
+					},
+					{
+						"type": "address",
+						"email": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren:"
+					},
+					{
+						"type": "form",
+						"fields": [
+							"Bestellte Waren:",
+							"Bestellt am / erhalten am:",
+							"Name des/der Verbraucher(s):",
+							"Anschrift des/der Verbraucher(s):",
+							"Datum:",
+							"Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "(*) Unzutreffendes streichen."
+					}
+				]
+			},
+			{
+				"title": "6. Hinweis für Unternehmer",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Das gesetzliche Verbraucherwiderrufsrecht gilt grundsätzlich nicht für Verträge, die von Unternehmern im Rahmen ihrer gewerblichen oder selbstständigen beruflichen Tätigkeit abgeschlossen werden."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für solche Verträge gelten die gesetzlichen Bestimmungen sowie die gegebenenfalls individuell vereinbarten vertraglichen Regelungen."
+					}
+				]
+			}
+		]
+	},
+	"shippingPayment": {
+		"pill": "Rechtliches",
+		"title": "Versand & Zahlung",
+		"subtitle": "Hier finden Sie Informationen zu unseren Versandkosten, Liefergebieten, Lieferzeiten und Zahlungsbedingungen.",
+		"weightHeader": "Versandgewicht",
+		"costHeader": "Versandkosten",
+		"upTo": "Bis {{weight}} kg",
+		"includingVat": "inkl. MwSt.",
+		"contact": {
+			"owner": "Inhaberin",
+			"country": "Deutschland",
+			"email": "E-Mail",
+			"phone": "Telefon"
+		},
+		"sections": [
+			{
+				"title": "1. Versand und Liefergebiete",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wir versenden unsere Produkte von Deutschland aus mit DHL."
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir bieten internationalen Versand in zahlreiche Länder weltweit an. Die Verfügbarkeit einer Lieferung und die jeweiligen Versandkosten hängen vom Zielland, dem Sendungsgewicht und den Versandbedingungen ab."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für die nachfolgend aufgeführten Versandregionen gelten unsere regulären Versandtarife."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für weitere Länder erstellen wir Ihnen gerne ein individuelles Versandangebot."
+					}
+				]
+			},
+			{
+				"title": "2. Versandkosten innerhalb Deutschlands",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für Lieferungen innerhalb Deutschlands gelten folgende Versandkosten:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 30,
+								"cents": 490
+							}
+						],
+						"vatIncluded": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Kostenloser Versand ab 50,00 € Warenwert inkl. MwSt.",
+						"bold": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Der kostenlose Versand gilt ausschließlich für Lieferungen innerhalb Deutschlands mit einem Versandgewicht von maximal 30 kg."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei Bestellungen mit einem höheren Versandgewicht bitten wir Sie, vorab Kontakt mit uns aufzunehmen."
+					}
+				]
+			},
+			{
+				"title": "3. Versandkosten nach Polen, in die übrigen EU-Länder und nach Monaco",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für Lieferungen nach Polen, in die übrigen Mitgliedstaaten der Europäischen Union (außer Deutschland) sowie nach Monaco gelten folgende Versandkosten:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1199
+							},
+							{
+								"weight": 5,
+								"cents": 2049
+							},
+							{
+								"weight": 10,
+								"cents": 2549
+							},
+							{
+								"weight": 20,
+								"cents": 3149
+							},
+							{
+								"weight": 30,
+								"cents": 4849
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "4. Versandkosten in die Schweiz",
+				"blocks": [
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1699
+							},
+							{
+								"weight": 5,
+								"cents": 2999
+							},
+							{
+								"weight": 10,
+								"cents": 3799
+							},
+							{
+								"weight": 20,
+								"cents": 5199
+							},
+							{
+								"weight": 30,
+								"cents": 6599
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei Lieferungen in die Schweiz können zusätzliche Einfuhrabgaben, Steuern und Zollabfertigungsgebühren entstehen."
+					}
+				]
+			},
+			{
+				"title": "5. Versandkosten in weitere europäische Länder",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für weitere belieferte europäische Länder, die nicht in den oben genannten Versandregionen enthalten sind, gelten folgende Tarife:"
+					},
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 1999
+							},
+							{
+								"weight": 5,
+								"cents": 3299
+							},
+							{
+								"weight": 10,
+								"cents": 4099
+							},
+							{
+								"weight": 20,
+								"cents": 5599
+							},
+							{
+								"weight": 30,
+								"cents": 7099
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "6. Versandkosten in die Vereinigten Arabischen Emirate und nach Katar",
+				"blocks": [
+					{
+						"type": "rates",
+						"rows": [
+							{
+								"weight": 2,
+								"cents": 2299
+							},
+							{
+								"weight": 5,
+								"cents": 4899
+							},
+							{
+								"weight": 10,
+								"cents": 6499
+							},
+							{
+								"weight": 20,
+								"cents": 10399
+							},
+							{
+								"weight": 30,
+								"cents": 14499
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei Lieferungen in diese Länder können zusätzliche Einfuhrabgaben, Steuern oder Zollgebühren anfallen."
+					}
+				]
+			},
+			{
+				"title": "7. Lieferungen in das Vereinigte Königreich",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bestellungen in das Vereinigte Königreich, einschließlich Nordirland, bearbeiten wir ausschließlich auf Anfrage per E-Mail."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bitte kontaktieren Sie uns vor Ihrer Bestellung:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir informieren Sie über die Versandmöglichkeiten, Versandkosten und die voraussichtliche Lieferzeit."
+					}
+				]
+			},
+			{
+				"title": "8. Weltweiter Versand und Sonderanfragen",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie möchten in ein Land bestellen, das in unserem Bestellformular nicht aufgeführt ist?"
+					},
+					{
+						"type": "paragraph",
+						"text": "Kontaktieren Sie uns gerne direkt per E-Mail:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Wir prüfen die Versandmöglichkeit und erstellen Ihnen ein individuelles Angebot mit den anfallenden Versandkosten und der voraussichtlichen Lieferzeit."
+					},
+					{
+						"type": "paragraph",
+						"text": "Das Gleiche gilt für Bestellungen, deren Versandgewicht 30 kg überschreitet."
+					},
+					{
+						"type": "paragraph",
+						"text": "Ein Versand in das gewünschte Zielland ist abhängig von den jeweils geltenden Versand-, Einfuhr- und gegebenenfalls Exportbestimmungen."
+					}
+				]
+			},
+			{
+				"title": "9. Bearbeitungszeit",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": [
+							"Nach vollständigem Zahlungseingang bereiten wir Ihre Bestellung in der Regel innerhalb von ",
+							{
+								"strong": "2 Werktagen"
+							},
+							" für den Versand vor."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Übergabe an DHL erfolgt nach Abschluss der Bearbeitung."
+					}
+				]
+			},
+			{
+				"title": "10. Lieferzeiten",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Die voraussichtliche Lieferzeit richtet sich nach dem Zielland und der gewählten Versanddienstleistung."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die für das jeweilige Lieferland geltenden Lieferzeiten werden dem Kunden vor Abschluss der Bestellung mitgeteilt."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei individuellen Versandangeboten teilen wir die voraussichtliche Lieferzeit zusammen mit dem Angebot mit."
+					}
+				]
+			},
+			{
+				"title": "11. Zahlungsarten",
+				"blocks": [
+					{
+						"type": "heading",
+						"text": "Banküberweisung (Vorkasse)"
+					},
+					{
+						"type": "paragraph",
+						"text": "Derzeit bieten wir die Zahlung per Banküberweisung im Voraus an."
+					},
+					{
+						"type": "paragraph",
+						"text": "Nach Eingang und Annahme Ihrer Bestellung erhalten Sie eine E-Mail mit der Bestellbestätigung und unseren Bankverbindungsdaten."
+					},
+					{
+						"type": "paragraph",
+						"text": [
+							"Bitte überweisen Sie den vollständigen Rechnungsbetrag innerhalb von ",
+							{
+								"strong": "7 Kalendertagen nach Erhalt der Bestellbestätigung"
+							},
+							" auf das angegebene Bankkonto."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Geben Sie bei Ihrer Überweisung den mitgeteilten Verwendungszweck an, damit wir die Zahlung Ihrer Bestellung zuordnen können."
+					},
+					{
+						"type": "paragraph",
+						"text": "Ihre Bestellung wird nach vollständigem Zahlungseingang für den Versand vorbereitet."
+					},
+					{
+						"type": "paragraph",
+						"text": "Ein Versand vor Zahlungseingang erfolgt grundsätzlich nicht.",
+						"bold": true
+					}
+				]
+			},
+			{
+				"title": "12. Zollgebühren und Einfuhrabgaben",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bei Lieferungen in Länder außerhalb der Europäischen Union sowie in bestimmte steuerliche oder zollrechtliche Sondergebiete können zusätzliche Kosten entstehen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Hierzu gehören beispielsweise:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Einfuhrzölle",
+							"Einfuhrumsatzsteuer",
+							"Zollabfertigungsgebühren",
+							"Gebühren des Versanddienstleisters für die Zollabwicklung"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Diese Kosten sind nicht Bestandteil unserer oben genannten Versandtarife, sofern sie nicht ausdrücklich im jeweiligen Angebot enthalten sind."
+					},
+					{
+						"type": "paragraph",
+						"text": "Über mögliche zusätzliche Einfuhrabgaben und deren grundsätzliche Tragung informieren wir Sie vor der Bestellung. Die konkrete Höhe kann von den Vorschriften des Ziellandes und den Umständen der Einfuhr abhängen."
+					}
+				]
+			},
+			{
+				"title": "13. Kontakt bei Fragen zu Versand und Zahlung",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bei Fragen zu Versandkosten, Lieferzeiten, Zahlungsmöglichkeiten oder internationalen Bestellungen helfen wir Ihnen gerne weiter."
+					},
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Alle Versandpreise und Lieferbedingungen gelten vorbehaltlich der im Bestellprozess ausgewiesenen Angaben. Der Kunde erhält vor Abgabe seiner verbindlichen Bestellung Informationen über die tatsächlich anfallenden Versandkosten und den Gesamtpreis.",
+						"italic": true
+					}
+				]
+			}
+		]
+	},
+	"complaints": {
+		"pill": "Rechtliches",
+		"title": "Reklamationen & Gewährleistung",
+		"intro": [
+			"Wir legen großen Wert auf die Qualität unserer Produkte und die Zufriedenheit unserer Kunden. Sollte ein Produkt beschädigt, mangelhaft oder nicht wie vereinbart bei Ihnen ankommen, helfen wir Ihnen gerne weiter.",
+			"Auf dieser Seite erfahren Sie, wie Sie eine Reklamation einreichen können und welche gesetzlichen Rechte Ihnen zustehen."
+		],
+		"contact": {
+			"owner": "Inhaberin",
+			"country": "Deutschland",
+			"email": "E-Mail",
+			"phone": "Telefon"
+		},
+		"sections": [
+			{
+				"title": "1. Wann können Sie eine Reklamation einreichen?",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sie können sich an uns wenden, wenn beispielsweise:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"ein Produkt beschädigt bei Ihnen angekommen ist,",
+							"ein Artikel einen Material- oder Verarbeitungsfehler aufweist,",
+							"ein Produkt nicht die vereinbarte Beschaffenheit besitzt,",
+							"Sie einen falschen Artikel erhalten haben,",
+							"ein geliefertes Produkt nicht ordnungsgemäß funktioniert."
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Ob ein gesetzlicher Sachmangel vorliegt und welche Ansprüche bestehen, richtet sich nach den geltenden gesetzlichen Bestimmungen."
+					}
+				]
+			},
+			{
+				"title": "2. Wie können Sie eine Reklamation einreichen?",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bitte kontaktieren Sie uns per E-Mail:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Damit wir Ihre Anfrage möglichst schnell bearbeiten können, sind folgende Informationen hilfreich:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Ihr Vor- und Nachname",
+							"Ihre E-Mail-Adresse",
+							"Ihre Bestellnummer, sofern vorhanden",
+							"Die Bezeichnung des betroffenen Produkts",
+							"Eine kurze Beschreibung des Problems",
+							"Falls möglich, Fotos des beschädigten oder mangelhaften Produkts"
+						],
+						"ordered": true
+					},
+					{
+						"type": "paragraph",
+						"text": "Fotos und die Angabe einer Bestellnummer erleichtern uns die Zuordnung und Prüfung. Sie sind jedoch keine zwingende Voraussetzung für die Geltendmachung Ihrer gesetzlichen Mängelrechte."
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie können uns auch telefonisch erreichen:"
+					},
+					{
+						"type": "phone"
+					},
+					{
+						"type": "heading",
+						"text": "Elektronisches Reklamationsformular"
+					},
+					{
+						"type": "paragraph",
+						"text": "Künftig werden wir zusätzlich ein elektronisches Reklamationsformular auf unserer Website bereitstellen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bis dahin können Sie Ihre Reklamation jederzeit per E-Mail an uns richten."
+					}
+				]
+			},
+			{
+				"title": "3. Bearbeitung Ihrer Reklamation",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Nach Eingang Ihrer Reklamation prüfen wir den geschilderten Sachverhalt und setzen uns mit Ihnen in Verbindung, um die weiteren Schritte abzustimmen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Je nach Art des Mangels können zur Prüfung zusätzliche Informationen oder die Bereitstellung des betroffenen Produkts erforderlich sein."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bitte kontaktieren Sie uns möglichst vor einer Rücksendung, damit wir die weitere Abwicklung mit Ihnen abstimmen können."
+					},
+					{
+						"type": "paragraph",
+						"text": "Ihre gesetzlichen Rechte bleiben auch dann bestehen, wenn Sie uns ohne vorherige Kontaktaufnahme eine Reklamation übermitteln."
+					}
+				]
+			},
+			{
+				"title": "4. Gesetzliche Gewährleistungsrechte",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Für unsere Produkte gelten die gesetzlichen Mängelhaftungsrechte nach dem Bürgerlichen Gesetzbuch (BGB)."
+					},
+					{
+						"type": "paragraph",
+						"text": "Verbraucher haben bei Vorliegen eines Sachmangels grundsätzlich Anspruch auf Nacherfüllung."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dabei können sie nach Maßgabe der gesetzlichen Vorschriften zwischen folgenden Möglichkeiten wählen:"
+					},
+					{
+						"type": "list",
+						"items": [
+							{
+								"label": "Nachbesserung:",
+								"text": "Beseitigung des Mangels, beispielsweise durch Reparatur."
+							},
+							{
+								"label": "Ersatzlieferung:",
+								"text": "Lieferung eines mangelfreien Produkts."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Die gesetzlichen Voraussetzungen und Grenzen der jeweiligen Art der Nacherfüllung bleiben unberührt."
+					},
+					{
+						"type": "paragraph",
+						"text": "Unter den gesetzlichen Voraussetzungen können darüber hinaus insbesondere folgende Rechte bestehen:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Rücktritt vom Kaufvertrag",
+							"Minderung des Kaufpreises",
+							"Schadensersatz oder Ersatz vergeblicher Aufwendungen"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Eine Rückerstattung des Kaufpreises erfolgt, wenn die dafür vorgesehenen gesetzlichen Voraussetzungen erfüllt sind."
+					}
+				]
+			},
+			{
+				"title": "5. Gewährleistungsfrist",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bei neuen Waren beträgt die gesetzliche Verjährungsfrist für Mängelansprüche im Regelfall zwei Jahre ab Ablieferung der Ware."
+					},
+					{
+						"type": "paragraph",
+						"text": "Für Verbrauchsgüterkäufe gelten die gesetzlichen Schutzvorschriften, einschließlich der besonderen Regelungen zur Beweislast."
+					},
+					{
+						"type": "paragraph",
+						"text": "Zeigt sich bei einem Verbrauchsgüterkauf innerhalb eines Jahres seit Gefahrübergang ein von den gesetzlichen Vorschriften erfasster mangelhafter Zustand, gelten die gesetzlichen Vermutungsregelungen des § 477 BGB."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei Verträgen mit Unternehmern (B2B) gelten die einschlägigen gesetzlichen und wirksam vereinbarten vertraglichen Bestimmungen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die gesetzlichen Gewährleistungsrechte werden durch diese Informationen nicht eingeschränkt."
+					}
+				]
+			},
+			{
+				"title": "6. Kosten bei einer berechtigten Reklamation",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Liegt ein Mangel vor und besteht ein gesetzlicher Anspruch auf Nacherfüllung, tragen wir die hierfür erforderlichen Aufwendungen nach Maßgabe des § 439 Abs. 2 BGB."
+					},
+					{
+						"type": "paragraph",
+						"text": "Dazu gehören insbesondere die erforderlichen:"
+					},
+					{
+						"type": "list",
+						"items": [
+							"Transportkosten",
+							"Versandkosten",
+							"Arbeitskosten",
+							"Materialkosten"
+						]
+					},
+					{
+						"type": "paragraph",
+						"text": "Soweit für die Nacherfüllung eine Rücksendung erforderlich ist, stimmen wir die Vorgehensweise gerne vorab mit Ihnen ab."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bitte kontaktieren Sie uns dazu unter:"
+					},
+					{
+						"type": "email"
+					},
+					{
+						"type": "paragraph",
+						"text": "Für die gesetzlich geschuldete Nacherfüllung entstehen Ihnen keine zusätzlichen Kosten, soweit die gesetzlichen Bestimmungen dies vorsehen."
+					}
+				]
+			},
+			{
+				"title": "7. Transportschäden und falsche Lieferungen",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Sollte Ihre Bestellung sichtbar beschädigt ankommen oder einen falschen Artikel enthalten, bitten wir Sie, uns möglichst zeitnah zu informieren."
+					},
+					{
+						"type": "paragraph",
+						"text": "Hilfreich sind eine kurze Beschreibung sowie gegebenenfalls Fotos der Verpackung und des betroffenen Produkts."
+					},
+					{
+						"type": "paragraph",
+						"text": "Eine sofortige Meldung ist für Verbraucher jedoch keine Voraussetzung für die Geltendmachung gesetzlicher Mängelrechte."
+					}
+				]
+			},
+			{
+				"title": "8. Unterschied zwischen Reklamation und Widerruf",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Bitte beachten Sie, dass eine Reklamation wegen eines mangelhaften Produkts und der gesetzliche Widerruf eines Fernabsatzvertrags unterschiedliche Rechte darstellen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Sie machen gesetzliche Rechte geltend, weil ein Produkt mangelhaft ist oder nicht der vereinbarten Beschaffenheit entspricht.",
+						"label": "Reklamation:"
+					},
+					{
+						"type": "paragraph",
+						"text": "Verbraucher können einen online geschlossenen Kaufvertrag im Rahmen des gesetzlichen Widerrufsrechts grundsätzlich innerhalb von 14 Tagen ohne Angabe von Gründen widerrufen.",
+						"label": "Widerruf:"
+					},
+					{
+						"type": "withdrawalLink",
+						"text": "Weitere Informationen zum Widerruf finden Sie in unserer gesonderten Widerrufsbelehrung."
+					}
+				]
+			},
+			{
+				"title": "9. Kontakt und Reklamationsadresse",
+				"blocks": [
+					{
+						"type": "contact"
+					},
+					{
+						"type": "paragraph",
+						"text": "Bitte verwenden Sie diese Kontaktdaten für Reklamationsanfragen und zur Abstimmung einer gegebenenfalls erforderlichen Rücksendung."
+					}
+				]
+			},
+			{
+				"title": "10. Hinweis für Geschäftskunden",
+				"blocks": [
+					{
+						"type": "paragraph",
+						"text": "Wir verkaufen unsere Produkte sowohl an Verbraucher als auch an Unternehmer."
+					},
+					{
+						"type": "paragraph",
+						"text": "Bei Bestellungen durch Unternehmer gelten die einschlägigen gesetzlichen Regelungen sowie gegebenenfalls wirksam vereinbarte vertragliche Bestimmungen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Insbesondere können bei beiderseitigen Handelsgeschäften die gesetzlichen Untersuchungs- und Rügeobliegenheiten nach § 377 HGB Anwendung finden, soweit deren Voraussetzungen vorliegen."
+					},
+					{
+						"type": "paragraph",
+						"text": "Die Rechte von Verbrauchern werden durch diese Regelungen nicht eingeschränkt."
+					}
+				]
+			}
+		]
 	},
 	"privacy": {
 		"pill": "Letzte Aktualisierung: 18.03.2026",
