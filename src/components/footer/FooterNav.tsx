@@ -130,6 +130,16 @@ async function FooterNav({ lng }: { lng: string }) {
 							</LinkButton>
 						</li>
 					))}
+					<li className="mt-2 max-w-full">
+						<LinkButton variant="footer" href={`/${lng}/widerruf/formular`} restClass="font-bold underline underline-offset-4 text-left" style={{ textWrap: 'wrap' }}>
+							{t('footer.legal.withdrawalForm')}
+						</LinkButton>
+					</li>
+					<li className="max-w-full">
+						<LinkButton variant="footer" href={`/${lng}/reklamation/formular`} restClass="text-left" style={{ textWrap: 'wrap' }}>
+							{t('footer.legal.complaintForm')}
+						</LinkButton>
+					</li>
 				</ul>
 				<div className="w-full border-t border-[#E9DDC880] pt-6 md:hidden">
 					<svg

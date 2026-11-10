@@ -37,7 +37,7 @@ const german = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/de/tran
 const markup = value => renderToStaticMarkup(value)
 
 for (const lng of ['de', 'en', 'pl']) {
-	test(`withdrawal notice renders all content, model form and temporary localized homepage link in ${lng}`, async () => {
+	test(`withdrawal notice renders all content, model form and localized withdrawal form link in ${lng}`, async () => {
 		const translations = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))
 		const copy = translations.withdrawal
 		const page = loadModule('app/[lng]/widerruf/page.tsx', translations)
@@ -63,7 +63,7 @@ for (const lng of ['de', 'en', 'pl']) {
 					for (const field of block.fields) assert.ok(html.includes(`<strong>${markup(field)}</strong>`))
 				}
 				if (block.type === 'withdrawalLink') {
-					assert.ok(html.includes(`href="/${lng}"`))
+					assert.ok(html.includes(`href="/${lng}/widerruf/formular"`))
 				}
 				if (block.bold) assert.ok(html.includes(`<strong>${markup(block.text)}</strong>`))
 			}

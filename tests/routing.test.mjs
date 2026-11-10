@@ -27,7 +27,7 @@ const request = (pathname, headers = {}) => new NextRequest(`https://www.iwonnai
 
 for (const lng of ['pl', 'en', 'de']) {
 	test(`preserves ${lng} pages and language headers`, () => {
-		for (const suffix of ['', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/reklamation', '/versand-zahlung']) {
+		for (const suffix of ['', '/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/widerruf/formular', '/reklamation', '/reklamation/formular', '/versand-zahlung']) {
 			const response = proxy(request(`/${lng}${suffix}`, { cookie: 'i18next=de', 'accept-language': 'de' }))
 			assert.equal(response.status, 200)
 			assert.equal(response.headers.get('location'), null)
@@ -47,7 +47,7 @@ for (const pathname of ['/plx', '/plx/produkte', '/english', '/deutsch/produkte'
 }
 
 test('keeps language negotiation and query strings on existing unprefixed routes', () => {
-	for (const pathname of ['/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/reklamation', '/versand-zahlung']) {
+	for (const pathname of ['/produkte', '/produkte/fingernagel', '/faq', '/datenschutz', '/impressum', '/agb', '/widerruf', '/widerruf/formular', '/reklamation', '/reklamation/formular', '/versand-zahlung']) {
 		const response = proxy(request(`${pathname}?source=test`, { 'accept-language': 'pl' }))
 		assert.equal(response.status, 307)
 		assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/pl${pathname}?source=test`)

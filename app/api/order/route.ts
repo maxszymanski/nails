@@ -1,6 +1,6 @@
 import { Resend } from 'resend'
 import { z } from 'zod'
-import { products } from '@/src/data/products'
+import { products, type ProductName } from '@/src/data/products'
 import { company } from '@/src/data/company'
 import { cartSchema, deliverySchema, CheckoutError } from '@/src/lib/checkout'
 import { getOrderQuote } from '@/src/lib/order-quote'
@@ -141,14 +141,14 @@ export async function POST(req: Request) {
 	if (age >= 23 * 60 * 60 * 1000 || age < -5 * 60 * 1000) {
 		return Response.json({ error: 'Order attempt expired', code: 'ORDER_EXPIRED' }, { status: 409 })
 	}
-	const items = []
+	const items: { name: ProductName; quantity: number; totalCents: number }[] = []
 	for (const item of parsed.data.cart.items) {
 		const product = products.find(product => product.id === item.id)
 		if (!product) {
 			return Response.json({ error: 'Unknown product' }, { status: 400 })
 		}
 		items.push({
-			name: translations[lng].products.products[product.name],
+			name: product.name,
 			quantity: item.quantity,
 			totalCents: Math.round(product.price * 100) * item.quantity,
 		})
@@ -205,11 +205,11 @@ export async function POST(req: Request) {
 		tax: '0.00',
 	}).toString()
 
-	const itemsHtml = items
+	const itemsHtml = (lng: keyof typeof templates) => items
 		.map(
 			item => `
 				<tr>
-					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; font-weight: 600;">${escapeHtml(item.name)}</td>
+					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; font-weight: 600;">${escapeHtml(translations[lng].products.products[item.name])}</td>
 					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #565656; text-align: center;">${item.quantity}</td>
 					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; text-align: right; font-weight: 600;">${formatPrice(
 						item.totalCents / 100,
@@ -218,15 +218,17 @@ export async function POST(req: Request) {
 				</tr>`,
 		)
 		.join('')
-	const labels = translations[lng].checkout
-	const summaryHtml = `
+	const summaryHtml = (lng: keyof typeof templates) => {
+		const labels = translations[lng].checkout
+		return `
 		<p>${labels.netProducts}: ${formatPrice(quote.subtotalCents / 100, lng)}</p>
 		<p>${labels.productVat} (${quote.vatRate}%): ${formatPrice(quote.productVatCents / 100, lng)}</p>
 		<p>${labels.grossShipping}: ${formatPrice(quote.shippingCents / 100, lng)}</p>
 		<p>${labels.includedVat} (${quote.vatRate}%): ${formatPrice(quote.vatCents / 100, lng)}</p>
 		${customer.isBusiness ? `<p>${labels.companyName}: ${escapeHtml(customer.companyName)}<br>${labels.vatId}: ${escapeHtml(customer.vatId || '-')}</p>` : ''}
 	`
-	const companyFooterHtml = `
+	}
+	const companyFooterHtml = (lng: keyof typeof templates) => `
 		<div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e5e5e5; color: #565656; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere;">
 			<p style="margin: 0;"><strong>${escapeHtml(company.name)}</strong><br>
 			${translations[lng].footer.owner}: ${escapeHtml(company.owner)}<br>
@@ -273,9 +275,9 @@ export async function POST(req: Request) {
 								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: right; text-transform: uppercase;">${template.price}</th>
 							</tr>
 						</thead>
-						<tbody>${itemsHtml}</tbody>
+						<tbody>${itemsHtml(lng)}</tbody>
 					</table>
-					${summaryHtml}
+					${summaryHtml(lng)}
 
 					<div style="margin-top: 16px; padding: 16px 18px; background: #725fff; border-radius: 14px; color: #ffffff;">
 						<p style="margin: 0; font-size: 13px; opacity: 0.86;">${template.total}</p>
@@ -286,56 +288,56 @@ export async function POST(req: Request) {
 					<p style="margin: 0 0 10px; color: #565656; font-size: 15px;">${template.shipping}</p>
 					<p style="margin: 0 0 22px; color: #565656; font-size: 15px;">${template.instagram}</p>
 					<p style="margin: 0; color: #060606; font-size: 15px; font-weight: 600;">${template.regards}</p>
-					${companyFooterHtml}
+					${companyFooterHtml(lng)}
 				</div>
 			</div>
 		</div>
 	`
 
 	const customerName = escapeHtml(`${customer.firstName} ${customer.lastName}`)
-	const countryName = new Intl.DisplayNames([lng], { type: 'region' }).of(customer.country)
+	const countryName = new Intl.DisplayNames(['de'], { type: 'region' }).of(customer.country)
 	const deliveryAddress = escapeHtml(`${customer.address}, ${customer.zipCode} ${customer.city}, ${countryName}`)
 
 	const ownerHtml = `
-		<div style="margin: 0; padding: 32px 16px; background: #f2f2f2; font-family: Arial, sans-serif; color: #060606; line-height: 1.5;">
+		<div lang="de" style="margin: 0; padding: 32px 16px; background: #f2f2f2; font-family: Arial, sans-serif; color: #060606; line-height: 1.5;">
 			<div style="max-width: 500px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 18px; overflow: hidden;">
 				<div style="height: 6px; background: #725fff;"></div>
 				<div style="padding: 28px 24px;">
 					<p style="margin: 0 0 10px; color: #725fff; font-size: 13px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase;">Iwonnaildisplay</p>
-					<h1 style="margin: 0 0 16px; color: #060606; font-size: 26px; line-height: 1.2;">Nowe zamówienie #${orderNumber}</h1>
+					<h1 style="margin: 0 0 16px; color: #060606; font-size: 26px; line-height: 1.2;">Neue Bestellung #${orderNumber}</h1>
 
 					<div style="background: #f2f2f2; border: 1px solid #e5e5e5; border-radius: 14px; padding: 18px;">
-						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">Dane klienta</h2>
-						<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">Imię i nazwisko:</strong> ${customerName}</p>
-						<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">Email:</strong> ${escapeHtml(customer.email)}</p>
+						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">Kundendaten</h2>
+						<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">Vor- und Nachname:</strong> ${customerName}</p>
+						<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">E-Mail:</strong> ${escapeHtml(customer.email)}</p>
 						<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">Instagram:</strong> ${escapeHtml(customer.instagram || '-')}</p>
-						<p style="margin: 0; color: #565656;"><strong style="color: #060606;">Wiadomość:</strong> ${escapeHtml(customer.message || '-')}</p>
+						<p style="margin: 0; color: #565656;"><strong style="color: #060606;">Nachricht:</strong> ${escapeHtml(customer.message || '-')}</p>
 					</div>
 
 					<div style="margin-top: 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 14px; padding: 18px;">
-						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">Adres dostawy</h2>
+						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">Lieferadresse</h2>
 						<p style="margin: 0; color: #565656;">${deliveryAddress}</p>
 					</div>
 
-					<h2 style="margin: 26px 0 12px; color: #060606; font-size: 20px; line-height: 1.3;">Co spakować</h2>
-					<p style="margin: 0 0 12px; color: #565656;"><strong style="color: #060606;">Waga produktów (bez opakowania):</strong> ${quote.totalWeightGrams} g (${new Intl.NumberFormat('pl', { maximumFractionDigits: 3 }).format(quote.totalWeightGrams / 1000)} kg)</p>
+					<h2 style="margin: 26px 0 12px; color: #060606; font-size: 20px; line-height: 1.3;">Zu verpackende Artikel</h2>
+					<p style="margin: 0 0 12px; color: #565656;"><strong style="color: #060606;">Produktgewicht (ohne Verpackung):</strong> ${quote.totalWeightGrams} g (${new Intl.NumberFormat('de', { maximumFractionDigits: 3 }).format(quote.totalWeightGrams / 1000)} kg)</p>
 					<table style="width: 100%; border-collapse: collapse; font-size: 14px;">
 						<thead>
 							<tr>
 								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: left; text-transform: uppercase;">Produkt</th>
-								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: center; text-transform: uppercase;">Ilość</th>
-								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: right; text-transform: uppercase;">Cena</th>
+								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: center; text-transform: uppercase;">Menge</th>
+								<th style="padding: 0 0 10px; border-bottom: 1px solid #e5e5e5; color: #565656; font-size: 12px; font-weight: 700; text-align: right; text-transform: uppercase;">Preis</th>
 							</tr>
 						</thead>
-						<tbody>${itemsHtml}</tbody>
+						<tbody>${itemsHtml('de')}</tbody>
 					</table>
-					${summaryHtml}
+					${summaryHtml('de')}
 
 					<div style="margin-top: 16px; padding: 16px 18px; background: #725fff; border-radius: 14px; color: #ffffff;">
-						<p style="margin: 0; font-size: 13px; opacity: 0.86;">Do zapłaty razem z dostawą</p>
-						<p style="margin: 2px 0 0; font-size: 24px; line-height: 1.2; font-weight: 700;">${formatPrice(totalWithShipping, lng)}</p>
+						<p style="margin: 0; font-size: 13px; opacity: 0.86;">Zu zahlen inkl. Versand</p>
+						<p style="margin: 2px 0 0; font-size: 24px; line-height: 1.2; font-weight: 700;">${formatPrice(totalWithShipping, 'de')}</p>
 					</div>
-					${companyFooterHtml}
+					${companyFooterHtml('de')}
 				</div>
 			</div>
 		</div>
@@ -345,7 +347,7 @@ export async function POST(req: Request) {
 		const resend = new Resend(apiKey)
 		const { data, error } = await resend.batch.send(
 			[
-				{ from: fromEmail, to: ownerEmail, subject: `Nowe zamówienie #${orderNumber}`, html: ownerHtml },
+				{ from: fromEmail, to: ownerEmail, subject: `Neue Bestellung #${orderNumber}`, html: ownerHtml },
 				{ from: fromEmail, to: customer.email, replyTo: company.email, subject: `${template.subject} #${orderNumber} 💅`, html },
 			],
 			{ idempotencyKey: `order/${orderId}`, batchValidation: 'strict' },

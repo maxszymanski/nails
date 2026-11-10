@@ -94,6 +94,8 @@
 			"organisation": "Organizacja"
 		},
 		"legal": {
+			"withdrawalForm": "Odstąp od umowy",
+			"complaintForm": "Złóż reklamację",
 			"title": "Informacje prawne",
 			"impressum": "Dane firmy",
 			"tos": "Regulamin",
@@ -290,7 +292,7 @@
 		"title": "Dane firmy",
 		"subtitle": "Informacje zgodnie z § 5 DDG (niemieckiej ustawy o usługach cyfrowych)",
 		"provider": "Dane usługodawcy",
-		"owner": "Właścicielka",
+		"owner": "Właściciel",
 		"country": "Niemcy",
 		"contact": "Kontakt",
 		"phone": "Telefon",
@@ -306,7 +308,7 @@
 		"title": "Polityka prywatności",
 		"updated": "Stan na: 6 listopada 2026 r.",
 		"contact": {
-			"owner": "Właścicielka",
+			"owner": "Właściciel",
 			"country": "Niemcy",
 			"phone": "Telefon",
 			"email": "E-mail",
@@ -819,7 +821,7 @@
 		"title": "Odstąpienie od umowy",
 		"updated": "Stan na: 6 listopada 2026 r.",
 		"contact": {
-			"owner": "Właścicielka",
+			"owner": "Właściciel",
 			"country": "Niemcy",
 			"phone": "Telefon",
 			"email": "E-mail"
@@ -1013,7 +1015,7 @@
 		"upTo": "Do {{weight}} kg",
 		"includingVat": "z VAT",
 		"contact": {
-			"owner": "Właścicielka",
+			"owner": "Właściciel",
 			"country": "Niemcy",
 			"email": "E-mail",
 			"phone": "Telefon"
@@ -1389,7 +1391,7 @@
 			"Na tej stronie dowiesz się, jak złożyć reklamację i jakie ustawowe prawa Ci przysługują."
 		],
 		"contact": {
-			"owner": "Właścicielka",
+			"owner": "Właściciel",
 			"country": "Niemcy",
 			"email": "E-mail",
 			"phone": "Telefon"
@@ -1437,7 +1439,7 @@
 						"items": [
 							"Twoje imię i nazwisko",
 							"Twój adres e-mail",
-							"Numer zamówienia, jeżeli jest dostępny",
+							"Numer zamówienia",
 							"Nazwa produktu, którego dotyczy zgłoszenie",
 							"Krótki opis problemu",
 							"Jeżeli to możliwe, zdjęcia uszkodzonego lub wadliwego produktu"
@@ -1446,7 +1448,7 @@
 					},
 					{
 						"type": "paragraph",
-						"text": "Zdjęcia i numer zamówienia ułatwiają nam przyporządkowanie zgłoszenia i jego sprawdzenie. Nie są jednak obowiązkowym warunkiem skorzystania z ustawowych praw z tytułu wad."
+						"text": "Przy składaniu reklamacji przez formularz wymagany jest numer zamówienia. Zdjęcia ułatwiają nam sprawdzenie zgłoszenia, ale nie są obowiązkowym warunkiem skorzystania z ustawowych praw z tytułu wad."
 					},
 					{
 						"type": "paragraph",
@@ -1676,6 +1678,105 @@
 				]
 			}
 		]
+	},
+	"formSubmission": {
+		"sending": "Wysyłanie...",
+		"error": "Nie udało się wysłać zgłoszenia. Twoje dane pozostały w formularzu. Spróbuj ponownie za chwilę.",
+		"expired": "Nie możemy bezpiecznie ponowić tego zgłoszenia po upływie 23 godzin. Skontaktuj się z nami e-mailem, aby sprawdzić, czy je otrzymaliśmy."
+	},
+	"customerRequestEmail": {
+		"greeting": "Witaj!",
+		"regards": "Pozdrawiamy, zespół Iwonnaildisplay",
+		"detailsTitle": "Dane zgłoszenia",
+		"acknowledged": "Potwierdzono w formularzu",
+		"language": "Język formularza",
+		"ownerIntro": "Otrzymaliśmy nowe zgłoszenie z formularza na stronie. Poniżej znajdują się wszystkie przekazane dane. Aby odpowiedzieć klientowi, odpowiedz na tę wiadomość.",
+		"withdrawal": {
+			"subject": "Potwierdzenie otrzymania zgłoszenia zwrotu",
+			"message": "Dziękujemy za przesłanie formularza odstąpienia od umowy. Potwierdzamy otrzymanie Twojego zgłoszenia. Wkrótce skontaktujemy się z Tobą e-mailem i przekażemy dalsze informacje dotyczące zwrotu. Poniżej znajdziesz kopię danych z formularza."
+		},
+		"complaint": {
+			"subject": "Potwierdzenie otrzymania reklamacji",
+			"message": "Dziękujemy za przesłanie formularza reklamacyjnego. Potwierdzamy otrzymanie Twojego zgłoszenia. Zapoznamy się z opisem problemu i skontaktujemy się z Tobą e-mailem tak szybko, jak to możliwe, aby przekazać dalsze informacje. Ta wiadomość potwierdza otrzymanie zgłoszenia, a nie wynik jego rozpatrzenia. Poniżej znajdziesz kopię danych z formularza."
+		}
+	},
+	"withdrawalForm": {
+		"pill": "Zwroty",
+		"success": {
+			"title": "Zgłoszenie zwrotu przyjęte",
+			"message": "Twój formularz odstąpienia od umowy został wysłany. Skontaktujemy się z Tobą e-mailem tak szybko, jak to możliwe."
+		},
+		"returnedProducts": "Zwracane produkty",
+		"title": "Formularz odstąpienia od umowy",
+		"firstName": "Imię",
+		"lastName": "Nazwisko",
+		"email": "Adres e-mail",
+		"orderNumber": "Numer zamówienia",
+		"scope": "Zakres odstąpienia od umowy",
+		"all": "Całe zamówienie",
+		"selected": "Wybrane produkty",
+		"accept": "Akceptuję",
+		"policy": "regulamin zwrotów",
+		"submit": "Odstąp od umowy",
+		"validation": {
+			"firstName": "Podaj imię.",
+			"lastName": "Podaj nazwisko.",
+			"nameInvalid": "Użyj liter, spacji, apostrofu lub łącznika.",
+			"nameMax": "Wpisz maksymalnie 100 znaków.",
+			"email": "Podaj prawidłowy adres e-mail.",
+			"orderNumber": "Podaj 10 cyfr numeru zamówienia, opcjonalnie z prefiksem IND-.",
+			"scope": "Wybierz zakres odstąpienia od umowy.",
+			"returnedProducts": "Wpisz, które produkty zwracasz.",
+			"returnedProductsMax": "Opis zwracanych produktów może mieć maksymalnie 2000 znaków.",
+			"terms": "Zaakceptuj regulamin zwrotów."
+		}
+	},
+	"complaintForm": {
+		"pill": "Reklamacja",
+		"success": {
+			"title": "Reklamacja przyjęta",
+			"message": "Twój formularz reklamacyjny został wysłany. Skontaktujemy się z Tobą e-mailem tak szybko, jak to możliwe."
+		},
+		"title": "Formularz reklamacyjny",
+		"firstName": "Imię",
+		"lastName": "Nazwisko",
+		"email": "Adres e-mail",
+		"orderNumber": "Numer zamówienia",
+		"product": "Produkt, którego dotyczy reklamacja",
+		"problem": "Rodzaj problemu",
+		"description": "Opis problemu",
+		"resolution": "Preferowane rozwiązanie",
+		"acknowledge": "Zapoznałem(-am) się z",
+		"policy": "informacjami o reklamacji",
+		"submit": "Złóż reklamację",
+		"problems": {
+			"damaged": "Produkt uszkodzony lub wadliwy",
+			"wrongProduct": "Dostarczono niewłaściwy produkt",
+			"missingProduct": "Brak produktu",
+			"other": "Inny problem"
+		},
+		"resolutions": {
+			"repair": "Naprawa",
+			"replacement": "Wymiana",
+			"refund": "Zwrot pieniędzy"
+		},
+		"validation": {
+			"firstName": "Podaj imię.",
+			"lastName": "Podaj nazwisko.",
+			"nameInvalid": "Użyj liter, spacji, apostrofu lub łącznika.",
+			"nameMax": "Wpisz maksymalnie 100 znaków.",
+			"email": "Podaj prawidłowy adres e-mail.",
+			"orderNumber": "Podaj 10 cyfr numeru zamówienia, opcjonalnie z prefiksem IND-.",
+			"product": "Wybierz produkt, którego dotyczy reklamacja.",
+			"problem": "Wybierz rodzaj problemu.",
+			"description": "Opisz problem z produktem.",
+			"descriptionMax": "Opis problemu może mieć maksymalnie 5000 znaków.",
+			"resolution": "Wybierz preferowane rozwiązanie.",
+			"terms": "Potwierdź zapoznanie się z informacjami o reklamacji."
+		}
+	},
+	"formConfirmation": {
+		"close": "OK, rozumiem"
 	},
 	"privacy": {
 		"pill": "Ostatnia aktualizacja: 18.03.2026",

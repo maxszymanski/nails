@@ -207,8 +207,10 @@ for (const [items, expected] of [
 		assert.equal(response.status, 200)
 		assert.equal((await response.json()).totalWithShipping, expected)
 		assert.equal(api.calls[0].emails.length, 2)
-		const formatted = new Intl.NumberFormat('en', { style: 'currency', currency: 'EUR' }).format(expected)
-		for (const email of api.calls[0].emails) assert.ok(email.html.includes(formatted))
+		for (const [index, email] of api.calls[0].emails.entries()) {
+			const formatted = new Intl.NumberFormat(index === 0 ? 'de' : 'en', { style: 'currency', currency: 'EUR' }).format(expected)
+			assert.ok(email.html.includes(formatted))
+		}
 	})
 }
 
@@ -236,13 +238,49 @@ for (const [lng, ownerLabel] of [['pl', 'Właściciel'], ['de', 'Inhaber'], ['en
 		assert.ok(customerEmail.html.includes('Recipient &lt;test&gt;'))
 		assert.ok(customerEmail.html.includes(environment.PAYMENT_IBAN))
 		assert.ok(customerEmail.html.includes(environment.PAYMENT_BIC))
-		for (const email of api.calls[0].emails) {
+		for (const [index, email] of api.calls[0].emails.entries()) {
 			for (const value of [
-				`${ownerLabel}: Tomasz Ptaszynski`, 'Grillparzerstr. 12', '40699 Erkrath',
+				`${index === 0 ? 'Inhaber' : ownerLabel}: Tomasz Ptaszynski`, 'Grillparzerstr. 12', '40699 Erkrath',
 				'href="tel:+491773500405"', 'href="https://iwonnaildisplay.de/"',
 				'href="mailto:Iwon@iwonnaildisplay.de"', 'DE238234451', '147/5193/3161',
 			]) assert.ok(email.html.includes(value), value)
 		}
+	})
+}
+
+for (const lng of ['pl', 'en', 'de']) {
+	test(`owner order email stays fully German for ${lng} checkout without changing customer language`, async () => {
+		const api = harness()
+		const body = order()
+		const { products } = loadModule('src/data/products.ts')
+		const { calculateQuote } = loadModule('src/lib/checkout.ts')
+		body.lng = lng
+		body.cart.items = products.map(product => ({ id: product.id, quantity: 1 }))
+		Object.assign(body.customer, { country: 'PL', isBusiness: true, companyName: 'Salon Testowy', message: 'Wiadomosc od klienta' })
+		const quote = calculateQuote(body.cart, 'PL')
+		body.expectedTotalCents = quote.totalCents
+		body.expectedVatRate = quote.vatRate
+		const response = await api.post(body)
+		assert.equal(response.status, 200)
+		const { orderNumber } = await response.json()
+		const [owner, customer] = api.calls[0].emails
+		const german = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/de/translations.json'), 'utf8'))
+		const localized = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))
+		assert.equal(owner.subject, `Neue Bestellung #${orderNumber}`)
+		for (const value of ['lang="de"', 'Kundendaten', 'Vor- und Nachname:', 'E-Mail:', 'Nachricht:', 'Lieferadresse', 'Zu verpackende Artikel', 'Produktgewicht (ohne Verpackung):', 'Menge', 'Preis', 'Polen', 'Inhaber: Tomasz Ptaszynski', 'Salon Testowy', body.customer.message]) {
+			assert.ok(owner.html.includes(value), value)
+		}
+		for (const product of products) {
+			assert.ok(owner.html.includes(german.products.products[product.name]))
+			assert.ok(customer.html.includes(localized.products.products[product.name]))
+		}
+		for (const labels of [german.checkout.netProducts, german.checkout.productVat, german.checkout.grossShipping, german.checkout.includedVat, german.checkout.companyName, german.checkout.vatId]) {
+			assert.ok(owner.html.includes(labels), labels)
+		}
+		assert.ok(owner.html.includes(new Intl.NumberFormat('de', { style: 'currency', currency: 'EUR' }).format(quote.totalCents / 100)))
+		assert.ok(customer.html.includes(localized.checkout.netProducts))
+		assert.ok(customer.html.includes(new Intl.NumberFormat(lng, { style: 'currency', currency: 'EUR' }).format(quote.totalCents / 100)))
+		assert.ok(!customer.html.includes('Zu verpackende Artikel'))
 	})
 }
 
@@ -400,7 +438,7 @@ for (const lng of ['pl', 'de', 'en']) {
 			assert.equal((await api.post(body)).status, 200)
 			const [owner, customer] = api.calls[0].emails
 			assert.equal(owner.to, environment.ORDER_OWNER_EMAIL)
-			assert.ok(owner.html.includes(`Waga produktów (bez opakowania):</strong> ${weight}`))
+			assert.ok(owner.html.includes(`Produktgewicht (ohne Verpackung):</strong> ${weight}`))
 			assert.equal(customer.to, body.customer.email)
 			assert.ok(!customer.html.includes('Waga produktów'))
 			assert.ok(!customer.html.includes(weight))
@@ -724,9 +762,10 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 				assert.equal(accepted.status, 200)
 				assert.equal((await accepted.json()).totalWithShipping, expected.totalCents / 100)
 				const emails = api.calls.at(-1).emails
-				const labels = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/en/translations.json'), 'utf8')).checkout
-				const money = cents => new Intl.NumberFormat('en', { style: 'currency', currency: 'EUR' }).format(cents / 100)
-				for (const email of emails) {
+				for (const [index, email] of emails.entries()) {
+					const emailLng = index === 0 ? 'de' : 'en'
+					const labels = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${emailLng}/translations.json`), 'utf8')).checkout
+					const money = cents => new Intl.NumberFormat(emailLng, { style: 'currency', currency: 'EUR' }).format(cents / 100)
 					assert.ok(email.html.includes(`${labels.netProducts}: ${money(subtotalCents)}`))
 					assert.ok(email.html.includes(`${labels.productVat} (${vatRate}%): ${money(productVatCents)}`))
 					assert.ok(email.html.includes(`${labels.grossShipping}: ${money(shippingCents)}`))

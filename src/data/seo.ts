@@ -1,5 +1,13 @@
 export const pageSeo = {
 	de: {
+		complaintForm: {
+			title: 'Reklamationsformular',
+			description: 'Formular für eine Produktreklamation bei Iwon Nail Display. Kontaktdaten, betroffenes Produkt, Problembeschreibung und bevorzugte Lösung.',
+		},
+		withdrawalForm: {
+			title: 'Widerrufsformular',
+			description: 'Formular zum Widerruf einer Bestellung bei Iwon Nail Display. Angaben zur Bestellung und zum Umfang des Widerrufs.',
+		},
 		impressum: {
 			title: 'Impressum',
 			description: 'Anbieterinformationen und Kontaktdaten von Iwon Nail Display. Angaben zum Unternehmen und zur Kontaktaufnahme.',
@@ -58,6 +66,14 @@ export const pageSeo = {
 		},
 	},
 	en: {
+		complaintForm: {
+			title: 'Complaint Form',
+			description: 'Product complaint form for Iwon Nail Display, with contact details, the affected product, problem description and preferred solution.',
+		},
+		withdrawalForm: {
+			title: 'Withdrawal Form',
+			description: 'Withdrawal form for an Iwon Nail Display order, with contact details, order number and scope of withdrawal.',
+		},
 		impressum: {
 			title: 'Legal Notice',
 			description: 'Company information and contact details for Iwon Nail Display. Find information about the seller and how to get in touch.',
@@ -116,6 +132,14 @@ export const pageSeo = {
 		},
 	},
 	pl: {
+		complaintForm: {
+			title: 'Formularz reklamacyjny',
+			description: 'Formularz reklamacji produktu Iwon Nail Display: dane kontaktowe, wybrany produkt, opis problemu i preferowane rozwiązanie.',
+		},
+		withdrawalForm: {
+			title: 'Formularz odstąpienia od umowy',
+			description: 'Formularz odstąpienia od umowy w Iwon Nail Display: dane kontaktowe, numer zamówienia i zakres zwrotu.',
+		},
 		impressum: {
 			title: 'Dane firmy',
 			description: 'Dane firmy i informacje kontaktowe Iwon Nail Display. Sprawdź informacje o sprzedawcy i sposoby kontaktu.',

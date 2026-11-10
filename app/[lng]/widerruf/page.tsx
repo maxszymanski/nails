@@ -75,8 +75,7 @@ async function page({ params }: { params: Params }) {
 									case 'withdrawalLink':
 										return (
 											<p key={index} className="text-grayscale-500 leading-6 mt-4">
-												{/* Replace the temporary homepage URL when the withdrawal function is available. */}
-												<Link className="underline" href={`/${lng}`}>{block.text}</Link>
+												<Link className="underline" href={`/${lng}/widerruf/formular`}>{block.text}</Link>
 											</p>
 										)
 									case 'form':

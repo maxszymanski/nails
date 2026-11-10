@@ -94,6 +94,8 @@
 			"organisation": "Organisation"
 		},
 		"legal": {
+			"withdrawalForm": "Vertrag widerrufen",
+			"complaintForm": "Reklamation einreichen",
 			"title": "Rechtliches",
 			"impressum": "Impressum",
 			"tos": "AGB",
@@ -291,7 +293,7 @@
 		"title": "Impressum",
 		"subtitle": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)",
 		"provider": "Angaben zum Diensteanbieter",
-		"owner": "Inhaberin",
+		"owner": "Inhaber",
 		"country": "Deutschland",
 		"contact": "Kontakt",
 		"phone": "Telefon",
@@ -307,7 +309,7 @@
 		"title": "Datenschutzerklärung",
 		"updated": "Stand: 06. November 2026",
 		"contact": {
-			"owner": "Inhaberin",
+			"owner": "Inhaber",
 			"country": "Deutschland",
 			"phone": "Telefon",
 			"email": "E-Mail",
@@ -820,7 +822,7 @@
 		"title": "Widerrufsbelehrung",
 		"updated": "Stand: 06. November 2026",
 		"contact": {
-			"owner": "Inhaberin",
+			"owner": "Inhaber",
 			"country": "Deutschland",
 			"phone": "Telefon",
 			"email": "E-Mail"
@@ -1014,7 +1016,7 @@
 		"upTo": "Bis {{weight}} kg",
 		"includingVat": "inkl. MwSt.",
 		"contact": {
-			"owner": "Inhaberin",
+			"owner": "Inhaber",
 			"country": "Deutschland",
 			"email": "E-Mail",
 			"phone": "Telefon"
@@ -1390,7 +1392,7 @@
 			"Auf dieser Seite erfahren Sie, wie Sie eine Reklamation einreichen können und welche gesetzlichen Rechte Ihnen zustehen."
 		],
 		"contact": {
-			"owner": "Inhaberin",
+			"owner": "Inhaber",
 			"country": "Deutschland",
 			"email": "E-Mail",
 			"phone": "Telefon"
@@ -1438,7 +1440,7 @@
 						"items": [
 							"Ihr Vor- und Nachname",
 							"Ihre E-Mail-Adresse",
-							"Ihre Bestellnummer, sofern vorhanden",
+							"Ihre Bestellnummer",
 							"Die Bezeichnung des betroffenen Produkts",
 							"Eine kurze Beschreibung des Problems",
 							"Falls möglich, Fotos des beschädigten oder mangelhaften Produkts"
@@ -1447,7 +1449,7 @@
 					},
 					{
 						"type": "paragraph",
-						"text": "Fotos und die Angabe einer Bestellnummer erleichtern uns die Zuordnung und Prüfung. Sie sind jedoch keine zwingende Voraussetzung für die Geltendmachung Ihrer gesetzlichen Mängelrechte."
+						"text": "Bei der Einreichung einer Reklamation über das Formular ist die Bestellnummer erforderlich. Fotos erleichtern uns die Prüfung, sind jedoch keine zwingende Voraussetzung für die Geltendmachung Ihrer gesetzlichen Mängelrechte."
 					},
 					{
 						"type": "paragraph",
@@ -1677,6 +1679,105 @@
 				]
 			}
 		]
+	},
+	"formSubmission": {
+		"sending": "Wird gesendet...",
+		"error": "Ihre Anfrage konnte nicht gesendet werden. Ihre Angaben bleiben im Formular erhalten. Bitte versuchen Sie es in Kürze erneut.",
+		"expired": "Nach 23 Stunden können wir diese Anfrage nicht mehr sicher erneut senden. Bitte kontaktieren Sie uns per E-Mail, um zu prüfen, ob wir sie erhalten haben."
+	},
+	"customerRequestEmail": {
+		"greeting": "Hallo!",
+		"regards": "Liebe Grüße, Ihr Team von Iwonnaildisplay",
+		"detailsTitle": "Angaben zur Anfrage",
+		"acknowledged": "Im Formular bestätigt",
+		"language": "Sprache des Formulars",
+		"ownerIntro": "Wir haben eine neue Anfrage über das Formular auf der Website erhalten. Nachfolgend finden Sie alle übermittelten Angaben. Um dem Kunden zu antworten, antworten Sie auf diese E-Mail.",
+		"withdrawal": {
+			"subject": "Bestätigung des Eingangs Ihres Widerrufs",
+			"message": "Vielen Dank für die Übermittlung Ihres Widerrufsformulars. Hiermit bestätigen wir den Eingang Ihrer Widerrufserklärung. Wir melden uns in Kürze per E-Mail mit weiteren Informationen zur Rücksendung. Eine Kopie Ihrer übermittelten Angaben finden Sie nachfolgend."
+		},
+		"complaint": {
+			"subject": "Bestätigung des Eingangs Ihrer Reklamation",
+			"message": "Vielen Dank für die Übermittlung Ihres Reklamationsformulars. Hiermit bestätigen wir den Eingang Ihrer Reklamation. Wir prüfen Ihre Problembeschreibung und melden uns so schnell wie möglich per E-Mail mit weiteren Informationen. Diese Nachricht bestätigt den Eingang Ihrer Reklamation, nicht das Ergebnis ihrer Prüfung. Eine Kopie Ihrer übermittelten Angaben finden Sie nachfolgend."
+		}
+	},
+	"withdrawalForm": {
+		"pill": "Rücksendungen",
+		"success": {
+			"title": "Widerruf eingegangen",
+			"message": "Ihr Widerrufsformular wurde gesendet. Wir melden uns so schnell wie möglich per E-Mail bei Ihnen."
+		},
+		"returnedProducts": "Zurückzusendende Produkte",
+		"title": "Widerrufsformular",
+		"firstName": "Vorname",
+		"lastName": "Nachname",
+		"email": "E-Mail-Adresse",
+		"orderNumber": "Bestellnummer",
+		"scope": "Umfang des Widerrufs",
+		"all": "Gesamte Bestellung",
+		"selected": "Ausgewählte Produkte",
+		"accept": "Ich akzeptiere die",
+		"policy": "Widerrufsbedingungen",
+		"submit": "Widerruf erklären",
+		"validation": {
+			"firstName": "Bitte geben Sie Ihren Vornamen ein.",
+			"lastName": "Bitte geben Sie Ihren Nachnamen ein.",
+			"nameInvalid": "Verwenden Sie Buchstaben, Leerzeichen, Apostrophe oder Bindestriche.",
+			"nameMax": "Geben Sie maximal 100 Zeichen ein.",
+			"email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+			"orderNumber": "Geben Sie die zehnstellige Bestellnummer ein, optional mit dem Präfix IND-.",
+			"scope": "Bitte wählen Sie den Umfang des Widerrufs.",
+			"returnedProducts": "Geben Sie an, welche Produkte Sie zurücksenden.",
+			"returnedProductsMax": "Die Beschreibung der zurückzusendenden Produkte darf maximal 2000 Zeichen enthalten.",
+			"terms": "Bitte akzeptieren Sie die Widerrufsbedingungen."
+		}
+	},
+	"complaintForm": {
+		"pill": "Reklamation",
+		"success": {
+			"title": "Reklamation eingegangen",
+			"message": "Ihr Reklamationsformular wurde gesendet. Wir melden uns so schnell wie möglich per E-Mail bei Ihnen."
+		},
+		"title": "Reklamationsformular",
+		"firstName": "Vorname",
+		"lastName": "Nachname",
+		"email": "E-Mail-Adresse",
+		"orderNumber": "Bestellnummer",
+		"product": "Betroffenes Produkt",
+		"problem": "Art des Problems",
+		"description": "Problembeschreibung",
+		"resolution": "Bevorzugte Lösung",
+		"acknowledge": "Ich habe die",
+		"policy": "Informationen zur Reklamation gelesen",
+		"submit": "Reklamation einreichen",
+		"problems": {
+			"damaged": "Produkt beschädigt oder mangelhaft",
+			"wrongProduct": "Falsches Produkt geliefert",
+			"missingProduct": "Produkt fehlt",
+			"other": "Anderes Problem"
+		},
+		"resolutions": {
+			"repair": "Reparatur",
+			"replacement": "Ersatzlieferung",
+			"refund": "Rückerstattung"
+		},
+		"validation": {
+			"firstName": "Bitte geben Sie Ihren Vornamen ein.",
+			"lastName": "Bitte geben Sie Ihren Nachnamen ein.",
+			"nameInvalid": "Verwenden Sie Buchstaben, Leerzeichen, Apostrophe oder Bindestriche.",
+			"nameMax": "Geben Sie maximal 100 Zeichen ein.",
+			"email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+			"orderNumber": "Geben Sie die zehnstellige Bestellnummer ein, optional mit dem Präfix IND-.",
+			"product": "Bitte wählen Sie das betroffene Produkt.",
+			"problem": "Bitte wählen Sie die Art des Problems.",
+			"description": "Bitte beschreiben Sie das Problem mit dem Produkt.",
+			"descriptionMax": "Die Problembeschreibung darf maximal 5000 Zeichen enthalten.",
+			"resolution": "Bitte wählen Sie Ihre bevorzugte Lösung.",
+			"terms": "Bitte bestätigen Sie, dass Sie die Informationen zur Reklamation gelesen haben."
+		}
+	},
+	"formConfirmation": {
+		"close": "OK, verstanden"
 	},
 	"privacy": {
 		"pill": "Letzte Aktualisierung: 18.03.2026",

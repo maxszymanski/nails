@@ -95,6 +95,8 @@
 			"organisation": "The Organisation"
 		},
 		"legal": {
+			"withdrawalForm": "Withdraw from contract",
+			"complaintForm": "Submit a complaint",
 			"title": "Legal",
 			"impressum": "Legal Notice",
 			"tos": "Terms & Conditions",
@@ -1439,7 +1441,7 @@
 						"items": [
 							"Your first and last name",
 							"Your email address",
-							"Your order number, if available",
+							"Your order number",
 							"The name of the product concerned",
 							"A brief description of the problem",
 							"If possible, photos of the damaged or faulty product"
@@ -1448,7 +1450,7 @@
 					},
 					{
 						"type": "paragraph",
-						"text": "Photos and an order number help us identify the order and assess the issue. However, they are not mandatory requirements for exercising your statutory rights in respect of defects."
+						"text": "An order number is required when submitting a complaint through the form. Photos help us assess the issue, but they are not a mandatory requirement for exercising your statutory rights in respect of defects."
 					},
 					{
 						"type": "paragraph",
@@ -1678,6 +1680,105 @@
 				]
 			}
 		]
+	},
+	"formSubmission": {
+		"sending": "Sending...",
+		"error": "We could not send your request. Your details are still in the form. Please try again shortly.",
+		"expired": "We cannot safely retry this request after 23 hours. Please contact us by email to check whether we received it."
+	},
+	"customerRequestEmail": {
+		"greeting": "Hello!",
+		"regards": "Best regards, your Iwonnaildisplay Team",
+		"detailsTitle": "Request details",
+		"acknowledged": "Confirmed in the form",
+		"language": "Form language",
+		"ownerIntro": "We have received a new request through the website form. All submitted details are listed below. To contact the customer, reply to this email.",
+		"withdrawal": {
+			"subject": "Your withdrawal request has been received",
+			"message": "Thank you for submitting your withdrawal form. We confirm that we have received your request. We will contact you by email shortly with further information about your return. You can find a copy of your submitted details below."
+		},
+		"complaint": {
+			"subject": "Your complaint has been received",
+			"message": "Thank you for submitting your complaint form. We confirm that we have received your request. We will review the problem you described and contact you by email as soon as possible with further information. This email confirms receipt of your complaint, not the outcome of its assessment. You can find a copy of your submitted details below."
+		}
+	},
+	"withdrawalForm": {
+		"pill": "Returns",
+		"success": {
+			"title": "Withdrawal request received",
+			"message": "Your withdrawal form has been submitted. We will contact you by email as soon as possible."
+		},
+		"returnedProducts": "Products being returned",
+		"title": "Withdrawal Form",
+		"firstName": "First name",
+		"lastName": "Last name",
+		"email": "Email address",
+		"orderNumber": "Order number",
+		"scope": "Scope of withdrawal",
+		"all": "Entire order",
+		"selected": "Selected products",
+		"accept": "I accept the",
+		"policy": "returns policy",
+		"submit": "Declare withdrawal",
+		"validation": {
+			"firstName": "Enter your first name.",
+			"lastName": "Enter your last name.",
+			"nameInvalid": "Use letters, spaces, apostrophes or hyphens.",
+			"nameMax": "Enter no more than 100 characters.",
+			"email": "Enter a valid email address.",
+			"orderNumber": "Enter the 10-digit order number, optionally prefixed with IND-.",
+			"scope": "Choose the scope of withdrawal.",
+			"returnedProducts": "Enter which products you are returning.",
+			"returnedProductsMax": "The description of returned products must not exceed 2000 characters.",
+			"terms": "Accept the returns policy."
+		}
+	},
+	"complaintForm": {
+		"pill": "Complaint",
+		"success": {
+			"title": "Complaint received",
+			"message": "Your complaint form has been submitted. We will contact you by email as soon as possible."
+		},
+		"title": "Complaint Form",
+		"firstName": "First name",
+		"lastName": "Last name",
+		"email": "Email address",
+		"orderNumber": "Order number",
+		"product": "Product concerned",
+		"problem": "Type of problem",
+		"description": "Problem description",
+		"resolution": "Preferred solution",
+		"acknowledge": "I have read the",
+		"policy": "complaints information",
+		"submit": "Submit a complaint",
+		"problems": {
+			"damaged": "Damaged or faulty product",
+			"wrongProduct": "Wrong product delivered",
+			"missingProduct": "Missing product",
+			"other": "Other problem"
+		},
+		"resolutions": {
+			"repair": "Repair",
+			"replacement": "Replacement",
+			"refund": "Refund"
+		},
+		"validation": {
+			"firstName": "Enter your first name.",
+			"lastName": "Enter your last name.",
+			"nameInvalid": "Use letters, spaces, apostrophes or hyphens.",
+			"nameMax": "Enter no more than 100 characters.",
+			"email": "Enter a valid email address.",
+			"orderNumber": "Enter the 10-digit order number, optionally prefixed with IND-.",
+			"product": "Select the product concerned.",
+			"problem": "Select the type of problem.",
+			"description": "Describe the problem with the product.",
+			"descriptionMax": "The problem description must not exceed 5000 characters.",
+			"resolution": "Select your preferred solution.",
+			"terms": "Confirm that you have read the complaints information."
+		}
+	},
+	"formConfirmation": {
+		"close": "OK, understood"
 	},
 	"privacy": {
 		"pill": "Last Update: 18.03.2026",

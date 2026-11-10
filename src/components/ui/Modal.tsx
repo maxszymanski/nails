@@ -7,12 +7,16 @@ function Modal({
 	children,
 	stopReset = false,
 	labelledBy,
+	describedBy,
+	centered = false,
 
 	mutation,
 }: {
 	children: React.ReactNode
 	stopReset?: boolean
 	labelledBy: string
+	describedBy?: string
+	centered?: boolean
 
 	mutation?: () => void
 }) {
@@ -57,6 +61,7 @@ function Modal({
 			role="dialog"
 			tabIndex={-1}
 			aria-labelledby={labelledBy}
+			aria-describedby={describedBy}
 			aria-modal="true"
 			aria-busy={stopReset}
 			onKeyDown={event => {
@@ -80,10 +85,10 @@ function Modal({
 					}
 				}
 			}}
-			className={` bg-black-primary/50  fixed left-0 top-0  h-dvh lg:h-screen w-full  overflow-hidden    animate-visible z-100  flex justify-end `}
+			className={` bg-black-primary/50  fixed left-0 top-0  h-dvh lg:h-screen w-full  overflow-hidden    animate-visible z-100  flex ${centered ? 'items-center justify-center p-4' : 'justify-end'} `}
 			onClick={handleClickOutside}>
 			<div
-				className={`z-110 max-h-dvh w-fit lg:max-h-screen my-scrollbar h-full overflow-y-auto overflow-x-hidden }`}
+				className={centered ? 'z-110 w-full max-w-[440px] max-h-[calc(100dvh-2rem)] my-scrollbar overflow-y-auto overflow-x-hidden' : `z-110 max-h-dvh w-fit lg:max-h-screen my-scrollbar h-full overflow-y-auto overflow-x-hidden }`}
 				onClick={e => e.stopPropagation()}>
 				{children}
 			</div>

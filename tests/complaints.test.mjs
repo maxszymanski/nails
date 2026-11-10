@@ -74,7 +74,7 @@ for (const lng of ['de', 'en', 'pl']) {
 			}
 		}
 		for (const value of [company.owner, company.street, company.postalCode, company.city, company.email]) assert.ok(html.includes(value))
-		for (const href of [company.phoneHref, 'mailto:' + company.email, '/' + lng + '/widerruf']) assert.ok(html.includes('href="' + href + '"'))
+		for (const href of [company.phoneHref, 'mailto:' + company.email, '/' + lng + '/widerruf', '/' + lng + '/reklamation/formular']) assert.ok(html.includes('href="' + href + '"'))
 		const metadata = await page.generateMetadata({ params }, Promise.resolve({}))
 		assert.equal(metadata.alternates.canonical, 'https://www.iwonnaildisplay.de/' + lng + '/reklamation')
 		for (const language of ['de', 'en', 'pl']) {

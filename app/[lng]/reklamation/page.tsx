@@ -39,6 +39,9 @@ async function page({ params }: { params: Params }) {
 					{intro.map((paragraph, index) => (
 						<p key={paragraph} className={`text-grayscale-500 leading-6 ${index > 0 ? 'mt-4' : ''}`}>{paragraph}</p>
 					))}
+					<p className="text-grayscale-500 leading-6 mt-4">
+						<Link className="underline" href={`/${lng}/reklamation/formular`}>{t('complaintForm.title')}</Link>
+					</p>
 					{sections.map(section => (
 						<div key={section.title} className="w-full pt-10">
 							<h2 className="text-[32px] leading-10">{section.title}</h2>

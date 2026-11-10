@@ -27,7 +27,7 @@ async function page() {
 						<p className="text-grayscale-500 leading-6 mt-4">{t('privacy.generalOne')}</p>
 						<div className="flex flex-col">
 							<p className="text-black leading-6 mt-4">
-								Ms Iwona Krol-Ptaszynska <br />
+								{company.owner} <br />
 								Grillparzerstr. 12 <br />
 								40699 Erkrath <br /> Germany <br />
 								{t('privacy.phone')}: +49 (0) 177 3500405 <br />
