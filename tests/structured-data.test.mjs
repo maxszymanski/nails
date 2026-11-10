@@ -41,7 +41,7 @@ test('organization reuses company contact details and website references the sam
 })
 
 for (const lng of ['de', 'en', 'pl']) {
-	test(`product data matches catalog images and visible translations in ${lng}, without guessing gross prices or stock`, () => {
+	test(`product data includes the German gross offer, confirmed stock and visible translations in ${lng}, without inventing reviews`, () => {
 		const translations = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))
 		for (const product of products) {
 			const name = translations.products.products[product.name]
@@ -53,7 +53,16 @@ for (const lng of ['de', 'en', 'pl']) {
 			assert.equal(data['@id'], `${data.url}#product`)
 			assert.equal(data.image.length, product.images.length)
 			for (const [index, image] of data.image.entries()) assert.equal(image, `${SITE_URL}${product.images[index]}`)
-			assert.equal(data.offers, undefined)
+			const netCents = Math.round(product.price * 100)
+			const grossPrice = (netCents + Math.round(netCents * 19 / 100)) / 100
+			assert.equal(data.offers['@type'], 'Offer')
+			assert.equal(data.offers.url, data.url)
+			assert.equal(data.offers.price, grossPrice.toFixed(2))
+			assert.equal(data.offers.priceCurrency, 'EUR')
+			assert.equal(data.offers.availability, 'https://schema.org/InStock')
+			assert.equal(data.offers.itemCondition, 'https://schema.org/NewCondition')
+			assert.equal(data.offers.priceValidUntil, undefined)
+			assert.equal(data.review, undefined)
 			assert.equal(data.aggregateRating, undefined)
 		}
 	})

@@ -169,7 +169,10 @@
 		"title": "Gestalten Sie Ihr individuelles Display-System",
 		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems – entwickelt für die Organisation, Präsentation und ansprechende Präsentation Ihrer Nagellackkollektion.",
 		"mayLike": "Für Sie Empfohlen",
-		"tax": "zzgl. gesetzlicher MwSt",
+		"tax": "inkl. 19 % MwSt.",
+		"priceInfo": "Preis- und Versandinformationen",
+		"priceNotice": "Die angegebenen Preise enthalten 19 % MwSt. für Lieferungen nach Deutschland. Bei Auswahl eines anderen Lieferlandes kann sich der Betrag ändern und wird im Warenkorb nach den geltenden Mehrwertsteuerregelungen neu berechnet.",
+		"shippingCosts": "Zuzüglich Versandkosten.",
 		"products": {
 			"title": "Produkte",
 			"nails": "IND Nägel",
@@ -1883,8 +1886,7 @@
 		"email": "E-Mail-Adresse",
 		"message": "Zusätzliche Nachricht",
 		"enterMessage": "Schreiben Sie Ihre Nachricht...",
-		"read": "Ich habe die",
-		"terms": "Datenschutzerklärung gelesen.",
+		"orderConsent": "Ich akzeptiere die <terms>AGB</terms> und bestätige, dass ich die <privacy>Datenschutzerklärung</privacy> sowie die <shipping>Informationen zu Versand und Zahlung</shipping> gelesen habe.",
 		"pill": "Versand innerhalb von 24 Stunden nach Zahlungseingang.",
 		"success": "Ihre Bestellung wurde erfolgreich aufgegeben.",
 		"successTitle": "Bestätigung",
@@ -1932,7 +1934,7 @@
 		"city": "Bitte geben Sie Ihre Stadt ein",
 		"cityMin": "Die Stadt muss mindestens 2 Zeichen lang sein",
 		"emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-		"termsRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
+		"termsRequired": "Bitte akzeptieren Sie die AGB und bestätigen Sie, dass Sie die verlinkten Informationen gelesen haben."
 	},
 	"compatible": {
 		"title": "Kompatible IKEA-Produkte",

@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { Product } from '@/src/data/products'
 import { useCartStore } from '../stores/CartStore'
 import { toast } from 'react-toastify'
+import { getGermanGrossPrice } from '@/src/lib/pricing'
+import PriceInfoTooltip from './PriceInfoTooltip'
 
 function ProductCard({ item, lng }: { item: Product; lng: string }) {
 	const { t } = useT('translations')
@@ -33,15 +35,19 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 					sizes="364px"
 					loading="eager"
 					fetchPriority="high"
+					quality={100}
 				/>
 			</Link>
 			<div className="flex items-center gap-2 justify-between">
 				<h2 className="text-xl leading-8 -tracking-[1%] text-grayscale-500 truncate ">
 					{t(`products.products.${item.name}`)}{' '}
 				</h2>
-				<p className="text-xl leading-8 text-nowrap">
-					{item.price.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>
-				</p>
+				<div className="flex shrink-0 items-center gap-1">
+					<p className="text-xl leading-8 text-nowrap">
+						{getGermanGrossPrice(item.price).toFixed(2).replace('.', ',')}€
+					</p>
+					<PriceInfoTooltip lng={lng} />
+				</div>
 			</div>
 			<div className="grid grid-cols-2 gap-3 ">
 				<LinkButton href={`/${lng}/produkte/${item.slug}`} variant="secondary">

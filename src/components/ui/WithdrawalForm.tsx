@@ -39,7 +39,7 @@ function WithdrawalForm({ lng }: { lng: string }) {
 	}
 
 	return (
-		<form noValidate aria-busy={isSubmitting} onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-6">
+		<form noValidate aria-busy={isSubmitting} onSubmit={event => handleSubmit(onSubmit)(event)} className="w-full flex flex-col gap-6">
 			<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 				<Input required id="withdrawal-first-name" autoComplete="given-name" maxLength={100}
 					label={t('withdrawalForm.firstName')} placeholder={t('withdrawalForm.firstName')}

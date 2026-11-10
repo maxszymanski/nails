@@ -2,6 +2,7 @@ import { languages } from '@/app/i18n/settings'
 import { company } from '@/src/data/company'
 import type { Product } from '@/src/data/products'
 import { SITE_URL } from '@/src/lib/seo'
+import { getGermanGrossPrice } from '@/src/lib/pricing'
 
 export const homepageStructuredData = {
 	'@context': 'https://schema.org',
@@ -52,7 +53,14 @@ export function productStructuredData(product: Product, lng: string, name: strin
 		description,
 		image: product.images.map(image => new URL(image, SITE_URL).href),
 		brand: { '@type': 'Brand', name: 'Iwon Nail Display' },
-		// Offers require a visible VAT-inclusive price; the catalog currently displays net prices.
+		offers: {
+			'@type': 'Offer',
+			url,
+			price: getGermanGrossPrice(product.price).toFixed(2),
+			priceCurrency: 'EUR',
+			availability: 'https://schema.org/InStock',
+			itemCondition: 'https://schema.org/NewCondition',
+		},
 	}
 }
 

@@ -168,7 +168,10 @@
 		"title": "Zbuduj Swój Idealny Zestaw Ekspozycyjny",
 		"subtitle": "Odkryj wszystkie elementy systemu Iwon Nail Display, stworzone do organizacji, prezentacji i efektownego wyeksponowania Twojej kolekcji lakierów.",
 		"mayLike": "Polecane dla Ciebie",
-		"tax": "plus ustawowy podatek VAT.",
+		"tax": "zawiera 19% VAT",
+		"priceInfo": "Informacje o cenie i dostawie",
+		"priceNotice": "Podane ceny zawierają 19% VAT dla dostawy do Niemiec. Przy wyborze innego kraju dostawy kwota może się różnić i zostanie ponownie obliczona w koszyku zgodnie z obowiązującymi zasadami VAT.",
+		"shippingCosts": "Koszty dostawy naliczane osobno.",
 		"products": {
 			"title": "Produkty",
 			"nails": "IND Paznokieć",
@@ -1882,8 +1885,7 @@
 		"email": "Adres Email",
 		"message": "Dodatkowa wiadomość",
 		"enterMessage": "Napisz swoją wiadomość...",
-		"read": "Zapoznałem/am się z",
-		"terms": "polityką ochrony danych osobowych.",
+		"orderConsent": "Akceptuję <terms>regulamin sklepu</terms> oraz potwierdzam zapoznanie się z <privacy>polityką prywatności</privacy> i <shipping>informacjami o dostawie i płatnościach</shipping>.",
 		"pill": "Wysyłka w ciągu 24 godzin od otrzymania płatności.",
 		"success": "Twoje zamówienie zostało pomyślnie złożone.",
 		"successTitle": "Potwierdzenie",
@@ -1931,7 +1933,7 @@
 		"city": "Proszę podać miasto",
 		"cityMin": "Miasto musi mieć co najmniej 2 znaki",
 		"emailInvalid": "Podaj poprawny adres e-mail",
-		"termsRequired": "Proszę zaakceptować politykę prywatności"
+		"termsRequired": "Zaakceptuj regulamin sklepu i potwierdź zapoznanie się z pozostałymi informacjami."
 	},
 	"compatible": {
 		"title": "Kompatybilne Produkty IKEA",

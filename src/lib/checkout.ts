@@ -1,12 +1,13 @@
 import { z } from 'zod'
 import { products } from '@/src/data/products'
+import { GERMAN_VAT_RATE } from '@/src/lib/pricing'
 
 // EU standard rates: https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm
 // Supported exports use 0% German VAT; local import taxes remain the customer's responsibility.
 // Monaco is treated as France for VAT: https://taxation-customs.ec.europa.eu/taxation/vat/vat-directive/how-does-vat-work/territorial-scope_en
 // Reviewed 2026-10-26. Unlisted destinations and special VAT territories require an individual quote.
 export const VAT_RATES = {
-	AT: 20, BE: 21, BG: 20, CY: 19, CZ: 21, DE: 19, DK: 25, EE: 24, GR: 24,
+	AT: 20, BE: 21, BG: 20, CY: 19, CZ: 21, DE: GERMAN_VAT_RATE, DK: 25, EE: 24, GR: 24,
 	ES: 21, FI: 25.5, FR: 20, HR: 25, HU: 27, IE: 23, IT: 22, LT: 21, LU: 17,
 	LV: 21, MT: 18, NL: 21, PL: 23, PT: 23, RO: 21, SE: 25, SI: 22, SK: 23,
 	CH: 0, AL: 0, AD: 0, BA: 0, ME: 0, IS: 0, XK: 0, LI: 0,
