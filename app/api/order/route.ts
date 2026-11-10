@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import { z } from 'zod'
 import { products, type ProductName } from '@/src/data/products'
 import { company } from '@/src/data/company'
-import { cartSchema, deliverySchema, CheckoutError } from '@/src/lib/checkout'
+import { cartSchema, deliverySchema, CheckoutError, isExportCountry } from '@/src/lib/checkout'
 import { getOrderQuote } from '@/src/lib/order-quote'
 import en from '@/app/i18n/locales/en/translations.json'
 import de from '@/app/i18n/locales/de/translations.json'
@@ -297,6 +297,22 @@ export async function POST(req: Request) {
 	const customerName = escapeHtml(`${customer.firstName} ${customer.lastName}`)
 	const countryName = new Intl.DisplayNames(['de'], { type: 'region' }).of(customer.country)
 	const deliveryAddress = escapeHtml(`${customer.address}, ${customer.zipCode} ${customer.city}, ${countryName}`)
+	const viesVerified = customer.isBusiness && Boolean(customer.vatId) && customer.country !== 'DE'
+		&& !isExportCountry(customer.country) && quote.vatRate === 0
+	const viesStatus = viesVerified
+		? 'Gültige USt-IdNr. bei Bestellabgabe durch VIES bestätigt.'
+		: customer.country === 'DE' ? 'Nicht durchgeführt: Lieferung innerhalb Deutschlands.'
+		: isExportCountry(customer.country) ? 'Nicht durchgeführt: Lieferung außerhalb des EU-Mehrwertsteuergebiets.'
+		: 'Nicht durchgeführt: Keine USt-IdNr. angegeben.'
+	const viesHtml = customer.isBusiness ? `
+		<div style="margin-top: 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 14px; padding: 18px;">
+			<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">VIES-Prüfung</h2>
+			<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">Ergebnis:</strong> ${viesStatus}</p>
+			<p style="margin: 0 0 6px; color: #565656;"><strong style="color: #060606;">USt-IdNr.:</strong> ${escapeHtml(customer.vatId || '-')}</p>
+			<p style="margin: 0; color: #565656;"><strong style="color: #060606;">Lieferland:</strong> ${escapeHtml(countryName || customer.country)}</p>
+			${viesVerified ? '<p style="margin: 12px 0 0; color: #565656; font-size: 12px;">Die Prüfung bestätigt die Gültigkeit der USt-IdNr., nicht Firmenname oder Anschrift.</p>' : ''}
+		</div>
+	` : ''
 
 	const ownerHtml = `
 		<div lang="de" style="margin: 0; padding: 32px 16px; background: #f2f2f2; font-family: Arial, sans-serif; color: #060606; line-height: 1.5;">
@@ -318,6 +334,7 @@ export async function POST(req: Request) {
 						<h2 style="margin: 0 0 12px; color: #060606; font-size: 18px; line-height: 1.3;">Lieferadresse</h2>
 						<p style="margin: 0; color: #565656;">${deliveryAddress}</p>
 					</div>
+					${viesHtml}
 
 					<h2 style="margin: 26px 0 12px; color: #060606; font-size: 20px; line-height: 1.3;">Zu verpackende Artikel</h2>
 					<p style="margin: 0 0 12px; color: #565656;"><strong style="color: #060606;">Produktgewicht (ohne Verpackung):</strong> ${quote.totalWeightGrams} g (${new Intl.NumberFormat('de', { maximumFractionDigits: 3 }).format(quote.totalWeightGrams / 1000)} kg)</p>

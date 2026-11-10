@@ -36,6 +36,19 @@ function loadModule(relativePath, translations) {
 const german = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/de/translations.json'), 'utf8')).privacyPolicy
 const markup = value => renderToStaticMarkup(value)
 
+for (const [lng, heading, title] of [['de', 'AGB', 'AGB'], ['en', 'Terms & Condition', 'Terms & Condition'], ['pl', 'Informacje prawne', 'Regulamin sklepu']]) {
+	test(`AGB titles use the requested language without changing other content in ${lng}`, async () => {
+		const translations = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))
+		const page = loadModule('app/[lng]/agb/page.tsx', translations)
+		const html = markup(await page.default())
+		assert.ok(html.includes(`>${markup(heading)}</h1>`))
+		assert.ok(html.includes(markup(translations.privacy.subtitle)))
+		const metadata = await page.generateMetadata({ params: Promise.resolve({ lng }) }, Promise.resolve({ openGraph: { images: [] } }))
+		assert.equal(metadata.title.absolute, `${title} | Iwon Nail Display`)
+		assert.equal(metadata.alternates.canonical, `https://www.iwonnaildisplay.de/${lng}/agb`)
+	})
+}
+
 for (const lng of ['de', 'en', 'pl']) {
 	test(`privacy policy renders without editorial notes and preserves legal-page styling in ${lng}`, async () => {
 		const translations = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))

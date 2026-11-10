@@ -13,7 +13,7 @@ export const pageSeo = {
 			description: 'Anbieterinformationen und Kontaktdaten von Iwon Nail Display. Angaben zum Unternehmen und zur Kontaktaufnahme.',
 		},
 		agb: {
-			title: 'Allgemeine Geschäftsbedingungen (AGB)',
+			title: 'AGB',
 			description: 'Allgemeine Geschäftsbedingungen von Iwon Nail Display. Informationen zu Bestellung, Vertragsschluss und Zahlungsbedingungen.',
 		},
 		widerruf: {
@@ -79,7 +79,7 @@ export const pageSeo = {
 			description: 'Company information and contact details for Iwon Nail Display. Find information about the seller and how to get in touch.',
 		},
 		agb: {
-			title: 'Terms & Conditions',
+			title: 'Terms & Condition',
 			description: 'Terms and conditions for purchases from Iwon Nail Display. Information about orders, contracts and payment terms.',
 		},
 		widerruf: {

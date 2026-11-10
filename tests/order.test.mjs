@@ -661,6 +661,75 @@ test('cross-border companies get 0% only after VIES verification, with Greek and
 	}
 })
 
+for (const lng of ['pl', 'en', 'de']) {
+	test(`includes the final VIES result only in the German owner email for ${lng} checkout`, async () => {
+		let checks = 0
+		const api = harness({ fetch: async (url, options) => {
+			assert.equal(url, 'https://ec.europa.eu/taxation_customs/vies/rest-api/check-vat-number')
+			checks++
+			return Response.json({ ...JSON.parse(options.body), valid: true })
+		} })
+		const body = order()
+		body.lng = lng
+		Object.assign(body.customer, { country: 'PL', vatId: 'PL1234567890', isBusiness: true, companyName: 'Test company' })
+		Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
+		assert.equal((await api.quote({ cart: body.cart, delivery: { country: 'PL', vatId: 'PL1234567890', isBusiness: true } })).status, 200)
+		assert.equal((await api.post(body)).status, 200)
+		assert.equal(checks, 2)
+		const [owner, customer] = api.calls[0].emails
+		for (const value of ['>VIES-Prüfung</h2>', 'Ergebnis:', 'Gültige USt-IdNr. bei Bestellabgabe durch VIES bestätigt.', 'USt-IdNr.:</strong> PL1234567890', 'Lieferland:</strong> Polen', 'nicht Firmenname oder Anschrift']) {
+			assert.ok(owner.html.includes(value), value)
+		}
+		assert.ok(!customer.html.includes('>VIES-Prüfung</h2>'))
+	})
+}
+
+for (const [country, vatId, reason] of [
+	['DE', 'DE123456789', 'Lieferung innerhalb Deutschlands.'],
+	['PL', '', 'Keine USt-IdNr. angegeben.'],
+	['AE', '', 'Lieferung außerhalb des EU-Mehrwertsteuergebiets.'],
+]) {
+	test(`owner email explains why VIES was not checked for ${country} with VAT ID ${vatId || 'missing'}`, async () => {
+		const api = harness()
+		const body = order()
+		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Test company' })
+		const { calculateQuote } = loadModule('src/lib/checkout.ts')
+		const quote = calculateQuote(body.cart, country)
+		Object.assign(body, { expectedTotalCents: quote.totalCents, expectedVatRate: quote.vatRate })
+		assert.equal((await api.post(body)).status, 200)
+		const [owner, customer] = api.calls[0].emails
+		assert.ok(owner.html.includes('>VIES-Prüfung</h2>'))
+		assert.ok(owner.html.includes(`Nicht durchgeführt: ${reason}`))
+		assert.ok(!owner.html.includes('Gültige USt-IdNr. bei Bestellabgabe durch VIES bestätigt.'))
+		assert.ok(!customer.html.includes('>VIES-Prüfung</h2>'))
+	})
+}
+
+test('private orders do not include a VIES section', async () => {
+	const api = harness()
+	assert.equal((await api.post(order())).status, 200)
+	for (const email of api.calls[0].emails) assert.ok(!email.html.includes('>VIES-Prüfung</h2>'))
+})
+
+test('business email retries remain identical even when VIES request metadata changes', async () => {
+	let checks = 0
+	const api = harness({ mode: 'lost-response', fetch: async (url, options) => {
+		checks++
+		return Response.json({
+			...JSON.parse(options.body), valid: true,
+			requestDate: `2026-11-10T12:00:0${checks}Z`, requestIdentifier: `check-${checks}`,
+		})
+	} })
+	const body = order()
+	Object.assign(body.customer, { country: 'PL', vatId: 'PL1234567890', isBusiness: true, companyName: 'Test company' })
+	Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
+	assert.equal((await api.post(body)).status, 502)
+	assert.equal((await api.post(body)).status, 200)
+	assert.equal(checks, 2)
+	assert.equal(api.deliveries.size, 1)
+	assert.equal(JSON.stringify(api.calls[0]), JSON.stringify(api.calls[1]))
+})
+
 for (const [result, code, status] of [
 	[{ valid: false, countryCode: 'PL', vatNumber: '1234567890' }, 'VAT_INVALID', 422],
 	[{ valid: true, countryCode: 'DE', vatNumber: '1234567890' }, 'VAT_UNAVAILABLE', 503],
