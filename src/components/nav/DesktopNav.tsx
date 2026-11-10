@@ -19,7 +19,7 @@ function DesktopNav({ lng }: { lng: string }) {
 			linkName: `${t('nav.products')}`,
 		},
 		{
-			href: `/${lng}/datenschutz`,
+			href: `/${lng}/agb`,
 			linkName: `${t('nav.legal')}`,
 		},
 		{ href: `/${lng}/faq`, linkName: `${t('nav.faq')}` },
