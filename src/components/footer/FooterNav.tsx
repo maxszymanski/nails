@@ -32,9 +32,15 @@ async function FooterNav({ lng }: { lng: string }) {
 
 	return (
 		<div className="w-full flex gap-6 mt-6 md:mt-8">
-			<div className="flex-col gap-y-6  items-start w-fit max-w-[458px] md:gap-y-12 hidden md:flex">
+			<div className="flex-col gap-y-6  items-start w-fit max-w-[458px] md:gap-y-12 hidden md:flex relative">
 				<p className="hidden md:block text-grayscale-500 leading-6 ">{t('footer.info')}</p>
-				<svg width="313" height="32" viewBox="0 0 313 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg
+					width="313"
+					height="32"
+					viewBox="0 0 313 32"
+					fill="none"
+					className="absolute bottom-0 left-0 lg:relative lg:bottom-auto lg:left-auto"
+					xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M39.7442 10C35.4186 10 31.5349 12.2824 31.5349 16.4706C31.5349 21.2941 38.3954 21.6235 38.3954 24.0235C38.3954 25.0353 37.2326 25.9529 35.2791 25.9529C32.4884 25.9529 30.3953 24.6824 30.3953 24.6824L29.5116 28.9176C29.5116 28.9176 31.907 30 35.1163 30C39.8605 30 43.5814 27.6235 43.5814 23.3412C43.5814 18.2588 36.6977 17.9294 36.6977 15.6941C36.6977 14.8941 37.6512 14.0235 39.6047 14.0235C41.814 14.0235 43.6279 14.9412 43.6279 14.9412L44.5116 10.8471C44.4884 10.8471 42.5116 10 39.7442 10ZM0.116279 10.3059L0 10.9176C0 10.9176 1.81395 11.2471 3.46512 11.9294C5.5814 12.7059 5.72093 13.1529 6.09302 14.5412L9.97675 29.6706H15.186L23.1628 10.3059H17.9767L12.8372 23.4824L10.7442 12.3059C10.5581 11.0353 9.5814 10.3059 8.37209 10.3059H0.116279ZM25.2558 10.3059L21.186 29.6706H26.1395L30.1861 10.3059H25.2558ZM52.8372 10.3059C51.6512 10.3059 51.0233 10.9412 50.5581 12.0706L43.3023 29.6706H48.4884L49.4884 26.7294H55.814L56.4186 29.6706H61L57.0233 10.3059H52.8372ZM53.5116 15.5529L55.0465 22.8235H50.9302L53.5116 15.5529Z"
 						fill="#565656"
@@ -131,12 +137,20 @@ async function FooterNav({ lng }: { lng: string }) {
 						</li>
 					))}
 					<li className="mt-2 max-w-full">
-						<LinkButton variant="footer" href={`/${lng}/widerruf/formular`} restClass="font-bold underline underline-offset-4 text-left" style={{ textWrap: 'wrap' }}>
+						<LinkButton
+							variant="footer"
+							href={`/${lng}/widerruf/formular`}
+							restClass="font-bold underline underline-offset-4 text-left"
+							style={{ textWrap: 'wrap' }}>
 							{t('footer.legal.withdrawalForm')}
 						</LinkButton>
 					</li>
 					<li className="max-w-full">
-						<LinkButton variant="footer" href={`/${lng}/reklamation/formular`} restClass="text-left" style={{ textWrap: 'wrap' }}>
+						<LinkButton
+							variant="footer"
+							href={`/${lng}/reklamation/formular`}
+							restClass="text-left"
+							style={{ textWrap: 'wrap' }}>
 							{t('footer.legal.complaintForm')}
 						</LinkButton>
 					</li>
