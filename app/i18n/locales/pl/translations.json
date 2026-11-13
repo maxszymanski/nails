@@ -1,4 +1,21 @@
 {
+	"metaCheckout": {
+		"title": "Finalizacja zamówienia",
+		"ready": "Tutaj możesz dokończyć zamówienie z Facebooka lub Instagrama.",
+		"continue": "Kontynuuj zamówienie",
+		"withoutCoupon": "Kontynuuj bez kuponu",
+		"noScript": "Włącz JavaScript, aby przenieść koszyk i kontynuować zamówienie.",
+		"errors": {
+			"MISSING_PRODUCTS": "Link do zamówienia nie zawiera produktów. Wróć do koszyka na Facebooku lub Instagramie.",
+			"INVALID_PRODUCTS": "Link do zamówienia jest nieprawidłowy lub zawiera zbyt wiele produktów. Twój dotychczasowy koszyk nie został zmieniony.",
+			"UNKNOWN_PRODUCT": "Nie znaleziono produktu z tego linku. Twój dotychczasowy koszyk nie został zmieniony. Wybierz produkty ponownie.",
+			"INVALID_QUANTITY": "Link zawiera nieprawidłową lub zbyt dużą ilość produktów. Sprawdź ilości w koszyku na Facebooku lub Instagramie.",
+			"DUPLICATE_PRODUCT": "Ten sam produkt występuje w linku więcej niż raz. Utwórz link ponownie. Twój dotychczasowy koszyk nie został zmieniony.",
+			"UNAVAILABLE_PRODUCT": "Produkt z tego linku jest obecnie niedostępny. Twój dotychczasowy koszyk nie został zmieniony.",
+			"COUPON_UNSUPPORTED": "Nasz sklep nie obsługuje obecnie kuponów. Nie naliczono rabatu i nie zmieniono koszyka. Możesz kontynuować bez kuponu.",
+			"IMPORT_FAILED": "Nie udało się przygotować koszyka. Odśwież stronę i sprawdź, czy przeglądarka pozwala na zapisywanie koszyka."
+		}
+	},
 	"a11y": {
 		"navigation": "Nawigacja główna",
 		"openMenu": "Otwórz menu",

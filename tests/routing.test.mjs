@@ -95,3 +95,17 @@ test('the shared product feed never redirects or negotiates a language', () => {
 		assert.equal(proxy(request(pathname)).status, 404)
 	}
 })
+
+test('Meta checkout preserves encoded cart and attribution parameters through locale routing', () => {
+	const query = '?products=ind-nails%3A3%2Cind-frame%3A1&coupon=&fbclid=test&cart_origin=instagram&utm_source=facebook&utm_campaign=one%20two'
+	const response = proxy(request(`/meta-checkout${query}`, { cookie: 'i18next=pl' }))
+	assert.equal(response.status, 307)
+	assert.equal(response.headers.get('location'), `https://www.iwonnaildisplay.de/pl/meta-checkout${query}`)
+	for (const lng of ['de', 'pl', 'en']) {
+		const localized = proxy(request(`/${lng}/meta-checkout${query}`, { cookie: 'i18next=en' }))
+		assert.equal(localized.status, 200)
+		assert.equal(localized.headers.get('location'), null)
+		assert.equal(localized.headers.get('x-i18next-current-language'), lng)
+	}
+	assert.equal(proxy(request(`/plx/meta-checkout${query}`)).status, 404)
+})

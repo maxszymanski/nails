@@ -1,4 +1,21 @@
 {
+	"metaCheckout": {
+		"title": "Checkout",
+		"ready": "You can complete your Facebook or Instagram order here.",
+		"continue": "Continue order",
+		"withoutCoupon": "Continue without a coupon",
+		"noScript": "Please enable JavaScript to transfer your cart and continue your order.",
+		"errors": {
+			"MISSING_PRODUCTS": "The checkout link contains no products. Please return to your cart on Facebook or Instagram.",
+			"INVALID_PRODUCTS": "The checkout link is invalid or contains too many products. Your previous cart has not been changed.",
+			"UNKNOWN_PRODUCT": "A product in this link could not be found. Your previous cart has not been changed. Please select the products again.",
+			"INVALID_QUANTITY": "The checkout link contains an invalid or excessive quantity. Please check the quantities in your Facebook or Instagram cart.",
+			"DUPLICATE_PRODUCT": "A product appears more than once in the checkout link. Please create the link again. Your previous cart has not been changed.",
+			"UNAVAILABLE_PRODUCT": "A product in this link is currently unavailable. Your previous cart has not been changed.",
+			"COUPON_UNSUPPORTED": "Our shop does not currently support coupons. No discount has been applied and your cart has not been changed. You can continue without a coupon.",
+			"IMPORT_FAILED": "The cart could not be prepared. Please reload the page and check that your browser allows cart storage."
+		}
+	},
 	"a11y": {
 		"navigation": "Main navigation",
 		"openMenu": "Open menu",

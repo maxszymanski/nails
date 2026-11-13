@@ -59,9 +59,9 @@ The initial Google taxonomy categories describe the products' display purpose:
 5. Check import diagnostics, images, gross prices and the six retailer IDs.
    Changing IDs in an existing catalog can create duplicates, so test a new
    catalog before replacing a working one.
-6. The Meta Checkout URL is a separate integration. This feed does not populate
-   the cart or create orders. Confirm imported retailer IDs before connecting and
-   validating the checkout link.
+6. The Meta Checkout URL is documented in [meta-checkout.md](meta-checkout.md).
+   This feed itself does not populate the cart or create orders. Confirm imported
+   retailer IDs before connecting and validating the checkout link.
 
 ## Google Merchant Center Setup
 

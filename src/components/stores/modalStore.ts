@@ -4,6 +4,7 @@ type ModalType = 'cart'
 
 type ModalStore = {
 	openModal: ModalType | null
+	modalVersion: number
 	setOpenModal: (modalType: ModalType) => void
 	closeModal: () => void
 	show: boolean
@@ -12,7 +13,8 @@ type ModalStore = {
 
 const useModalStore = create<ModalStore>()(set => ({
 	openModal: null,
-	setOpenModal: modalType => set({ openModal: modalType }),
+	modalVersion: 0,
+	setOpenModal: modalType => set(state => ({ openModal: modalType, modalVersion: state.modalVersion + 1 })),
 	closeModal: () => set({ openModal: null }),
 	show: true,
 	setShow: show => set({ show }),

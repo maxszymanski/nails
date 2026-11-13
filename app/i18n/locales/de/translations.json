@@ -1,4 +1,21 @@
 {
+	"metaCheckout": {
+		"title": "Zur Kasse",
+		"ready": "Deine Bestellung von Facebook oder Instagram kannst du hier abschließen.",
+		"continue": "Bestellung fortsetzen",
+		"withoutCoupon": "Ohne Gutscheincode fortfahren",
+		"noScript": "Bitte aktiviere JavaScript, um den Warenkorb zu übernehmen und die Bestellung fortzusetzen.",
+		"errors": {
+			"MISSING_PRODUCTS": "Der Checkout-Link enthält keine Produkte. Bitte kehre zu deinem Warenkorb auf Facebook oder Instagram zurück.",
+			"INVALID_PRODUCTS": "Der Checkout-Link ist ungültig oder enthält zu viele Produkte. Dein bisheriger Warenkorb wurde nicht geändert.",
+			"UNKNOWN_PRODUCT": "Ein Produkt aus diesem Link wurde nicht gefunden. Dein bisheriger Warenkorb wurde nicht geändert. Bitte wähle die Produkte erneut aus.",
+			"INVALID_QUANTITY": "Der Checkout-Link enthält eine ungültige oder zu große Menge. Bitte prüfe die Mengen in deinem Warenkorb auf Facebook oder Instagram.",
+			"DUPLICATE_PRODUCT": "Ein Produkt ist im Checkout-Link mehrfach enthalten. Bitte erstelle den Link erneut. Dein bisheriger Warenkorb wurde nicht geändert.",
+			"UNAVAILABLE_PRODUCT": "Ein Produkt aus diesem Link ist derzeit nicht verfügbar. Dein bisheriger Warenkorb wurde nicht geändert.",
+			"COUPON_UNSUPPORTED": "Unser Shop unterstützt derzeit keine Gutscheincodes. Es wurde kein Rabatt angewendet und dein Warenkorb wurde nicht geändert. Du kannst ohne Gutscheincode fortfahren.",
+			"IMPORT_FAILED": "Der Warenkorb konnte nicht vorbereitet werden. Bitte lade die Seite neu und prüfe, ob dein Browser die Speicherung des Warenkorbs zulässt."
+		}
+	},
 	"a11y": {
 		"navigation": "Hauptnavigation",
 		"openMenu": "Menü öffnen",

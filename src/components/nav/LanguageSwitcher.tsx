@@ -38,7 +38,8 @@ export default function LanguageSwitcher({ lng, isFooter = false }: { lng: strin
 
 	const handleSelect = (value: string) => {
 		const newPath = pathname.replace(`/${lng}`, `/${value}`)
-		router.push(newPath)
+		const query = pathname === `/${lng}/meta-checkout` ? window.location.search : ''
+		router.push(`${newPath}${query}`)
 		setOpen(false)
 	}
 
