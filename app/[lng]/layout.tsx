@@ -18,6 +18,9 @@ const outfit = Outfit({
 
 const defaultMetadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
+	verification: {
+		other: { 'facebook-domain-verification': 'd64ex3qt37c5a94vs1vgikduegtt08' },
+	},
 	icons: {
 		icon: [
 			{ url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
