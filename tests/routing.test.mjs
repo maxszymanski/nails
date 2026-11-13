@@ -82,3 +82,16 @@ test('only valid full language segments in referrers can set the language cookie
 	assert.equal(proxy(request('/pl', { referer: 'https://www.iwonnaildisplay.de/en/produkte' })).cookies.get('i18next')?.value, 'en')
 	assert.equal(proxy(request('/pl', { referer: 'https://www.iwonnaildisplay.de/english' })).cookies.get('i18next'), undefined)
 })
+
+test('the shared product feed never redirects or negotiates a language', () => {
+	for (const headers of [{}, { 'accept-language': 'pl', cookie: 'i18next=en' }, { referer: 'https://www.iwonnaildisplay.de/pl' }]) {
+		const response = proxy(request('/feeds/products.xml', headers))
+		assert.equal(response.status, 200)
+		assert.equal(response.headers.get('location'), null)
+		assert.equal(response.headers.get('x-i18next-current-language'), null)
+		assert.equal(response.headers.get('set-cookie'), null)
+	}
+	for (const pathname of ['/feeds', '/feeds/other.xml', '/feeds/products.xml/extra', '/feeds/products.xmlx', '/plx/feeds/products.xml']) {
+		assert.equal(proxy(request(pathname)).status, 404)
+	}
+})

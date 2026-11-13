@@ -193,8 +193,8 @@ for (const [lng, country, rate, amount, button] of [
 
 for (const [items, expected] of [
 	[[{ id: 4, quantity: 1 }], 118.99],
-	[[{ id: 0, quantity: 3 }], 30.6],
-	[[{ id: 1, quantity: 10 }, { id: 0, quantity: 2 }, { id: 2, quantity: 2 }], 177.07],
+	[[{ id: 0, quantity: 3 }], 30.61],
+	[[{ id: 1, quantity: 10 }, { id: 0, quantity: 2 }, { id: 2, quantity: 2 }], 177.08],
 	[[{ id: 1, quantity: 10 }, { id: 5, quantity: 2 }], 178.26],
 	[[{ id: 1, quantity: 5 }, { id: 5, quantity: 6 }, { id: 0, quantity: 3 }], 203.49],
 ]) {
@@ -811,7 +811,9 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 		]) {
 			for (const mode of ['private', 'business', 'businessVatId']) {
 				const vatRate = mode === 'businessVatId' && viesEligible ? 0 : standardRate
-				const productVatCents = roundFraction(subtotalCents * (vatRate * 10), 1000)
+				const productVatCents = country === 'DE'
+					? items.reduce((sum, item) => sum + [137, 228, 137, 1520, 1900, 283][item.id] * item.quantity, 0)
+					: roundFraction(subtotalCents * (vatRate * 10), 1000)
 				const shippingCents = country === 'DE' ? (subtotalCents + productVatCents >= 5000 ? 0 : 490) : prices[band]
 				const shippingVatCents = shippingCents - roundFraction(shippingCents * 1000, 1000 + vatRate * 10)
 				const expected = {

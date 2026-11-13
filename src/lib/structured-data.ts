@@ -1,6 +1,6 @@
 import { languages } from '@/app/i18n/settings'
 import { company } from '@/src/data/company'
-import type { Product } from '@/src/data/products'
+import { PRODUCT_BRAND, type Product } from '@/src/data/products'
 import { SITE_URL } from '@/src/lib/seo'
 import { getGermanGrossPrice } from '@/src/lib/pricing'
 
@@ -51,14 +51,15 @@ export function productStructuredData(product: Product, lng: string, name: strin
 		url,
 		name,
 		description,
+		sku: product.sku,
 		image: product.images.map(image => new URL(image, SITE_URL).href),
-		brand: { '@type': 'Brand', name: 'Iwon Nail Display' },
+		brand: { '@type': 'Brand', name: PRODUCT_BRAND },
 		offers: {
 			'@type': 'Offer',
 			url,
 			price: getGermanGrossPrice(product.price).toFixed(2),
 			priceCurrency: 'EUR',
-			availability: 'https://schema.org/InStock',
+			availability: product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
 			itemCondition: 'https://schema.org/NewCondition',
 		},
 	}

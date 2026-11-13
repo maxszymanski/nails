@@ -49,6 +49,7 @@ for (const lng of ['de', 'en', 'pl']) {
 			const data = productStructuredData(product, lng, name, description)
 			assert.equal(data.name, name)
 			assert.equal(data.description, description)
+			assert.equal(data.sku, product.sku)
 			assert.equal(data.url, `${SITE_URL}/${lng}/produkte/${product.slug}`)
 			assert.equal(data['@id'], `${data.url}#product`)
 			assert.equal(data.image.length, product.images.length)

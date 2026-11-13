@@ -10,6 +10,8 @@ export const config = {
 }
 
 export function proxy(req: NextRequest) {
+	if (req.nextUrl.pathname === '/feeds/products.xml') return NextResponse.next()
+
 	if (req.nextUrl.pathname === '/') {
 		return NextResponse.redirect(new URL(`/${fallbackLng}${req.nextUrl.search}`, req.url), 308)
 	}

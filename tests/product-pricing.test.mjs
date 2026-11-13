@@ -64,6 +64,26 @@ test('German catalog prices match checkout cents without changing the net catalo
 	}
 })
 
+for (const quantity of [2, 3, 7, 13]) {
+	test(`German checkout matches displayed unit gross prices for ${quantity} units of every product`, () => {
+		for (const product of products) {
+			const quote = calculateQuote({ items: [{ id: product.id, quantity }] }, 'DE')
+			const unitGrossCents = Math.round(expectedGross[product.id] * 100)
+			assert.equal(quote.subtotalCents + quote.productVatCents, unitGrossCents * quantity)
+			assert.equal(quote.subtotalCents, Math.round(product.price * 100) * quantity)
+		}
+	})
+}
+
+test('a mixed German cart matches the sum of all displayed gross prices', () => {
+	const cart = { items: products.map(product => ({ id: product.id, quantity: 3 })) }
+	const quote = calculateQuote(cart, 'DE')
+	const expected = expectedGross.reduce((sum, price) => sum + Math.round(price * 100) * 3, 0)
+	assert.equal(quote.subtotalCents + quote.productVatCents, expected)
+	assert.equal(quote.shippingCents, 0)
+	assert.equal(quote.totalCents, expected)
+})
+
 test('checkout retains net amounts and destination-dependent VAT', () => {
 	const cart = { items: [{ id: 0, quantity: 1 }] }
 	for (const [country, rate, vat] of [['DE', 19, 137], ['PL', 23, 166], ['AE', 0, 0]]) {

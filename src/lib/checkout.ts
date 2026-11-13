@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { products } from '@/src/data/products'
-import { GERMAN_VAT_RATE } from '@/src/lib/pricing'
+import { GERMAN_VAT_RATE, getGermanGrossPrice } from '@/src/lib/pricing'
 
 // EU standard rates: https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm
 // Supported exports use 0% German VAT; local import taxes remain the customer's responsibility.
@@ -76,18 +76,21 @@ export function calculateQuote(cart: Cart, country: string, vatExempt = false): 
 	const validated = cartSchema.safeParse(cart)
 	if (!validated.success) throw new CheckoutError('INVALID_CART', 400)
 	let subtotalCents = 0
+	let germanGrossCents = 0
 	let totalWeightGrams = 0
 	for (const item of validated.data.items) {
 		const product = products.find(product => product.id === item.id)
 		if (!product) throw new CheckoutError('INVALID_CART', 400)
 		subtotalCents += Math.round(product.price * 100) * item.quantity
+		germanGrossCents += Math.round(getGermanGrossPrice(product.price) * 100) * item.quantity
 		totalWeightGrams += product.weightGrams * item.quantity
 	}
 	if (!Number.isSafeInteger(subtotalCents) || subtotalCents <= 1) throw new CheckoutError('INVALID_CART', 400)
 	const weightBand = SHIPPING_WEIGHT_LIMITS.findIndex(limit => totalWeightGrams <= limit)
 	if (totalWeightGrams > MAX_SHIPPING_WEIGHT_GRAMS) throw new CheckoutError('WEIGHT_LIMIT')
 	const vatRate = vatExempt && country !== 'DE' ? 0 : VAT_RATES[country as keyof typeof VAT_RATES]
-	const productVatCents = Math.round(subtotalCents * vatRate / 100)
+	// Match the rounded unit gross prices published on product pages and in the feed.
+	const productVatCents = country === 'DE' ? germanGrossCents - subtotalCents : Math.round(subtotalCents * vatRate / 100)
 	const productsGrossCents = subtotalCents + productVatCents
 	const shippingZone = country === 'CH' ? 'switzerland'
 		: country === 'AE' || country === 'QA' ? 'uaeQatar'

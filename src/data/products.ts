@@ -2,13 +2,18 @@ export type ProductName = 'nails' | 'magnetic' | 'transparent' | 'frame' | 'cabi
 
 export type Product = {
 	id: number
+	sku: string
 	name: ProductName
 	slug: string
 	price: number
+	inStock: boolean
+	googleProductCategory: string
 	weightGrams: number
 	images: string[]
 	patent?: string
 }
+export const PRODUCT_BRAND = 'Iwon Nail Display'
+
 export type CompatibleProduct = {
 	id: string
 	name: string
@@ -19,9 +24,12 @@ export type CompatibleProduct = {
 export const products: Product[] = [
 	{
 		id: 0,
+		sku: 'ind-nails',
 		name: 'nails',
 		slug: `fingernagel`,
 		price: 7.2,
+		inStock: true,
+		googleProductCategory: '499897',
 		weightGrams: 30,
 		images: [
 			'/assets/nails/nail.png',
@@ -33,9 +41,12 @@ export const products: Product[] = [
 	},
 	{
 		id: 1,
+		sku: 'ind-magnetic',
 		name: 'magnetic',
 		slug: `magnetnagel`,
 		price: 12,
+		inStock: true,
+		googleProductCategory: '499897',
 		weightGrams: 35,
 		images: [
 			'/assets/magnetic/magnetic-nails.png',
@@ -47,9 +58,12 @@ export const products: Product[] = [
 	},
 	{
 		id: 2,
+		sku: 'ind-transparent',
 		name: 'transparent',
 		slug: `transparente-nagel`,
 		price: 7.2,
+		inStock: true,
+		googleProductCategory: '499897',
 		weightGrams: 30,
 		images: [
 			'/assets/transparent/transparent-nails.png',
@@ -61,9 +75,12 @@ export const products: Product[] = [
 	},
 	{
 		id: 3,
+		sku: 'ind-frame',
 		name: 'frame',
 		slug: `rahmendisplay`,
 		price: 79.99,
+		inStock: true,
+		googleProductCategory: '4160',
 		weightGrams: 890,
 		images: [
 			'/assets/frame/frame-nails.png',
@@ -74,9 +91,12 @@ export const products: Product[] = [
 	},
 	{
 		id: 4,
+		sku: 'ind-cabinet',
 		name: 'cabinet',
 		slug: `vitrinenauslage`,
 		price: 99.99,
+		inStock: true,
+		googleProductCategory: '4160',
 		weightGrams: 2181,
 		images: [
 			'/assets/cabinet/cabinet-nails.png',
@@ -87,9 +107,12 @@ export const products: Product[] = [
 	},
 	{
 		id: 5,
+		sku: 'ind-display',
 		name: 'display',
 		slug: `nagelstreifen`,
 		price: 14.9,
+		inStock: true,
+		googleProductCategory: '499897',
 		weightGrams: 109,
 		images: [
 			'/assets/display/display-nails.png',
