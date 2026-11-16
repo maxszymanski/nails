@@ -13,6 +13,7 @@ export function productFeedXml() {
 		'g:image_link': new URL(product.images[0], SITE_URL).href,
 		'g:additional_image_link': product.images.slice(1).map(image => new URL(image, SITE_URL).href),
 		'g:availability': product.inStock ? 'in_stock' : 'out_of_stock',
+		quantity_to_sell_on_facebook: product.inStock ? 500 : 0,
 		'g:condition': 'new',
 		'g:price': `${getGermanGrossPrice(product.price).toFixed(2)} EUR`,
 		'g:brand': PRODUCT_BRAND,

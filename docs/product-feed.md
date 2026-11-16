@@ -20,9 +20,13 @@ independent of language cookies, browser language and URL query parameters.
 - German checkout multiplies the rounded gross unit price by quantity. Net
   product values, other destination VAT calculations and payment methods remain
   unchanged.
-- No coupons, promotions, artificial stock counts, ratings or expiry dates.
+- No coupons, promotions, ratings or expiry dates.
 - All six products were confirmed new and in stock. Maintain `inStock` manually;
   this is not an inventory management integration.
+- At the owner's request, Meta's `quantity_to_sell_on_facebook` is fixed at 500
+  for each in-stock product and 0 for an out-of-stock product. It is a Meta-only
+  XML field without the `g:` prefix. Orders do not decrement this value in the
+  shop; every feed refresh sends the fixed quantity again.
 - The owner confirmed no assigned GTIN/EAN or MPN. The feed sets
   `identifier_exists` to `no`, retains the real brand and does not fabricate codes.
   If codes are assigned later, add the genuine identifiers and update this flag.
@@ -56,7 +60,10 @@ The initial Google taxonomy categories describe the products' display purpose:
    values with spaces.
 4. Enter the production feed URL. A daily refresh is sufficient for the current
    code-based catalog; request a refresh after deploying price or stock changes.
-5. Check import diagnostics, images, gross prices and the six retailer IDs.
+5. Check import diagnostics, images, gross prices, quantity to sell (500 for
+   available products) and the six retailer IDs. Ensure the shop items are
+   actually linked to this feed; changing the feed does not update unrelated
+   manually created items.
    Changing IDs in an existing catalog can create duplicates, so test a new
    catalog before replacing a working one.
 6. The Meta Checkout URL is documented in [meta-checkout.md](meta-checkout.md).

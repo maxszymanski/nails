@@ -84,6 +84,8 @@ for (const product of products) {
 		assert.equal(item['g:price'], `${expectedGross[product.id]} EUR`)
 		assert.equal(item['g:price'], `${data.offers.price} ${data.offers.priceCurrency}`)
 		assert.equal(item['g:availability'], 'in_stock')
+		assert.equal(item.quantity_to_sell_on_facebook, '500')
+		assert.equal(item['g:quantity_to_sell_on_facebook'], undefined)
 		assert.equal(item['g:condition'], 'new')
 		assert.equal(item['g:brand'], data.brand.name)
 		assert.equal(item['g:google_product_category'], product.googleProductCategory)
@@ -125,7 +127,9 @@ test('feed availability and JSON-LD share the product stock flag', () => {
 	const { productFeedXml: serialize } = loadModule('src/lib/product-feed.ts', {
 		'@/src/data/products': { products: [product], PRODUCT_BRAND },
 	})
-	assert.equal(parseFeed(serialize()).rss.channel.item['g:availability'], 'out_of_stock')
+	const item = parseFeed(serialize()).rss.channel.item
+	assert.equal(item['g:availability'], 'out_of_stock')
+	assert.equal(item.quantity_to_sell_on_facebook, '0')
 	assert.equal(productStructuredData(product, 'de', 'Test', 'Test').offers.availability, 'https://schema.org/OutOfStock')
 })
 
