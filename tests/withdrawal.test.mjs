@@ -68,8 +68,9 @@ for (const lng of ['de', 'en', 'pl']) {
 				if (block.bold) assert.ok(html.includes(`<strong>${markup(block.text)}</strong>`))
 			}
 		}
-		for (const value of [company.owner, company.street, company.postalCode, company.city, company.email]) assert.ok(html.includes(value))
-		for (const href of [company.phoneHref, `mailto:${company.email}`]) assert.ok(html.includes(`href="${href}"`))
+		for (const value of [company.owner, company.street, company.postalCode, company.city, 'return@iwonnaildisplay.de']) assert.ok(html.includes(value))
+		for (const href of [company.phoneHref, 'mailto:return@iwonnaildisplay.de']) assert.ok(html.includes(`href="${href}"`))
+		assert.ok(!html.includes(company.email))
 		const metadata = await page.generateMetadata({ params }, Promise.resolve({}))
 		assert.equal(metadata.alternates.canonical, `https://www.iwonnaildisplay.de/${lng}/widerruf`)
 		for (const language of ['de', 'en', 'pl']) {

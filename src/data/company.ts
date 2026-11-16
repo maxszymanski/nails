@@ -5,6 +5,8 @@ export const company = {
 	postalCode: '40699',
 	city: 'Erkrath',
 	email: 'Iwon@iwonnaildisplay.de',
+	withdrawalEmail: 'return@iwonnaildisplay.de',
+	complaintEmail: 'complaints@iwonnaildisplay.de',
 	phone: '+49 (0) 177 3500405',
 	phoneHref: 'tel:+491773500405',
 	website: 'https://iwonnaildisplay.de/',

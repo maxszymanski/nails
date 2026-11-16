@@ -72,8 +72,8 @@ async function page({ params }: { params: Params }) {
 										return (
 											<p key={index} className="text-grayscale-500 leading-6 mt-4">
 												<strong>
-													<a className="underline break-all" href={block.type === 'email' ? `mailto:${company.email}` : company.phoneHref}>
-														{block.type === 'email' ? company.email : company.phone}
+													<a className="underline break-all" href={block.type === 'email' ? `mailto:${company.complaintEmail}` : company.phoneHref}>
+														{block.type === 'email' ? company.complaintEmail : company.phone}
 													</a>
 												</strong>
 											</p>
@@ -90,7 +90,7 @@ async function page({ params }: { params: Params }) {
 												</p>
 												<p className="text-black leading-6 mt-4">
 													<strong>{t('complaints.contact.email')}:</strong>{' '}
-													<a className="underline break-all" href={`mailto:${company.email}`}>{company.email}</a><br />
+													<a className="underline break-all" href={`mailto:${company.complaintEmail}`}>{company.complaintEmail}</a><br />
 													<strong>{t('complaints.contact.phone')}:</strong>{' '}
 													<a className="underline" href={company.phoneHref}>{company.phone}</a>
 												</p>

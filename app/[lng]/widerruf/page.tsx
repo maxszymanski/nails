@@ -67,7 +67,7 @@ async function page({ params }: { params: Params }) {
 															</>
 														)}
 														{block.contact ? <strong>{t('withdrawal.contact.email')}:</strong> : <>{t('withdrawal.contact.email')}:</>}{' '}
-														<a className="underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
+														<a className="underline break-all" href={`mailto:${company.withdrawalEmail}`}>{company.withdrawalEmail}</a>
 													</p>
 												)}
 											</div>
