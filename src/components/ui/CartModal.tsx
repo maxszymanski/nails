@@ -31,8 +31,16 @@ function CartModal() {
 
 	const items = useCartStore(state => state.items)
 
-	const totalValue = items.reduce((sum, item) => sum + Math.round((products.find(product => product.id === item.id)?.price || 0) * 100) * item.quantity, 0) / 100
-	const totalWeightGrams = items.reduce((sum, item) => sum + (products.find(product => product.id === item.id)?.weightGrams || 0) * item.quantity, 0)
+	const totalValue =
+		items.reduce(
+			(sum, item) =>
+				sum + Math.round((products.find(product => product.id === item.id)?.price || 0) * 100) * item.quantity,
+			0,
+		) / 100
+	const totalWeightGrams = items.reduce(
+		(sum, item) => sum + (products.find(product => product.id === item.id)?.weightGrams || 0) * item.quantity,
+		0,
+	)
 	const exceedsWeightLimit = totalWeightGrams > MAX_SHIPPING_WEIGHT_GRAMS
 
 	const cartInformation: CartInformation = {
@@ -42,10 +50,12 @@ function CartModal() {
 		})),
 	}
 
+	// remove step === 4 from className after adding compatible products images
+
 	return (
 		<Modal labelledBy={titleId} stopReset={isSubmitting}>
 			<div
-				className={`w-screen p-4 sm:p-8 flex flex-col min-h-full overflow-x-hidden   lg:flex-1 bg-white ${step === 1 ? 'sm:max-w-[424px] xl:max-h-full' : 'sm:max-w-[484px] '}`}>
+				className={`w-screen p-4 sm:p-8 flex flex-col min-h-full overflow-x-hidden   lg:flex-1 bg-white ${step === 1 || step === 4 ? 'sm:max-w-[424px] xl:max-h-full' : 'sm:max-w-[484px] '}`}>
 				<div className="flex items-center justify-between gap-2 pb-4 sm:pb-6 border-b border-grayscale-200">
 					<h2 id={titleId} className="sm:text-xl sm:leading-8  leading-6">
 						{' '}
@@ -148,13 +158,23 @@ function CartModal() {
 							<span className="text-grayscale-500">{t('checkout.netProducts')}:</span>
 							<span className="shrink-0">{totalValue.toFixed(2).replace('.', ',')} EUR</span>
 						</p>
-						{exceedsWeightLimit && <div id={weightWarningId} role="alert" className="text-sm leading-6">
-							<p className="text-red-700">{t('checkout.errors.WEIGHT_LIMIT')}</p>
-							<a className="block underline break-all" href={`mailto:${company.email}`}>{company.email}</a>
-						</div>}
-						<Button variant="primary" type="button" restClass="w-full mb-4" disabled={exceedsWeightLimit}
+						{exceedsWeightLimit && (
+							<div id={weightWarningId} role="alert" className="text-sm leading-6">
+								<p className="text-red-700">{t('checkout.errors.WEIGHT_LIMIT')}</p>
+								<a className="block underline break-all" href={`mailto:${company.email}`}>
+									{company.email}
+								</a>
+							</div>
+						)}
+						<Button
+							variant="primary"
+							type="button"
+							restClass="w-full mb-4"
+							disabled={exceedsWeightLimit}
 							aria-describedby={exceedsWeightLimit ? weightWarningId : undefined}
-							onClick={() => { if (!exceedsWeightLimit) setStep(2) }}>
+							onClick={() => {
+								if (!exceedsWeightLimit) setStep(2)
+							}}>
 							{t('cart.quote')}
 						</Button>
 					</div>

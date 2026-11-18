@@ -28,10 +28,10 @@ function CompatibleProducts({ onClick }: { onClick?: () => void }) {
 	}
 
 	return (
-		<div className="lg:flex-1 min-h-0 lg:overflow-y-auto pt-4 lg:pt-6 flex flex-col gap-6 my-scrollbar">
+		<div className="lg:flex-1 min-h-0 lg:overflow-y-auto pt-4 lg:pt-6 flex flex-col gap-6 my-scrollbar ">
 			{compatibleProducts.map(product => (
 				<div key={product.id} className="flex gap-6 w-full">
-					<div className=" size-26 shrink-0 aspect-square relative overflow-hidden rounded-2xl  ">
+					{/* <div className=" size-26 shrink-0 aspect-square relative overflow-hidden rounded-2xl  ">
 						<Image
 							src={product.image}
 							alt={t(`images.compatible.${product.lng}`)}
@@ -40,8 +40,8 @@ function CompatibleProducts({ onClick }: { onClick?: () => void }) {
 							sizes="104px"
 							loading="eager"
 						/>
-					</div>
-					<div className="flex flex-col flex-1 min-w-0">
+					</div> */}
+					<div className="flex flex-col flex-1 min-w-0 ">
 						<h3 className="leading-6  truncate w-full uppercase text-black-primary">{product.name}</h3>
 						<p className="leading-6 text-grayscale-500">{t(`compatible.${product.lng}`)}</p>
 						<div className="mt-auto w-full h-10 rounded-full flex items-center justify-center bg-grayscale-100 xs:px-4 px-2 sm:gap-4 gap-2">
