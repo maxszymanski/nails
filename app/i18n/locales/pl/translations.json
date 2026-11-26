@@ -92,6 +92,11 @@
 			"mosslanda-four": "Dłuższa półka IKEA MOSSLANDA w kolorze drewna"
 		}
 	},
+	"promotion": {
+		"label": "Promocja świąteczna",
+		"message": "Świąteczne promocje do −{{discount}}%",
+		"link": "Zobacz produkty"
+	},
 	"nav": {
 		"home": "Strona główna",
 		"products": "Produkty",
@@ -186,6 +191,8 @@
 		"subtitle": "Odkryj wszystkie elementy systemu Iwon Nail Display, stworzone do organizacji, prezentacji i efektownego wyeksponowania Twojej kolekcji lakierów.",
 		"mayLike": "Polecane dla Ciebie",
 		"tax": "zawiera 19% VAT",
+		"regularPrice": "Cena regularna",
+		"salePrice": "Cena promocyjna",
 		"priceInfo": "Informacje o cenie i dostawie",
 		"priceNotice": "Podane ceny zawierają 19% VAT dla dostawy do Niemiec. Przy wyborze innego kraju dostawy kwota może się różnić i zostanie ponownie obliczona w koszyku zgodnie z obowiązującymi zasadami VAT.",
 		"shippingCosts": "Koszty dostawy naliczane osobno.",
@@ -1924,6 +1931,7 @@
 		"vatId": "NIP-UE z prefiksem kraju (opcjonalnie, weryfikacja VIES)",
 		"importTaxes": "VAT sklepu: 0% (eksport poza UE). Przy odbiorze mogą zostać naliczone lokalne podatki importowe, cło lub opłaty przewoźnika.",
 		"netProducts": "Produkty netto",
+		"savings": "Oszczędzasz (netto)",
 		"productVat": "VAT od produktów",
 		"grossShipping": "Dostawa brutto",
 		"includedVat": "W tym VAT łącznie",

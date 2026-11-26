@@ -92,6 +92,11 @@
 			"mosslanda-four": "Längere holzfarbene IKEA MOSSLANDA Bilderleiste"
 		}
 	},
+	"promotion": {
+		"label": "Weihnachtsaktion",
+		"message": "Weihnachtsangebote bis −{{discount}}%",
+		"link": "Produkte entdecken"
+	},
 	"nav": {
 		"home": "Startseite",
 		"products": "Produkte",
@@ -187,6 +192,8 @@
 		"subtitle": "Entdecken Sie alle Komponenten des Iwon Nail Display Systems – entwickelt für die Organisation, Präsentation und ansprechende Präsentation Ihrer Nagellackkollektion.",
 		"mayLike": "Für Sie Empfohlen",
 		"tax": "inkl. 19 % MwSt.",
+		"regularPrice": "Regulärer Preis",
+		"salePrice": "Aktionspreis",
 		"priceInfo": "Preis- und Versandinformationen",
 		"priceNotice": "Die angegebenen Preise enthalten 19 % MwSt. für Lieferungen nach Deutschland. Bei Auswahl eines anderen Lieferlandes kann sich der Betrag ändern und wird im Warenkorb nach den geltenden Mehrwertsteuerregelungen neu berechnet.",
 		"shippingCosts": "Zuzüglich Versandkosten.",
@@ -1925,6 +1932,7 @@
 		"vatId": "USt-IdNr. mit Länderpräfix (optional, MIAS/VIES-Prüfung)",
 		"importTaxes": "Shop-MwSt.: 0 % (Ausfuhr in ein Nicht-EU-Land). Bei der Zustellung können lokale Einfuhrumsatzsteuer, Zoll- oder Beförderungsgebühren anfallen.",
 		"netProducts": "Warenwert netto",
+		"savings": "Sie sparen (netto)",
 		"productVat": "MwSt. auf Produkte",
 		"grossShipping": "Versand inkl. MwSt.",
 		"includedVat": "Enthaltene MwSt. gesamt",

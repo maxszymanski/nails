@@ -11,7 +11,7 @@ import { languages } from '@/app/i18n/settings'
 import { pageMetadata } from '@/src/lib/seo'
 import JsonLd from '@/src/components/ui/JsonLd'
 import { productStructuredData } from '@/src/lib/structured-data'
-import { getGermanGrossPrice } from '@/src/lib/pricing'
+import ProductPrice from '@/src/components/ui/ProductPrice'
 
 type Params = Promise<{ slug: string; lng: string }>
 
@@ -107,7 +107,7 @@ async function page({ params }: { params: Params }) {
 							</p>
 							<p className=" mb-4 flex flex-wrap items-end gap-4">
 								<span className="text-[32px] leading-10 lg:text-5xl lg:leading-14">
-									{getGermanGrossPrice(product.price).toFixed(2).replace('.', ',')}€
+									<ProductPrice product={product} regularPriceLabel={t('products.regularPrice')} salePriceLabel={t('products.salePrice')} />
 								</span>
 								<span className="text-sm text-grayscale-500 leading-5 mb-2">{t('products.tax')}</span>
 							</p>

@@ -10,11 +10,13 @@ import NavList from './NavList'
 
 import LanguageSwitcher from './LanguageSwitcher'
 import { useT } from '@/app/i18n/client'
+import ChristmasPromotion from './ChristmasPromotion'
+import { products } from '@/src/data/products'
 
 function Navbar({ lng }: { lng: string }) {
 	const { t } = useT('translations')
 	const [show, setShow] = useState(true)
-	const navRef = useRef(null)
+	const navRef = useRef<HTMLElement>(null)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isExpanded, setIsExpanded] = useState(false)
 	const menuButtonRef = useRef<HTMLButtonElement>(null)
@@ -22,6 +24,7 @@ function Navbar({ lng }: { lng: string }) {
 	const [isSocialOpen, setIsSocialOpen] = useState(false)
 
 	const pathname = usePathname()
+	const discount = Math.max(0, ...products.map(product => product.discount || 0))
 
 	const toogleNav = () => {
 		setIsExpanded(is => !is)
@@ -48,7 +51,7 @@ function Navbar({ lng }: { lng: string }) {
 	useEffect(() => {
 		const handleScroll = () => {
 			const currentY = window.scrollY
-			const triggerScroll = 88
+			const triggerScroll = navRef.current?.parentElement?.offsetHeight || 88
 
 			if (currentY > triggerScroll) {
 				if (currentY > lastScrollY) {
@@ -69,21 +72,24 @@ function Navbar({ lng }: { lng: string }) {
 	}, [lastScrollY, isExpanded])
 
 	return (
-		<>
-			<header className="w-full">
+		<header
+			className={`w-full shrink-0 ${discount > 0 ? 'pt-[var(--promotion-height)] [--promotion-height:64px] md:[--promotion-height:44px]' : '[--promotion-height:0px]'}`}>
+			<div
+				onFocusCapture={() => setShow(true)}
+				className={`fixed top-0 inset-x-0 z-60 bg-white duration-400 delay-200 transition-transform motion-reduce:transition-none motion-reduce:delay-0 ${show ? 'translate-y-0' : '-translate-y-full'}`}>
+				{discount > 0 && <ChristmasPromotion lng={lng} discount={discount} />}
 				<nav
 					aria-label={t('a11y.navigation')}
-					onFocusCapture={() => setShow(true)}
 					onKeyDown={event => {
 						if (event.key === 'Escape' && isExpanded) {
 							closeNav()
 							menuButtonRef.current?.focus()
 						}
 					}}
-					className={`px-4 lg:left-1/2 lg:-translate-x-1/2 left-0 duration-400  fixed top-0 z-60 flex flex-col xl:max-w-[1172px]  xl:mx-auto  w-full transition-all ${show ? 'translate-y-0' : '-translate-y-full'} ${isExpanded ? 'overflow-y-auto max-h-dvh  h-full' : 'overflow-y-hidden max-h-22'}  lg:max-h-22 delay-200 lg:overflow-y-visible`}
+					className={`px-4 relative mx-auto z-60 flex flex-col xl:max-w-[1172px] w-full ${isExpanded ? 'overflow-y-auto max-h-[calc(100dvh-var(--promotion-height))] h-[calc(100dvh-var(--promotion-height))]' : 'overflow-y-hidden max-h-22'} lg:max-h-22 lg:overflow-y-visible`}
 					ref={navRef}>
 					{/* mobile */}
-					<div className="relative  py-6 w-full flex justify-between items-center z-20 lg:hidden ">
+					<div className="relative shrink-0 py-6 w-full flex justify-between items-center z-20 lg:hidden ">
 						<LogoLink />
 						<div className="flex items-center gap-4">
 							{' '}
@@ -138,7 +144,7 @@ function Navbar({ lng }: { lng: string }) {
 						id="mobile-navigation"
 						inert={!isExpanded}
 						aria-hidden={!isExpanded}
-						className={`lg:hidden flex flex-col h-dvh justify-between relative pb-4 w-full ${!isExpanded ? '-z-10 opacity-0 pointer-events-none delay-1000' : ' z-60 opacity-100 '}`}>
+						className={`lg:hidden flex flex-col flex-1 min-h-max justify-between relative pb-4 w-full ${!isExpanded ? '-z-10 opacity-0 pointer-events-none delay-1000' : ' z-60 opacity-100 '}`}>
 						<NavList
 							lng={lng}
 							isExpanded={isExpanded}
@@ -147,7 +153,7 @@ function Navbar({ lng }: { lng: string }) {
 						/>
 
 						<div
-							className={`w-full  sticky bottom-0 transition-all duration-500 ${
+							className={`w-full transition-all duration-500 ${
 								!isExpanded
 									? 'opacity-0 text-grayscale -translate-y-4 delay-100'
 									: 'opacity-100 text-grayscale translate-y-0 delay-900'
@@ -159,15 +165,13 @@ function Navbar({ lng }: { lng: string }) {
 					{/* desktop */}
 					<DesktopNav lng={lng} />
 				</nav>
-			</header>
+			</div>
 			<div
-				className={`fixed top-8 right-8 z-55 w-1 h-1 rounded-full bg-white
+				className={`fixed top-[calc(2rem+var(--promotion-height))] right-8 z-55 w-1 h-1 rounded-full bg-white
     transition-transform will-change-transform pointer-events-none  origin-center duration-1000 lg:hidden
     ${isExpanded ? 'scale-[800] ease-[cubic-bezier(0.55,0.055,0.675,0.19)]' : 'scale-0 '}`}
 				style={{ transformOrigin: 'center' }}></div>
-			<div
-				className={`  w-full fixed top-0 left-0 z-20 h-22 bg-white duration-400 delay-200 transition-transform ${show ? 'translate-y-0' : '-translate-y-full'}`}></div>
-		</>
+		</header>
 	)
 }
 

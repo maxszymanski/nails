@@ -1,0 +1,91 @@
+.promotion {
+	position: relative;
+	height: var(--promotion-height);
+	overflow: hidden;
+	background: #8f2928;
+	color: #fff4e6;
+	letter-spacing: 0;
+}
+
+.content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding-inline: 40px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.message,
+.link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.message {
+	font-weight: 500;
+}
+
+.gift {
+	flex-shrink: 0;
+	color: #f1ca79;
+}
+
+.link {
+	min-height: 24px;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.link:hover {
+	text-decoration-thickness: 2px;
+}
+
+.link:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+.leftDecoration,
+.rightDecoration {
+	position: absolute;
+	top: 0;
+	height: 48px;
+	background-image: url('/assets/christmas-decoration.webp');
+	background-repeat: no-repeat;
+	background-size: 144px 48px;
+	pointer-events: none;
+}
+
+.leftDecoration {
+	left: -96px;
+	width: 144px;
+}
+
+.rightDecoration {
+	right: -10px;
+	width: 80px;
+	transform: scaleX(-1) rotate(180deg);
+}
+
+@media (min-width: 768px) {
+	.content {
+		flex-direction: row;
+		gap: 24px;
+		padding-inline: 144px;
+	}
+
+	.leftDecoration {
+		left: 0;
+	}
+	.rightDecoration {
+		right: 0;
+	}
+}

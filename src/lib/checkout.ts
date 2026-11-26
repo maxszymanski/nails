@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { products } from '@/src/data/products'
-import { GERMAN_VAT_RATE, getGermanGrossPrice } from '@/src/lib/pricing'
+import { GERMAN_VAT_RATE, getDiscountedPrice, getGermanGrossPrice } from '@/src/lib/pricing'
 
 // EU standard rates: https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm
 // Supported exports use 0% German VAT; local import taxes remain the customer's responsibility.
@@ -56,6 +56,7 @@ export type Cart = z.infer<typeof cartSchema>
 export type Quote = {
 	totalWeightGrams: number
 	subtotalCents: number
+	discountCents: number
 	productVatCents: number
 	shippingCents: number
 	shippingVatCents: number
@@ -76,13 +77,17 @@ export function calculateQuote(cart: Cart, country: string, vatExempt = false): 
 	const validated = cartSchema.safeParse(cart)
 	if (!validated.success) throw new CheckoutError('INVALID_CART', 400)
 	let subtotalCents = 0
+	let discountCents = 0
 	let germanGrossCents = 0
 	let totalWeightGrams = 0
 	for (const item of validated.data.items) {
 		const product = products.find(product => product.id === item.id)
 		if (!product) throw new CheckoutError('INVALID_CART', 400)
-		subtotalCents += Math.round(product.price * 100) * item.quantity
-		germanGrossCents += Math.round(getGermanGrossPrice(product.price) * 100) * item.quantity
+		const price = getDiscountedPrice(product.price, product.discount)
+		const unitCents = Math.round(price * 100)
+		subtotalCents += unitCents * item.quantity
+		discountCents += (Math.round(product.price * 100) - unitCents) * item.quantity
+		germanGrossCents += Math.round(getGermanGrossPrice(price) * 100) * item.quantity
 		totalWeightGrams += product.weightGrams * item.quantity
 	}
 	if (!Number.isSafeInteger(subtotalCents) || subtotalCents <= 1) throw new CheckoutError('INVALID_CART', 400)
@@ -102,7 +107,7 @@ export function calculateQuote(cart: Cart, country: string, vatExempt = false): 
 	const shippingVatCents = shippingCents - Math.round(shippingCents * 100 / (100 + vatRate))
 	return {
 		totalWeightGrams,
-		subtotalCents, productVatCents, shippingCents, shippingVatCents,
+		subtotalCents, discountCents, productVatCents, shippingCents, shippingVatCents,
 		vatCents: productVatCents + shippingVatCents,
 		vatRate, totalCents: productsGrossCents + shippingCents,
 	}

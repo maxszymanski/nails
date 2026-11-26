@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { Product } from '@/src/data/products'
 import { useCartStore } from '../stores/CartStore'
 import { toast } from 'react-toastify'
-import { getGermanGrossPrice } from '@/src/lib/pricing'
+import ProductPrice from '@/src/components/ui/ProductPrice'
 import PriceInfoTooltip from './PriceInfoTooltip'
 
 function ProductCard({ item, lng }: { item: Product; lng: string }) {
@@ -43,8 +43,8 @@ function ProductCard({ item, lng }: { item: Product; lng: string }) {
 					{t(`products.products.${item.name}`)}{' '}
 				</h2>
 				<div className="flex shrink-0 items-center gap-1">
-					<p className="text-xl leading-8 text-nowrap">
-						{getGermanGrossPrice(item.price).toFixed(2).replace('.', ',')}€
+					<p className="text-xl leading-8">
+						<ProductPrice product={item} regularPriceLabel={t('products.regularPrice')} salePriceLabel={t('products.salePrice')} />
 					</p>
 					<PriceInfoTooltip lng={lng} />
 				</div>

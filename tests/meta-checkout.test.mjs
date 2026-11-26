@@ -39,6 +39,7 @@ function loadModule(relativePath, overrides = {}, globals = {}, cache = new Map(
 const { products } = loadModule('src/data/products.ts')
 const { parseMetaCheckout } = loadModule('src/lib/meta-checkout.ts')
 const { productFeedXml } = loadModule('src/lib/product-feed.ts')
+const { calculateQuote } = loadModule('src/lib/checkout.ts')
 const input = products => ({ products })
 
 for (const [value, expected] of [
@@ -68,6 +69,17 @@ test('all content IDs map directly from the unchanged feed, not Meta Graph or in
 		const result = parseMetaCheckout(input(`${item['g:id']}:1`))
 		assert.equal(result.ok, true)
 		assert.equal(products.find(product => product.sku === item['g:id']).id, result.items[0].id)
+	}
+})
+
+test('Meta imports use the same sale unit prices as the feed and checkout, without URL discounts', () => {
+	const feed = new XMLParser().parse(productFeedXml()).rss.channel.item
+	for (const item of feed) {
+		const result = parseMetaCheckout({ products: `${item['g:id']}:3`, discount: '99', price: '0.01' })
+		assert.equal(result.ok, true)
+		const quote = calculateQuote({ items: result.items.map(({ id, quantity }) => ({ id, quantity })) }, 'DE')
+		const saleCents = Math.round(parseFloat(item['g:sale_price']) * 100)
+		assert.equal(quote.subtotalCents + quote.productVatCents, saleCents * 3)
 	}
 })
 
@@ -227,6 +239,7 @@ for (const lng of ['de', 'pl', 'en']) {
 
 test('Meta uses the ordinary first cart step without an extra order-form summary', () => {
 	const result = parseMetaCheckout(input('ind-nails:3,ind-frame:1'))
+	for (const item of result.items) item.price = 0.01
 	const { default: CartModal } = loadModule('src/components/ui/CartModal.tsx', {
 		'@/app/i18n/client': { useT: () => ({ t: key => key }) },
 		'../stores/CartStore': { useCartStore: selector => selector({ items: result.items }) },
@@ -242,6 +255,10 @@ test('Meta uses the ordinary first cart step without an extra order-form summary
 	assert.ok(ordinary.includes('cart.quote'))
 	assert.ok(ordinary.includes('data-product="0" data-quantity="3"'))
 	assert.ok(ordinary.includes('data-product="3" data-quantity="1"'))
+	assert.ok(ordinary.includes('101,59 EUR'))
+	assert.ok(ordinary.includes('55,12 EUR'))
+	assert.ok(ordinary.includes('46,47 EUR'))
+	assert.ok(ordinary.includes('checkout.savings'))
 	assert.ok(!ordinary.includes('<ul'))
 	assert.ok(!ordinary.match(/<h2[^>]*>/)[0].includes('tabindex'))
 })

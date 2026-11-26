@@ -9,6 +9,6 @@ export const company = {
 	complaintEmail: 'complaints@iwonnaildisplay.de',
 	phone: '+49 (0) 177 3500405',
 	phoneHref: 'tel:+491773500405',
-	website: 'https://iwonnaildisplay.de/',
+	website: 'https://www.iwonnaildisplay.de/',
 	vatId: 'DE238234451',
 } as const

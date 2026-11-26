@@ -17,10 +17,10 @@ independent of language cookies, browser language and URL query parameters.
 - Product data, stock flags, images, shipping weights and catalog IDs:
   `src/data/products.ts`.
 - Gross prices use the same helper as visible product prices and JSON-LD.
-- German checkout multiplies the rounded gross unit price by quantity. Net
-  product values, other destination VAT calculations and payment methods remain
-  unchanged.
-- No coupons, promotions, ratings or expiry dates.
+- German checkout multiplies the rounded discounted gross unit price by quantity.
+  Other destinations apply their existing VAT rules to discounted net values.
+  Payment methods remain unchanged.
+- No coupons, ratings or expiry dates.
 - All six products were confirmed new and in stock. Maintain `inStock` manually;
   this is not an inventory management integration.
 - At the owner's request, Meta's `quantity_to_sell_on_facebook` is fixed at 500
@@ -30,6 +30,21 @@ independent of language cookies, browser language and URL query parameters.
 - The owner confirmed no assigned GTIN/EAN or MPN. The feed sets
   `identifier_exists` to `no`, retains the real brand and does not fabricate codes.
   If codes are assigned later, add the genuine identifiers and update this flag.
+
+## Discount Preview
+
+Discount branch preview: `products.ts` accepts an optional percentage `discount`.
+The catalog UI, cart, checkout, order emails, JSON-LD and feed use the shared
+rounded discounted net price. Cart savings are explicitly shown excluding VAT;
+German free shipping starts at EUR 50 gross AFTER discounts. Existing cart
+sessions and Meta imports are priced from the current catalog, not stored or URL
+prices. The server recalculates and rejects stale checkout totals before sending
+order emails.
+The feed keeps the base German gross price in `g:price` and adds `g:sale_price`
+only when the final price is lower. Omit `discount` or set it to 0 to remove it.
+No campaign end date or historical reference price has been assumed.
+Do not publish this campaign to production until the required price-reference
+information has been completed.
 
 ## Stable Catalog IDs
 

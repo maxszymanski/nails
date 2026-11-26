@@ -39,6 +39,7 @@ const { calculateQuote } = loadModule('src/lib/checkout.ts')
 const { SITE_URL } = loadModule('src/lib/seo.ts')
 const translations = JSON.parse(readFileSync(path.join(root, 'app/i18n/locales/de/translations.json'), 'utf8'))
 const expectedGross = ['8.57', '14.28', '8.57', '95.19', '118.99', '17.73']
+const expectedSale = ['6.00', '10.00', '6.00', '47.60', '59.50', '12.41']
 const feed = parseFeed(productFeedXml())
 
 test('the feed is a complete UTF-8 RSS 2.0 catalog in the Google namespace', () => {
@@ -63,13 +64,12 @@ test('catalog identifiers are fixed, unique and separate from internal cart IDs 
 		assert.equal(item['g:identifier_exists'], 'no')
 		assert.equal(item['g:gtin'], undefined)
 		assert.equal(item['g:mpn'], undefined)
-		assert.equal(item['g:sale_price'], undefined)
 		assert.equal(item['g:inventory'], undefined)
 	}
 })
 
 for (const product of products) {
-	test(`feed data for ${product.name} matches its landing page, JSON-LD and German checkout`, () => {
+	test(`feed sale for ${product.name} matches JSON-LD and checkout`, () => {
 		const item = feed.rss.channel.item.find(item => item['g:id'] === product.sku)
 		const title = translations.products.products[product.name]
 		const description = translations.products.description[product.name]
@@ -82,7 +82,9 @@ for (const product of products) {
 		assert.equal(item['g:image_link'], data.image[0])
 		assert.deepEqual(item['g:additional_image_link'], Array.from(data.image.slice(1)))
 		assert.equal(item['g:price'], `${expectedGross[product.id]} EUR`)
-		assert.equal(item['g:price'], `${data.offers.price} ${data.offers.priceCurrency}`)
+		assert.equal(item['g:sale_price'], `${expectedSale[product.id]} EUR`)
+		assert.equal(item['g:sale_price'], `${data.offers.price} ${data.offers.priceCurrency}`)
+		assert.equal(item['g:sale_price_effective_date'], undefined)
 		assert.equal(item['g:availability'], 'in_stock')
 		assert.equal(item.quantity_to_sell_on_facebook, '500')
 		assert.equal(item['g:quantity_to_sell_on_facebook'], undefined)
@@ -94,7 +96,7 @@ for (const product of products) {
 		assert.equal(item['g:shipping'], undefined)
 		for (const quantity of [1, 3]) {
 			const quote = calculateQuote({ items: [{ id: product.id, quantity }] }, 'DE')
-			assert.equal(quote.subtotalCents + quote.productVatCents, Math.round(Number(expectedGross[product.id]) * 100) * quantity)
+			assert.equal(quote.subtotalCents + quote.productVatCents, Math.round(Number(expectedSale[product.id]) * 100) * quantity)
 		}
 		for (const image of [item['g:image_link'], ...item['g:additional_image_link']]) {
 			const url = new URL(image)
@@ -105,6 +107,20 @@ for (const product of products) {
 		}
 	})
 }
+
+test('removing a discount or setting it to zero removes sale fields without changing IDs or base prices', () => {
+	for (const discount of [undefined, 0]) {
+		const product = { ...products[0], discount }
+		const { productFeedXml: serialize } = loadModule('src/lib/product-feed.ts', {
+			'@/src/data/products': { products: [product], PRODUCT_BRAND },
+		})
+		const item = parseFeed(serialize()).rss.channel.item
+		assert.equal(item['g:id'], 'ind-nails')
+		assert.equal(item['g:price'], '8.57 EUR')
+		assert.equal(item['g:sale_price'], undefined)
+		assert.equal(productStructuredData(product, 'de', 'Test', 'Test').offers.price, '8.57')
+	}
+})
 
 test('XML serialization preserves special characters and cannot inject products or elements', () => {
 	const title = 'IND <test> & "quoted" \'sample\' \u00df'

@@ -54,7 +54,7 @@ for (const lng of ['de', 'en', 'pl']) {
 			assert.equal(data['@id'], `${data.url}#product`)
 			assert.equal(data.image.length, product.images.length)
 			for (const [index, image] of data.image.entries()) assert.equal(image, `${SITE_URL}${product.images[index]}`)
-			const netCents = Math.round(product.price * 100)
+			const netCents = Math.round(Math.round(product.price * 100) * (100 - (product.discount || 0)) / 100)
 			const grossPrice = (netCents + Math.round(netCents * 19 / 100)) / 100
 			assert.equal(data.offers['@type'], 'Offer')
 			assert.equal(data.offers.url, data.url)

@@ -12,6 +12,30 @@ import ts from 'typescript'
 const require = createRequire(import.meta.url)
 const root = fileURLToPath(new URL('../', import.meta.url))
 
+function renderLogo(lng) {
+	const filename = path.join(root, 'src/components/ui/LogoLink.tsx')
+	const compiled = ts.transpileModule(readFileSync(filename, 'utf8'), {
+		compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX },
+	}).outputText
+	const exports = {}
+	const localRequire = name => {
+		if (name === 'next/link') return { default: 'a' }
+		if (name === 'next/navigation') return { useParams: () => ({ lng }) }
+		return require(name)
+	}
+	vm.runInNewContext(`(function(require, exports) { ${compiled}\n })`, {}, { filename })(localRequire, exports)
+	return renderToStaticMarkup(createElement(exports.default))
+}
+
+for (const lng of ['pl', 'en', 'de']) {
+	test(`shared logo links to the homepage in the current route language: ${lng}`, () => {
+		const html = renderLogo(lng)
+		assert.ok(html.includes(`href="/${lng}"`))
+		assert.ok(!html.includes('href="/"'))
+		assert.ok(html.includes('<svg width="87" height="20"'))
+	})
+}
+
 function renderNavigation(component, lng, pathname) {
 	const translations = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${lng}/translations.json`), 'utf8'))
 	const filename = path.join(root, `src/components/nav/${component}.tsx`)

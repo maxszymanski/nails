@@ -13,6 +13,7 @@ import CompatibleProducts from './CompatibleProducts'
 import { products } from '@/src/data/products'
 import { company } from '@/src/data/company'
 import { MAX_SHIPPING_WEIGHT_GRAMS } from '@/src/lib/checkout'
+import { getDiscountedPrice } from '@/src/lib/pricing'
 
 export type CartInformation = {
 	items: {
@@ -31,12 +32,19 @@ function CartModal() {
 
 	const items = useCartStore(state => state.items)
 
-	const totalValue =
-		items.reduce(
-			(sum, item) =>
-				sum + Math.round((products.find(product => product.id === item.id)?.price || 0) * 100) * item.quantity,
-			0,
-		) / 100
+	const totals = items.reduce(
+		(sum, item) => {
+			const product = products.find(product => product.id === item.id)
+			if (product) {
+				sum.regularCents += Math.round(product.price * 100) * item.quantity
+				sum.saleCents += Math.round(getDiscountedPrice(product.price, product.discount) * 100) * item.quantity
+			}
+			return sum
+		},
+		{ regularCents: 0, saleCents: 0 },
+	)
+	const savingsCents = totals.regularCents - totals.saleCents
+	const money = (cents: number) => `${(cents / 100).toFixed(2).replace('.', ',')} EUR`
 	const totalWeightGrams = items.reduce(
 		(sum, item) => sum + (products.find(product => product.id === item.id)?.weightGrams || 0) * item.quantity,
 		0,
@@ -156,8 +164,24 @@ function CartModal() {
 					<div className="mt-auto flex flex-col w-full pt-4 gap-4">
 						<p className="w-full flex justify-between gap-3 items-center leading-6">
 							<span className="text-grayscale-500">{t('checkout.netProducts')}:</span>
-							<span className="shrink-0">{totalValue.toFixed(2).replace('.', ',')} EUR</span>
+							<span className="flex flex-wrap justify-end gap-x-2 gap-y-1">
+								{savingsCents > 0 && (
+									<del className="text-sm text-grayscale-500 whitespace-nowrap">
+										<span className="sr-only">{t('products.regularPrice')}: </span>
+										{money(totals.regularCents)}
+									</del>
+								)}
+								<span className={savingsCents > 0 ? 'text-[#b3263e] font-medium whitespace-nowrap' : 'whitespace-nowrap'}>
+									{money(totals.saleCents)}
+								</span>
+							</span>
 						</p>
+						{savingsCents > 0 && (
+							<p className="flex justify-between gap-3 text-sm text-[#b3263e]">
+								<span>{t('checkout.savings')}</span>
+								<span className="shrink-0 font-medium">{money(savingsCents)}</span>
+							</p>
+						)}
 						{exceedsWeightLimit && (
 							<div id={weightWarningId} role="alert" className="text-sm leading-6">
 								<p className="text-red-700">{t('checkout.errors.WEIGHT_LIMIT')}</p>

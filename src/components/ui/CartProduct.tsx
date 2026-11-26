@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { CartItem, useCartStore } from '../stores/CartStore'
 import { useT } from '@/app/i18n/client'
 import Button from './Button'
+import { products } from '@/src/data/products'
+import { getDiscountedPrice } from '@/src/lib/pricing'
 
 function CartProduct({ product }: { product: CartItem }) {
 	const { t } = useT('translations')
@@ -11,10 +13,15 @@ function CartProduct({ product }: { product: CartItem }) {
 	const decrease = useCartStore(state => state.decrease)
 	const remove = useCartStore(state => state.remove)
 
-	const totalPrice = product.price * product.quantity
+	const catalogProduct = products.find(item => item.id === product.id)
+	if (!catalogProduct) return null
+	const regularCents = Math.round(catalogProduct.price * 100) * product.quantity
+	const totalCents = Math.round(getDiscountedPrice(catalogProduct.price, catalogProduct.discount) * 100) * product.quantity
+	const savingsCents = regularCents - totalCents
+	const money = (cents: number) => `${(cents / 100).toFixed(2).replace('.', ',')}\u20ac`
 
 	return (
-		<div className="w-full flex gap-6 items-center">
+		<div className="w-full flex gap-3 sm:gap-6 items-center">
 			<div className=" size-26 shrink-0 aspect-square relative overflow-hidden rounded-2xl  ">
 				<Image
 					src={product.image}
@@ -29,9 +36,22 @@ function CartProduct({ product }: { product: CartItem }) {
 				<h3 className="leading-6 text-grayscale-500 truncate w-full ">
 					{t(`products.products.${product.name}`)}{' '}
 				</h3>
-				<p className="leading-6 text-nowrap ">
-					{totalPrice.toFixed(2).replace('.', ',')}€ <span className="opacity-50 ">(+VAT)</span>{' '}
+				<p className="leading-6 flex flex-wrap items-baseline gap-x-2">
+					{savingsCents > 0 && (
+						<del className="text-sm text-grayscale-500 whitespace-nowrap">
+							<span className="sr-only">{t('products.regularPrice')}: </span>{money(regularCents)}
+						</del>
+					)}
+					<span className={savingsCents > 0 ? 'text-[#b3263e] font-medium whitespace-nowrap' : 'whitespace-nowrap'}>
+						{savingsCents > 0 && <span className="sr-only">{t('products.salePrice')}: </span>}{money(totalCents)}
+					</span>
+					<span className="opacity-50 whitespace-nowrap">(+VAT)</span>
 				</p>
+				{savingsCents > 0 && (
+					<p className="text-xs leading-5 text-[#b3263e]">
+						{t('checkout.savings')}: <span className="whitespace-nowrap">{money(savingsCents)}</span>
+					</p>
+				)}
 				<div
 					className={`flex items-center rounded-full bg-grayscale-100 overflow-hidden  w-[117px] h-10 gap-2 shrink-0 mt-4`}>
 					<Button

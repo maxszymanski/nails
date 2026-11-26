@@ -92,6 +92,11 @@
 			"mosslanda-four": "Longer wood-coloured IKEA MOSSLANDA picture ledge"
 		}
 	},
+	"promotion": {
+		"label": "Christmas promotion",
+		"message": "Christmas offers up to −{{discount}}%",
+		"link": "Shop products"
+	},
 	"nav": {
 		"home": "Home",
 		"products": "Products",
@@ -187,6 +192,8 @@
 		"subtitle": "Discover all components of the Iwon Nail Display system designed to organize, present and elevate your nail color collection.",
 		"mayLike": "You May Also Like",
 		"tax": "incl. 19% VAT",
+		"regularPrice": "Regular price",
+		"salePrice": "Sale price",
 		"priceInfo": "Price and shipping information",
 		"priceNotice": "Prices include 19% VAT for delivery to Germany. For delivery to another country, the amount may differ and will be recalculated in the cart according to the applicable VAT rules.",
 		"shippingCosts": "Shipping costs are charged separately.",
@@ -1926,6 +1933,7 @@
 		"vatId": "EU VAT ID with country prefix (optional, VIES verification)",
 		"importTaxes": "Store VAT: 0% (non-EU export). Local import VAT, customs duties or carrier fees may be charged on delivery.",
 		"netProducts": "Products excluding VAT",
+		"savings": "You save (excl. VAT)",
 		"productVat": "VAT on products",
 		"grossShipping": "Shipping including VAT",
 		"includedVat": "Total VAT included",

@@ -454,6 +454,12 @@ function OrderForm({
 										<dt>{t('checkout.netProducts')}</dt>
 										<dd className="shrink-0">{money(summaryQuote?.subtotalCents ?? 0)}</dd>
 									</div>
+									{summaryQuote && summaryQuote.discountCents > 0 && (
+										<div className="flex justify-between gap-3 text-[#b3263e]">
+											<dt>{t('checkout.savings')}</dt>
+											<dd className="shrink-0 font-medium">{money(summaryQuote.discountCents)}</dd>
+										</div>
+									)}
 									<div className="flex justify-between gap-3">
 										<dt>
 											{t('checkout.productVat')} ({summaryQuote?.vatRate ?? 0}%)

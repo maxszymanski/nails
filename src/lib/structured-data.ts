@@ -2,7 +2,7 @@ import { languages } from '@/app/i18n/settings'
 import { company } from '@/src/data/company'
 import { PRODUCT_BRAND, type Product } from '@/src/data/products'
 import { SITE_URL } from '@/src/lib/seo'
-import { getGermanGrossPrice } from '@/src/lib/pricing'
+import { getDiscountedPrice, getGermanGrossPrice } from '@/src/lib/pricing'
 
 export const homepageStructuredData = {
 	'@context': 'https://schema.org',
@@ -57,7 +57,7 @@ export function productStructuredData(product: Product, lng: string, name: strin
 		offers: {
 			'@type': 'Offer',
 			url,
-			price: getGermanGrossPrice(product.price).toFixed(2),
+			price: getGermanGrossPrice(getDiscountedPrice(product.price, product.discount)).toFixed(2),
 			priceCurrency: 'EUR',
 			availability: product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
 			itemCondition: 'https://schema.org/NewCondition',

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Button from './Button'
 import { useCartStore } from '../stores/CartStore'
 import { toast } from 'react-toastify'
-import { getGermanGrossPrice } from '@/src/lib/pricing'
+import ProductPrice from '@/src/components/ui/ProductPrice'
 
 function MoreCard({ product, lng }: { product: Product; lng: string }) {
 	const { t } = useT('translations')
@@ -36,7 +36,7 @@ function MoreCard({ product, lng }: { product: Product; lng: string }) {
 					{t(`products.products.${product.name}`)}{' '}
 				</h3>
 				<p className="text-lg leading-7 xl:text-xl xl:leading-8">
-					{getGermanGrossPrice(product.price).toFixed(2).replace('.', ',')}€
+					<ProductPrice product={product} regularPriceLabel={t('products.regularPrice')} salePriceLabel={t('products.salePrice')} />
 				</p>
 			</div>
 			<Button variant="primary" restClass="w-full mt-auto" onClick={addItemToCart}>

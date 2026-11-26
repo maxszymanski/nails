@@ -1,8 +1,13 @@
+'use client'
+
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 function LogoLink() {
+	const { lng } = useParams<{ lng: string }>()
+
 	return (
-		<Link href={'/'}>
+		<Link href={`/${lng}`}>
 			<span className="sr-only">Homepage</span>
 			<svg width="87" height="20" viewBox="0 0 87 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path

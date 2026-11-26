@@ -6,6 +6,7 @@ export type Product = {
 	name: ProductName
 	slug: string
 	price: number
+	discount?: number
 	inStock: boolean
 	googleProductCategory: string
 	weightGrams: number
@@ -28,6 +29,7 @@ export const products: Product[] = [
 		name: 'nails',
 		slug: `fingernagel`,
 		price: 7.2,
+		discount: 30,
 		inStock: true,
 		googleProductCategory: '499897',
 		weightGrams: 30,
@@ -45,6 +47,7 @@ export const products: Product[] = [
 		name: 'magnetic',
 		slug: `magnetnagel`,
 		price: 12,
+		discount: 30,
 		inStock: true,
 		googleProductCategory: '499897',
 		weightGrams: 35,
@@ -62,6 +65,7 @@ export const products: Product[] = [
 		name: 'transparent',
 		slug: `transparente-nagel`,
 		price: 7.2,
+		discount: 30,
 		inStock: true,
 		googleProductCategory: '499897',
 		weightGrams: 30,
@@ -79,6 +83,7 @@ export const products: Product[] = [
 		name: 'frame',
 		slug: `rahmendisplay`,
 		price: 79.99,
+		discount: 50,
 		inStock: true,
 		googleProductCategory: '4160',
 		weightGrams: 890,
@@ -95,6 +100,7 @@ export const products: Product[] = [
 		name: 'cabinet',
 		slug: `vitrinenauslage`,
 		price: 99.99,
+		discount: 50,
 		inStock: true,
 		googleProductCategory: '4160',
 		weightGrams: 2181,
@@ -111,6 +117,7 @@ export const products: Product[] = [
 		name: 'display',
 		slug: `nagelstreifen`,
 		price: 14.9,
+		discount: 30,
 		inStock: true,
 		googleProductCategory: '499897',
 		weightGrams: 109,

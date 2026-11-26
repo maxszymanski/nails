@@ -4,6 +4,7 @@ import { products, type ProductName } from '@/src/data/products'
 import { company } from '@/src/data/company'
 import { cartSchema, deliverySchema, CheckoutError, isExportCountry } from '@/src/lib/checkout'
 import { getOrderQuote } from '@/src/lib/order-quote'
+import { getDiscountedPrice } from '@/src/lib/pricing'
 import en from '@/app/i18n/locales/en/translations.json'
 import de from '@/app/i18n/locales/de/translations.json'
 import pl from '@/app/i18n/locales/pl/translations.json'
@@ -141,7 +142,7 @@ export async function POST(req: Request) {
 	if (age >= 23 * 60 * 60 * 1000 || age < -5 * 60 * 1000) {
 		return Response.json({ error: 'Order attempt expired', code: 'ORDER_EXPIRED' }, { status: 409 })
 	}
-	const items: { name: ProductName; quantity: number; totalCents: number }[] = []
+	const items: { name: ProductName; quantity: number; totalCents: number; regularCents: number }[] = []
 	for (const item of parsed.data.cart.items) {
 		const product = products.find(product => product.id === item.id)
 		if (!product) {
@@ -150,7 +151,8 @@ export async function POST(req: Request) {
 		items.push({
 			name: product.name,
 			quantity: item.quantity,
-			totalCents: Math.round(product.price * 100) * item.quantity,
+			totalCents: Math.round(getDiscountedPrice(product.price, product.discount) * 100) * item.quantity,
+			regularCents: Math.round(product.price * 100) * item.quantity,
 		})
 	}
 	const subtotalCents = items.reduce((sum, item) => sum + item.totalCents, 0)
@@ -211,10 +213,12 @@ export async function POST(req: Request) {
 				<tr>
 					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; font-weight: 600;">${escapeHtml(translations[lng].products.products[item.name])}</td>
 					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #565656; text-align: center;">${item.quantity}</td>
-					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; text-align: right; font-weight: 600;">${formatPrice(
-						item.totalCents / 100,
-						lng,
-					)}</td>
+					<td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5; color: #060606; text-align: right; font-weight: 600;">${
+						item.regularCents > item.totalCents
+							? `<del style="color: #565656; font-size: 12px; font-weight: 400;">${translations[lng].products.regularPrice}: ${formatPrice(item.regularCents / 100, lng)}</del><br>
+								<span style="color: #b3263e;">${translations[lng].products.salePrice}: ${formatPrice(item.totalCents / 100, lng)}</span>`
+							: formatPrice(item.totalCents / 100, lng)
+					}</td>
 				</tr>`,
 		)
 		.join('')
@@ -222,6 +226,7 @@ export async function POST(req: Request) {
 		const labels = translations[lng].checkout
 		return `
 		<p>${labels.netProducts}: ${formatPrice(quote.subtotalCents / 100, lng)}</p>
+		${quote.discountCents > 0 ? `<p style="color: #b3263e;">${labels.savings}: ${formatPrice(quote.discountCents / 100, lng)}</p>` : ''}
 		<p>${labels.productVat} (${quote.vatRate}%): ${formatPrice(quote.productVatCents / 100, lng)}</p>
 		<p>${labels.grossShipping}: ${formatPrice(quote.shippingCents / 100, lng)}</p>
 		<p>${labels.includedVat} (${quote.vatRate}%): ${formatPrice(quote.vatCents / 100, lng)}</p>

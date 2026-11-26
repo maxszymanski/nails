@@ -48,7 +48,7 @@ function order() {
 		orderId: randomUUID(),
 		createdAt: new Date().toISOString(),
 		lng: 'en',
-		expectedTotalCents: 11899,
+		expectedTotalCents: 5950,
 		expectedVatRate: 19,
 		customer: {
 			country: 'DE', isBusiness: false, vatId: '', companyName: '',
@@ -108,6 +108,8 @@ const invalidCases = {
 	'negative total': body => { body.cart.totalWithShipping = -10 },
 	'forged shipping': body => { body.cart.shipping = 0 },
 	'forged price': body => { body.cart.items[0].price = 0.01 },
+	'forged discount': body => { body.cart.items[0].discount = 99 },
+	'forged savings': body => { body.cart.discountCents = 9999 },
 	'forged product weight': body => { body.cart.items[0].weightGrams = 1 },
 	'forged cart weight': body => { body.cart.totalWeightGrams = 1 },
 	'forged product name': body => { body.cart.items[0].name = 'Another product' },
@@ -157,9 +159,9 @@ test('rejects an invalid PayPal recipient before sending email', async () => {
 })
 
 for (const [lng, country, rate, amount, button] of [
-	['pl', 'PL', 23, '20.85', 'Zapłać przez PayPal'],
-	['de', 'DE', 19, '13.47', 'Mit PayPal bezahlen'],
-	['en', 'DE', 19, '13.47', 'Pay with PayPal'],
+	['pl', 'PL', 23, '18.19', 'Zapłać przez PayPal'],
+	['de', 'DE', 19, '10.90', 'Mit PayPal bezahlen'],
+	['en', 'DE', 19, '10.90', 'Pay with PayPal'],
 ]) {
 	test(`PayPal link in ${lng} includes recipient, server total, EUR and order number`, async () => {
 		const recipient = 'payments+shop@example.invalid'
@@ -192,11 +194,11 @@ for (const [lng, country, rate, amount, button] of [
 }
 
 for (const [items, expected] of [
-	[[{ id: 4, quantity: 1 }], 118.99],
-	[[{ id: 0, quantity: 3 }], 30.61],
-	[[{ id: 1, quantity: 10 }, { id: 0, quantity: 2 }, { id: 2, quantity: 2 }], 177.08],
-	[[{ id: 1, quantity: 10 }, { id: 5, quantity: 2 }], 178.26],
-	[[{ id: 1, quantity: 5 }, { id: 5, quantity: 6 }, { id: 0, quantity: 3 }], 203.49],
+	[[{ id: 4, quantity: 1 }], 59.50],
+	[[{ id: 0, quantity: 3 }], 22.90],
+	[[{ id: 1, quantity: 10 }, { id: 0, quantity: 2 }, { id: 2, quantity: 2 }], 124.00],
+	[[{ id: 1, quantity: 10 }, { id: 5, quantity: 2 }], 124.82],
+	[[{ id: 1, quantity: 5 }, { id: 5, quantity: 6 }, { id: 0, quantity: 3 }], 142.46],
 ]) {
 	test(`calculates catalog total ${expected} EUR in cents`, async () => {
 		const api = harness()
@@ -279,6 +281,15 @@ for (const lng of ['pl', 'en', 'de']) {
 		}
 		assert.ok(owner.html.includes(new Intl.NumberFormat('de', { style: 'currency', currency: 'EUR' }).format(quote.totalCents / 100)))
 		assert.ok(customer.html.includes(localized.checkout.netProducts))
+		assert.ok(owner.html.includes(german.checkout.savings))
+		assert.ok(customer.html.includes(localized.checkout.savings))
+		for (const [email, copy, lng] of [[owner, german, 'de'], [customer, localized, body.lng]]) {
+			for (const cents of [504, 840, 4000, 5000, 1043]) {
+				const money = new Intl.NumberFormat(lng, { style: 'currency', currency: 'EUR' }).format(cents / 100)
+				assert.ok(email.html.includes(`${copy.products.salePrice}: ${money}</span>`))
+			}
+			assert.ok(email.html.includes('<del'))
+		}
 		assert.ok(customer.html.includes(new Intl.NumberFormat(lng, { style: 'currency', currency: 'EUR' }).format(quote.totalCents / 100)))
 		assert.ok(!customer.html.includes('Zu verpackende Artikel'))
 	})
@@ -343,14 +354,14 @@ test('browser retry identity survives remounts and persists no customer details'
 })
 
 for (const [country, rate, productVat, shippingVat, total] of [
-	['DE', 19, 137, 78, 1347],
-	['PL', 23, 166, 224, 2085],
-	['FI', 25.5, 184, 244, 2103],
-	['EE', 24, 173, 232, 2092],
-	['RO', 21, 151, 208, 2070],
-	['SK', 23, 166, 224, 2085],
-	['AE', 0, 0, 0, 3019],
-	['QA', 0, 0, 0, 3019],
+	['DE', 19, 96, 78, 1090],
+	['PL', 23, 116, 224, 1819],
+	['FI', 25.5, 129, 244, 1832],
+	['EE', 24, 121, 232, 1824],
+	['RO', 21, 106, 208, 1809],
+	['SK', 23, 116, 224, 1819],
+	['AE', 0, 0, 0, 2803],
+	['QA', 0, 0, 0, 2803],
 ]) {
 	test(`quotes and orders use ${rate}% VAT for ${country} and final delivery prices`, async () => {
 		const api = harness()
@@ -381,7 +392,7 @@ for (const [country, shipping] of [
 		const body = order()
 		body.cart.items = [{ id: 0, quantity: 1 }]
 		Object.assign(body.customer, { country, isBusiness: true, companyName: 'Test company', vatId: `${country}123456` })
-		Object.assign(body, { expectedTotalCents: 720 + shipping, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: 504 + shipping, expectedVatRate: 0 })
 		assert.equal((await api.post(body)).status, 200)
 	})
 }
@@ -455,6 +466,45 @@ test('German free shipping threshold uses gross products, including exactly 50 E
 		assert.equal(result.totalCents, gross + shipping)
 		assert.equal(result.shippingCents, shipping)
 	}
+})
+
+test('discounts apply before the German free shipping threshold and preserve cent boundaries', () => {
+	for (const [price, gross, shipping] of [[84.02, 4999, 490], [84.04, 5000, 0]]) {
+		const { calculateQuote } = loadModule('src/lib/checkout.ts', {
+			'@/src/data/products': { products: [{ id: 0, price, discount: 50, weightGrams: 30 }] },
+		})
+		const quote = calculateQuote({ items: [{ id: 0, quantity: 1 }] }, 'DE')
+		assert.equal(quote.subtotalCents + quote.productVatCents, gross)
+		assert.equal(quote.shippingCents, shipping)
+	}
+	const { calculateQuote } = loadModule('src/lib/checkout.ts')
+	const quote = calculateQuote({ items: [{ id: 3, quantity: 1 }] }, 'DE')
+	assert.equal(quote.subtotalCents, 4000)
+	assert.equal(quote.discountCents, 3999)
+	assert.equal(quote.shippingCents, 490)
+	assert.equal(quote.totalCents, 5250)
+})
+
+test('removing discounts restores base checkout prices and zero savings without a migration', () => {
+	const { products } = loadModule('src/data/products.ts')
+	for (const discount of [undefined, 0]) {
+		const { calculateQuote } = loadModule('src/lib/checkout.ts', {
+			'@/src/data/products': { products: products.map(product => ({ ...product, discount })) },
+		})
+		const quote = calculateQuote({ items: [{ id: 4, quantity: 1 }] }, 'DE')
+		assert.equal(quote.subtotalCents, 9999)
+		assert.equal(quote.discountCents, 0)
+		assert.equal(quote.totalCents, 11899)
+	}
+})
+
+test('a stale pre-discount order is requoted rather than charging the old amount', async () => {
+	const api = harness()
+	const body = { ...order(), expectedTotalCents: 11899 }
+	const response = await api.post(body)
+	assert.equal(response.status, 409)
+	assert.equal((await response.json()).code, 'QUOTE_CHANGED')
+	assert.equal(api.calls.length, 0)
 })
 
 for (const [countries, prices] of [
@@ -558,7 +608,7 @@ test('Monaco uses French VAT and the EU shipping prices', async () => {
 	const api = harness()
 	const body = order()
 	body.customer.country = 'MC'
-	body.expectedTotalCents = 14048
+	body.expectedTotalCents = 8049
 	body.expectedVatRate = 20
 	assert.equal((await api.post(body)).status, 200)
 })
@@ -626,7 +676,7 @@ test('all UK orders require email regardless of value, weight, postcode or custo
 })
 
 test('business customers without VAT ID and domestic companies still pay VAT', async () => {
-	for (const [country, vatId, total, rate] of [['DE', 'DE123456789', 11899, 19], ['PL', '', 14348, 23]]) {
+	for (const [country, vatId, total, rate] of [['DE', 'DE123456789', 5950, 19], ['PL', '', 8199, 23]]) {
 		const api = harness()
 		const body = order()
 		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Test company' })
@@ -648,7 +698,7 @@ test('cross-border companies get 0% only after VIES verification, with Greek and
 		} })
 		const body = order()
 		Object.assign(body.customer, { country, vatId, isBusiness: true, companyName: 'Company <test>' })
-		Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: 7049, expectedVatRate: 0 })
 		const quoted = await api.quote({ cart: body.cart, delivery: { country, vatId, isBusiness: true } })
 		assert.equal((await quoted.json()).quote.vatRate, 0)
 		assert.equal((await api.post(body)).status, 200)
@@ -672,7 +722,7 @@ for (const lng of ['pl', 'en', 'de']) {
 		const body = order()
 		body.lng = lng
 		Object.assign(body.customer, { country: 'PL', vatId: 'PL1234567890', isBusiness: true, companyName: 'Test company' })
-		Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
+		Object.assign(body, { expectedTotalCents: 7049, expectedVatRate: 0 })
 		assert.equal((await api.quote({ cart: body.cart, delivery: { country: 'PL', vatId: 'PL1234567890', isBusiness: true } })).status, 200)
 		assert.equal((await api.post(body)).status, 200)
 		assert.equal(checks, 2)
@@ -722,7 +772,7 @@ test('business email retries remain identical even when VIES request metadata ch
 	} })
 	const body = order()
 	Object.assign(body.customer, { country: 'PL', vatId: 'PL1234567890', isBusiness: true, companyName: 'Test company' })
-	Object.assign(body, { expectedTotalCents: 12048, expectedVatRate: 0 })
+	Object.assign(body, { expectedTotalCents: 7049, expectedVatRate: 0 })
 	assert.equal((await api.post(body)).status, 502)
 	assert.equal((await api.post(body)).status, 200)
 	assert.equal(checks, 2)
@@ -764,7 +814,7 @@ test('VAT ID prefix must match the delivery country', async () => {
 test('accepts alphanumeric EU postcodes', async () => {
 	const body = order()
 	Object.assign(body.customer, { country: 'NL', zipCode: '1234 AB' })
-	Object.assign(body, { expectedVatRate: 21, expectedTotalCents: 14148 })
+	Object.assign(body, { expectedVatRate: 21, expectedTotalCents: 8099 })
 	assert.equal((await harness().post(body)).status, 200)
 })
 
@@ -802,22 +852,23 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 			return Response.json({ ...data, valid: true })
 		} })
 		for (const [items, subtotalCents, totalWeightGrams, band] of [
-			[[{ id: 0, quantity: 1 }], 720, 30, 0],
-			[[{ id: 3, quantity: 2 }, { id: 5, quantity: 2 }], 18978, 1998, 0],
-			[[{ id: 4, quantity: 1 }], 9999, 2181, 1],
-			[[{ id: 4, quantity: 3 }], 29997, 6543, 2],
-			[[{ id: 4, quantity: 8 }], 79992, 17448, 3],
-			[[{ id: 4, quantity: 10 }], 99990, 21810, 4],
+			[[{ id: 0, quantity: 1 }], 504, 30, 0],
+			[[{ id: 3, quantity: 2 }, { id: 5, quantity: 2 }], 10086, 1998, 0],
+			[[{ id: 4, quantity: 1 }], 5000, 2181, 1],
+			[[{ id: 4, quantity: 3 }], 15000, 6543, 2],
+			[[{ id: 4, quantity: 8 }], 40000, 17448, 3],
+			[[{ id: 4, quantity: 10 }], 50000, 21810, 4],
 		]) {
 			for (const mode of ['private', 'business', 'businessVatId']) {
 				const vatRate = mode === 'businessVatId' && viesEligible ? 0 : standardRate
 				const productVatCents = country === 'DE'
-					? items.reduce((sum, item) => sum + [137, 228, 137, 1520, 1900, 283][item.id] * item.quantity, 0)
+					? items.reduce((sum, item) => sum + [96, 160, 96, 760, 950, 198][item.id] * item.quantity, 0)
 					: roundFraction(subtotalCents * (vatRate * 10), 1000)
 				const shippingCents = country === 'DE' ? (subtotalCents + productVatCents >= 5000 ? 0 : 490) : prices[band]
 				const shippingVatCents = shippingCents - roundFraction(shippingCents * 1000, 1000 + vatRate * 10)
 				const expected = {
 					totalWeightGrams, subtotalCents, productVatCents, shippingCents, shippingVatCents,
+					discountCents: items.reduce((sum, item) => sum + [720, 1200, 720, 7999, 9999, 1490][item.id] * item.quantity, 0) - subtotalCents,
 					vatCents: productVatCents + shippingVatCents, vatRate,
 					totalCents: subtotalCents + productVatCents + shippingCents,
 				}
@@ -838,6 +889,7 @@ for (const [country, standardRate, prices, viesEligible] of auditDestinations) {
 					const labels = JSON.parse(readFileSync(path.join(root, `app/i18n/locales/${emailLng}/translations.json`), 'utf8')).checkout
 					const money = cents => new Intl.NumberFormat(emailLng, { style: 'currency', currency: 'EUR' }).format(cents / 100)
 					assert.ok(email.html.includes(`${labels.netProducts}: ${money(subtotalCents)}`))
+					assert.ok(email.html.includes(`${labels.savings}: ${money(expected.discountCents)}`))
 					assert.ok(email.html.includes(`${labels.productVat} (${vatRate}%): ${money(productVatCents)}`))
 					assert.ok(email.html.includes(`${labels.grossShipping}: ${money(shippingCents)}`))
 					assert.ok(email.html.includes(`${labels.includedVat} (${vatRate}%): ${money(expected.vatCents)}`))
